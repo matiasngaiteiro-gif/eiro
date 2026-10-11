@@ -1,6 +1,6 @@
 # ORENSIA — Estudio creativo
 
-Web institucional estática en español, adaptable a móviles y escritorio. Sin dependencias, compilación, servicios externos ni instalación. Abrí `index.html` para verla en tu computadora.
+Web institucional estática en español, adaptable a móviles y escritorio. Sin compilación ni instalación. Las tipografías se cargan desde Adobe Fonts y requieren conexión a internet. Abrí `index.html` para verla en tu computadora.
 
 ## Archivos
 
@@ -16,7 +16,7 @@ Web institucional estática en español, adaptable a móviles y escritorio. Sin 
 1. Agregá el correo real en `config.js`, dentro de las comillas de `email`.
 2. Revisá los servicios y confirmá que todos estén disponibles dentro de tu oferta. Los textos son una propuesta comercial, no una acreditación de servicios ya prestados.
 3. No se incluyeron clientes, testimonios, resultados, equipo ni proyectos ficticios. Podés incorporar un portfolio cuando tengas los casos y permisos correspondientes.
-4. La tipografía es Georgia (con alternativas del sistema), una aproximación editorial. Para usar la fuente exacta de tu logo, exportá el logotipo como SVG y reemplazá las marcas tipográficas. Para una fuente web propia, verificá su licencia.
+4. El kit oficial `https://use.typekit.net/lgv5pfx.css` está integrado. Trust 1A se aplica a la marca y Trust 3A a los títulos, con Georgia como alternativa. Se usan únicamente pesos normales disponibles en el kit, sin cursivas sintéticas. Mantené activo tu proyecto de Adobe Fonts.
 
 ## Publicar en GitHub Pages
 
@@ -32,7 +32,13 @@ Con `email` vacío, el formulario valida los campos y descarga `consulta-orensia
 
 - Bordó frambuesa: #591A35
 - Rojo rosáceo: #F53058
-- Blanco pétalo: #F7F1F3
-- Rosa empolvado: #DDBCC8
+- Marfil: #F3EEE5
+- Negro tinta: #191716
 
 El rojo sobre bordó se reserva al logotipo y titulares grandes. Los textos corrientes usan combinaciones de mayor contraste. Incluye navegación por teclado, enlace para saltar al contenido, estados de foco, etiquetas en formularios y respeto por la preferencia de movimiento reducido.
+
+## Segunda edición
+
+Base negro y marfil, acentos bordó y rojo rosáceo. Composición O/S propia en código, servicios con enlaces directos, consulta con servicio preseleccionado, preguntas frecuentes y navegación con sección activa. Campos obligatorios señalados y controles táctiles de al menos 44 px en los accesos principales. Animación ornamental limitada a escritorio y desactivada con movimiento reducido. No incorpora rastreadores propios; Adobe Fonts realiza solicitudes externas para servir la tipografía.
+
+Verificaciones: sintaxis JavaScript, referencias locales y anclas, selección de servicios, menú y ambos modos de contacto mediante pruebas aisladas. No se realizó verificación visual de navegador ni auditoría Lighthouse o certificación de accesibilidad.

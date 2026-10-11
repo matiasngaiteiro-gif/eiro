@@ -9,7 +9,7 @@ window.matchMedia('(min-width: 601px)').addEventListener('change',e=>{if(e.match
 document.querySelector('#year').textContent=new Date().getFullYear();
 const email=(window.ORENSIA_CONFIG?.email||'').trim();
 const hasEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-if(hasEmail){document.querySelector('#submit-label').textContent='Escribir al estudio';document.querySelector('#form-note').textContent='Se abrirá tu aplicación de correo con la consulta preparada. Revisala y enviála desde allí. No almacenamos tus datos en esta web.';}
+if(hasEmail){document.querySelector('#submit-label').textContent='Escribir al estudio';document.querySelector('#form-note').textContent='Se abrirá tu aplicación de correo con la consulta preparada. Revisala y enviala desde allí. No almacenamos tus datos en esta web.';}
 document.querySelector('#brief-form').addEventListener('submit',e=>{
  e.preventDefault();const values=new FormData(e.currentTarget);
  const brief=`CONSULTA — ORENSIA\n\nNombre: ${values.get('nombre')}\nEmail: ${values.get('email')}\nMarca: ${values.get('marca')||'Por definir'}\nServicio: ${values.get('servicio')}\n\n${values.get('mensaje')}\n`;
@@ -17,3 +17,17 @@ document.querySelector('#brief-form').addEventListener('submit',e=>{
  if(hasEmail){window.location.href=`mailto:${email}?subject=${encodeURIComponent('Consulta ORENSIA — '+(values.get('marca')||values.get('nombre')))}&body=${encodeURIComponent(brief)}`;status.textContent='Consulta preparada. Completá el envío desde tu aplicación de correo.';}
  else{const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='consulta-orensia.txt';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);status.textContent='Consulta descargada. No fue enviada. Conservá el archivo para compartirlo con el estudio.';}
 });
+// Rutas directas hacia servicios y consultas contextualizadas.
+document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{
+ const detail=document.querySelector('#servicio-'+link.dataset.service);if(detail)detail.open=true;
+}));
+document.querySelectorAll('[data-interest]').forEach(link=>link.addEventListener('click',()=>{
+ document.querySelector('select[name="servicio"]').value=link.dataset.interest;
+}));
+function openLinkedService(){const hash=window.location.hash;if(/^#servicio-[1-6]$/.test(hash)){const detail=document.querySelector(hash);if(detail)detail.open=true;}}
+openLinkedService();window.addEventListener('hashchange',openLinkedService);
+if('IntersectionObserver' in window){
+ const links=[...nav.querySelectorAll('a')];
+ const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(link=>{if(link.getAttribute('href')==='#'+entry.target.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -55% 0px',threshold:0});
+ document.querySelectorAll('main section[id]').forEach(section=>observer.observe(section));
+}
