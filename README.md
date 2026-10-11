@@ -65,7 +65,7 @@ Los bloques grises son espacios reservados para imágenes. Cada uno indica su pr
 
 La imagen se recorta sola para llenar el bloque. También podés usar un `<video>` (por ejemplo para el reel). Al poner la imagen, quitá del `div` los atributos `role` y `aria-label`.
 
-En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá "Nombre del proyecto" y "Categoría" por los datos reales. Para sumar o quitar proyectos, copiá o borrá un `<li>`. Las clases `w-7`, `w-5` y `w-12` definen el ancho (sobre 12 columnas) y `r-4x3`, `r-4x5`, `r-21x9` la proporción.
+En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá "Nombre del cliente", "Año, categoría" y la línea de resumen por los datos reales. Para sumar o quitar proyectos, copiá o borrá un `<li>`. La clase `work-wide` hace que un proyecto ocupe todo el ancho, y `r-4x3`, `r-4x5`, `r-21x9` definen la proporción de la imagen.
 
 ## Cuando haya dominio propio
 

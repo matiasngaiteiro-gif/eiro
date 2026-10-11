@@ -463,3 +463,37 @@ a { color: inherit; }
 
 /* Logo en Helvética */
 .wordmark { font-weight: 700; letter-spacing: -0.055em; }
+
+/* ---------- Estructura al estilo de un estudio grande: títulos simples, fichas de proyecto, menú con bajadas ---------- */
+.sec-row {
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+  gap: 12px 24px; padding-bottom: clamp(32px, 4.5vw, 64px);
+}
+.sec-row h2 { font-size: var(--t-h2); }
+
+.works { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(36px, 4.5vw, 72px) clamp(16px, 1.6vw, 24px); align-items: start; }
+.work { gap: 16px; }
+.work-wide { grid-column: 1 / -1; }
+.work-meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: baseline; }
+.work-name { font-size: var(--t-h4); }
+.work-tag { font-family: var(--font-mono); font-size: var(--t-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.work-line { grid-column: 1 / -1; color: var(--muted); font-size: 0.97rem; }
+@media (max-width: 760px) { .works { grid-template-columns: minmax(0, 1fr); } }
+
+.nav li a small { display: none; }
+@media (max-width: 900px) {
+  .js .nav li a { justify-content: space-between; gap: 16px; }
+  .js .nav li a small {
+    display: inline; font-family: var(--font-mono); font-size: var(--t-mono); font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  }
+}
+
+.copy-btn {
+  justify-self: start; min-height: 44px; padding: 8px 18px; margin-top: 8px;
+  background: none; color: inherit; border: 1px solid var(--fg); border-radius: 999px; cursor: pointer;
+  font-family: var(--font-mono); font-size: var(--t-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background-color .18s ease, color .18s ease;
+}
+.copy-btn:hover { background: var(--fg); color: var(--bg); }
+@media (max-width: 900px) { .js .nav .cta-link { font-size: 1.5rem; } }

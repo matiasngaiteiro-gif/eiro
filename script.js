@@ -52,7 +52,7 @@
 
   /* Aparición de bloques al hacer scroll */
   if (!reduceMotion && "IntersectionObserver" in window) {
-    var targets = document.querySelectorAll(".reel, .sec-head, .sec-bar, .work, .statement, .studio-grid, .services > li, .wide-img .ph, .method > li, .modes, .contact h2, .contact-grid");
+    var targets = document.querySelectorAll(".reel, .sec-head, .sec-row, .work, .statement, .studio-grid, .services > li, .wide-img .ph, .method > li, .modes, .contact h2, .contact-grid");
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
@@ -83,7 +83,7 @@
   /* Canales de contacto */
   var items = [];
   if (config.email) {
-    items.push({ name: "Correo", text: config.email, href: "mailto:" + config.email });
+    items.push({ name: "Correo", text: config.email, href: "mailto:" + config.email, copy: config.email });
   }
   if (config.instagram) {
     var user = String(config.instagram).replace(/^@/, "");
@@ -113,6 +113,22 @@
         li.appendChild(s);
       }
       li.appendChild(a);
+      if (idx === 0 && it.copy) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "copy-btn";
+        b.textContent = "Copiar";
+        b.addEventListener("click", function () {
+          var done = function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 2000); };
+          var selectText = function () {
+            var range = document.createRange(); range.selectNodeContents(a);
+            var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(it.copy).then(done, selectText);
+          else selectText();
+        });
+        li.appendChild(b);
+      }
       target.appendChild(li);
     });
   });
