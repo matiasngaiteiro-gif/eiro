@@ -13,7 +13,7 @@ Web de Teiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin i
 
 ## Abrir la web
 
-Abrí `index.html` con doble clic. En equipos sin Helvética, la tipografía de reemplazo se carga desde Google Fonts y necesita conexión a internet.
+Abrí `index.html` con doble clic. No necesita conexión a internet: las tipografías están incluidas.
 
 ## Configurar el contacto
 
@@ -42,7 +42,11 @@ window.TEIRO_CONFIG = {
 
 ## Tipografía
 
-Toda la web, incluido el logo, usa dos familias: Helvética para logo, títulos, textos, navegación y botones, y Roboto Mono para etiquetas y numeración. En Mac y iPhone la Helvética es la del sistema; en Windows y Android se carga Inter desde Google Fonts como equivalente. Están definidas en `--font-logo`, `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
+- **Bricolage Grotesque:** logo y títulos.
+- **Instrument Sans:** textos, navegación y botones.
+- **Roboto Mono:** etiquetas, numeración y datos chicos.
+
+Las tres son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, así que la web no depende de servicios externos y se ve igual en todos los dispositivos. Las licencias están en la misma carpeta. Están definidas en `--font-logo`, `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 

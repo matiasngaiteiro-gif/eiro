@@ -3,6 +3,11 @@
   Página negra con paneles en negro, grafito y hueso. El cobalto es el único acento.
 */
 
+/* Fuentes alojadas en el sitio (assets/fonts), recortadas al alfabeto latino. Licencia SIL Open Font License. */
+@font-face { font-family: "Bricolage Grotesque"; src: url("assets/fonts/bricolage-grotesque.woff") format("woff"); font-weight: 300 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("assets/fonts/instrument-sans.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Roboto Mono"; src: url("assets/fonts/roboto-mono.woff") format("woff"); font-weight: 400 500; font-style: normal; font-display: swap; }
+
 :root {
   /* Color: 90% neutros, 10% cobalto como máximo */
   --black: #0B0B0B;            /* base, fondos oscuros y texto principal */
@@ -22,11 +27,11 @@
   --bone-ph: #E3DFD4;          /* bloques de imagen sobre hueso */
 
   /* Tipografía */
-  --font-logo: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* logo téiro, en negrita */
-  --font-display: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* títulos */
-  --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* textos, navegación y botones */
+  --font-logo: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif; /* logo téiro */
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif; /* títulos */
+  --font-body: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* textos, navegación y botones */
   --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* etiquetas, numeración y datos */
-  --w-display: 400;
+  --w-display: 500;
 
   /* Escala tipográfica: seis tamaños, nada fuera de la escala */
   --t-hero: clamp(2.5rem, 7vw, 7.25rem);
@@ -526,3 +531,11 @@ html:not(.js) .header { background: var(--black); }
 .signature { display: grid; gap: 4px; margin-top: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
 .signature span:first-child { font-family: var(--font-display); font-weight: 500; font-size: var(--t-h4); letter-spacing: -0.03em; }
 .rotator { display: inline-block; min-height: 0; }
+
+/* Tipografía de Teiro: Bricolage Grotesque en logo y títulos, Instrument Sans en textos, Roboto Mono en datos */
+.display, .services h3, .marquee-group span { letter-spacing: -0.015em; }
+.work-name, .method h3, .modes dt, .channels a, .signature span:first-child { letter-spacing: -0.01em; font-weight: 600; }
+.wordmark { font-weight: 700; letter-spacing: -0.025em; }
+.method .num { font-weight: 300; }
+.rotator { font-weight: 600; }
+body { font-size: 17px; }
