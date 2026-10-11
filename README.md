@@ -8,7 +8,7 @@ Web de Teiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin i
 - `styles.css`: diseño. Colores, tipografías, espacios y medidas están como variables al principio del archivo.
 - `script.js`: menú móvil, palabra rotativa de la portada, año del pie y canales de contacto.
 - `config.js`: datos de contacto editables.
-- `assets/`: favicon y futuros recursos.
+- `assets/`: logo, favicon, fuentes y futuras imágenes.
 - `.nojekyll`: hace que GitHub Pages sirva los archivos tal cual.
 
 ## Abrir la web
@@ -33,31 +33,27 @@ window.TEIRO_CONFIG = {
 - `whatsapp` va con código de país y solo dígitos. `instagram` va sin `@`.
 - La web no tiene formulario. Para sumar uno hace falta un servicio real de envío.
 
-## Nombre
+## Nombre y logo
 
-- El estudio se llama Teiro (se pronuncia "téi-ro"). Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio".
-- En el logo y en los títulos se escribe con acento: téiro o TÉIRO. En la web el logo va en minúsculas, con la tilde en cobalto.
-- En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro.
-- Dominio y usuario de Instagram están pendientes. No hay eslogan.
+- El estudio se llama Teiro. Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio". No hay eslogan.
+- El logo es el dibujo manuscrito "teiro". Está vectorizado en `assets/logo-teiro.svg` y también incluido dentro de `index.html`, así toma el color del texto de cada fondo.
+- En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro. Dominio y usuario de Instagram están pendientes.
 
-## Tipografía
+## Sistema visual
 
-- **Bricolage Grotesque:** logo y títulos.
-- **Instrument Sans:** textos, navegación y botones.
-- **Roboto Mono:** etiquetas, numeración y datos chicos.
+- **Titulares:** Inter Tight en peso extra negrita, mayúsculas, con interlineado y espaciado muy cerrados (clase `heavy`).
+- **Todo lo chico:** DM Mono liviana, en mayúsculas y con espaciado abierto (clase `mono`): navegación, etiquetas, tabla de trabajos, botones y datos.
+- **Afiches:** la portada y Contacto usan la misma composición: líneas enormes, el logo chico al centro, y otra línea enorme.
 
-Las tres son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, así que la web no depende de servicios externos y se ve igual en todos los dispositivos. Las licencias están en la misma carpeta. Están definidas en `--font-logo`, `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
+Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias. Están definidas en `--font-display` y `--font-mono` dentro de `styles.css`.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 
 ## Color
 
-Los colores están como variables al principio de `styles.css`: negro (`--black` #0B0B0B), grafito (`--graphite` #2A2A28), piedra (`--stone` #8C8A84), hueso (`--bone` #F2EFE8), blanco (`--white`) y cobalto (`--cobalt` #1F3BFF).
+Los colores están como variables al principio de `styles.css`: azul noche (`--night` #0D1017), negro, blanco, hielo (`--ice` #ECEEF2), gris frío (`--lilac` #A7A8B4), lima (`--lime` #D9F44C) y cobalto (`--cobalt` #1F3BFF).
 
-- 90% neutros, 10% cobalto como máximo. El cobalto va en la tilde del logo, el botón principal, los subrayados de enlaces y algún dato destacado. Nunca como fondo de una sección.
-- Cada sección elige su fondo con una clase: `tone-dark` (negro), `tone-brand` (grafito) o `tone-light` (hueso).
-- El cobalto como texto solo se usa sobre hueso; sobre negro o grafito no alcanza el contraste necesario.
-- Para que el texto secundario se lea, sobre fondos oscuros se usa una piedra más clara (`--stone-light`) y sobre hueso una más oscura (`--stone-deep`).
+Cada sección es un panel y elige su fondo con una clase: `t-night`, `t-black`, `t-white`, `t-ice`, `t-lilac`, `t-lime` o `t-cobalt`. El lima se usa para resaltar (fila de la tabla al pasar, servicio abierto, botón de la barra, placa de Estudio) y el cobalto para Contacto.
 
 ## Publicar en GitHub Pages
 
@@ -76,12 +72,12 @@ Los bloques grises son espacios reservados para imágenes. Cada uno indica su pr
 2. En `index.html` buscá el bloque `<div class="ph ...">` y reemplazá el `<span>` de adentro por la imagen:
 
 ```html
-<div class="ph r-4x3"><img src="assets/proyecto-01.jpg" alt="Descripción de la imagen" loading="lazy"></div>
+<div class="ph"><img src="assets/reel.jpg" alt="Descripción de la imagen" loading="lazy"></div>
 ```
 
 La imagen se recorta sola para llenar el bloque. También podés usar un `<video>` (por ejemplo para el reel). Al poner la imagen, quitá del `div` los atributos `role` y `aria-label`.
 
-En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá "Nombre del cliente", "Año, categoría" y la línea de resumen por los datos reales. Para sumar o quitar proyectos, copiá o borrá un `<li>`. La clase `work-wide` hace que un proyecto ocupe todo el ancho, y `r-4x3`, `r-4x5`, `r-21x9` definen la proporción de la imagen.
+En la sección **Trabajos**, cada fila de la tabla (`<tr>`) es un proyecto: cambiá "Nombre del cliente" y "Nombre del proyecto" por los datos reales y ajustá el área. Para sumar o quitar proyectos, copiá o borrá una fila.
 
 ## Cuando haya dominio propio
 

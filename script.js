@@ -52,7 +52,7 @@
 
   /* Aparición de bloques al hacer scroll */
   if (!reduceMotion && "IntersectionObserver" in window) {
-    var targets = document.querySelectorAll(".reel, .sec-head, .sec-row, .work, .statement, .studio-grid, .services > li, .wide-img .ph, .method > li, .modes, .contact h2, .contact-grid");
+    var targets = document.querySelectorAll(".reveal");
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
@@ -108,7 +108,7 @@
       if (it.external) { a.target = "_blank"; a.rel = "noopener"; }
       if (idx === 0) {
         var s = document.createElement("span");
-        s.className = "label";
+        s.className = "mono";
         s.textContent = it.name;
         li.appendChild(s);
       }
@@ -116,7 +116,7 @@
       if (idx === 0 && it.copy) {
         var b = document.createElement("button");
         b.type = "button";
-        b.className = "copy-btn";
+        b.className = "copy-btn mono";
         b.textContent = "Copiar";
         b.addEventListener("click", function () {
           var done = function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 2000); };
