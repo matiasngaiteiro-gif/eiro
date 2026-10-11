@@ -22,7 +22,7 @@
   /* Medidas */
   --gutter: clamp(20px, 4.4vw, 64px);
   --max: 1560px;
-  --section: clamp(80px, 12vw, 190px);
+  --section: clamp(64px, 8.5vw, 136px);
   --header-h: 88px;
   --radius-pill: 999px;
 }
@@ -149,7 +149,7 @@ a { color: inherit; }
 }
 
 /* Portada */
-.hero { padding-block: clamp(72px, 13vw, 220px) clamp(40px, 5vw, 72px); }
+.hero { padding-block: clamp(20px, 2.6vw, 44px) clamp(40px, 5vw, 72px); }
 .hero h1 { font-size: clamp(2.7rem, 10.4vw, 11rem); }
 .hero h1 .line { display: block; }
 .rotator {
