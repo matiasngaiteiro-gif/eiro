@@ -40,7 +40,9 @@ El kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css` trae dos familias:
 - `trust-3a` (pesos 200, 300, 400, 500, 700): títulos y marca.
 - `trust-1a` (pesos 400, 500, 700): textos.
 
-Están definidas en `--font-display` y `--font-body` dentro de `styles.css`. Si el kit no carga, se usan Georgia y Helvetica/Arial.
+Están definidas en `--font-display` y `--font-body` dentro de `styles.css`. Las etiquetas, la numeración y los datos chicos usan Roboto Mono (`--font-mono`), cargada desde Google Fonts.
+
+Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador. Si el kit no carga, se usan Georgia y Helvetica/Arial.
 
 Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts que el proyecto web siga activo y que el dominio de la web esté permitido.
 
