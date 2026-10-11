@@ -36,15 +36,17 @@ window.TEIRO_CONFIG = {
 ## Nombre y logo
 
 - El estudio se llama Teiro. Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio". No hay eslogan.
-- El logo es el dibujo manuscrito "teiro". Está vectorizado en `assets/logo-teiro.svg` y también incluido dentro de `index.html`, así toma el color del texto de cada fondo.
+- El logo es "teiro" en trazo uniforme, con la r unida a la o. Está en `assets/logo-teiro.svg` y también dibujado dentro de `index.html`, así toma el color del texto de cada fondo. Es una propuesta hecha en código: conviene que un diseñador de letras la revise antes de registrarla o imprimirla.
 - En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro. Dominio y usuario de Instagram están pendientes.
 
 ## Sistema visual
 
-- **Base blanca y negra, con mucho aire.** El logo manuscrito es el protagonista de la portada.
-- **Tres voces tipográficas:** Figtree (sans geométrica) para títulos y textos, Caveat (letra de mano) para notas y la firma, y DM Mono para etiquetas y datos. Clases: `title`, `pen` y `mono`.
-- **Color como fuga de luz:** el color no se usa como relleno plano. Aparece difuminado en un borde, como una fuga de luz de película (clase `leak`), en la portada y en Contacto. Los tres tonos están en `--leak-warm`, `--leak-amber` y `--leak-cool`.
-- **Imágenes en tarjetas** de esquinas muy redondeadas (clase `shot`).
+- **Carbón cálido y blanco.** El carbón (`--char` #2B2927) se usa en la portada, Servicios y Contacto; el resto es blanco.
+- **El logo como cartel:** en la portada ocupa todo el ancho, con la barrita de degradado abajo a la izquierda y la frase abajo a la derecha.
+- **Tipografía:** Figtree, una sans geométrica, en pesos livianos (300 y 400) y con mucho aire entre palabras en la frase de portada. DM Mono para etiquetas y datos. Clases: `title` y `mono`.
+- **Color:** un solo degradado (`--grad`), siempre como barrita chica (clase `chip`). Nunca como fondo.
+- **Óvalo a mano:** una palabra puede ir rodeada por un óvalo dibujado (clase `circled`). Se usa en la palabra rotativa de la portada y en "hola" de Contacto.
+- **Imágenes** en tarjetas de esquinas muy redondeadas (clase `shot`).
 
 Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias.
 
@@ -61,13 +63,13 @@ Todas las rutas son relativas, así que funciona en un subdirectorio.
 
 ## Imágenes y portfolio
 
-Las imágenes de `assets/muestras/` son de muestra: las generé para que la página tenga vida mientras no están las reales, y cada una lleva la nota "muestra" escrita a mano. No son trabajos de clientes.
+Las imágenes de `assets/muestras/` son de muestra: las generé para que la página tenga vida mientras no están las reales, y cada una lleva la etiqueta "Muestra". No son trabajos de clientes.
 
 Para reemplazar una:
 
 1. Guardá la imagen real en `assets/` (JPG o WebP, hasta unos 1600 px de ancho).
 2. En `index.html`, cambiá el `src` del `<img>` y escribí un `alt` que la describa.
-3. Borrá el `<span class="tag pen">muestra</span>` de ese bloque.
+3. Borrá el `<span class="tag mono">Muestra</span>` de ese bloque.
 
 La imagen se recorta sola para llenar la tarjeta. Las clases `r-4x3`, `r-4x5` y `r-21x9` definen la proporción; sin clase es 16:9. También podés usar un `<video>` en lugar del `<img>`.
 
