@@ -48,7 +48,7 @@ Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts
 
 ## Color
 
-Los colores están como variables al principio de `styles.css`. Son cuatro: negro (`--black`), verde oscuro (`--dark-green`), verde caribe (`--caribbean`) y platino (`--platinum`). Cada sección elige su fondo con una clase: `tone-dark` (verde oscuro en los paneles, negro en la barra y el pie), `tone-light` (platino) o `tone-brand` (verde caribe).
+Los colores están como variables al principio de `styles.css`. Son cuatro: negro (`--black`), verde oscuro (`--dark-green`), verde caribe (`--caribbean`) y platino (`--platinum`). El verde oscuro es el principal; el verde caribe se usa solo en detalles. Cada sección elige su fondo con una clase: `tone-brand` (verde oscuro), `tone-dark` (negro) o `tone-light` (platino).
 
 ## Publicar en GitHub Pages
 

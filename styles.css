@@ -7,8 +7,8 @@
 :root {
   /* Color: cuatro colores de marca y sus derivados */
   --black: #000000;
-  --dark-green: #00221F;
-  --caribbean: #00D991;
+  --dark-green: #00221F;       /* color principal: portada, Servicios y Contacto */
+  --caribbean: #00D991;        /* solo para detalles: numeración, etiquetas, palabra rotativa, estados activos */
   --platinum: #E8E8E8;
 
   --dark-green-ph: #0B302C;    /* bloques de imagen sobre verde oscuro */
@@ -17,9 +17,6 @@
   --platinum-ph: #D3D3D3;      /* bloques de imagen sobre platino */
   --platinum-line: #C6C6C6;    /* bordes sobre platino */
   --platinum-soft: #454545;    /* texto secundario sobre platino (8:1) */
-  --caribbean-ph: #00C282;     /* bloques de imagen sobre verde caribe */
-  --caribbean-line: #00A870;   /* bordes sobre verde caribe */
-  --caribbean-soft: #00352B;   /* texto secundario sobre verde caribe (8:1) */
   --caribbean-deep: #006B48;   /* el verde caribe oscurecido, para detalles sobre platino (5,4:1) */
 
   /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
@@ -73,9 +70,9 @@ a { color: inherit; }
 ::selection { background: var(--caribbean); color: var(--black); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--black); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green-ph); --accent: var(--caribbean); }
+.tone-dark  { --bg: var(--black); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green); --accent: var(--caribbean); }
 .tone-light { --bg: var(--platinum); --fg: var(--black); --muted: var(--platinum-soft); --line: var(--platinum-line); --ph: var(--platinum-ph); --accent: var(--caribbean-deep); }
-.tone-brand { --bg: var(--caribbean); --fg: var(--black); --muted: var(--caribbean-soft); --line: var(--caribbean-line); --ph: var(--caribbean-ph); --accent: var(--dark-green); }
+.tone-brand { --bg: var(--dark-green); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green-ph); --accent: var(--caribbean); }
 .tone-dark, .tone-light, .tone-brand { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -394,7 +391,7 @@ a { color: inherit; }
    La página es negra y cada sección es un panel redondeado apoyado encima.
    El color de cada panel lo define su clase tone-*. */
 .panel { margin: var(--panel-gap) var(--panel-gap) 0; border-radius: var(--panel-radius); overflow: hidden; }
-.panel.tone-dark { --bg: var(--dark-green); }
+.panel.tone-dark { border: 1px solid var(--dark-green-line); }
 .ph { border-radius: clamp(14px, 1.4vw, 22px); }
 .wide-img .ph { border-radius: 0; }
 
