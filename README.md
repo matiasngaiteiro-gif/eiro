@@ -36,12 +36,12 @@ window.TEIRO_CONFIG = {
 ## Nombre y logo
 
 - El estudio se llama Teiro. Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio". No hay eslogan.
-- El logo es "teiro" en trazo uniforme, con la r unida a la o. Está en `assets/logo-teiro.svg` y también dibujado dentro de `index.html`, así toma el color del texto de cada fondo. Es una propuesta hecha en código: conviene que un diseñador de letras la revise antes de registrarla o imprimirla.
+- El logo es "teiro" en Figtree (peso 500), convertido a trazado. Está en `assets/logo-teiro.svg` y también dibujado dentro de `index.html`, así toma el color del texto de cada fondo. Es provisorio.
 - En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro. Dominio y usuario de Instagram están pendientes.
 
 ## Sistema visual
 
-- **Carbón cálido y blanco.** El carbón (`--char` #2B2927) se usa en la portada, Servicios y Contacto; el resto es blanco.
+- **Negro puro y blanco, con grises neutros.** Van en negro la barra, la portada, Servicios, Contacto y el pie; el resto es blanco. La clase `on-dark` pone cualquier zona en negro e invierte sola botones, líneas y textos.
 - **El logo como cartel:** en la portada ocupa todo el ancho, con la barrita de degradado abajo a la izquierda y la frase abajo a la derecha.
 - **Tipografía:** Figtree, una sans geométrica, en pesos livianos (300 y 400) y con mucho aire entre palabras en la frase de portada. DM Mono para etiquetas y datos. Clases: `title` y `mono`.
 - **Color:** un solo degradado (`--grad`), siempre como barrita chica (clase `chip`). Nunca como fondo.

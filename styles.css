@@ -1,7 +1,7 @@
 /*
   Teiro, estudio creativo
 
-  Sistema: el logo de trazo uniforme como protagonista, sobre carbón cálido;
+  Sistema: el logo como protagonista, sobre negro puro;
   sans geométrica en peso liviano con mucho aire entre palabras; el color reducido
   a una barrita de degradado; y un óvalo dibujado a mano para destacar una palabra.
 */
@@ -10,14 +10,14 @@
 @font-face { font-family: "DM Mono"; src: url("assets/fonts/dm-mono-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
 
 :root {
-  /* Color: carbón cálido y blanco roto */
+  /* Color: negro puro y blanco, con grises neutros */
   --paper: #FFFFFF;
-  --ink: #1C1A19;
-  --char: #2B2927;         /* carbón: portada, Servicios y Contacto */
-  --char-fg: #F5F3EF;      /* texto sobre carbón */
-  --soft: #F4F2EE;         /* superficies suaves */
-  --line: #E7E3DC;
-  --gray: #66625C;         /* texto secundario (6:1 sobre blanco) */
+  --ink: #0A0A0A;
+  --char: #0A0A0A;         /* negro de los bloques oscuros */
+  --char-fg: #F5F5F5;      /* texto sobre negro */
+  --soft: #F4F4F4;         /* superficies suaves */
+  --line: #E5E5E5;
+  --gray: #5F5F5F;         /* texto secundario (6,5:1 sobre blanco) */
 
   /* Degradado: el único color de la marca, siempre chico */
   --grad: linear-gradient(90deg, #FFC64D, #FF7A2F 50%, #1F3BFF);
@@ -59,6 +59,9 @@ img { display: block; max-width: 100%; }
 ::selection { background: var(--ink); color: var(--paper); }
 :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
+/* Zonas en negro: invierten los colores base, así botones, líneas y textos se adaptan solos */
+.on-dark { --paper: #0A0A0A; --ink: #F5F5F5; --soft: #171717; --line: #2A2A2A; --gray: #A6A6A6; background: var(--paper); color: var(--ink); }
+
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section); }
 .skip { position: absolute; left: var(--gutter); top: -120px; z-index: 60; background: var(--ink); color: var(--paper); padding: 14px 20px; text-decoration: none; border-radius: 999px; }
@@ -72,8 +75,8 @@ img { display: block; max-width: 100%; }
 .lede { font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.45; max-width: 32em; }
 .statement { font-size: var(--t-statement); line-height: 1.25; letter-spacing: -0.02em; font-weight: 400; text-wrap: pretty; }
 
-/* Logo: trazo uniforme, dibujado en la página; toma el color del texto */
-.logo { display: inline-block; width: var(--logo-w, 96px); height: auto; aspect-ratio: 422 / 170; flex: none; fill: none; stroke: currentColor; vertical-align: middle; overflow: visible; }
+/* Logo: "teiro" en Figtree, convertido a trazado; toma el color del texto */
+.logo { display: inline-block; width: var(--logo-w, 96px); height: auto; aspect-ratio: 1966 / 733; flex: none; fill: currentColor; vertical-align: middle; overflow: visible; }
 
 /* Barrita de degradado */
 .chip { display: inline-block; width: clamp(44px, 5vw, 76px); height: clamp(9px, 1vw, 14px); background: var(--grad); flex: none; }
@@ -105,10 +108,10 @@ img { display: block; max-width: 100%; }
   transition: transform .32s cubic-bezier(.2, .7, .2, 1), border-color .2s ease;
 }
 .header.is-stuck, .header.menu-open { border-bottom-color: var(--line); }
-.header.menu-open { background: var(--paper); }
+.header.menu-open, .header.on-dark { background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; }
 .header.is-hidden:not(:focus-within) { transform: translateY(-100%); }
 .header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 24px; min-height: var(--header-h); }
-.logo-link { display: inline-flex; align-items: center; min-height: var(--header-h); --logo-w: clamp(78px, 6.4vw, 100px); }
+.logo-link { display: inline-flex; align-items: center; min-height: var(--header-h); --logo-w: clamp(84px, 7vw, 108px); }
 .nav, .nav-end { display: flex; align-items: center; gap: clamp(18px, 2.6vw, 40px); }
 .nav ul { display: flex; gap: clamp(18px, 2.6vw, 40px); }
 .nav li a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-weight: 500; font-size: 0.98rem; }
@@ -147,11 +150,10 @@ img { display: block; max-width: 100%; }
 /* Portada: un cartel. El logo ocupa el ancho; abajo, la barrita y la frase. */
 .hero { padding-bottom: var(--s-5); }
 .board {
-  background: var(--char); color: var(--char-fg); border-radius: var(--radius);
-  margin-inline: clamp(8px, 1.2vw, 20px); padding: clamp(24px, 4.4vw, 72px);
+  max-width: var(--max); margin-inline: auto; padding: clamp(20px, 3vw, 48px) var(--gutter) 0;
   display: grid; gap: clamp(48px, 9vw, 150px);
 }
-.board .logo { --logo-w: min(100%, 1180px); }
+.board .logo { --logo-w: 100%; }
 .board-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap; }
 .tagline { font-weight: 300; font-size: clamp(1.15rem, 2.5vw, 2.25rem); letter-spacing: -0.01em; word-spacing: 0.55em; line-height: 1.5; text-align: right; margin-left: auto; }
 .tagline .circled { word-spacing: 0; margin-left: 0.2em; }
@@ -202,7 +204,7 @@ img { display: block; max-width: 100%; }
 
 /* Servicios: bloque negro redondeado */
 .dark {
-  --muted: #B8B3AC; --line: #45413E;
+  --muted: #A6A6A6; --line: #2A2A2A;
   background: var(--char); color: var(--char-fg); border-radius: var(--radius);
   margin-inline: clamp(8px, 1.2vw, 20px); padding-block: var(--s-5);
 }
@@ -252,9 +254,8 @@ img { display: block; max-width: 100%; }
 
 /* Contacto: otro bloque en carbón */
 .contact-card {
-  --muted: #B8B3AC; --line: #45413E;
-  background: var(--char); color: var(--char-fg); border-radius: var(--radius);
-  padding: var(--s-5) clamp(20px, 4.4vw, 72px); margin-inline: clamp(8px, 1.2vw, 20px);
+  --muted: #A6A6A6; --line: #2A2A2A; color: var(--char-fg);
+  max-width: var(--max); margin-inline: auto; padding: var(--section) var(--gutter) var(--s-5);
 }
 .contact-card h2 { font-size: clamp(2.6rem, 8vw, 7rem); font-weight: 300; }
 .contact-card .circled { margin-left: 0.12em; }
@@ -272,9 +273,10 @@ img { display: block; max-width: 100%; }
 
 /* Pie */
 .footer { padding-block: var(--s-5) 28px; }
+.footer.on-dark .footer-grid { padding-top: var(--s-5); border-top: 1px solid var(--line); }
 .footer-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 24px; }
 .footer-brand { grid-column: 1 / span 6; display: grid; gap: 14px; align-content: start; justify-items: start; min-width: 0; }
-.footer-brand .logo { --logo-w: clamp(120px, 12vw, 170px); }
+.footer-brand .logo { --logo-w: clamp(130px, 13vw, 190px); }
 .footer-brand p { color: var(--gray); }
 .footer nav { grid-column: 8 / span 2; min-width: 0; }
 .foot-channels { grid-column: 10 / -1; min-width: 0; }
