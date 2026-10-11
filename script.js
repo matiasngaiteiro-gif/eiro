@@ -33,6 +33,31 @@
     });
   }
 
+  /* Encabezado: se esconde al bajar y vuelve al subir */
+  var header = document.querySelector(".header");
+  if (header) {
+    var lastY = window.scrollY;
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY;
+      var open = nav && nav.classList.contains("is-open");
+      if (!open && y > 240 && y > lastY + 4) header.classList.add("is-hidden");
+      else if (y < lastY - 4 || y <= 240) header.classList.remove("is-hidden");
+      lastY = y;
+    }, { passive: true });
+  }
+
+  /* Aparición de bloques al hacer scroll */
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var targets = document.querySelectorAll(".reel, .sec-head, .sec-bar, .work, .statement, .studio-grid, .services > li, .wide-img .ph, .method > li, .modes, .contact h2, .contact-grid");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    targets.forEach(function (el) { el.setAttribute("data-reveal", ""); io.observe(el); });
+    document.documentElement.classList.add("reveal-on");
+  }
+
   /* Palabra rotativa de la portada. Sin JavaScript o con movimiento reducido queda fija. */
   var rot = document.getElementById("rotator");
   if (rot && !reduceMotion) {

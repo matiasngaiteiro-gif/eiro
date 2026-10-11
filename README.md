@@ -46,6 +46,10 @@ Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, s
 
 Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts que el proyecto web siga activo y que el dominio de la web esté permitido.
 
+## Color
+
+Los colores están como variables al principio de `styles.css`. Negro (`--ink`) y marfil (`--ivory`) son la base; el verde inglés (`--green`) es el color de marca y ocupa secciones enteras (Estudio y Contacto); el latón (`--brass`) se usa solo en detalles. Cada sección elige su fondo con una clase: `tone-dark`, `tone-light` o `tone-brand`.
+
 ## Publicar en GitHub Pages
 
 1. En el repositorio, entrá a **Settings > Pages**.
