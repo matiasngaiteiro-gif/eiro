@@ -43,7 +43,8 @@ window.TEIRO_CONFIG = {
 
 - **Titulares:** Inter Tight en peso extra negrita, mayúsculas, con interlineado y espaciado muy cerrados (clase `heavy`).
 - **Todo lo chico:** DM Mono liviana, en mayúsculas y con espaciado abierto (clase `mono`): navegación, etiquetas, tabla de trabajos, botones y datos.
-- **Afiches:** la portada y Contacto usan la misma composición: líneas enormes, el logo chico al centro, y otra línea enorme.
+- **Afiche:** la portada es el único bloque centrado: una línea enorme, el logo al centro y otra línea enorme. El resto de la página va alineado a la izquierda.
+- **Escala y espacios:** hay una sola serie de tamaños (`--t-*`) y una sola de espacios (`--s-*`) al principio de `styles.css`.
 
 Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias. Están definidas en `--font-display` y `--font-mono` dentro de `styles.css`.
 
@@ -53,7 +54,7 @@ Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, s
 
 Los colores están como variables al principio de `styles.css`: azul noche (`--night` #0D1017), negro, blanco, hielo (`--ice` #ECEEF2), gris frío (`--lilac` #A7A8B4), lima (`--lime` #D9F44C) y cobalto (`--cobalt` #1F3BFF).
 
-Cada sección es un panel y elige su fondo con una clase: `t-night`, `t-black`, `t-white`, `t-ice`, `t-lilac`, `t-lime` o `t-cobalt`. El lima se usa para resaltar (fila de la tabla al pasar, servicio abierto, botón de la barra, placa de Estudio) y el cobalto para Contacto.
+Cada sección es un panel y elige su fondo con una clase: `t-night`, `t-black`, `t-white`, `t-ice`, `t-lilac`, `t-lime` o `t-cobalt`. El lima se usa solo para resaltar (botón de la barra, servicio abierto, selección) y el cobalto para Contacto.
 
 ## Publicar en GitHub Pages
 
@@ -77,7 +78,7 @@ Los bloques grises son espacios reservados para imágenes. Cada uno indica su pr
 
 La imagen se recorta sola para llenar el bloque. También podés usar un `<video>` (por ejemplo para el reel). Al poner la imagen, quitá del `div` los atributos `role` y `aria-label`.
 
-En la sección **Trabajos**, cada fila de la tabla (`<tr>`) es un proyecto: cambiá "Nombre del cliente" y "Nombre del proyecto" por los datos reales y ajustá el área. Para sumar o quitar proyectos, copiá o borrá una fila.
+En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá la imagen, "Nombre del cliente", "Año, área" y la línea de resumen. Para sumar o quitar proyectos, copiá o borrá un `<li>`.
 
 ## Cuando haya dominio propio
 

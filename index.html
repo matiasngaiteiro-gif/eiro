@@ -17,7 +17,7 @@
 
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css?v=30">
+<link rel="stylesheet" href="styles.css?v=31">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -53,14 +53,13 @@
       <h1 class="poster heavy">
         <span class="sr-only">Teiro, estudio creativo de marca, contenido, marketing, redes y eventos.</span>
         <span aria-hidden="true">
-          <span class="line">Estudio</span>
-          <span class="line">creativo</span>
+          <span class="line">Estudio creativo</span>
           <svg class="logo" aria-hidden="true" focusable="false"><use href="#logo-teiro"/></svg>
           <span class="line">de <span class="rotator" id="rotator" data-words="marca|contenido|marketing|redes|eventos">marca</span></span>
         </span>
       </h1>
       <div class="hero-foot">
-        <p class="mono">Teiro hace marca, contenido, gestión de marketing y redes, y eventos. Cuidamos la relación con cada cliente tanto como el trabajo.</p>
+        <p class="lede">Teiro hace marca, contenido, gestión de marketing y redes, y eventos. Cuidamos la relación con cada cliente tanto como el trabajo.</p>
         <div class="cta-row">
           <a class="btn btn-solid" href="#trabajos">Ver trabajos</a>
           <a class="btn btn-line" href="#servicios">Ver servicios</a>
@@ -73,39 +72,59 @@
 
   <section class="section panel t-white" id="trabajos" aria-labelledby="trabajos-t">
     <div class="wrap">
-      <div class="sec-title mono"><h2 id="trabajos-t">Trabajos</h2></div>
-      <!-- PORTFOLIO: cada <tr> es un proyecto. Reemplazá "Nombre del cliente" y "Nombre del proyecto" por los datos reales, y ajustá el área. -->
-      <table class="works mono reveal">
-        <caption class="sr-only">Selección de trabajos</caption>
-        <thead>
-          <tr><th scope="col">Cliente</th><th scope="col">Proyecto</th><th scope="col">Área</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Marca</td></tr>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Contenido</td></tr>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Marketing y redes</td></tr>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Eventos</td></tr>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Marca</td></tr>
-          <tr><td>Nombre del cliente</td><td>Nombre del proyecto</td><td>Contenido</td></tr>
-        </tbody>
-      </table>
+      <div class="sec-head">
+        <h2 class="heavy" id="trabajos-t">Trabajos</h2>
+        <p class="mono muted">Selección</p>
+      </div>
+      <!-- PORTFOLIO: cada <li> es un proyecto. Cambiá la imagen, el nombre del cliente, el año y el área, y la línea de resumen. -->
+      <ul class="works">
+        <li class="work reveal">
+          <div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 01"><span class="mono">Imagen de proyecto · 4:3</span></div>
+          <div class="work-meta">
+            <h3 class="heavy">Nombre del cliente</h3>
+            <p class="mono muted">Año, área</p>
+            <p class="work-line muted">Una línea que resume el proyecto.</p>
+          </div>
+        </li>
+        <li class="work reveal">
+          <div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 02"><span class="mono">Imagen de proyecto · 4:3</span></div>
+          <div class="work-meta">
+            <h3 class="heavy">Nombre del cliente</h3>
+            <p class="mono muted">Año, área</p>
+            <p class="work-line muted">Una línea que resume el proyecto.</p>
+          </div>
+        </li>
+        <li class="work reveal">
+          <div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 03"><span class="mono">Imagen de proyecto · 4:3</span></div>
+          <div class="work-meta">
+            <h3 class="heavy">Nombre del cliente</h3>
+            <p class="mono muted">Año, área</p>
+            <p class="work-line muted">Una línea que resume el proyecto.</p>
+          </div>
+        </li>
+        <li class="work reveal">
+          <div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 04"><span class="mono">Imagen de proyecto · 4:3</span></div>
+          <div class="work-meta">
+            <h3 class="heavy">Nombre del cliente</h3>
+            <p class="mono muted">Año, área</p>
+            <p class="work-line muted">Una línea que resume el proyecto.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section class="panel t-lime plate" id="estudio" aria-label="Estudio">
+  <section class="section panel t-ice" id="estudio" aria-labelledby="estudio-t">
     <div class="wrap">
-      <p class="reveal">Teiro es un estudio creativo de marca, contenido, marketing y eventos</p>
-    </div>
-  </section>
-
-  <section class="section panel t-ice" aria-labelledby="estudio-t">
-    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="heavy" id="estudio-t">Estudio</h2>
+        <p class="mono muted">Teiro, estudio creativo</p>
+      </div>
       <div class="studio-grid">
         <div class="ph r-4x5 studio-img reveal" role="img" aria-label="Espacio reservado para una imagen del estudio"><span class="mono">Imagen del estudio · 4:5</span></div>
         <div class="studio-text reveal">
-          <h2 class="heavy" id="estudio-t">Cerca de cada cliente</h2>
-          <p class="lede">Lo que nos distingue es la relación con cada cliente: cercana, directa y pensada para durar más que un proyecto.</p>
-          <p class="muted">Pensamos la marca, el contenido, el marketing y los eventos en un mismo lugar, para que las piezas no se contradigan entre sí. El nombre sale de Gaiteiro, el apellido de su fundador.</p>
+          <p class="statement">Teiro es un estudio creativo de marca, contenido, marketing y eventos. Lo que nos distingue es la relación con cada cliente: cercana, directa y pensada para durar más que un proyecto.</p>
+          <p class="muted">Pensamos todo en un mismo lugar, para que las piezas de una marca no se contradigan entre sí. El nombre sale de Gaiteiro, el apellido de su fundador.</p>
           <p class="signature"><strong>Matías Gaiteiro</strong><span class="mono muted">Fundador y director creativo</span></p>
         </div>
       </div>
@@ -118,7 +137,10 @@
 
   <section class="section panel t-black" id="servicios" aria-labelledby="servicios-t">
     <div class="wrap">
-      <div class="sec-title mono"><h2 id="servicios-t">Servicios</h2></div>
+      <div class="sec-head">
+        <h2 class="heavy" id="servicios-t">Servicios</h2>
+        <p class="mono muted">Cuatro áreas, juntas o por separado</p>
+      </div>
       <ol class="services">
         <li class="reveal"><details open>
           <summary><span class="num mono" aria-hidden="true">01</span><h3 class="heavy">Marca</h3><span class="toggle" aria-hidden="true"></span></summary>
@@ -154,7 +176,10 @@
 
   <section class="section panel t-white" id="metodo" aria-labelledby="metodo-t">
     <div class="wrap">
-      <div class="sec-title mono"><h2 id="metodo-t">Método</h2></div>
+      <div class="sec-head">
+        <h2 class="heavy" id="metodo-t">Método</h2>
+        <p class="mono muted">Primero entender, después diseñar</p>
+      </div>
       <ol class="method">
         <li class="reveal"><span class="num mono" aria-hidden="true">01</span><h3 class="heavy">Entender</h3><p>Qué ofrecés, a quién y qué lugar ocupás hoy. De ahí sale el problema que hay que resolver.</p></li>
         <li class="reveal"><span class="num mono" aria-hidden="true">02</span><h3 class="heavy">Definir</h3><p>Posicionamiento, tono y prioridades. Son las decisiones que guían todo lo que viene después.</p></li>
@@ -162,7 +187,7 @@
         <li class="reveal"><span class="num mono" aria-hidden="true">04</span><h3 class="heavy">Acompañar</h3><p>Seguimos cerca mientras la marca se usa y ajustamos lo necesario para que se mantenga consistente.</p></li>
       </ol>
       <div class="modes reveal" id="modalidades">
-        <h3 class="mono">Tres formas de empezar</h3>
+        <h3 class="mono muted">Tres formas de empezar</h3>
         <dl>
           <div><dt>Proyecto puntual</dt><dd>Algo concreto, con principio y fin: una identidad, un evento o un lanzamiento.</dd></div>
           <div><dt>Acompañamiento mensual</dt><dd>Trabajo continuo en redes, contenido y marketing, con un plan que se revisa cada mes.</dd></div>
@@ -174,19 +199,15 @@
 
   <section class="section panel t-cobalt contact" id="contacto" aria-labelledby="contacto-t">
     <div class="wrap">
-      <h2 class="poster heavy" id="contacto-t">
-        <span class="sr-only">Decinos hola</span>
-        <span aria-hidden="true">
-          <span class="line">Decinos</span>
-          <svg class="logo" aria-hidden="true" focusable="false"><use href="#logo-teiro"/></svg>
-          <span class="line">hola</span>
-        </span>
-      </h2>
-      <div class="contact-foot">
-        <p class="lede">Escribinos con lo que tengas: una idea, un problema o un proyecto en marcha. Te respondemos para ver por dónde conviene empezar.</p>
+      <div class="sec-head">
+        <h2 class="heavy" id="contacto-t">Decinos hola</h2>
+        <p class="mono muted">Contacto</p>
+      </div>
+      <div class="contact-grid">
+        <p class="statement">Escribinos con lo que tengas: una idea, un problema o un proyecto en marcha. Te respondemos para ver por dónde conviene empezar.</p>
         <div class="channels">
           <ul id="channels" hidden></ul>
-          <p class="channels-empty mono" id="channels-empty">Estamos terminando de configurar nuestros canales de contacto. Muy pronto vas a poder escribirnos desde acá.</p>
+          <p class="channels-empty" id="channels-empty">Estamos terminando de configurar nuestros canales de contacto. Muy pronto vas a poder escribirnos desde acá.</p>
         </div>
       </div>
     </div>
@@ -223,7 +244,7 @@
   </div>
 </footer>
 
-<script src="config.js?v=30"></script>
-<script src="script.js?v=30"></script>
+<script src="config.js?v=31"></script>
+<script src="script.js?v=31"></script>
 </body>
 </html>
