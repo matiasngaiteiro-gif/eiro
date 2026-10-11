@@ -13,6 +13,8 @@
   if (btn && nav) {
     var setOpen = function (open, returnFocus) {
       nav.classList.toggle("is-open", open);
+      var bar = document.querySelector(".header");
+      if (bar) bar.classList.toggle("menu-open", open);
       btn.setAttribute("aria-expanded", String(open));
       btn.textContent = open ? "Cerrar" : "Menú";
       if (open) {
@@ -37,8 +39,10 @@
   var header = document.querySelector(".header");
   if (header) {
     var lastY = window.scrollY;
+    header.classList.toggle("is-stuck", lastY > 24);
     window.addEventListener("scroll", function () {
       var y = window.scrollY;
+      header.classList.toggle("is-stuck", y > 24);
       var open = nav && nav.classList.contains("is-open");
       if (!open && y > 240 && y > lastY + 4) header.classList.add("is-hidden");
       else if (y < lastY - 4 || y <= 240) header.classList.remove("is-hidden");
