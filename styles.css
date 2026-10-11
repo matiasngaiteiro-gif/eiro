@@ -20,10 +20,11 @@
   --caribbean-deep: #006B48;   /* el verde caribe oscurecido, para detalles sobre platino (5,4:1) */
 
   /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
-  --font-display: "trust-3a", Georgia, "Times New Roman", serif;   /* pesos 200, 300, 400, 500, 700 */
+  --font-logo: "trust-3a", Georgia, "Times New Roman", serif;      /* solo el logo ORENSIA */
+  --font-display: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* títulos */
   --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* textos, navegación y botones */
   --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* etiquetas, numeración y datos */
-  --w-display: 300;
+  --w-display: 400;
 
   /* Escala tipográfica: seis tamaños, nada fuera de la escala */
   --t-hero: clamp(2.5rem, 7vw, 7.25rem);
@@ -128,7 +129,7 @@ a { color: inherit; }
   gap: 0 24px; min-height: var(--header-h);
 }
 .wordmark {
-  font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 3vw, 2.75rem);
+  font-family: var(--font-logo); font-weight: 500; font-size: clamp(2rem, 3vw, 2.75rem);
   letter-spacing: -0.05em; line-height: 1; text-decoration: none; font-synthesis: none;
   display: inline-flex; align-items: center; min-height: 44px;
 }
@@ -291,7 +292,7 @@ a { color: inherit; }
   padding-block: clamp(22px, 2.8vw, 40px); border-bottom: 1px solid var(--line);
 }
 .method .num {
-  grid-column: 1 / span 3; font-family: var(--font-display); font-weight: 200;
+  grid-column: 1 / span 3; font-family: var(--font-display); font-weight: 300;
   font-size: clamp(2.6rem, 5vw, 4.75rem); line-height: 0.85; letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
 }
@@ -455,3 +456,7 @@ a { color: inherit; }
 @media (max-width: 900px) {
   .js .nav li a, .js .nav .cta-link { font-family: var(--font-display); font-size: 2rem; letter-spacing: -0.02em; }
 }
+
+/* Títulos en grotesca: interletrado más cerrado */
+.display, .services h3, .marquee-group span { letter-spacing: -0.045em; }
+.work-name, .method h3, .modes dt, .channels a { letter-spacing: -0.03em; font-weight: 500; }

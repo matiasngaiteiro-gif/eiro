@@ -35,7 +35,9 @@ window.ORENSIA_CONFIG = {
 
 ## Tipografía
 
-Trust (kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css`, familia `trust-3a`) se usa en el logo y los títulos. Los textos, la navegación y los botones van en Helvética: en Mac y iPhone se usa la del sistema, y en Windows y Android se carga Inter desde Google Fonts como equivalente. Las etiquetas y la numeración usan Roboto Mono. Las tres están definidas en `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
+Toda la web usa dos familias: Helvética para títulos, textos, navegación y botones, y Roboto Mono para etiquetas y numeración. En Mac y iPhone la Helvética es la del sistema; en Windows y Android se carga Inter desde Google Fonts como equivalente.
+
+La única excepción es el logo ORENSIA, que sigue en Trust 3A Medium (kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css`). Las tres están definidas en `--font-logo`, `--font-display` / `--font-body` y `--font-mono` dentro de `styles.css`.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 
