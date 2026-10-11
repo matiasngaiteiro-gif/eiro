@@ -1,44 +1,70 @@
-# ORENSIA — Estudio creativo
+# ORENSIA
 
-Web institucional estática en español, adaptable a móviles y escritorio. Sin compilación ni instalación. Las tipografías se cargan desde Adobe Fonts y requieren conexión a internet. Abrí `index.html` para verla en tu computadora.
+Web de ORENSIA, estudio creativo y agencia de comunicación integral. Sitio estático en HTML, CSS y JavaScript, sin instalación ni compilación.
 
 ## Archivos
 
-- `index.html`: estructura y textos editables.
-- `styles.css`: identidad visual, tamaños y diseño adaptable.
-- `script.js`: navegación móvil y preparación de consultas.
-- `config.js`: correo de contacto.
-- `assets/favicon.svg`: icono del navegador.
-- `.nojekyll`: permite servir los archivos estáticos sin procesamiento Jekyll.
+- `index.html`: estructura y textos.
+- `styles.css`: diseño. Colores, tipografías, espacios y medidas están como variables al principio del archivo.
+- `script.js`: menú móvil, palabra rotativa de la portada, año del pie y canales de contacto.
+- `config.js`: datos de contacto editables.
+- `assets/`: favicon y futuros recursos.
+- `.nojekyll`: hace que GitHub Pages sirva los archivos tal cual.
 
-## Antes de publicar
+## Abrir la web
 
-1. Agregá el correo real en `config.js`, dentro de las comillas de `email`.
-2. Revisá los servicios y confirmá que todos estén disponibles dentro de tu oferta. Los textos son una propuesta comercial, no una acreditación de servicios ya prestados.
-3. No se incluyeron clientes, testimonios, resultados, equipo ni proyectos ficticios. Podés incorporar un portfolio cuando tengas los casos y permisos correspondientes.
-4. El kit oficial `https://use.typekit.net/lgv5pfx.css` está integrado. Trust 1A se aplica a la marca y Trust 3A a los títulos, con Georgia como alternativa. Se usan únicamente pesos normales disponibles en el kit, sin cursivas sintéticas. Mantené activo tu proyecto de Adobe Fonts.
+Abrí `index.html` con doble clic. Las tipografías se cargan desde Adobe Fonts, así que hace falta conexión a internet.
+
+## Configurar el contacto
+
+Editá `config.js` y completá los canales que tengas:
+
+```js
+window.ORENSIA_CONFIG = {
+  email: "hola@tudominio.com",
+  instagram: "orensia",
+  whatsapp: "5491100000000",
+  whatsappMensaje: "Hola ORENSIA, quiero contarles sobre mi marca."
+};
+```
+
+- Los canales que queden vacíos (`""`) no se muestran.
+- Si los tres están vacíos, la sección Contacto muestra un aviso de que los canales están en configuración.
+- `whatsapp` va con código de país y solo dígitos. `instagram` va sin `@`.
+- La web no tiene formulario. Para sumar uno hace falta un servicio real de envío.
+
+## Tipografía
+
+El kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css` trae dos familias:
+
+- `trust-3a` (pesos 200, 300, 400, 500, 700): títulos y marca.
+- `trust-1a` (pesos 400, 500, 700): textos.
+
+Están definidas en `--font-display` y `--font-body` dentro de `styles.css`. Si el kit no carga, se usan Georgia y Helvetica/Arial.
+
+Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts que el proyecto web siga activo y que el dominio de la web esté permitido.
 
 ## Publicar en GitHub Pages
 
-Subí **el contenido de esta carpeta** a la raíz del repositorio (no el ZIP). El archivo `index.html` debe quedar en el nivel principal. En la configuración del repositorio, activá Pages y seleccioná la publicación desde la rama que contenga estos archivos, carpeta raíz. Los nombres de los controles pueden cambiar según la interfaz de GitHub.
+1. En el repositorio, entrá a **Settings > Pages**.
+2. En **Source** elegí **Deploy from a branch**.
+3. Elegí la rama `main` y la carpeta `/ (root)`. Guardá.
+4. En uno o dos minutos la web queda en `https://USUARIO.github.io/REPOSITORIO/`.
 
-Todos los recursos usan rutas relativas, compatibles tanto con sitios de usuario como con repositorios dentro de una subruta. No hace falta ejecutar npm ni configurar un build.
+Todas las rutas son relativas, así que funciona en un subdirectorio.
 
-## Contacto: comportamiento real
+## Cuando haya dominio propio
 
-Con `email` vacío, el formulario valida los campos y descarga `consulta-orensia.txt`. Explica al visitante que la consulta no fue enviada. Con un email válido, abre la aplicación de correo mediante `mailto:` con el texto preparado; el visitante debe enviar el mensaje. No existe un backend, no se guardan datos y no se simula un envío exitoso. Para recepción directa sin cliente de correo hace falta integrar un proveedor de formularios o un backend.
+Agregá en el `<head>` de `index.html`, con la URL real:
 
-## Identidad
+```html
+<link rel="canonical" href="https://tudominio.com/">
+<meta property="og:url" content="https://tudominio.com/">
+<meta property="og:image" content="https://tudominio.com/assets/og.jpg">
+```
 
-- Bordó frambuesa: #591A35
-- Rojo rosáceo: #F53058
-- Marfil: #F3EEE5
-- Negro tinta: #191716
+La imagen social recomendada es de 1200 × 630 px, guardada en `assets/`. Con la imagen lista, cambiá `twitter:card` a `summary_large_image`.
 
-El rojo sobre bordó se reserva al logotipo y titulares grandes. Los textos corrientes usan combinaciones de mayor contraste. Incluye navegación por teclado, enlace para saltar al contenido, estados de foco, etiquetas en formularios y respeto por la preferencia de movimiento reducido.
+## Contenido
 
-## Segunda edición
-
-Base negro y marfil, acentos bordó y rojo rosáceo. Composición O/S propia en código, servicios con enlaces directos, consulta con servicio preseleccionado, preguntas frecuentes y navegación con sección activa. Campos obligatorios señalados y controles táctiles de al menos 44 px en los accesos principales. Animación ornamental limitada a escritorio y desactivada con movimiento reducido. No incorpora rastreadores propios; Adobe Fonts realiza solicitudes externas para servir la tipografía.
-
-Verificaciones: sintaxis JavaScript, referencias locales y anclas, selección de servicios, menú y ambos modos de contacto mediante pruebas aisladas. No se realizó verificación visual de navegador ni auditoría Lighthouse o certificación de accesibilidad.
+No hay clientes, testimonios, cifras, equipo ni proyectos inventados, y no hay sección de portfolio. Se puede sumar cuando haya casos reales.

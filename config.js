@@ -1,3 +1,10 @@
-// Reemplazar el valor vacío por el correo real del estudio.
-// Con email vacío, el formulario descarga un brief y no simula un envío.
-window.ORENSIA_CONFIG = { email: "" };
+/*
+  Datos editables de ORENSIA.
+  Completá solo los canales que tengas. Los que queden vacíos ("") no se muestran en la web.
+*/
+window.ORENSIA_CONFIG = {
+  email: "",      // ej: "hola@tudominio.com"
+  instagram: "",  // usuario sin @, ej: "orensia"
+  whatsapp: "",   // código de país + número, solo dígitos, ej: "5491100000000"
+  whatsappMensaje: "Hola ORENSIA, quiero contarles sobre mi marca."
+};
