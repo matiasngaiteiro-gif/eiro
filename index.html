@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="tone-dark">
@@ -46,7 +46,7 @@
 
 <main id="contenido">
 
-  <section class="hero tone-dark" id="inicio">
+  <section class="hero panel tone-brand" id="inicio">
     <div class="wrap">
       <h1 class="display">
         <span class="sr-only">Marcas hechas para durar, con criterio, estrategia, identidad, contenido, diseño y oficio.</span>
@@ -68,7 +68,11 @@
     </div>
   </section>
 
-  <section class="section tone-dark" id="trabajos" aria-labelledby="trabajos-t">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track"><span class="marquee-group"><span>Estrategia</span><span>Identidad visual</span><span>Contenido</span><span>Dirección de arte</span><span>Diseño digital</span><span>Campañas</span></span><span class="marquee-group"><span>Estrategia</span><span>Identidad visual</span><span>Contenido</span><span>Dirección de arte</span><span>Diseño digital</span><span>Campañas</span></span></div>
+  </div>
+
+  <section class="section panel tone-dark" id="trabajos" aria-labelledby="trabajos-t">
     <div class="wrap">
       <div class="sec-bar">
         <h2 class="label" id="trabajos-t">Trabajos</h2>
@@ -85,7 +89,7 @@
     </div>
   </section>
 
-  <section class="section tone-brand" id="estudio" aria-labelledby="estudio-t">
+  <section class="section panel tone-light" id="estudio" aria-labelledby="estudio-t">
     <div class="wrap">
       <div class="studio">
         <span class="label">Estudio</span>
@@ -104,7 +108,7 @@
     </div>
   </section>
 
-  <section class="section tone-dark" id="servicios" aria-labelledby="servicios-t">
+  <section class="section panel tone-dark" id="servicios" aria-labelledby="servicios-t">
     <div class="wrap">
       <div class="sec-bar">
         <h2 class="label" id="servicios-t">Servicios</h2>
@@ -157,11 +161,11 @@
     </div>
   </section>
 
-  <div class="tone-dark wide-img">
+  <div class="panel tone-dark wide-img">
     <div class="ph r-21x9" role="img" aria-label="Espacio reservado para una imagen a todo el ancho"><span>Imagen a todo el ancho · 21:9</span></div>
   </div>
 
-  <section class="section tone-light" id="metodo" aria-labelledby="metodo-t">
+  <section class="section panel tone-light" id="metodo" aria-labelledby="metodo-t">
     <div class="wrap">
       <div class="sec-head">
         <span class="label">Método</span>
@@ -184,7 +188,7 @@
     </div>
   </section>
 
-  <section class="section tone-brand contact" id="contacto" aria-labelledby="contacto-t">
+  <section class="section panel tone-brand contact" id="contacto" aria-labelledby="contacto-t">
     <div class="wrap">
       <span class="label">Contacto</span>
       <h2 class="display" id="contacto-t">Hablemos de tu marca.</h2>
@@ -202,7 +206,7 @@
 
 </main>
 
-<footer class="footer tone-light">
+<footer class="footer tone-dark">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -224,7 +228,6 @@
         <ul id="foot-channels"></ul>
       </div>
     </div>
-    <div class="bigmark" aria-hidden="true">ORENSIA</div>
     <div class="legal">
       <span>© <span id="year">2026</span> ORENSIA</span>
       <span>Estrategia · Identidad · Comunicación</span>
@@ -232,7 +235,7 @@
   </div>
 </footer>
 
-<script src="config.js?v=8"></script>
-<script src="script.js?v=8"></script>
+<script src="config.js?v=9"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts
 
 ## Color
 
-Los colores están como variables al principio de `styles.css`. Negro (`--ink`) y marfil (`--ivory`) son la base; el verde inglés (`--green`) es el color de marca y ocupa secciones enteras (Estudio y Contacto); el latón (`--brass`) se usa solo en detalles. Cada sección elige su fondo con una clase: `tone-dark`, `tone-light` o `tone-brand`.
+Los colores están como variables al principio de `styles.css`. Negro (`--ink`) y marfil (`--ivory`) son la base; el esmeralda oscuro (`--green`) es el color de marca y ocupa secciones enteras (portada y Contacto); el latón (`--brass`) se usa solo en detalles. Cada sección elige su fondo con una clase: `tone-dark`, `tone-light` o `tone-brand`.
 
 ## Publicar en GitHub Pages
 
