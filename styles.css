@@ -54,8 +54,8 @@ a { color: inherit; }
 ::selection { background: var(--ivory); color: var(--ink); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--ink); --fg: var(--ivory); --muted: var(--ivory-soft); --line: var(--line-dark); }
-.tone-light { --bg: var(--ivory); --fg: var(--ink); --muted: var(--ink-soft); --line: var(--line-light); }
+.tone-dark  { --bg: var(--ink); --fg: var(--ivory); --muted: var(--ivory-soft); --line: var(--line-dark); --ph: #2B2A27; }
+.tone-light { --bg: var(--ivory); --fg: var(--ink); --muted: var(--ink-soft); --line: var(--line-light); --ph: #D8D2C4; }
 .tone-dark, .tone-light { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -174,11 +174,10 @@ a { color: inherit; }
 
 /* Espacios reservados para imágenes. Al poner un <img> o <video> adentro, ocupa todo el bloque. */
 .ph {
-  --ph: #2B2A27;
   position: relative; display: grid; place-items: center; overflow: hidden;
   width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: var(--ph);
 }
-.ph span { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-soft); text-align: center; padding: 12px; }
+.ph span { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-align: center; padding: 12px; }
 .ph img, .ph video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .r-4x3 { aspect-ratio: 4 / 3; }
 .r-4x5 { aspect-ratio: 4 / 5; }
@@ -289,13 +288,7 @@ a { color: inherit; }
   .service-body { padding-left: 0; }
 }
 
-/* Método: banda propia, titular en sans pesada, etapas en filas */
-.band.tone-dark { --bg: var(--ink-raised); }
-.heavy {
-  font-family: var(--font-body); font-weight: 700; text-transform: uppercase;
-  font-size: clamp(2rem, 5.8vw, 5.4rem); line-height: 0.95; letter-spacing: -0.025em;
-  max-width: 14em; text-wrap: balance;
-}
+/* Método: bloque en marfil, etapas en filas con numeración a gran escala */
 .method { border-top: 1px solid var(--fg); }
 .method li {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px 24px; align-items: baseline;
@@ -307,8 +300,8 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 .method h3 {
-  grid-column: 4 / span 3; font-family: var(--font-body); font-weight: 700; text-transform: uppercase;
-  font-size: clamp(1rem, 1.5vw, 1.35rem); letter-spacing: 0.04em; min-width: 0;
+  grid-column: 4 / span 3; font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2.5rem); line-height: 1.05; letter-spacing: -0.025em; min-width: 0;
 }
 .method p { grid-column: 7 / span 5; color: var(--muted); min-width: 0; }
 @media (max-width: 760px) {
