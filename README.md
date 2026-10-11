@@ -35,14 +35,9 @@ window.ORENSIA_CONFIG = {
 
 ## Tipografía
 
-El kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css` trae dos familias:
+Trust (kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css`, familia `trust-3a`) se usa en el logo y los títulos. Los textos, la navegación y los botones van en Helvética: en Mac y iPhone se usa la del sistema, y en Windows y Android se carga Inter desde Google Fonts como equivalente. Las etiquetas y la numeración usan Roboto Mono. Las tres están definidas en `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
 
-- `trust-3a` (pesos 200, 300, 400, 500, 700): títulos y marca.
-- `trust-1a` (pesos 400, 500, 700): textos.
-
-Están definidas en `--font-display` y `--font-body` dentro de `styles.css`. Las etiquetas, la numeración y los datos chicos usan Roboto Mono (`--font-mono`), cargada desde Google Fonts.
-
-Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador. Si el kit no carga, se usan Georgia y Helvetica/Arial.
+Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 
 Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts que el proyecto web siga activo y que el dominio de la web esté permitido.
 

@@ -21,7 +21,7 @@
 
   /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
   --font-display: "trust-3a", Georgia, "Times New Roman", serif;   /* pesos 200, 300, 400, 500, 700 */
-  --font-body: "trust-1a", "Helvetica Neue", Helvetica, Arial, sans-serif; /* pesos 400, 500, 700 */
+  --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* textos, navegación y botones */
   --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* etiquetas, numeración y datos */
   --w-display: 300;
 
@@ -448,3 +448,10 @@ a { color: inherit; }
 
 /* Pie simple */
 .footer { padding-block: clamp(40px, 5vw, 72px) 28px; }
+
+/* Lo funcional en grotesca: navegación y botones. Trust queda para el logo y los títulos. */
+.nav li a, .cta-link { font-family: var(--font-body); font-size: 0.95rem; font-weight: 400; letter-spacing: 0; }
+.cta-link { font-weight: 500; }
+@media (max-width: 900px) {
+  .js .nav li a, .js .nav .cta-link { font-family: var(--font-display); font-size: 2rem; letter-spacing: -0.02em; }
+}
