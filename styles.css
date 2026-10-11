@@ -13,6 +13,8 @@
   --ink-soft: #4A463F;       /* texto secundario sobre marfil (8:1) */
   --line-dark: #33312D;      /* bordes sobre negro */
   --line-light: #CFC8B8;     /* bordes sobre marfil */
+  --brass: #B79A62;          /* latón envejecido: detalles sobre negro (6,4:1) */
+  --brass-deep: #74592A;     /* el mismo latón, oscurecido para leerse sobre marfil (5,7:1) */
 
   /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
   --font-display: "trust-3a", Georgia, "Times New Roman", serif;   /* pesos 200, 300, 400, 500, 700 */
@@ -52,11 +54,11 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 a { color: inherit; }
 [hidden] { display: none !important; }
-::selection { background: var(--ivory); color: var(--ink); }
+::selection { background: var(--brass); color: var(--ink); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--ink); --fg: var(--ivory); --muted: var(--ivory-soft); --line: var(--line-dark); --ph: #2B2A27; }
-.tone-light { --bg: var(--ivory); --fg: var(--ink); --muted: var(--ink-soft); --line: var(--line-light); --ph: #D8D2C4; }
+.tone-dark  { --bg: var(--ink); --fg: var(--ivory); --muted: var(--ivory-soft); --line: var(--line-dark); --ph: #2B2A27; --accent: var(--brass); }
+.tone-light { --bg: var(--ivory); --fg: var(--ink); --muted: var(--ink-soft); --line: var(--line-light); --ph: #D8D2C4; --accent: var(--brass-deep); }
 .tone-dark, .tone-light { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -361,4 +363,26 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Detalles en latón: numeración, etiqueta que abre cada sección y estados activos */
+.sec-bar h2, .sec-head > .label, .studio > .label, .contact .wrap > .label { color: var(--accent); }
+.services .num, .work-cap .num, .method .num { color: var(--accent); }
+.cta-link::after { color: var(--accent); }
+.nav li a:hover, .footer li a:hover, .channels a:hover { text-decoration-color: var(--accent); }
+.services details[open] .toggle { background: var(--accent); border-color: var(--accent); }
+.services summary:hover .toggle { border-color: var(--accent); }
+
+/* Pie como papel: grano sutil y el nombre en relieve (gofrado), tono sobre tono */
+.footer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .25 0 0 0 0 .2 0 0 0 0 .12 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.bigmark {
+  color: #EFEADF;
+  text-shadow:
+    -1px -1px 0 rgba(255, 255, 255, 0.95),
+    -0.012em -0.012em 0.02em rgba(255, 255, 255, 0.8),
+    1px 1px 1px rgba(70, 58, 36, 0.28),
+    0.012em 0.014em 0.022em rgba(70, 58, 36, 0.30),
+    0.03em 0.035em 0.06em rgba(70, 58, 36, 0.16);
 }
