@@ -53,6 +53,21 @@ Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts
 
 Todas las rutas son relativas, así que funciona en un subdirectorio.
 
+## Imágenes y portfolio
+
+Los bloques grises son espacios reservados para imágenes. Cada uno indica su proporción recomendada.
+
+1. Guardá la imagen en `assets/` (JPG o WebP, hasta unos 2000 px de ancho).
+2. En `index.html` buscá el bloque `<div class="ph ...">` y reemplazá el `<span>` de adentro por la imagen:
+
+```html
+<div class="ph r-4x3"><img src="assets/proyecto-01.jpg" alt="Descripción de la imagen" loading="lazy"></div>
+```
+
+La imagen se recorta sola para llenar el bloque. También podés usar un `<video>` (por ejemplo para el reel). Al poner la imagen, quitá del `div` los atributos `role` y `aria-label`.
+
+En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá "Nombre del proyecto" y "Categoría" por los datos reales. Para sumar o quitar proyectos, copiá o borrá un `<li>`. Las clases `w-7`, `w-5` y `w-12` definen el ancho (sobre 12 columnas) y `r-4x3`, `r-4x5`, `r-21x9` la proporción.
+
 ## Cuando haya dominio propio
 
 Agregá en el `<head>` de `index.html`, con la URL real:
@@ -67,4 +82,4 @@ La imagen social recomendada es de 1200 × 630 px, guardada en `assets/`. Con la
 
 ## Contenido
 
-No hay clientes, testimonios, cifras, equipo ni proyectos inventados, y no hay sección de portfolio. Se puede sumar cuando haya casos reales.
+No hay clientes, testimonios, cifras, equipo ni proyectos inventados. La sección Trabajos tiene espacios reservados sin datos: completala con proyectos reales antes de difundir la web.

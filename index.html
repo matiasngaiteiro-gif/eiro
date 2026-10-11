@@ -31,12 +31,12 @@
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul>
+        <li><a href="#trabajos">Trabajos</a></li>
         <li><a href="#estudio">Estudio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#metodo">Método</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <a class="btn btn-solid" href="#contacto">Hablemos de tu marca</a>
+      <a class="cta-link" href="#contacto">Hablemos de tu marca</a>
     </nav>
   </div>
 </header>
@@ -45,10 +45,6 @@
 
   <section class="hero tone-dark" id="inicio">
     <div class="wrap">
-      <div class="hero-meta">
-        <span class="label">Estudio creativo</span>
-        <span class="label">Agencia de comunicación integral</span>
-      </div>
       <h1 class="display">
         <span class="sr-only">Estudio creativo para marcas con criterio: estrategia, identidad, contenido, producción, diseño digital y campañas.</span>
         <span aria-hidden="true">
@@ -61,9 +57,11 @@
         <p class="lede">Trabajamos estrategia, identidad visual y comunicación como una sola cosa. Te ayudamos a definir quién es tu marca, cómo se presenta y cómo le habla a su público.</p>
         <div class="cta-row">
           <a class="btn btn-solid btn-arrow" href="#contacto">Hablemos de tu marca</a>
-          <a class="btn btn-line" href="#servicios">Ver servicios</a>
+          <a class="btn btn-line" href="#trabajos">Ver trabajos</a>
         </div>
       </div>
+      <!-- IMAGEN: reemplazar el contenido de cada .ph por <img src="assets/archivo.jpg" alt="Descripción"> o un <video> -->
+      <div class="ph reel" role="img" aria-label="Espacio reservado para el reel o la imagen principal"><span>Reel o imagen principal · 16:9</span></div>
     </div>
   </section>
 
@@ -77,6 +75,23 @@
     </div>
   </div>
 
+  <section class="section tone-dark" id="trabajos" aria-labelledby="trabajos-t">
+    <div class="wrap">
+      <div class="sec-bar">
+        <h2 class="label" id="trabajos-t">Trabajos</h2>
+        <p class="label">Selección</p>
+      </div>
+      <!-- PORTFOLIO: cada <li> es un proyecto. Cambiá la imagen, el nombre y la categoría. -->
+      <ul class="works">
+        <li class="work w-7"><div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 01"><span>Imagen de proyecto · 4:3</span></div><p class="work-cap"><span class="num">01</span><span class="work-name">Nombre del proyecto</span><span class="muted">Categoría</span></p></li>
+        <li class="work w-5"><div class="ph r-4x5" role="img" aria-label="Espacio reservado para la imagen del proyecto 02"><span>Imagen de proyecto · 4:5</span></div><p class="work-cap"><span class="num">02</span><span class="work-name">Nombre del proyecto</span><span class="muted">Categoría</span></p></li>
+        <li class="work w-5"><div class="ph r-4x5" role="img" aria-label="Espacio reservado para la imagen del proyecto 03"><span>Imagen de proyecto · 4:5</span></div><p class="work-cap"><span class="num">03</span><span class="work-name">Nombre del proyecto</span><span class="muted">Categoría</span></p></li>
+        <li class="work w-7"><div class="ph r-4x3" role="img" aria-label="Espacio reservado para la imagen del proyecto 04"><span>Imagen de proyecto · 4:3</span></div><p class="work-cap"><span class="num">04</span><span class="work-name">Nombre del proyecto</span><span class="muted">Categoría</span></p></li>
+        <li class="work w-12"><div class="ph r-21x9" role="img" aria-label="Espacio reservado para la imagen del proyecto 05"><span>Imagen de proyecto · 21:9</span></div><p class="work-cap"><span class="num">05</span><span class="work-name">Nombre del proyecto</span><span class="muted">Categoría</span></p></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="section tone-dark" id="estudio" aria-labelledby="estudio-t">
     <div class="wrap">
       <div class="studio">
@@ -84,6 +99,8 @@
       <div class="studio-main">
       <h2 class="display statement" id="estudio-t">Una marca se construye con decisiones chicas y sostenidas. <span>Una tipografía bien elegida, un tono que se mantiene, una foto que cuenta lo mismo que el texto.</span></h2>
       <div class="studio-grid">
+        <div class="ph r-4x5 studio-img" role="img" aria-label="Espacio reservado para una imagen del estudio"><span>Imagen del estudio · 4:5</span></div>
+        <div class="studio-side">
         <div class="studio-text">
           <p class="lede">ORENSIA es un estudio creativo y una agencia de comunicación integral. Reunimos en un mismo lugar el pensamiento estratégico, el diseño y la comunicación de una marca.</p>
           <p class="muted">Trabajamos de cerca, con trato directo y explicando cada decisión. Queremos que entiendas por qué tu marca se ve y habla como lo hace.</p>
@@ -93,6 +110,7 @@
           <li><h3>Construir coherencia</h3><p>Que la marca sea la misma en una web, en un posteo y en una tarjeta.</p></li>
           <li><h3>Acompañar la evolución</h3><p>Las marcas cambian. Las ayudamos a crecer sin perder lo que las hace reconocibles.</p></li>
         </ul>
+        </div>
       </div>
       </div>
       </div>
@@ -202,6 +220,10 @@
     </div>
   </section>
 
+  <div class="tone-dark wide-img">
+    <div class="ph r-21x9" role="img" aria-label="Espacio reservado para una imagen a todo el ancho"><span>Imagen a todo el ancho · 21:9</span></div>
+  </div>
+
   <section class="section tone-light contact" id="contacto" aria-labelledby="contacto-t">
     <div class="wrap">
       <span class="label">Contacto</span>
@@ -230,6 +252,7 @@
       <nav aria-label="Pie de página">
         <span class="label">Navegación</span>
         <ul>
+          <li><a href="#trabajos">Trabajos</a></li>
           <li><a href="#estudio">Estudio</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#metodo">Método</a></li>
