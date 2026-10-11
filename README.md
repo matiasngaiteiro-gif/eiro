@@ -1,6 +1,6 @@
-# ORENSIA
+# Teiro
 
-Web de ORENSIA, estudio creativo y agencia de comunicación integral. Sitio estático en HTML, CSS y JavaScript, sin instalación ni compilación.
+Web de Teiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin instalación ni compilación.
 
 ## Archivos
 
@@ -20,11 +20,11 @@ Abrí `index.html` con doble clic. En equipos sin Helvética, la tipografía de 
 Editá `config.js` y completá los canales que tengas:
 
 ```js
-window.ORENSIA_CONFIG = {
-  email: "hola@tudominio.com",
-  instagram: "orensia",
-  whatsapp: "5491100000000",
-  whatsappMensaje: "Hola ORENSIA, quiero contarles sobre mi marca."
+window.TEIRO_CONFIG = {
+  email: "",
+  instagram: "",
+  whatsapp: "",
+  whatsappMensaje: "Hola Teiro, quiero contarles sobre mi marca."
 };
 ```
 
@@ -32,6 +32,13 @@ window.ORENSIA_CONFIG = {
 - Si los tres están vacíos, la sección Contacto muestra un aviso de que los canales están en configuración.
 - `whatsapp` va con código de país y solo dígitos. `instagram` va sin `@`.
 - La web no tiene formulario. Para sumar uno hace falta un servicio real de envío.
+
+## Nombre
+
+- El estudio se llama Teiro (se pronuncia "téi-ro"). Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio".
+- En el logo y en los títulos se escribe con acento: téiro o TÉIRO. En la web el logo va en minúsculas, con la tilde en cobalto.
+- En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro.
+- Dominio y usuario de Instagram están pendientes. No hay eslogan.
 
 ## Tipografía
 
@@ -41,7 +48,12 @@ Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, s
 
 ## Color
 
-Los colores están como variables al principio de `styles.css`. Son cuatro: negro (`--black`), gris oscuro (`--dark-gray`), gris (`--gray`) y blanco (`--white`). Cada sección elige su fondo con una clase: `tone-brand` (gris oscuro), `tone-dark` (negro) o `tone-light` (blanco).
+Los colores están como variables al principio de `styles.css`: negro (`--black` #0B0B0B), grafito (`--graphite` #2A2A28), piedra (`--stone` #8C8A84), hueso (`--bone` #F2EFE8), blanco (`--white`) y cobalto (`--cobalt` #1F3BFF).
+
+- 90% neutros, 10% cobalto como máximo. El cobalto va en la tilde del logo, el botón principal, los subrayados de enlaces y algún dato destacado. Nunca como fondo de una sección.
+- Cada sección elige su fondo con una clase: `tone-dark` (negro), `tone-brand` (grafito) o `tone-light` (hueso).
+- El cobalto como texto solo se usa sobre hueso; sobre negro o grafito no alcanza el contraste necesario.
+- Para que el texto secundario se lea, sobre fondos oscuros se usa una piedra más clara (`--stone-light`) y sobre hueso una más oscura (`--stone-deep`).
 
 ## Publicar en GitHub Pages
 

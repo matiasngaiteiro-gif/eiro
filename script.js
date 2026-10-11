@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var config = window.ORENSIA_CONFIG || {};
+  var config = window.TEIRO_CONFIG || {};
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Año del pie */

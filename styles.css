@@ -1,26 +1,28 @@
 /*
-  ORENSIA
-  Página en negro con tipografía a gran escala. El marfil se reserva para el texto
-  y para un único bloque invertido (Contacto).
+  Teiro, estudio creativo
+  Página negra con paneles en negro, grafito y hueso. El cobalto es el único acento.
 */
 
 :root {
-  /* Color: blanco, gris, gris oscuro y negro. Los grises tienen un leve tinte azulado, nunca cálido. */
-  --black: #000000;
-  --dark-gray: #14171B;        /* color principal: portada, Servicios y Contacto */
-  --gray: #858B93;             /* detalles: numeración, etiquetas, palabra rotativa */
-  --white: #FFFFFF;
+  /* Color: 90% neutros, 10% cobalto como máximo */
+  --black: #0B0B0B;            /* base, fondos oscuros y texto principal */
+  --graphite: #2A2A28;         /* fondos secundarios oscuros */
+  --stone: #8C8A84;            /* detalles */
+  --bone: #F2EFE8;             /* fondo claro principal */
+  --white: #FFFFFF;            /* solo texto sobre oscuro */
+  --cobalt: #1F3BFF;           /* único acento: tilde del logo, botones, enlaces y datos destacados */
 
-  --dark-gray-ph: #1E2227;     /* bloques de imagen sobre gris oscuro */
-  --dark-gray-line: #2C3138;   /* bordes sobre negro y gris oscuro */
-  --dark-gray-soft: #A2A8B0;   /* texto secundario sobre negro y gris oscuro (7:1) */
-  --white-ph: #E3E6EA;         /* bloques de imagen sobre blanco */
-  --white-line: #CED3D9;       /* bordes sobre blanco */
-  --white-soft: #4E545C;       /* texto secundario sobre blanco (7,5:1) */
-  --gray-deep: #626973;        /* el gris oscurecido, para detalles sobre blanco (5,3:1) */
+  /* Derivados de los neutros, para que el texto secundario se lea en cada fondo */
+  --stone-light: #ABA9A3;      /* texto secundario sobre negro y grafito (6:1 sobre grafito) */
+  --stone-deep: #5E5C57;       /* texto secundario sobre hueso (6:1) */
+  --black-line: #2E2E2B;       /* bordes sobre negro */
+  --graphite-line: #43433F;    /* bordes sobre grafito */
+  --graphite-ph: #363633;      /* bloques de imagen sobre grafito */
+  --bone-line: #D5D0C4;        /* bordes sobre hueso */
+  --bone-ph: #E3DFD4;          /* bloques de imagen sobre hueso */
 
   /* Tipografía */
-  --font-logo: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* logo ORENSIA, en negrita */
+  --font-logo: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* logo téiro, en negrita */
   --font-display: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* títulos */
   --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* textos, navegación y botones */
   --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* etiquetas, numeración y datos */
@@ -68,12 +70,12 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 a { color: inherit; }
 [hidden] { display: none !important; }
-::selection { background: var(--gray); color: var(--black); }
+::selection { background: var(--cobalt); color: var(--white); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--black); --fg: var(--white); --muted: var(--dark-gray-soft); --line: var(--dark-gray-line); --ph: var(--dark-gray); --accent: var(--gray); }
-.tone-light { --bg: var(--white); --fg: var(--black); --muted: var(--white-soft); --line: var(--white-line); --ph: var(--white-ph); --accent: var(--gray-deep); }
-.tone-brand { --bg: var(--dark-gray); --fg: var(--white); --muted: var(--dark-gray-soft); --line: var(--dark-gray-line); --ph: var(--dark-gray-ph); --accent: var(--gray); }
+.tone-dark  { --bg: var(--black); --fg: var(--white); --muted: var(--stone-light); --line: var(--black-line); --ph: var(--graphite); --accent: var(--stone); }
+.tone-light { --bg: var(--bone); --fg: var(--black); --muted: var(--stone-deep); --line: var(--bone-line); --ph: var(--bone-ph); --accent: var(--stone-deep); }
+.tone-brand { --bg: var(--graphite); --fg: var(--white); --muted: var(--stone-light); --line: var(--graphite-line); --ph: var(--graphite-ph); --accent: var(--stone-light); }
 .tone-dark, .tone-light, .tone-brand { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -392,7 +394,7 @@ a { color: inherit; }
    La página es negra y cada sección es un panel redondeado apoyado encima.
    El color de cada panel lo define su clase tone-*. */
 .panel { margin: var(--panel-gap) var(--panel-gap) 0; border-radius: var(--panel-radius); overflow: hidden; }
-.panel.tone-dark { border: 1px solid var(--dark-gray-line); }
+.panel.tone-dark { border: 1px solid var(--black-line); }
 .ph { border-radius: clamp(14px, 1.4vw, 22px); }
 .wide-img .ph { border-radius: 0; }
 
@@ -402,7 +404,7 @@ a { color: inherit; }
   background: transparent; border-bottom: 1px solid transparent;
   transition: transform .32s cubic-bezier(.2, .7, .2, 1), background-color .2s ease, border-color .2s ease;
 }
-.header.is-stuck, .header.menu-open { background: var(--black); border-bottom-color: var(--dark-gray-line); }
+.header.is-stuck, .header.menu-open { background: var(--black); border-bottom-color: var(--black-line); }
 .header .wrap { padding-inline: calc(var(--gutter) + var(--panel-gap)); min-height: var(--header-h); }
 .wordmark { font-size: clamp(2.1rem, 3.3vw, 3.1rem); }
 .nav li a, .cta-link { font-size: 1.08rem; }
@@ -441,7 +443,7 @@ a { color: inherit; }
   letter-spacing: -0.03em; line-height: 1.1;
 }
 .marquee-group span::after {
-  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--gray);
+  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--cobalt);
   margin-inline: 0.55em;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
@@ -497,3 +499,30 @@ a { color: inherit; }
 }
 .copy-btn:hover { background: var(--fg); color: var(--bg); }
 @media (max-width: 900px) { .js .nav .cta-link { font-size: 1.5rem; } }
+
+/* ---------- Teiro ---------- */
+/* Logo: téiro en minúsculas, con la tilde en cobalto. La tilde se pinta con una copia de la "é" recortada a su parte superior. */
+.wordmark { text-transform: none; letter-spacing: -0.06em; }
+.wm-e { position: relative; display: inline-block; }
+.wm-e::after {
+  content: attr(data-g); position: absolute; left: 0; top: 0; color: var(--cobalt);
+  clip-path: inset(0 0 74% 0); pointer-events: none;
+}
+
+/* Cobalto: botón principal, subrayados de enlaces, palabra rotativa sobre hueso y estados activos */
+.btn-solid { background: var(--cobalt); border-color: var(--cobalt); color: var(--white); }
+.btn-solid:hover { background: transparent; color: var(--fg); border-color: var(--fg); }
+.cta-link, .channels a { text-decoration-color: var(--cobalt); text-decoration-thickness: 2px; }
+.cta-link::after { color: inherit; }
+.tone-light .rotator { color: var(--cobalt); }
+.services details[open] .toggle { background: var(--cobalt); border-color: var(--cobalt); color: var(--white); }
+.services summary:hover .toggle { border-color: var(--cobalt); }
+
+/* La barra sobre la portada clara usa texto negro; al bajar pasa a fondo negro con texto blanco. Sin JavaScript queda siempre en negro. */
+html:not(.js) .header { background: var(--black); }
+.js .header:not(.is-stuck):not(.menu-open) { --fg: var(--black); --muted: var(--stone-deep); color: var(--black); }
+
+/* Firma en Estudio */
+.signature { display: grid; gap: 4px; margin-top: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+.signature span:first-child { font-family: var(--font-display); font-weight: 500; font-size: var(--t-h4); letter-spacing: -0.03em; }
+.rotator { display: inline-block; min-height: 0; }
