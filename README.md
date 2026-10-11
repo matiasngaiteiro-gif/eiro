@@ -41,20 +41,14 @@ window.TEIRO_CONFIG = {
 
 ## Sistema visual
 
-- **Titulares:** Inter Tight en peso extra negrita, mayúsculas, con interlineado y espaciado muy cerrados (clase `heavy`).
-- **Todo lo chico:** DM Mono liviana, en mayúsculas y con espaciado abierto (clase `mono`): navegación, etiquetas, tabla de trabajos, botones y datos.
-- **Afiche:** la portada es el único bloque centrado: una línea enorme, el logo al centro y otra línea enorme. El resto de la página va alineado a la izquierda.
-- **Escala y espacios:** hay una sola serie de tamaños (`--t-*`) y una sola de espacios (`--s-*`) al principio de `styles.css`.
+- **Base blanca y negra, con mucho aire.** El logo manuscrito es el protagonista de la portada.
+- **Tres voces tipográficas:** Figtree (sans geométrica) para títulos y textos, Caveat (letra de mano) para notas y la firma, y DM Mono para etiquetas y datos. Clases: `title`, `pen` y `mono`.
+- **Color como fuga de luz:** el color no se usa como relleno plano. Aparece difuminado en un borde, como una fuga de luz de película (clase `leak`), en la portada y en Contacto. Los tres tonos están en `--leak-warm`, `--leak-amber` y `--leak-cool`.
+- **Imágenes en tarjetas** de esquinas muy redondeadas (clase `shot`).
 
-Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias. Están definidas en `--font-display` y `--font-mono` dentro de `styles.css`.
+Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
-
-## Color
-
-Los colores están como variables al principio de `styles.css`: azul noche (`--night` #0D1017), negro, blanco, hielo (`--ice` #ECEEF2), gris frío (`--lilac` #A7A8B4), lima (`--lime` #D9F44C) y cobalto (`--cobalt` #1F3BFF).
-
-Cada sección es un panel y elige su fondo con una clase: `t-night`, `t-black`, `t-white`, `t-ice`, `t-lilac`, `t-lime` o `t-cobalt`. El lima se usa solo para resaltar (botón de la barra, servicio abierto, selección) y el cobalto para Contacto.
 
 ## Publicar en GitHub Pages
 
@@ -67,16 +61,15 @@ Todas las rutas son relativas, así que funciona en un subdirectorio.
 
 ## Imágenes y portfolio
 
-Los bloques grises son espacios reservados para imágenes. Cada uno indica su proporción recomendada.
+Las imágenes de `assets/muestras/` son de muestra: las generé para que la página tenga vida mientras no están las reales, y cada una lleva la nota "muestra" escrita a mano. No son trabajos de clientes.
 
-1. Guardá la imagen en `assets/` (JPG o WebP, hasta unos 2000 px de ancho).
-2. En `index.html` buscá el bloque `<div class="ph ...">` y reemplazá el `<span>` de adentro por la imagen:
+Para reemplazar una:
 
-```html
-<div class="ph"><img src="assets/reel.jpg" alt="Descripción de la imagen" loading="lazy"></div>
-```
+1. Guardá la imagen real en `assets/` (JPG o WebP, hasta unos 1600 px de ancho).
+2. En `index.html`, cambiá el `src` del `<img>` y escribí un `alt` que la describa.
+3. Borrá el `<span class="tag pen">muestra</span>` de ese bloque.
 
-La imagen se recorta sola para llenar el bloque. También podés usar un `<video>` (por ejemplo para el reel). Al poner la imagen, quitá del `div` los atributos `role` y `aria-label`.
+La imagen se recorta sola para llenar la tarjeta. Las clases `r-4x3`, `r-4x5` y `r-21x9` definen la proporción; sin clase es 16:9. También podés usar un `<video>` en lugar del `<img>`.
 
 En la sección **Trabajos**, cada `<li class="work">` es un proyecto: cambiá la imagen, "Nombre del cliente", "Año, área" y la línea de resumen. Para sumar o quitar proyectos, copiá o borrá un `<li>`.
 
