@@ -5,21 +5,22 @@
 */
 
 :root {
-  /* Color */
-  --ink: #111111;
-  --ink-raised: #191918;     /* superficie apenas más clara que el fondo */
-  --ivory: #F3EFE6;
-  --ivory-soft: #B9B3A6;     /* texto secundario sobre negro (9,5:1) */
-  --ink-soft: #4A463F;       /* texto secundario sobre marfil (8:1) */
-  --line-dark: #33312D;      /* bordes sobre negro */
-  --line-light: #CFC8B8;     /* bordes sobre marfil */
-  --green: #04503D;          /* esmeralda oscuro: color de marca, ocupa secciones enteras */
-  --green-deep: #033F30;     /* bloques de imagen sobre verde */
-  --green-line: #23705C;     /* bordes sobre verde */
-  --green-soft: #BCD4CB;     /* texto secundario sobre verde (8:1) */
-  --brass-light: #DCC088;    /* latón aclarado para leerse sobre verde (5,5:1) */
-  --brass: #B79A62;          /* latón envejecido: detalles sobre negro (6,4:1) */
-  --brass-deep: #74592A;     /* el mismo latón, oscurecido para leerse sobre marfil (5,7:1) */
+  /* Color: cuatro colores de marca y sus derivados */
+  --black: #000000;
+  --dark-green: #00221F;
+  --caribbean: #00D991;
+  --platinum: #E8E8E8;
+
+  --dark-green-ph: #0B302C;    /* bloques de imagen sobre verde oscuro */
+  --dark-green-line: #154640;  /* bordes sobre negro y verde oscuro */
+  --dark-green-soft: #A3B8B4;  /* texto secundario sobre negro y verde oscuro (8:1) */
+  --platinum-ph: #D3D3D3;      /* bloques de imagen sobre platino */
+  --platinum-line: #C6C6C6;    /* bordes sobre platino */
+  --platinum-soft: #454545;    /* texto secundario sobre platino (8:1) */
+  --caribbean-ph: #00C282;     /* bloques de imagen sobre verde caribe */
+  --caribbean-line: #00A870;   /* bordes sobre verde caribe */
+  --caribbean-soft: #00352B;   /* texto secundario sobre verde caribe (8:1) */
+  --caribbean-deep: #006B48;   /* el verde caribe oscurecido, para detalles sobre platino (5,4:1) */
 
   /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
   --font-display: "trust-3a", Georgia, "Times New Roman", serif;   /* pesos 200, 300, 400, 500, 700 */
@@ -56,8 +57,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--ivory);
+  background: var(--black);
+  color: var(--platinum);
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.6;
@@ -69,12 +70,12 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 a { color: inherit; }
 [hidden] { display: none !important; }
-::selection { background: var(--brass); color: var(--ink); }
+::selection { background: var(--caribbean); color: var(--black); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--ink); --fg: var(--ivory); --muted: var(--ivory-soft); --line: var(--line-dark); --ph: #2B2A27; --accent: var(--brass); }
-.tone-light { --bg: var(--ivory); --fg: var(--ink); --muted: var(--ink-soft); --line: var(--line-light); --ph: #D8D2C4; --accent: var(--brass-deep); }
-.tone-brand { --bg: var(--green); --fg: var(--ivory); --muted: var(--green-soft); --line: var(--green-line); --ph: var(--green-deep); --accent: var(--brass-light); }
+.tone-dark  { --bg: var(--black); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green-ph); --accent: var(--caribbean); }
+.tone-light { --bg: var(--platinum); --fg: var(--black); --muted: var(--platinum-soft); --line: var(--platinum-line); --ph: var(--platinum-ph); --accent: var(--caribbean-deep); }
+.tone-brand { --bg: var(--caribbean); --fg: var(--black); --muted: var(--caribbean-soft); --line: var(--caribbean-line); --ph: var(--caribbean-ph); --accent: var(--dark-green); }
 .tone-dark, .tone-light, .tone-brand { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -84,7 +85,7 @@ a { color: inherit; }
 
 .skip {
   position: absolute; left: var(--gutter); top: -120px; z-index: 60;
-  background: var(--ivory); color: var(--ink); padding: 14px 20px; text-decoration: none;
+  background: var(--platinum); color: var(--black); padding: 14px 20px; text-decoration: none;
 }
 .skip:focus { top: 10px; }
 
@@ -121,7 +122,7 @@ a { color: inherit; }
 /* Encabezado */
 .header {
   position: sticky; top: 0; z-index: 30;
-  background: var(--ink);
+  background: var(--black);
   transition: transform .32s cubic-bezier(.2, .7, .2, 1);
 }
 .header.is-hidden:not(:focus-within) { transform: translateY(-100%); }
@@ -377,7 +378,7 @@ a { color: inherit; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-/* Detalles en latón: numeración, etiqueta que abre cada sección y estados activos */
+/* Detalles en verde: numeración, etiqueta que abre cada sección y estados activos */
 .sec-bar h2, .sec-head > .label, .studio > .label, .contact .wrap > .label { color: var(--accent); }
 .services .num, .work-cap .num, .method .num { color: var(--accent); }
 .cta-link::after { color: var(--accent); }
@@ -393,7 +394,7 @@ a { color: inherit; }
    La página es negra y cada sección es un panel redondeado apoyado encima.
    El color de cada panel lo define su clase tone-*. */
 .panel { margin: var(--panel-gap) var(--panel-gap) 0; border-radius: var(--panel-radius); overflow: hidden; }
-.panel.tone-dark { --bg: var(--ink-raised); }
+.panel.tone-dark { --bg: var(--dark-green); }
 .ph { border-radius: clamp(14px, 1.4vw, 22px); }
 .wide-img .ph { border-radius: 0; }
 
@@ -401,7 +402,7 @@ a { color: inherit; }
 .header { background: transparent; top: calc(var(--panel-gap) * 2); margin-top: calc(var(--panel-gap) * 2); padding-inline: calc(var(--panel-gap) * 2); }
 .header .wrap {
   max-width: none; min-height: var(--header-h); padding-inline: clamp(18px, 2vw, 28px);
-  background: var(--ink); border: 1px solid var(--line-dark); border-radius: 22px;
+  background: var(--black); border: 1px solid var(--dark-green-line); border-radius: 22px;
 }
 .header.is-hidden:not(:focus-within) { transform: translateY(-160%); }
 .wordmark { font-size: clamp(1.75rem, 2.4vw, 2.2rem); }
@@ -427,7 +428,7 @@ a { color: inherit; }
   letter-spacing: -0.03em; line-height: 1.1;
 }
 .marquee-group span::after {
-  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--brass);
+  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--caribbean);
   margin-inline: 0.55em;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
