@@ -13,7 +13,7 @@ Web de ORENSIA, estudio creativo y agencia de comunicación integral. Sitio est�
 
 ## Abrir la web
 
-Abrí `index.html` con doble clic. Las tipografías se cargan desde Adobe Fonts, así que hace falta conexión a internet.
+Abrí `index.html` con doble clic. En equipos sin Helvética, la tipografía de reemplazo se carga desde Google Fonts y necesita conexión a internet.
 
 ## Configurar el contacto
 
@@ -35,17 +35,13 @@ window.ORENSIA_CONFIG = {
 
 ## Tipografía
 
-Toda la web usa dos familias: Helvética para títulos, textos, navegación y botones, y Roboto Mono para etiquetas y numeración. En Mac y iPhone la Helvética es la del sistema; en Windows y Android se carga Inter desde Google Fonts como equivalente.
-
-La única excepción es el logo ORENSIA, que sigue en Trust 3A Medium (kit de Adobe Fonts `https://use.typekit.net/lgv5pfx.css`). Las tres están definidas en `--font-logo`, `--font-display` / `--font-body` y `--font-mono` dentro de `styles.css`.
+Toda la web, incluido el logo, usa dos familias: Helvética para logo, títulos, textos, navegación y botones, y Roboto Mono para etiquetas y numeración. En Mac y iPhone la Helvética es la del sistema; en Windows y Android se carga Inter desde Google Fonts como equivalente. Están definidas en `--font-logo`, `--font-display`, `--font-body` y `--font-mono` dentro de `styles.css`.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 
-Si en la web publicada ves las tipografías alternativas, revisá en Adobe Fonts que el proyecto web siga activo y que el dominio de la web esté permitido.
-
 ## Color
 
-Los colores están como variables al principio de `styles.css`. Son cuatro: negro (`--black`), verde oscuro (`--dark-green`), verde caribe (`--caribbean`) y platino (`--platinum`). El verde oscuro es el principal; el verde caribe se usa solo en detalles. Cada sección elige su fondo con una clase: `tone-brand` (verde oscuro), `tone-dark` (negro) o `tone-light` (platino).
+Los colores están como variables al principio de `styles.css`. Son cuatro: negro (`--black`), gris oscuro (`--dark-gray`), gris (`--gray`) y blanco (`--white`). Cada sección elige su fondo con una clase: `tone-brand` (gris oscuro), `tone-dark` (negro) o `tone-light` (blanco).
 
 ## Publicar en GitHub Pages
 

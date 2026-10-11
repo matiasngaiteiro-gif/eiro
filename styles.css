@@ -5,22 +5,22 @@
 */
 
 :root {
-  /* Color: cuatro colores de marca y sus derivados */
+  /* Color: blanco, gris, gris oscuro y negro */
   --black: #000000;
-  --dark-green: #00221F;       /* color principal: portada, Servicios y Contacto */
-  --caribbean: #00D991;        /* solo para detalles: numeración, etiquetas, palabra rotativa, estados activos */
-  --platinum: #E8E8E8;
+  --dark-gray: #1A1A1A;        /* color principal: portada, Servicios y Contacto */
+  --gray: #8A8A8A;             /* detalles: numeración, etiquetas, palabra rotativa */
+  --white: #FFFFFF;
 
-  --dark-green-ph: #0B302C;    /* bloques de imagen sobre verde oscuro */
-  --dark-green-line: #154640;  /* bordes sobre negro y verde oscuro */
-  --dark-green-soft: #A3B8B4;  /* texto secundario sobre negro y verde oscuro (8:1) */
-  --platinum-ph: #D3D3D3;      /* bloques de imagen sobre platino */
-  --platinum-line: #C6C6C6;    /* bordes sobre platino */
-  --platinum-soft: #454545;    /* texto secundario sobre platino (8:1) */
-  --caribbean-deep: #006B48;   /* el verde caribe oscurecido, para detalles sobre platino (5,4:1) */
+  --dark-gray-ph: #262626;     /* bloques de imagen sobre gris oscuro */
+  --dark-gray-line: #333333;   /* bordes sobre negro y gris oscuro */
+  --dark-gray-soft: #A6A6A6;   /* texto secundario sobre negro y gris oscuro (7:1) */
+  --white-ph: #E6E6E6;         /* bloques de imagen sobre blanco */
+  --white-line: #D4D4D4;       /* bordes sobre blanco */
+  --white-soft: #555555;       /* texto secundario sobre blanco (7,5:1) */
+  --gray-deep: #6B6B6B;        /* el gris oscurecido, para detalles sobre blanco (5,3:1) */
 
-  /* Tipografía: familias reales del kit de Adobe Fonts lgv5pfx */
-  --font-logo: "trust-3a", Georgia, "Times New Roman", serif;      /* solo el logo ORENSIA */
+  /* Tipografía */
+  --font-logo: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* logo ORENSIA, en negrita */
   --font-display: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* títulos */
   --font-body: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif; /* textos, navegación y botones */
   --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* etiquetas, numeración y datos */
@@ -56,7 +56,7 @@ html {
 body {
   margin: 0;
   background: var(--black);
-  color: var(--platinum);
+  color: var(--white);
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.6;
@@ -68,12 +68,12 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 a { color: inherit; }
 [hidden] { display: none !important; }
-::selection { background: var(--caribbean); color: var(--black); }
+::selection { background: var(--gray); color: var(--black); }
 
 /* Tonos de sección */
-.tone-dark  { --bg: var(--black); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green); --accent: var(--caribbean); }
-.tone-light { --bg: var(--platinum); --fg: var(--black); --muted: var(--platinum-soft); --line: var(--platinum-line); --ph: var(--platinum-ph); --accent: var(--caribbean-deep); }
-.tone-brand { --bg: var(--dark-green); --fg: var(--platinum); --muted: var(--dark-green-soft); --line: var(--dark-green-line); --ph: var(--dark-green-ph); --accent: var(--caribbean); }
+.tone-dark  { --bg: var(--black); --fg: var(--white); --muted: var(--dark-gray-soft); --line: var(--dark-gray-line); --ph: var(--dark-gray); --accent: var(--gray); }
+.tone-light { --bg: var(--white); --fg: var(--black); --muted: var(--white-soft); --line: var(--white-line); --ph: var(--white-ph); --accent: var(--gray-deep); }
+.tone-brand { --bg: var(--dark-gray); --fg: var(--white); --muted: var(--dark-gray-soft); --line: var(--dark-gray-line); --ph: var(--dark-gray-ph); --accent: var(--gray); }
 .tone-dark, .tone-light, .tone-brand { background: var(--bg); color: var(--fg); }
 
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
@@ -83,7 +83,7 @@ a { color: inherit; }
 
 .skip {
   position: absolute; left: var(--gutter); top: -120px; z-index: 60;
-  background: var(--platinum); color: var(--black); padding: 14px 20px; text-decoration: none;
+  background: var(--white); color: var(--black); padding: 14px 20px; text-decoration: none;
 }
 .skip:focus { top: 10px; }
 
@@ -376,7 +376,7 @@ a { color: inherit; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-/* Detalles en verde: numeración, etiqueta que abre cada sección y estados activos */
+/* Detalles en gris: numeración, etiqueta que abre cada sección y estados activos */
 .sec-bar h2, .sec-head > .label, .studio > .label, .contact .wrap > .label { color: var(--accent); }
 .services .num, .work-cap .num, .method .num { color: var(--accent); }
 .cta-link::after { color: var(--accent); }
@@ -392,7 +392,7 @@ a { color: inherit; }
    La página es negra y cada sección es un panel redondeado apoyado encima.
    El color de cada panel lo define su clase tone-*. */
 .panel { margin: var(--panel-gap) var(--panel-gap) 0; border-radius: var(--panel-radius); overflow: hidden; }
-.panel.tone-dark { border: 1px solid var(--dark-green-line); }
+.panel.tone-dark { border: 1px solid var(--dark-gray-line); }
 .ph { border-radius: clamp(14px, 1.4vw, 22px); }
 .wide-img .ph { border-radius: 0; }
 
@@ -402,7 +402,7 @@ a { color: inherit; }
   background: transparent; border-bottom: 1px solid transparent;
   transition: transform .32s cubic-bezier(.2, .7, .2, 1), background-color .2s ease, border-color .2s ease;
 }
-.header.is-stuck, .header.menu-open { background: var(--black); border-bottom-color: var(--dark-green-line); }
+.header.is-stuck, .header.menu-open { background: var(--black); border-bottom-color: var(--dark-gray-line); }
 .header .wrap { padding-inline: calc(var(--gutter) + var(--panel-gap)); min-height: var(--header-h); }
 .wordmark { font-size: clamp(2.1rem, 3.3vw, 3.1rem); }
 .nav li a, .cta-link { font-size: 1.08rem; }
@@ -411,7 +411,7 @@ a { color: inherit; }
   .header .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 24px; }
   .nav { display: contents; }
   .nav-start { grid-column: 1; grid-row: 1; justify-self: start; }
-  .wordmark { grid-column: 2; grid-row: 1; }
+  .header .wordmark { grid-column: 2; grid-row: 1; }
   .nav-end { grid-column: 3; grid-row: 1; justify-self: end; }
 }
 @media (max-width: 900px) {
@@ -441,7 +441,7 @@ a { color: inherit; }
   letter-spacing: -0.03em; line-height: 1.1;
 }
 .marquee-group span::after {
-  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--caribbean);
+  content: ""; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--gray);
   margin-inline: 0.55em;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
@@ -450,7 +450,7 @@ a { color: inherit; }
 /* Pie simple */
 .footer { padding-block: clamp(40px, 5vw, 72px) 28px; }
 
-/* Lo funcional en grotesca: navegación y botones. Trust queda para el logo y los títulos. */
+/* Lo funcional en grotesca: navegación y botones. */
 .nav li a, .cta-link { font-family: var(--font-body); font-size: 0.95rem; font-weight: 400; letter-spacing: 0; }
 .cta-link { font-weight: 500; }
 @media (max-width: 900px) {
@@ -460,3 +460,6 @@ a { color: inherit; }
 /* Títulos en grotesca: interletrado más cerrado */
 .display, .services h3, .marquee-group span { letter-spacing: -0.045em; }
 .work-name, .method h3, .modes dt, .channels a { letter-spacing: -0.03em; font-weight: 500; }
+
+/* Logo en Helvética */
+.wordmark { font-weight: 700; letter-spacing: -0.055em; }
