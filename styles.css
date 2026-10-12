@@ -213,6 +213,12 @@ img { display: block; max-width: 100%; }
 .work-line { grid-column: 1 / -1; }
 @media (max-width: 760px) { .works { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); } .work:nth-child(even) { margin-top: 0; } }
 
+/* Trabajamos con */
+.clients { display: grid; gap: var(--s-2); margin-top: var(--s-5); padding-top: var(--s-3); border-top: 1px solid var(--line); }
+.clients ul { display: flex; flex-wrap: wrap; gap: 6px 0; }
+.clients li { font-weight: 800; font-size: clamp(1.6rem, 3.6vw, 3.2rem); letter-spacing: -0.045em; line-height: 1.05; }
+.clients li:not(:last-child)::after { content: "·"; margin-inline: 0.35em; color: var(--accent); }
+
 /* Frase resaltada: grilla de fondo y renglones en recuadro negro */
 .quote {
   padding-block: var(--section); text-align: center;

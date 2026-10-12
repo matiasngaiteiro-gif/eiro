@@ -40,6 +40,16 @@ window.EIRO_CONFIG = {
 - Si Adobe Fonts no carga (por ejemplo, abriendo el archivo sin conexión o desde un dominio que no esté en el proyecto web), el logo se ve en Archivo Expanded Black. **En Adobe Fonts, agregá el dominio de la web al proyecto** (`matiasngaiteiro-gif.github.io` y, cuando lo tengas, el dominio propio).
 - Dominio y usuario de Instagram están pendientes.
 
+## Cómo escribe Eiro
+
+- **Nosotros.** El estudio habla en plural. Matías aparece por nombre solo en la sección Estudio.
+- **Seguro y cálido.** Frases cortas, afirmativas, sin exagerar. Nada de "los mejores", "soluciones integrales" ni "llevamos tu marca al siguiente nivel".
+- **Una imagen concreta.** Cuando se pueda, mostrar en lugar de enumerar: "de la primera idea a la última historia de la noche" dice más que "comunicación integral de eventos".
+- **Sin repetir.** La lista de servicios aparece completa una sola vez (en Servicios). En el resto de la web, cada sección dice algo nuevo.
+- **Voseo rioplatense.** "Contanos", "escribinos", "tu marca".
+- **Promesa de la marca:** "Hacemos marcas que se reconocen de lejos y se sienten de cerca."
+- **Datos que se pueden decir:** Buenos Aires; trabajos para Argentina y Estados Unidos; más de diez años de experiencia del fundador; clientes El Calentón, Extracto Importado y Crisger.
+
 ## Sistema visual (el mismo de las piezas de Illustrator)
 
 - **Fondos blancos o negros.** Van en negro la barra, la portada, la cinta, Servicios, Contacto y el pie.
