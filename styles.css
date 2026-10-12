@@ -752,3 +752,24 @@ img { display: block; max-width: 100%; }
   .kn-c3-sym { min-height: 40cqi; }
 }
 .motion .kn-comp:not(.in) *, .motion .kn-hero-stage:not(.in) *, .motion .kn-grid-stage:not(.in) * { animation-play-state: paused; }
+
+/* Botón flotante "Hablemos" */
+.talk {
+  position: fixed; z-index: 60; left: 50%; bottom: max(18px, env(safe-area-inset-bottom));
+  display: flex; align-items: center; gap: 14px; padding: 6px; padding-right: 6px;
+  border-radius: 999px; text-decoration: none; color: #FFFFFF;
+  background: rgba(20, 20, 20, .72); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.1);
+  transform: translate(-50%, 140%); opacity: 0; transition: transform .6s var(--ease), opacity .4s ease;
+}
+.talk.is-on { transform: translate(-50%, 0); opacity: 1; }
+.talk-mark { width: 48px; height: 48px; border-radius: 50%; background: #0B0B0B; color: var(--accent, #6CE26F); display: grid; place-items: center;
+  font-family: var(--font-logo); font-weight: 900; font-stretch: 125%; font-size: 20px; line-height: 1; }
+.talk-label { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; padding-inline: 4px 10px; }
+.talk-wa { width: 48px; height: 48px; border-radius: 50%; background: #6CE26F; color: #0B0B0B; display: grid; place-items: center;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35); transition: transform .4s var(--ease); }
+.talk-wa svg { width: 24px; height: 24px; }
+.talk:hover .talk-wa, .talk:focus-visible .talk-wa { transform: rotate(-12deg) scale(1.06); }
+.talk:focus-visible { outline: 2px solid #6CE26F; outline-offset: 3px; }
+@media (min-width: 901px) { .talk { left: auto; right: 28px; } .talk { transform: translateY(140%); } .talk.is-on { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .talk { transition: none; } }
