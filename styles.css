@@ -615,3 +615,69 @@ img { display: block; max-width: 100%; }
 /* Dentro de los proyectos, todo recto: imágenes, placas y bloques de color. Los botones siguen en píldora. */
 .case-page { --radius: 0px; }
 .case-page .cs-sw, .case-page .cb-l, .case-page .cb-spec { border-radius: 0; }
+
+/* ---------- Caso NERO: mismo armado por capítulos, con su paleta y sus letras ---------- */
+.kn {
+  --cer: #A1A2A6; --cer-black: #0A0A0A; --cer-graph: #2D2D2D; --cer-white: #E6E6E6;
+  --cer-narrow: "Sora", "Helvetica Neue", Arial, sans-serif;
+  --cer-text: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --kn-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+.kn .cb-meta, .kn .cu-meta { font-family: var(--kn-mono); font-stretch: 100%; font-weight: 400; letter-spacing: .02em; }
+.kn-stage-logo { width: 56%; height: auto; aspect-ratio: 4204 / 1000; animation: cb-wipe 3s var(--ease) infinite; }
+.kn .cu-h { font-stretch: 100%; text-transform: none; font-weight: 600; letter-spacing: -0.04em; line-height: .98; font-size: 15cqi; }
+.kn .cu-wide .cu-h { font-size: 8cqi; }
+.kn .kc-tag { color: #A1A2A6; }
+.kn .kc-label span { color: #A1A2A6; }
+.kn .kc-nav a:hover, .kn .kc-nav a:focus-visible { background: #E6E6E6; border-color: #E6E6E6; }
+
+/* Dos mitades del símbolo que se unen */
+.kn-join { aspect-ratio: 16 / 7; }
+.kn-join-stage { position: relative; flex: 1; display: grid; place-items: center; }
+.kn-half { position: absolute; width: 26%; height: auto; aspect-ratio: 1; color: #E6E6E6; }
+.kn-a { clip-path: polygon(0 0, 100% 0, 100% 100%); animation: kn-a 5s cubic-bezier(.76,0,.24,1) infinite; color: #E6E6E6; }
+.kn-b { clip-path: polygon(0 0, 0 100%, 100% 100%); animation: kn-b 5s cubic-bezier(.76,0,.24,1) infinite; color: #A1A2A6; }
+@keyframes kn-a { 0%, 8% { transform: translate(60%, -40%); opacity: 0; } 35%, 85% { transform: none; opacity: 1; } 100% { transform: translate(60%, -40%); opacity: 0; } }
+@keyframes kn-b { 0%, 8% { transform: translate(-60%, 40%); opacity: 0; } 35%, 85% { transform: none; opacity: 1; } 100% { transform: translate(-60%, 40%); opacity: 0; } }
+@media (max-width: 560px) { .kn-join { aspect-ratio: 4 / 5; } .kn-half { width: 56%; } }
+
+/* Versiones del logo */
+.kn-l1 { background: #0A0A0A; color: #E6E6E6; }
+.kn-l2 { background: #A1A2A6; color: #0A0A0A; }
+.kn-l3 { background: #E6E6E6; color: #0A0A0A; }
+.cb-l svg.kn-word { width: 56%; aspect-ratio: 4204 / 1000; }
+.cb-l svg.kn-sym { width: 22%; aspect-ratio: 1; }
+.kn-lock2 { width: 56%; display: grid; justify-items: center; gap: .6em; }
+.kn-lock2 svg { width: 100%; height: auto; aspect-ratio: 4204 / 1000; }
+.kn-lock2 span { font-family: var(--cer-narrow); font-weight: 400; text-transform: uppercase; letter-spacing: .42em; font-size: clamp(.55rem, 1vw, .9rem); padding-left: .42em; }
+
+/* Paleta */
+.kn .cs-name { font-stretch: 100%; text-transform: none; font-weight: 600; letter-spacing: -0.03em; }
+.kn-sw1 { background: #0A0A0A; color: #E6E6E6; }
+.kn-sw2 { background: #A1A2A6; color: #0A0A0A; }
+.kn-sw3 { background: #2D2D2D; color: #E6E6E6; }
+.kn-sw4 { background: #E6E6E6; color: #0A0A0A; }
+.kn-sw5 { background: linear-gradient(180deg, #0A0A0A, #A1A2A6); color: #E6E6E6; }
+.kn .cs-hex { font-family: var(--kn-mono); }
+
+/* Letra */
+.kn-roll { font-family: "Sora", sans-serif; font-stretch: 100%; text-transform: none; font-weight: 600; letter-spacing: -0.05em; color: #E6E6E6; }
+.kn-text { font-family: "Manrope", sans-serif; }
+.kn-mono { font-family: var(--kn-mono); font-size: clamp(.78rem, 1vw, .95rem); letter-spacing: .02em; color: #A1A2A6; line-height: 1.6; }
+.cu-p .kn-mono { font-size: 3.6cqi; margin-top: 4cqi; }
+
+/* Placas */
+.kn-grad { background: linear-gradient(160deg, #0A0A0A 30%, #A1A2A6 140%); background-size: 100% 180%; animation: kn-grad 8s ease-in-out infinite alternate; }
+@keyframes kn-grad { to { background-position: 0 100%; } }
+.kn-gray { background: #A1A2A6; }
+.kn-click-stage { flex: 1; display: grid; place-items: center; color: #0A0A0A; }
+.kn-click-stage svg { width: 42%; height: auto; aspect-ratio: 1; animation: kn-press 2.4s cubic-bezier(.76,0,.24,1) infinite; }
+@keyframes kn-press { 0%, 40%, 100% { transform: scale(1); } 50% { transform: scale(.86); } 60% { transform: scale(1.04); } 70% { transform: scale(1); } }
+.kn-cm .kn-1 { grid-column: 1 / span 6; }
+.kn-cm .kn-2 { grid-column: 8 / -1; margin-top: clamp(60px, 12vw, 220px); }
+.kn-cm .kn-3 { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+@media (max-width: 760px) { .kn-cm .kn-3 { aspect-ratio: 4 / 3; } }
+.motion .kn-join:not(.in) *, .motion .kn-stage:not(.in) * { animation-play-state: paused; }
+.kn .cs-pal { grid-template-columns: 3fr 2.2fr 1.8fr 1.5fr 1.5fr; }
+.kn-roll { line-height: 1.12; height: 1.12em; }
+.kn-roll span { height: 1.12em; padding-top: 0; }
