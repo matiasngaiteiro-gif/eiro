@@ -17,14 +17,34 @@
 
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<!-- Tipografías: Plus Jakarta Sans (textos) y Archivo Expanded Black (respaldo del logo, ver README). -->
+<!-- Logo: Vinila Extended Black (Adobe Fonts). Textos: Plus Jakarta Sans (Google Fonts). Archivo Expanded queda de respaldo del logo. -->
+<link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=43">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=50">
+<script>
+  /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
+     La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
+  (function () {
+    var d = document.documentElement;
+    d.classList.add("js");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    d.classList.add("motion");
+    var seen = false;
+    try { seen = sessionStorage.getItem("eiro-intro") === "1"; } catch (e) {}
+    if (!seen) d.classList.add("intro-on");
+  })();
+</script>
 </head>
 <body>
+
+<!-- INTRO: se escribe GAITEIRO, se borra GAIT y queda EIRO -->
+<div class="intro" id="intro" aria-hidden="true">
+  <p class="logo intro-word"><span class="gait"><span>G</span><span>A</span><span>I</span><span>T</span></span><span class="eiro"><span>E</span><span>I</span><span>R</span><span>O</span></span><i class="caret"></i></p>
+  <p class="intro-note mono">Eiro, estudio creativo</p>
+</div>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
@@ -42,7 +62,7 @@
           <li><a href="#servicios">Servicios <small>Qué hacemos</small></a></li>
           <li><a href="#metodo">Método <small>Cómo trabajamos</small></a></li>
         </ul>
-        <a class="nav-cta" href="#contacto">Hablemos</a>
+        <a class="nav-cta btn-roll" href="#contacto"><span class="roll"><span data-label="Hablemos">Hablemos</span></span></a>
       </div>
     </nav>
   </div>
@@ -50,119 +70,129 @@
 
 <main id="contenido">
 
+  <!-- PORTADA -->
   <section class="hero on-dark" id="inicio">
-    <div class="board">
-      <p class="logo logo-fit" id="logo-board" role="img" aria-label="Eiro">EIRO</p>
-      <div class="board-foot">
-        <span class="chip" aria-hidden="true"></span>
-        <h1 class="tagline">
-          <span class="sr-only">Eiro, estudio creativo de marca, contenido, marketing, redes y eventos.</span>
-          <span aria-hidden="true">Estudio creativo de <span class="circled"><span class="rotator" id="rotator" data-words="marca|contenido|marketing|redes|eventos">marca</span><svg class="oval" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14,58 C4,26 58,6 112,8 C168,10 198,30 192,56 C186,84 128,96 82,92 C36,88 2,72 12,44 C20,24 56,13 92,12"/></svg></span></span>
-        </h1>
-      </div>
-    </div>
     <div class="wrap">
-      <div class="intro">
-        <p class="statement">Eiro es un estudio creativo de marca, contenido, gestión de marketing y redes, y eventos. Cuidamos la relación con cada cliente tanto como el trabajo.</p>
-        <div class="cta-row">
-          <a class="btn btn-solid" href="#trabajos">Ver trabajos</a>
-          <a class="btn btn-line" href="#servicios">Ver servicios</a>
+      <p class="logo logo-fit" id="logo-board" role="img" aria-label="Eiro" data-anim="letters">EIRO</p>
+      <div class="hero-row">
+        <h1 class="hero-title title">
+          <span class="sr-only">Eiro, estudio creativo de marca, contenido, marketing, redes y eventos.</span>
+          <span aria-hidden="true" data-anim="words">Estudio creativo de</span>
+          <span class="word-pill" id="word-pill" aria-hidden="true"><span class="rotator" id="rotator" data-words="marca|contenido|marketing|redes|eventos">marca</span></span>
+        </h1>
+        <div class="hero-side">
+          <p class="statement" data-anim="fade">Eiro es un estudio creativo de marca, contenido, gestión de marketing y redes, y eventos. Cuidamos la relación con cada cliente tanto como el trabajo.</p>
+          <div class="cta-row" data-anim="fade">
+            <a class="btn btn-solid btn-roll" href="#trabajos"><span class="roll"><span data-label="Ver trabajos">Ver trabajos</span></span></a>
+            <a class="btn btn-line btn-roll" href="#servicios"><span class="roll"><span data-label="Ver servicios">Ver servicios</span></span></a>
+          </div>
         </div>
       </div>
-      <!-- IMAGEN: las imágenes de assets/muestras/ son de muestra. Reemplazá el archivo o cambiá el src; quitá el <span class="tag"> cuando sea una imagen real. -->
-      <div class="shot reel reveal"><img src="assets/muestras/reel.jpg" alt="Imagen de muestra del reel" width="1600" height="900"><span class="tag mono" aria-hidden="true">Muestra</span></div>
+      <!-- IMÁGENES: las fotos de assets/fotos/ son de muestra; reemplazalas por trabajos reales cuando estén. -->
+      <div class="hero-gallery">
+        <figure class="shot r-4x5" data-anim="shot" data-parallax="0.06"><img src="assets/fotos/fiesta.jpg" alt="Manos arriba con anillos dorados en una fiesta, con flash y papel picado" width="928" height="1152"><figcaption class="tag">Eventos</figcaption></figure>
+        <figure class="shot r-4x5 hero-gallery-offset" data-anim="shot" data-parallax="-0.05"><img src="assets/fotos/pasto.jpg" alt="Chica riéndose entre pastizales al atardecer" width="928" height="1152"><figcaption class="tag">Contenido</figcaption></figure>
+      </div>
     </div>
   </section>
 
+  <!-- CINTA -->
+  <div class="marquee on-dark" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Marca</span><i></i><span>Contenido</span><i></i><span>Marketing y redes</span><i></i><span>Eventos</span><i></i>
+      <span>Marca</span><i></i><span>Contenido</span><i></i><span>Marketing y redes</span><i></i><span>Eventos</span><i></i>
+    </div>
+  </div>
+
+  <!-- TRABAJOS -->
   <section class="section" id="trabajos" aria-labelledby="trabajos-t">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="title" id="trabajos-t">Trabajos</h2>
-        <p class="mono muted">Selección · imágenes de muestra</p>
+        <h2 class="title" id="trabajos-t" data-anim="words">Trabajos</h2>
+        <p class="mono muted" data-anim="fade">Selección · imágenes de muestra</p>
       </div>
       <!-- PORTFOLIO: cada <li> es un proyecto. Cambiá la imagen, el nombre del cliente, el año y el área, y la línea de resumen. -->
       <ul class="works">
-        <li class="work reveal">
-          <div class="shot r-4x3"><img src="assets/muestras/proyecto-01.jpg" alt="Imagen de muestra 1" width="1600" height="1200" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
-          <div class="work-meta">
-            <h3>Nombre del cliente</h3>
-            <p class="mono muted">Año, área</p>
-            <p class="work-line muted">Una línea que resume el proyecto.</p>
-          </div>
+        <li class="work">
+          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/dj.jpg" alt="Mano con anillos dorados sobre una consola de DJ" width="928" height="1152" loading="lazy"><figcaption class="tag">Muestra</figcaption></figure>
+          <div class="work-meta" data-anim="fade"><h3>Nombre del cliente</h3><p class="mono muted">Año, área</p><p class="work-line muted">Una línea que resume el proyecto.</p></div>
         </li>
-        <li class="work reveal">
-          <div class="shot r-4x3"><img src="assets/muestras/proyecto-02.jpg" alt="Imagen de muestra 2" width="1600" height="1200" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
-          <div class="work-meta">
-            <h3>Nombre del cliente</h3>
-            <p class="mono muted">Año, área</p>
-            <p class="work-line muted">Una línea que resume el proyecto.</p>
-          </div>
+        <li class="work">
+          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/perfume.jpg" alt="Mano con anillos dorados sosteniendo un frasco de perfume ámbar" width="928" height="1152" loading="lazy"><figcaption class="tag">Muestra</figcaption></figure>
+          <div class="work-meta" data-anim="fade"><h3>Nombre del cliente</h3><p class="mono muted">Año, área</p><p class="work-line muted">Una línea que resume el proyecto.</p></div>
         </li>
-        <li class="work reveal">
-          <div class="shot r-4x3"><img src="assets/muestras/proyecto-03.jpg" alt="Imagen de muestra 3" width="1600" height="1200" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
-          <div class="work-meta">
-            <h3>Nombre del cliente</h3>
-            <p class="mono muted">Año, área</p>
-            <p class="work-line muted">Una línea que resume el proyecto.</p>
-          </div>
+        <li class="work">
+          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/cadenas.jpg" alt="Retrato con cadenas doradas al sol sobre remera negra" width="928" height="1152" loading="lazy"><figcaption class="tag">Muestra</figcaption></figure>
+          <div class="work-meta" data-anim="fade"><h3>Nombre del cliente</h3><p class="mono muted">Año, área</p><p class="work-line muted">Una línea que resume el proyecto.</p></div>
         </li>
-        <li class="work reveal">
-          <div class="shot r-4x3"><img src="assets/muestras/proyecto-04.jpg" alt="Imagen de muestra 4" width="1600" height="1200" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
-          <div class="work-meta">
-            <h3>Nombre del cliente</h3>
-            <p class="mono muted">Año, área</p>
-            <p class="work-line muted">Una línea que resume el proyecto.</p>
-          </div>
+        <li class="work">
+          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/paletas.jpg" alt="Manos con anillos sosteniendo pruebas de marca y muestras de color" width="928" height="1152" loading="lazy"><figcaption class="tag">Muestra</figcaption></figure>
+          <div class="work-meta" data-anim="fade"><h3>Nombre del cliente</h3><p class="mono muted">Año, área</p><p class="work-line muted">Una línea que resume el proyecto.</p></div>
         </li>
       </ul>
     </div>
   </section>
 
+  <!-- FRASE RESALTADA -->
+  <section class="quote" aria-label="Cómo pensamos">
+    <div class="wrap">
+      <p class="quote-text title">
+        <span class="q-line" data-anim="words">Todo en</span>
+        <span class="q-line" data-anim="words">un mismo lugar.</span>
+        <span class="q-line q-mark" data-anim="mark"><span>Para que nada</span></span>
+        <span class="q-line q-mark" data-anim="mark"><span>se contradiga.</span></span>
+      </p>
+      <p class="pill-tag" data-anim="fade">Eiro, estudio creativo</p>
+    </div>
+  </section>
+
+  <!-- ESTUDIO -->
   <section class="section" id="estudio" aria-labelledby="estudio-t">
     <div class="wrap">
       <div class="studio-grid">
-        <div class="shot r-4x5 studio-img reveal"><img src="assets/muestras/estudio.jpg" alt="Imagen de muestra del estudio" width="1200" height="1500" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
-        <div class="studio-text reveal">
-          <p class="mono muted"><span class="chip" aria-hidden="true"></span>Estudio</p>
-          <h2 class="title" id="estudio-t">Cerca de cada cliente.</h2>
-          <p class="statement">Lo que nos distingue es la relación con cada cliente: cercana, directa y pensada para durar más que un proyecto.</p>
-          <p class="muted">Pensamos la marca, el contenido, el marketing y los eventos en un mismo lugar, para que las piezas no se contradigan entre sí. El nombre sale de Gaiteiro, el apellido de su fundador.</p>
-          <p class="signature"><strong>Matías Gaiteiro</strong><span class="mono muted">Fundador y director creativo</span></p>
+        <figure class="shot r-4x5 studio-img" data-anim="shot" data-parallax="0.05"><img src="assets/fotos/matias.jpg" alt="Matías Gaiteiro con camisa de corderoy verde contra una pared verde, al sol" width="928" height="1152" loading="lazy"><figcaption class="tag">Matías Gaiteiro</figcaption></figure>
+        <div class="studio-text">
+          <p class="mono muted" data-anim="fade"><span class="chip" aria-hidden="true"></span>Estudio</p>
+          <h2 class="title" id="estudio-t" data-anim="words">Cerca de cada cliente.</h2>
+          <p class="statement" data-anim="fade">Lo que nos distingue es la relación con cada cliente: cercana, directa y pensada para durar más que un proyecto.</p>
+          <p class="muted" data-anim="fade">Pensamos la marca, el contenido, el marketing y los eventos en un mismo lugar, para que las piezas no se contradigan entre sí. El nombre sale de Gaiteiro, el apellido de su fundador.</p>
+          <p class="signature" data-anim="fade"><strong>Matías Gaiteiro</strong><span class="mono muted">Fundador y director creativo</span></p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section id="servicios" aria-labelledby="servicios-t">
     <div class="dark">
       <div class="wrap">
         <div class="sec-head">
-          <h2 class="title" id="servicios-t">Qué hacemos</h2>
-          <p class="mono muted">Cuatro áreas, juntas o por separado</p>
+          <h2 class="title" id="servicios-t" data-anim="words">Qué hacemos</h2>
+          <p class="mono muted" data-anim="fade">Cuatro áreas, juntas o por separado</p>
         </div>
         <ol class="services">
-          <li class="reveal"><details open>
+          <li data-anim="fade"><details open>
             <summary><span class="num mono" aria-hidden="true">01</span><h3 class="title">Marca</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Definimos quién es tu marca y cómo se ve, y dejamos las reglas para que se use bien en todos lados.</p>
               <ul class="mono" aria-label="Entregables"><li>Estrategia y posicionamiento</li><li>Identidad visual</li><li>Sistemas gráficos</li><li>Manual de marca</li></ul>
             </div>
           </details></li>
-          <li class="reveal"><details>
+          <li data-anim="fade"><details>
             <summary><span class="num mono" aria-hidden="true">02</span><h3 class="title">Contenido</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Pensamos y producimos las piezas que tu marca publica, con una idea y una estética en común.</p>
               <ul class="mono" aria-label="Entregables"><li>Dirección de arte</li><li>Fotografía</li><li>Video</li><li>Diseño de piezas</li></ul>
             </div>
           </details></li>
-          <li class="reveal"><details>
+          <li data-anim="fade"><details>
             <summary><span class="num mono" aria-hidden="true">03</span><h3 class="title">Marketing y redes</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Nos hacemos cargo del día a día: planificamos, publicamos, coordinamos al equipo y revisamos cómo funciona.</p>
               <ul class="mono" aria-label="Entregables"><li>Planificación</li><li>Gestión de cuentas</li><li>Calendarios de contenido</li><li>Campañas y anuncios</li><li>Coordinación de equipos</li><li>Seguimiento</li></ul>
             </div>
           </details></li>
-          <li class="reveal"><details>
+          <li data-anim="fade"><details>
             <summary><span class="num mono" aria-hidden="true">04</span><h3 class="title">Eventos</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Diseñamos la identidad y la comunicación de un evento, desde el concepto hasta las piezas de difusión.</p>
@@ -174,36 +204,45 @@
     </div>
   </section>
 
+  <!-- MÉTODO -->
   <section class="section" id="metodo" aria-labelledby="metodo-t">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 class="title" id="metodo-t">Cómo trabajamos</h2>
-        <p class="mono muted">Primero entender, después diseñar</p>
+      <div class="method-grid">
+        <figure class="shot r-4x5 method-img" data-anim="shot">
+          <img src="assets/fotos/amigas.jpg" alt="Dos amigas riéndose en un campo al atardecer" width="928" height="1152" loading="lazy">
+          <span class="over-title" aria-hidden="true">Primero<br>entender,<br>después<br>diseñar</span>
+        </figure>
+        <div class="method-side">
+          <div class="sec-head">
+            <h2 class="title" id="metodo-t" data-anim="words">Cómo trabajamos</h2>
+            <p class="mono muted" data-anim="fade">Primero entender, después diseñar</p>
+          </div>
+          <ol class="method">
+            <li data-anim="fade"><span class="num mono" aria-hidden="true">01</span><div><h3 class="title">Entender</h3><p>Qué ofrecés, a quién y qué lugar ocupás hoy. De ahí sale el problema que hay que resolver.</p></div></li>
+            <li data-anim="fade"><span class="num mono" aria-hidden="true">02</span><div><h3 class="title">Definir</h3><p>Posicionamiento, tono y prioridades. Son las decisiones que guían todo lo que viene después.</p></div></li>
+            <li data-anim="fade"><span class="num mono" aria-hidden="true">03</span><div><h3 class="title">Crear</h3><p>La identidad, los contenidos, la campaña o el evento. Cada pieza responde a algo que ya se decidió.</p></div></li>
+            <li data-anim="fade"><span class="num mono" aria-hidden="true">04</span><div><h3 class="title">Acompañar</h3><p>Seguimos cerca mientras la marca se usa y ajustamos lo necesario para que se mantenga consistente.</p></div></li>
+          </ol>
+        </div>
       </div>
-      <ol class="method">
-        <li class="reveal"><span class="num mono" aria-hidden="true">01</span><h3 class="title">Entender</h3><p>Qué ofrecés, a quién y qué lugar ocupás hoy. De ahí sale el problema que hay que resolver.</p></li>
-        <li class="reveal"><span class="num mono" aria-hidden="true">02</span><h3 class="title">Definir</h3><p>Posicionamiento, tono y prioridades. Son las decisiones que guían todo lo que viene después.</p></li>
-        <li class="reveal"><span class="num mono" aria-hidden="true">03</span><h3 class="title">Crear</h3><p>La identidad, los contenidos, la campaña o el evento. Cada pieza responde a algo que ya se decidió.</p></li>
-        <li class="reveal"><span class="num mono" aria-hidden="true">04</span><h3 class="title">Acompañar</h3><p>Seguimos cerca mientras la marca se usa y ajustamos lo necesario para que se mantenga consistente.</p></li>
-      </ol>
-      <div class="modes reveal" id="modalidades">
-        <h3 class="mono muted">Tres formas de empezar</h3>
+      <div class="modes" id="modalidades">
+        <h3 class="mono muted" data-anim="fade">Tres formas de empezar</h3>
         <dl>
-          <div><dt>Proyecto puntual</dt><dd>Algo concreto, con principio y fin: una identidad, un evento o un lanzamiento.</dd></div>
-          <div><dt>Acompañamiento mensual</dt><dd>Trabajo continuo en redes, contenido y marketing, con un plan que se revisa cada mes.</dd></div>
-          <div><dt>Consultoría estratégica</dt><dd>Encuentros para ordenar ideas antes de invertir, o para sumar una mirada externa a tu equipo.</dd></div>
+          <div data-anim="fade"><dt>Proyecto puntual</dt><dd>Algo concreto, con principio y fin: una identidad, un evento o un lanzamiento.</dd></div>
+          <div data-anim="fade"><dt>Acompañamiento mensual</dt><dd>Trabajo continuo en redes, contenido y marketing, con un plan que se revisa cada mes.</dd></div>
+          <div data-anim="fade"><dt>Consultoría estratégica</dt><dd>Encuentros para ordenar ideas antes de invertir, o para sumar una mirada externa a tu equipo.</dd></div>
         </dl>
       </div>
-      <div class="shot r-21x9 reveal" style="margin-top: var(--s-5)"><img src="assets/muestras/ancho.jpg" alt="Imagen de muestra a todo el ancho" width="1600" height="686" loading="lazy"><span class="tag mono" aria-hidden="true">Muestra</span></div>
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section class="on-dark" id="contacto" aria-labelledby="contacto-t">
-    <div class="contact-card">
-      <h2 class="title" id="contacto-t">Decinos <span class="circled">hola<svg class="oval" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14,58 C4,26 58,6 112,8 C168,10 198,30 192,56 C186,84 128,96 82,92 C36,88 2,72 12,44 C20,24 56,13 92,12"/></svg></span></h2>
+    <div class="contact-card wrap">
+      <h2 class="title" id="contacto-t"><span data-anim="words">Decinos</span> <span class="hl" data-anim="mark"><span>hola</span></span></h2>
       <div class="contact-grid">
-        <p class="statement">Contanos lo que tengas: una idea, un problema o un proyecto en marcha. Te respondemos para ver por dónde conviene empezar.</p>
-        <div class="channels">
+        <p class="statement" data-anim="fade">Contanos lo que tengas: una idea, un problema o un proyecto en marcha. Te respondemos para ver por dónde conviene empezar.</p>
+        <div class="channels" data-anim="fade">
           <ul id="channels" hidden></ul>
           <p class="channels-empty" id="channels-empty">Estamos terminando de configurar nuestros canales de contacto. Muy pronto vas a poder escribirnos desde acá.</p>
         </div>
@@ -217,7 +256,6 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="logo" role="img" aria-label="Eiro">EIRO</span>
         <p class="mono">Eiro, estudio creativo</p>
       </div>
       <nav aria-label="Pie de página">
@@ -235,6 +273,7 @@
         <ul id="foot-channels"></ul>
       </div>
     </div>
+    <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters">EIRO</p>
     <div class="legal mono">
       <span>© <span id="year">2026</span> Eiro</span>
       <span>Marca · Contenido · Marketing y redes · Eventos</span>
@@ -242,7 +281,9 @@
   </div>
 </footer>
 
-<script src="config.js?v=43"></script>
-<script src="script.js?v=43"></script>
+<div class="cursor" id="cursor" aria-hidden="true">Ver</div>
+
+<script src="config.js?v=50"></script>
+<script src="script.js?v=50"></script>
 </body>
 </html>
