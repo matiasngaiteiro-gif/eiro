@@ -160,11 +160,14 @@ img { display: block; max-width: 100%; }
 .hero-side { grid-column: 9 / -1; display: grid; gap: var(--s-3); }
 .hero-side .statement { color: var(--gray); }
 .cta-row { display: flex; flex-wrap: wrap; gap: var(--s-1); }
+/* Píldora de la palabra rotativa: alto propio para que entren las letras con cola (g, q, p) */
 .word-pill {
-  display: inline-flex; overflow: hidden; vertical-align: bottom; margin-top: 0.08em;
-  background: var(--accent); color: var(--on-accent); border-radius: 999px; padding: 0.02em 0.32em 0.1em;
+  display: inline-flex; align-items: center; overflow: hidden; vertical-align: -0.12em; margin-top: 0.14em;
+  height: 1.22em; line-height: 1.22; padding: 0 0.34em 0.06em;
+  background: var(--accent); color: var(--on-accent); border-radius: 999px;
   transition: width .6s var(--ease);
 }
+.word-pill .rotator { padding-bottom: 0.04em; }
 .rotator { display: inline-block; white-space: nowrap; }
 .motion .rotator { transition: transform .5s var(--ease), opacity .3s ease; }
 .rotator.is-out { transform: translateY(-110%); opacity: 0; }
@@ -212,12 +215,16 @@ img { display: block; max-width: 100%; }
   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: clamp(56px, 7vw, 96px) clamp(56px, 7vw, 96px); background-position: center;
 }
-.quote-text { display: grid; justify-items: center; gap: 0.06em; font-size: clamp(2.4rem, 7vw, 7rem); }
+.quote-text { display: grid; justify-items: center; row-gap: 0.1em; font-size: clamp(2.4rem, 7vw, 7rem); }
 .q-line { display: block; }
+/* Renglones resaltados: el recuadro deja aire arriba, abajo (colas de g, q, p) y a los costados */
+.q-mark { margin-block: 0.04em; }
 .q-mark > span, .hl > span {
-  display: inline-block; padding: 0.02em 0.22em 0.1em; color: var(--paper);
-  background: linear-gradient(var(--ink), var(--ink)) no-repeat left / 100% 100%;
+  display: inline-block; line-height: 1.08; padding: 0.06em 0.24em 0.12em; border-radius: 0.1em;
+  color: var(--paper); background: linear-gradient(var(--ink), var(--ink)) no-repeat left / 100% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
+.hl { display: inline-block; margin-left: 0.04em; }
 .pill-tag { margin-top: var(--s-4); }
 
 /* Estudio */
@@ -280,8 +287,8 @@ img { display: block; max-width: 100%; }
 
 /* Contacto */
 .contact-card { padding-block: var(--section) var(--s-5); }
-.contact-card h2 { font-size: clamp(3rem, 11vw, 10rem); }
-.hl > span { background-image: linear-gradient(var(--accent), var(--accent)); color: var(--on-accent); border-radius: 0.12em; }
+.contact-card h2 { font-size: clamp(3rem, 10vw, 9rem); line-height: 1.1; }
+.hl > span { background-image: linear-gradient(var(--accent), var(--accent)); color: var(--on-accent); }
 .contact-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-4) var(--s-3); align-items: start; margin-top: var(--s-5); }
 .contact-grid .statement { grid-column: 1 / span 6; max-width: 24em; }
 .channels { grid-column: 8 / -1; min-width: 0; border-top: 1px solid var(--ink); }
