@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matiasngaiteiro-gif.github.io/eiro/sitemap.xml

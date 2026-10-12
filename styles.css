@@ -816,3 +816,14 @@ img { display: block; max-width: 100%; }
 .ct-ideas button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #0B0B0B; }
 .ct-ideas button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .ct-field textarea::placeholder { color: #5F5F5F; }
+
+/* Método en una fila de cuatro pasos */
+.method-row { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); border-top: 0; }
+.method-row li { grid-template-columns: 1fr; gap: var(--s-2); border-bottom: 0; border-top: 1px solid var(--ink); padding-block: var(--s-2) 0; }
+.method-row .num { padding-top: 0; }
+@media (max-width: 900px) { .method-row { grid-template-columns: 1fr 1fr; row-gap: var(--s-4); } }
+@media (max-width: 560px) { .method-row { grid-template-columns: 1fr; } }
+/* Portada sin galería: el aire lo da el logo */
+.hero { padding-bottom: var(--section); }
+.clients li { font-size: clamp(1.1rem, 2vw, 1.7rem); }
+.ct-opt .channels:has(ul[hidden]) { display: none; }

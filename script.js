@@ -77,6 +77,7 @@
     items.forEach(function (it) {
       [list, foot].forEach(function (target, idx) {
         if (!target) return;
+        if (idx === 0 && it.name === "WhatsApp") return; /* en Contacto ya está el botón */
         var li = document.createElement("li");
         var a = document.createElement("a");
         a.href = it.href;
@@ -98,7 +99,7 @@
         target.appendChild(li);
       });
     });
-    if (list) list.hidden = false;
+    if (list) list.hidden = !list.children.length;
     var empty = document.getElementById("channels-empty");
     if (empty) empty.hidden = true;
     var box = document.getElementById("foot-channels-box");
