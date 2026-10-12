@@ -83,7 +83,7 @@ Todas las rutas son relativas, así que funciona en un subdirectorio.
 Las fotos de `assets/fotos/` son de muestra, generadas con el estilo de la marca (la de Matías es un retrato de él). En los trabajos llevan la etiqueta "Muestra". No son trabajos de clientes.
 
 - Portada: `fiesta.jpg` y `pasto.jpg`.
-- Trabajos: `dj.jpg`, `perfume.jpg`, `cadenas.jpg`, `paletas.jpg`.
+- Trabajos: `cer.jpg`, `el-calenton.jpg`, `crisger.jpg`, `alma.jpg` (imágenes de referencia hasta tener las fotos de cada proyecto).
 - Estudio: `matias.jpg`. Método: `amigas.jpg` (con el titular encima).
 
 Para reemplazar una: guardá la imagen en `assets/fotos/` (JPG o WebP, vertical 4:5, hasta unos 1600 px de ancho), cambiá el `src` y el `alt` en `index.html` y, en los trabajos reales, cambiá el texto de la etiqueta (`<figcaption class="tag">`) por el nombre del cliente.
