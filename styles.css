@@ -476,18 +476,16 @@ img { display: block; max-width: 100%; }
 @media (max-width: 760px) { .cb-lock { grid-template-columns: 1fr; } }
 
 /* Paleta: el ancho de cada color dice cuánto se usa */
-.cs-pal { display: grid; grid-template-columns: 4fr 2.4fr 2fr 1.4fr .55fr; gap: 6px; height: clamp(300px, 34vw, 480px); margin-top: var(--s-5); }
+.cs-pal { display: grid; grid-template-columns: 3.4fr 2.2fr 1.8fr 1.4fr 1.2fr; gap: 6px; height: clamp(300px, 34vw, 480px); margin-top: var(--s-5); }
 .cs-sw { border-radius: calc(var(--radius) * .7); padding: var(--s-3); display: flex; flex-direction: column; gap: 4px; justify-content: flex-end; min-width: 0; overflow: hidden; transform-origin: bottom; }
-.cs-name { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: clamp(1.4rem, 2.4vw, 2.4rem); line-height: .9; }
+.cs-name { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: clamp(1.3rem, 2vw, 2.2rem); line-height: .9; }
 .cs-hex { font-size: var(--t-mono); opacity: .8; }
-.cs-use { font-family: var(--cer-text); font-size: .9rem; opacity: .75; }
+.cs-use { font-family: var(--cer-text); font-size: .9rem; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cs-black { background: var(--cer-black); color: var(--cer); }
 .cs-orange { background: var(--cer); color: var(--cer-black); }
 .cs-graph { background: var(--cer-graph); color: var(--cer-white); }
 .cs-white { background: var(--cer-white); color: var(--cer-black); box-shadow: inset 0 0 0 1px #E2E2E2; }
-.cs-sky { background: var(--cer-sky); color: var(--cer-black); padding-inline: 10px; }
-.cs-sky .cs-name { font-size: clamp(.9rem, 1.1vw, 1.1rem); writing-mode: vertical-rl; transform: rotate(180deg); align-self: center; margin-bottom: auto; }
-.cs-sky .cs-hex, .cs-sky .cs-use { font-size: .62rem; }
+.cs-sky { background: var(--cer-sky); color: var(--cer-black); }
 .motion .cs-pal .cs-sw { transform: scaleY(.15); opacity: 0; transition: transform 1.1s var(--ease), opacity .5s ease; }
 .motion .cs-pal.in .cs-sw { transform: none; opacity: 1; }
 .motion .cs-pal.in .cs-sw:nth-child(2) { transition-delay: .08s; } .motion .cs-pal.in .cs-sw:nth-child(3) { transition-delay: .16s; }
@@ -497,8 +495,6 @@ img { display: block; max-width: 100%; }
   .cs-sw { padding: 18px; }
   .cs-name { font-size: 1.5rem; }
   .cs-black { grid-column: 1 / -1; grid-row: span 2; }
-  .cs-sky { grid-column: 1 / -1; grid-row: auto; height: 56px; flex-direction: row; align-items: center; gap: 12px; padding: 0 18px; }
-  .cs-sky .cs-name { writing-mode: horizontal-tb; transform: none; margin: 0; }
 }
 
 /* Letra */
@@ -548,9 +544,10 @@ img { display: block; max-width: 100%; }
 .cu-p > .cu-meta:first-child { padding-bottom: 3cqi; border-bottom: 1px solid currentColor; }
 .cu-wide > .cu-meta:first-child { padding-bottom: 1.2cqi; }
 .cu-bottom { margin-top: 0; padding-top: 3cqi; border-top: 1px solid currentColor; }
-.cu-count { margin-top: auto; font-size: 50cqi; line-height: .8; }
-.cu-num { counter-reset: n var(--cu-n); animation: cu-count 6s cubic-bezier(.2,.7,.2,1) infinite; }
-.cu-num::before { content: counter(n); }
+/* El "100" real reserva el ancho; el contador se dibuja encima, alineado a la derecha, así nada se mueve */
+.cu-count { margin-top: auto; font-size: 44cqi; line-height: .8; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cu-num { position: relative; display: inline-block; color: transparent; }
+.cu-num::before { content: counter(n); counter-reset: n var(--cu-n); position: absolute; right: 0; top: 0; color: var(--cer-white); animation: cu-count 6s cubic-bezier(.2,.7,.2,1) infinite; }
 @keyframes cu-count { 0% { --cu-n: 0; } 45%, 100% { --cu-n: 100; } }
 .cu-detail { display: block; height: 1.2cqi; width: 22cqi; background: var(--cer-sky); margin-top: 5cqi; border-radius: 99px; transform-origin: left; animation: cu-line 6s var(--ease) infinite; }
 @keyframes cu-line { 0%, 10% { transform: scaleX(0); } 30%, 90% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
@@ -614,3 +611,7 @@ img { display: block; max-width: 100%; }
 .kc-quote { grid-column: 7 / -1; margin: 0; display: grid; gap: var(--s-2); }
 .kc-quote p { font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -0.05em; }
 @media (max-width: 760px) { .kc-end .shot, .kc-quote { grid-column: 1 / -1; } }
+
+/* Dentro de los proyectos, todo recto: imágenes, placas y bloques de color. Los botones siguen en píldora. */
+.case-page { --radius: 0px; }
+.case-page .cs-sw, .case-page .cb-l, .case-page .cb-spec { border-radius: 0; }
