@@ -134,6 +134,34 @@
     update();
   })();
 
+  /* ---------- Contacto: botón de WhatsApp y formulario que arma el mensaje ---------- */
+  (function contactForm() {
+    var number = String(config.whatsapp || "").replace(/\D/g, "");
+    var wa = document.getElementById("ct-wa");
+    if (wa && number) {
+      wa.href = "https://wa.me/" + number + (config.whatsappMensaje ? "?text=" + encodeURIComponent(config.whatsappMensaje) : "");
+      wa.target = "_blank"; wa.rel = "noopener";
+    }
+    var form = document.getElementById("ct-form");
+    if (!form) return;
+    var msg = document.getElementById("ct-msg");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var d = new FormData(form);
+      var nombre = String(d.get("nombre") || "").trim();
+      if (!nombre) { msg.textContent = "Contanos tu nombre para poder responderte."; msg.classList.add("is-error"); form.nombre.focus(); return; }
+      msg.classList.remove("is-error");
+      var lines = ["Hola Eiro, soy " + nombre + (d.get("marca") ? " de " + d.get("marca") : "") + "."];
+      var serv = d.getAll("servicio"); if (serv.length) lines.push("Necesito: " + serv.join(", ") + ".");
+      if (d.get("cuando")) lines.push("Quiero arrancar: " + String(d.get("cuando")).toLowerCase() + ".");
+      if (String(d.get("detalle") || "").trim()) lines.push(String(d.get("detalle")).trim());
+      var text = lines.join("\n");
+      if (number) { window.open("https://wa.me/" + number + "?text=" + encodeURIComponent(text), "_blank", "noopener"); msg.textContent = "Listo, se abrió WhatsApp con tu mensaje."; }
+      else if (config.email) { window.location.href = "mailto:" + config.email + "?subject=" + encodeURIComponent("Proyecto: " + nombre) + "&body=" + encodeURIComponent(text); msg.textContent = "Listo, se abrió tu correo con el mensaje."; }
+      else { msg.textContent = "Muy pronto vas a poder enviarnos tu proyecto desde acá."; }
+    });
+  })();
+
   /* ---------- Palabra rotativa en la píldora verde ---------- */
   var rot = document.getElementById("rotator");
   var pill = document.getElementById("word-pill");
