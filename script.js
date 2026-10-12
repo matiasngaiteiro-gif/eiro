@@ -237,9 +237,16 @@
       el.style.translate = "0 " + off.toFixed(1) + "px";
     });
   }
+  /* Solo en pantallas anchas: en el celular el desplazamiento tapaba el texto de abajo */
+  var wide = window.matchMedia("(min-width: 901px)");
+  function resetParallax() { para.forEach(function (el) { el.style.translate = ""; }); }
   if (para.length) {
-    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(updateParallax); } }, { passive: true });
-    updateParallax();
+    window.addEventListener("scroll", function () {
+      if (!wide.matches) return;
+      if (!ticking) { ticking = true; requestAnimationFrame(updateParallax); }
+    }, { passive: true });
+    if (wide.addEventListener) wide.addEventListener("change", function () { if (wide.matches) updateParallax(); else resetParallax(); });
+    if (wide.matches) updateParallax();
   }
 
   /* ---------- Cursor "Ver" sobre los trabajos ---------- */
