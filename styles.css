@@ -824,6 +824,6 @@ img { display: block; max-width: 100%; }
 @media (max-width: 900px) { .method-row { grid-template-columns: 1fr 1fr; row-gap: var(--s-4); } }
 @media (max-width: 560px) { .method-row { grid-template-columns: 1fr; } }
 /* Portada sin galería: el aire lo da el logo */
-.hero { padding-bottom: var(--section); }
+.hero { padding-bottom: var(--s-5); }
 .clients li { font-size: clamp(1.1rem, 2vw, 1.7rem); }
 .ct-opt .channels:has(ul[hidden]) { display: none; }
