@@ -220,7 +220,7 @@ img { display: block; max-width: 100%; }
 /* Renglones resaltados: el recuadro deja aire arriba, abajo (colas de g, q, p) y a los costados */
 .q-mark { margin-block: 0.04em; }
 .q-mark > span, .hl > span {
-  display: inline-block; line-height: 1.08; padding: 0.06em 0.24em 0.12em; border-radius: 0.1em;
+  display: inline-block; line-height: 1.08; padding: 0.06em 0.24em 0.12em; border-radius: 0;
   color: var(--paper); background: linear-gradient(var(--ink), var(--ink)) no-repeat left / 100% 100%;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
