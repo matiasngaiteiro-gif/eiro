@@ -1,6 +1,6 @@
-# Teiro
+# Eiro
 
-Web de Teiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin instalación ni compilación.
+Web de Eiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin instalación ni compilación.
 
 ## Archivos
 
@@ -8,23 +8,23 @@ Web de Teiro, estudio creativo. Sitio estático en HTML, CSS y JavaScript, sin i
 - `styles.css`: diseño. Colores, tipografías, espacios y medidas están como variables al principio del archivo.
 - `script.js`: menú móvil, palabra rotativa de la portada, año del pie y canales de contacto.
 - `config.js`: datos de contacto editables.
-- `assets/`: logo, favicon, fuentes y futuras imágenes.
+- `assets/`: favicon e imágenes.
 - `.nojekyll`: hace que GitHub Pages sirva los archivos tal cual.
 
 ## Abrir la web
 
-Abrí `index.html` con doble clic. No necesita conexión a internet: las tipografías están incluidas.
+Abrí `index.html` con doble clic. Las tipografías se cargan desde Google Fonts, así que sin conexión se ven con la tipografía de respaldo.
 
 ## Configurar el contacto
 
 Editá `config.js` y completá los canales que tengas:
 
 ```js
-window.TEIRO_CONFIG = {
+window.EIRO_CONFIG = {
   email: "",
   instagram: "",
   whatsapp: "",
-  whatsappMensaje: "Hola Teiro, quiero contarles sobre mi marca."
+  whatsappMensaje: "Hola Eiro, quiero contarles sobre mi marca."
 };
 ```
 
@@ -35,20 +35,23 @@ window.TEIRO_CONFIG = {
 
 ## Nombre y logo
 
-- El estudio se llama Teiro. Descriptor: "Teiro, estudio creativo"; en inglés, "Teiro Studio". No hay eslogan.
-- El logo es "teiro" en Figtree (peso 500), convertido a trazado. Está en `assets/logo-teiro.svg` y también dibujado dentro de `index.html`, así toma el color del texto de cada fondo. Es provisorio.
-- En dominio, mails, usuario de Instagram, direcciones y metadatos va siempre sin acento: teiro. Dominio y usuario de Instagram están pendientes.
+- El estudio se llama Eiro. Descriptor: "Eiro, estudio creativo". No hay eslogan.
+- El logo es **EIRO** en mayúsculas, en **Vinila Extended Black**. En la web está escrito como texto (clase `logo`), así toma el color de cada fondo, y en la portada un script lo agranda hasta ocupar todo el ancho.
+- Vinila es una tipografía comercial, así que no está incluida. Mientras no esté cargada, el logo se ve en **Archivo Expanded Black** (gratis, Google Fonts), que tiene un ancho y un peso parecidos. Para usar Vinila de verdad hay dos caminos:
+  1. Si la tenés en Adobe Fonts, agregala a un proyecto web y pegá en el `<head>` el `<link>` que te da Adobe. La variable `--font-logo` de `styles.css` ya busca `vinila-extended`; si Adobe le da otro nombre, cambialo ahí.
+  2. O exportá el logo desde Illustrator como SVG (texto convertido a trazado) y reemplazá el texto `EIRO` por ese SVG.
+- Dominio y usuario de Instagram están pendientes.
 
 ## Sistema visual
 
-- **Negro puro y blanco, con grises neutros.** Van en negro la barra, la portada, Servicios, Contacto y el pie; el resto es blanco. La clase `on-dark` pone cualquier zona en negro e invierte sola botones, líneas y textos.
-- **El logo como cartel:** en la portada ocupa todo el ancho, con la barrita de degradado abajo a la izquierda y la frase abajo a la derecha.
-- **Tipografía:** Figtree, una sans geométrica, en pesos livianos (300 y 400) y con mucho aire entre palabras en la frase de portada. DM Mono para etiquetas y datos. Clases: `title` y `mono`.
-- **Color:** un solo degradado (`--grad`), siempre como barrita chica (clase `chip`). Nunca como fondo.
-- **Óvalo a mano:** una palabra puede ir rodeada por un óvalo dibujado (clase `circled`). Se usa en la palabra rotativa de la portada y en "hola" de Contacto.
-- **Imágenes** en tarjetas de esquinas muy redondeadas (clase `shot`).
+- **Fondos blancos o negros.** Van en negro la barra, la portada, Servicios, Contacto y el pie; el resto es blanco. La clase `on-dark` pone cualquier zona en negro e invierte sola botones, líneas y textos.
+- **Verde #6CE26F solo como acento:** botones sobre negro, etiquetas sobre las imágenes, la barrita (clase `chip`), el óvalo de la palabra rotativa y el ícono abierto de Servicios. Nunca como fondo de una sección. Sobre blanco los botones van en negro.
+- **Tipografía:** Plus Jakarta Sans. Títulos en ExtraBold con poco espacio entre letras (clase `title`); textos en Regular y Medium; etiquetas en SemiBold, mayúscula y espaciadas (clase `mono`).
+- **Formas redondeadas:** imágenes en tarjetas de esquinas redondeadas (clase `shot`) y botones y etiquetas en píldora.
+- **Óvalo a mano:** una palabra puede ir rodeada por un óvalo verde (clase `circled`). Se usa en la palabra rotativa de la portada y en "hola" de Contacto.
+- **Fotografía:** cálida, con color tipo película Kodak y grano; luz dura de sol o flash, destellos en el metal.
 
-Las fuentes son de uso libre (SIL Open Font License) y están alojadas en `assets/fonts/`, recortadas al alfabeto latino, junto con sus licencias.
+Los colores, tipografías y medidas están como variables al principio de `styles.css`.
 
 Si cambiás `styles.css` o `script.js` y no ves el cambio en la web publicada, subí el número de `?v=` en los enlaces de `index.html` para evitar la caché del navegador.
 
@@ -63,7 +66,9 @@ Todas las rutas son relativas, así que funciona en un subdirectorio.
 
 ## Imágenes y portfolio
 
-Las imágenes de `assets/muestras/` son de muestra: las generé para que la página tenga vida mientras no están las reales, y cada una lleva la etiqueta "Muestra". No son trabajos de clientes.
+Las imágenes de `assets/muestras/` son de muestra: fondos cálidos con grano, para que la página tenga el tono de la marca mientras no están las fotos. Cada una lleva la etiqueta "Muestra". No son trabajos de clientes.
+
+Para la portada (`reel.jpg`), los trabajos (`proyecto-01` a `04`), el estudio (`estudio.jpg`, vertical 4:5) y la imagen ancha (`ancho.jpg`) se pueden usar las fotos generadas en Magnific con el estilo de la marca.
 
 Para reemplazar una:
 

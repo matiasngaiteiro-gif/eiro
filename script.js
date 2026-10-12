@@ -1,7 +1,23 @@
 (function () {
   "use strict";
-  var config = window.TEIRO_CONFIG || {};
+  var config = window.EIRO_CONFIG || window.TEIRO_CONFIG || {};
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Logo de la portada: se ajusta para ocupar todo el ancho, con la tipografía que haya cargado */
+  var board = document.getElementById("logo-board");
+  if (board) {
+    var fit = function () {
+      var box = board.parentElement;
+      var cs = window.getComputedStyle(box);
+      var avail = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      board.style.fontSize = "100px";
+      var w = board.getBoundingClientRect().width;
+      if (w > 0 && avail > 0) board.style.fontSize = (100 * avail / w * 0.995) + "px";
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  }
 
   /* Año del pie */
   var year = document.getElementById("year");

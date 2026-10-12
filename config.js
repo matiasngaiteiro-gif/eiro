@@ -1,11 +1,11 @@
 /*
-  Datos editables de Teiro.
+  Datos editables de Eiro.
   Completá solo los canales que tengas. Los que queden vacíos ("") no se muestran en la web.
-  En mails, usuario de Instagram y direcciones, el nombre va siempre sin acento: teiro.
+  En mails, usuario de Instagram y direcciones, el nombre va en minúscula: eiro.
 */
-window.TEIRO_CONFIG = {
+window.EIRO_CONFIG = {
   email: "",      // pendiente: todavía no hay dominio definido
   instagram: "",  // pendiente: usuario sin @
   whatsapp: "",   // código de país + número, solo dígitos
-  whatsappMensaje: "Hola Teiro, quiero contarles sobre mi marca."
+  whatsappMensaje: "Hola Eiro, quiero contarles sobre mi marca."
 };
