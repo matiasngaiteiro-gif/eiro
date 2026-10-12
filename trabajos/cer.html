@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
-<link rel="stylesheet" href="../styles.css?v=64">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="../styles.css?v=65">
 <script>
   (function () {
     var d = document.documentElement;
@@ -73,99 +73,134 @@
   </section>
 
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cer-logo" viewBox="0 0 831 259"><path fill="currentColor" fill-rule="evenodd" d="M573,1 L573,258 L643,258 L643,174 L707,174 L754,258 L830,258 L781,174 L823,130 L823,44 L823,44 L781,1 L781,1Z M613,62 L754,62 L754,62 L754,109 L754,109 L643,109 L643,81Z M303,1 L303,258 L534,258 L534,196 L374,196 L374,159 L493,159 L493,99 L374,99 L374,81 L343,62 L534,62 L534,1Z M42,1 L0,44 L0,216 L42,258 L220,258 L263,216 L263,151 L192,151 L192,196 L71,196 L71,81 L71,81 L42,62 L192,62 L192,62 L192,109 L263,109 L263,44 L220,1Z"/></symbol></svg>
+
+  <!-- PALETA Y TIPOGRAFÍA DE CER -->
+  <section class="section cer-sys" aria-labelledby="sys-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="title" id="sys-t" data-anim="words">Color y letra</h2>
+        <p class="mono muted" data-anim="fade">Sistema de CER</p>
+      </div>
+      <div class="cs-pal" data-anim="fade">
+        <div class="cs-sw cs-black"><span class="cs-name">Negro</span><span class="cs-hex mono">#0B0B0B</span><span class="cs-use">Fondo principal</span></div>
+        <div class="cs-sw cs-orange"><span class="cs-name">Naranja CER</span><span class="cs-hex mono">#FF3A12</span><span class="cs-use">Marca y títulos</span></div>
+        <div class="cs-sw cs-graph"><span class="cs-name">Gris oscuro</span><span class="cs-hex mono">#262626</span><span class="cs-use">Fondos secundarios</span></div>
+        <div class="cs-sw cs-white"><span class="cs-name">Blanco</span><span class="cs-hex mono">#F4F4F2</span><span class="cs-use">Textos y respiro</span></div>
+        <div class="cs-sw cs-sky"><span class="cs-name">Celeste</span><span class="cs-hex mono">#4EC3F0</span><span class="cs-use">Solo casos especiales</span></div>
+      </div>
+      <div class="cs-type" data-anim="fade">
+        <div class="cs-t"><span class="mono muted">Logo · Wide</span><svg class="cs-logo" role="img" aria-label="CER"><use href="#cer-logo"/></svg></div>
+        <div class="cs-t"><span class="mono muted">Títulos · Narrow</span><p class="cs-narrow">Entrená<br>distinto.</p></div>
+        <div class="cs-t"><span class="mono muted">Textos · Normal</span><p class="cs-normal">Entrenamientos al aire libre, online y 100% personalizados. Desde Ciudad Evita, con la energía de un barrio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIEZAS ANIMADAS -->
   <section class="section cer-pieces" aria-labelledby="piezas-t">
     <div class="wrap">
       <div class="sec-head">
         <h2 class="title" id="piezas-t" data-anim="words">Piezas para redes</h2>
-        <p class="mono muted" data-anim="fade">Carruseles, reels y stories</p>
+        <p class="mono muted" data-anim="fade">Posteos, reels y stories</p>
       </div>
       <div class="cw" data-anim="fade">
 
-        <figure class="cw-i">
-          <div class="cw-p cw-red r45" aria-label="Placa: No ignores las señales">
-            <span class="cw-logo">CER</span>
-            <p class="cw-h cw-stack"><span>No</span><span>ignores</span><span>las</span><span>señales</span></p>
-            <p class="cw-chev" aria-hidden="true"><i>›</i><i>›</i><i>›</i></p>
-          </div>
-          <figcaption class="mono muted">Carrusel · Tapa</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-black r45" aria-label="Posteo: Entrená distinto">
+          <div class="cw-meta"><span>CER</span><span>01 / 12</span></div>
+          <svg class="cw-biglogo" aria-hidden="true"><use href="#cer-logo"/></svg>
+          <p class="cw-n cw-up"><span>Entrená</span><span>distinto.</span></p>
+          <div class="cw-meta cw-meta-b"><span>Ciudad Evita</span><span>Al aire libre · Online</span></div>
+        </div><figcaption class="mono muted">Posteo · Marca</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-photo cw-dark r916" style="background-image:url(../assets/fotos/cer.jpg)" aria-label="Reel con subtítulos">
-            <span class="cw-bar" aria-hidden="true"><i></i></span>
-            <span class="cw-logo">CER</span>
-            <p class="cw-subs"><span class="cw-s1">Che, estás mejorando un montón.</span><span class="cw-s2">¿Quién te está entrenando?</span></p>
-          </div>
-          <figcaption class="mono muted">Reel · Subtítulos</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-black cw-photo r916" style="background-image:url(../assets/fotos/cer.jpg)" aria-label="Reel con subtítulos">
+          <span class="cw-bar" aria-hidden="true"><i></i></span>
+          <svg class="cw-logo" aria-hidden="true"><use href="#cer-logo"/></svg>
+          <p class="cw-subs"><span class="cw-s1">Che, estás mejorando un montón.</span><span class="cw-s2">¿Quién te está entrenando?</span></p>
+        </div><figcaption class="mono muted">Reel · Subtítulos</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-photo cw-redfade r45" style="background-image:url(../assets/fotos/cer-3.jpg)" aria-label="Carrusel: HIIT vs. fuerza">
-            <p class="cw-h cw-vs"><span class="cw-l">HIIT</span><b>vs.</b><span class="cw-r">Fuerza</span></p>
-            <p class="cw-chev" aria-hidden="true"><i>›</i><i>›</i><i>›</i></p>
-          </div>
-          <figcaption class="mono muted">Carrusel educativo</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-orange r45" aria-label="Carrusel: No ignores las señales">
+          <div class="cw-meta"><span>Carrusel</span><span>›››</span></div>
+          <p class="cw-n cw-up cw-ink"><span>No</span><span>ignores</span><span>las</span><span>señales</span></p>
+          <svg class="cw-logo cw-ink" aria-hidden="true"><use href="#cer-logo"/></svg>
+        </div><figcaption class="mono muted">Carrusel · Tapa</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-red r11 cw-mid" aria-label="Placa: 100% personalizado">
-            <p class="cw-h cw-count" aria-label="100%"><span class="cw-n" aria-hidden="true"></span>%</p>
-            <p class="cw-h cw-sm">Personalizado</p>
-            <span class="cw-logo cw-logo-b">CER</span>
-          </div>
-          <figcaption class="mono muted">Placa · Dato</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-black r11 cw-center" aria-label="Placa: 100% personalizado">
+          <p class="cw-n cw-count cw-or"><span class="cw-num" aria-hidden="true"></span>%</p>
+          <p class="cw-n cw-sm">Personalizado</p>
+          <div class="cw-meta cw-meta-b"><span>CER</span><span>Cada rutina, una persona</span></div>
+        </div><figcaption class="mono muted">Placa · Dato</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-photo cw-dark r45" style="background-image:url(../assets/fotos/cer-2.jpg)" aria-label="Placa: Empezá a correr">
-            <span class="cw-logo">CER</span>
-            <p class="cw-h cw-run"><span>Empezá a</span><span class="cw-redt">correr</span></p>
-            <div class="cw-band" aria-hidden="true"><p><span>Al aire libre · Online · 100% personalizado · </span><span>Al aire libre · Online · 100% personalizado · </span></p></div>
-          </div>
-          <figcaption class="mono muted">Carrusel · Running</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-grey r45" aria-label="Carrusel educativo: HIIT vs. fuerza">
+          <div class="cw-meta cw-ink"><span>Carrusel educativo</span><span>02</span></div>
+          <p class="cw-n cw-vs cw-ink"><span class="cw-l">HIIT</span><b>vs.</b><span class="cw-r">Fuerza</span></p>
+          <p class="cw-txt cw-ink">Qué te conviene según tu objetivo. Deslizá.</p>
+        </div><figcaption class="mono muted">Carrusel · Educativo</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-red r11 cw-mid" aria-label="Comentario de un alumno">
-            <div class="cw-comment">
-              <span class="cw-av" aria-hidden="true">A</span>
-              <div><p class="cw-user">alumno.cer</p><p><b>CER</b> es lo más hermoso que me pudo pasar. Gran lugar y gran ambiente!</p></div>
-              <span class="cw-heart" aria-hidden="true">♥</span>
-            </div>
-            <p class="cw-h cw-sm cw-under">Lo dijo un alumno</p>
-          </div>
-          <figcaption class="mono muted">Comunidad</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-black cw-photo cw-bw r916" style="background-image:url(../assets/fotos/cer-2.jpg)" aria-label="Reel: Empezá a correr">
+          <span class="cw-bar" aria-hidden="true"><i></i></span>
+          <p class="cw-clock mono" aria-hidden="true"><span class="cw-mm"></span></p>
+          <p class="cw-n cw-run"><span>Empezá a</span><span class="cw-or">correr.</span></p>
+          <div class="cw-meta cw-meta-b"><span>Running</span><span>Grupo de barrio</span></div>
+        </div><figcaption class="mono muted">Reel · Running</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-photo cw-bw r916" style="background-image:url(../assets/fotos/cer-3.jpg)" aria-label="Reel: Uups, profe">
-            <span class="cw-bar" aria-hidden="true"><i></i></span>
-            <p class="cw-h cw-oops"><span>Uups,</span><span class="cw-redt">profe!</span></p>
-          </div>
-          <figcaption class="mono muted">Reel · Humor</figcaption>
-        </figure>
+        <figure class="cw-i"><div class="cw-p k-white r45" aria-label="Posteo: No hay excusas, hay horarios">
+          <div class="cw-meta cw-ink"><span>CER</span><span>Manifiesto</span></div>
+          <p class="cw-n cw-up cw-ink cw-manif"><span>No hay</span><span>excusas.</span><span class="cw-or">Hay</span><span class="cw-or">horarios.</span></p>
+          <svg class="cw-logo cw-ink" aria-hidden="true"><use href="#cer-logo"/></svg>
+        </div><figcaption class="mono muted">Posteo · Manifiesto</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-red r45" aria-label="Placa: Entrená al aire libre, online, personalizado">
-            <span class="cw-logo">CER</span>
-            <p class="cw-h cw-pre">Entrená</p>
-            <p class="cw-h cw-roll"><span>al aire libre</span><span>online</span><span>a tu ritmo</span><span>al aire libre</span></p>
-            <p class="cw-chev" aria-hidden="true"><i>›</i><i>›</i><i>›</i></p>
+        <figure class="cw-i"><div class="cw-p k-graph r11" aria-label="Placa con el logo en movimiento">
+          <div class="cw-marq" aria-hidden="true">
+            <div class="cw-mrow"><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span></div>
+            <div class="cw-mrow cw-rev cw-orrow"><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span></div>
+            <div class="cw-mrow"><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span><span><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg><svg><use href="#cer-logo"/></svg></span></div>
           </div>
-          <figcaption class="mono muted">Placa animada</figcaption>
-        </figure>
+          <p class="cw-n cw-sm cw-onmarq">Al aire libre · Online · Personalizado</p>
+        </div><figcaption class="mono muted">Placa · Marca en movimiento</figcaption></figure>
 
-        <figure class="cw-i">
-          <div class="cw-p cw-photo cw-redfade r916" style="background-image:url(../assets/fotos/cer-4.jpg)" aria-label="Story: Mandanos un WhatsApp">
-            <span class="cw-logo">CER</span>
-            <p class="cw-h cw-cta"><span>¿Arrancamos?</span></p>
-            <span class="cw-btn">Mandanos un WhatsApp <i aria-hidden="true">››</i></span>
+        <figure class="cw-i"><div class="cw-p k-sky r45" aria-label="Caso especial: Edición verano">
+          <div class="cw-meta cw-ink"><span>Edición especial</span><span>Verano</span></div>
+          <p class="cw-n cw-up cw-ink"><span>Entrenar</span><span>al sol</span><span>también</span><span>es plan.</span></p>
+          <svg class="cw-logo cw-ink" aria-hidden="true"><use href="#cer-logo"/></svg>
+        </div><figcaption class="mono muted">Caso especial · Celeste</figcaption></figure>
+
+        <figure class="cw-i"><div class="cw-p k-black r11 cw-center" aria-label="Comentario de un alumno">
+          <div class="cw-comment">
+            <span class="cw-av" aria-hidden="true">A</span>
+            <div><p class="cw-user">alumno.cer</p><p><b>CER</b> es lo más hermoso que me pudo pasar. Gran lugar y gran ambiente!</p></div>
+            <span class="cw-heart" aria-hidden="true">♥</span>
           </div>
-          <figcaption class="mono muted">Story · Cierre</figcaption>
-        </figure>
+          <p class="cw-n cw-sm cw-or cw-under">Lo dijo un alumno</p>
+        </div><figcaption class="mono muted">Comunidad</figcaption></figure>
+
+        <figure class="cw-i"><div class="cw-p k-black r916" aria-label="Story: ¿Arrancamos?">
+          <div class="cw-meta"><span>Story</span><span>CER</span></div>
+          <p class="cw-n cw-cta"><span class="cw-or">¿Arran</span><span class="cw-or">camos?</span></p>
+          <p class="cw-txt">Contanos tu objetivo y armamos tu rutina.</p>
+          <span class="cw-btn">Mandanos un WhatsApp <i aria-hidden="true">›</i></span>
+        </div><figcaption class="mono muted">Story · Cierre</figcaption></figure>
 
       </div>
       <p class="mono muted cer-note">Recreaciones con la identidad de CER.</p>
+    </div>
+  </section>
+
+  <!-- MAQUETAS -->
+  <section class="section cer-mock" aria-labelledby="mock-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="title" id="mock-t" data-anim="words">La marca puesta</h2>
+        <p class="mono muted" data-anim="fade">Maquetas</p>
+      </div>
+      <div class="cm">
+        <figure class="shot cm-a" data-anim="shot"><img src="../assets/fotos/cer-m1.jpg" alt="Remera negra con el logo de CER colgada en un arco de fútbol" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Remera</figcaption></figure>
+        <figure class="shot cm-b" data-anim="shot"><img src="../assets/fotos/cer-m4.jpg" alt="Botella con el logo de CER sobre una pista de atletismo" width="1600" height="900" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Botella</figcaption></figure>
+        <figure class="shot cm-c" data-anim="shot"><img src="../assets/fotos/cer-m2.jpg" alt="Musculosa negra de entrenamiento con el logo de CER" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Musculosa</figcaption></figure>
+        <figure class="shot cm-d" data-anim="shot"><img src="../assets/fotos/cer-m3.jpg" alt="Corredora en la pista con una toalla celeste de CER al hombro" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Toalla · celeste</figcaption></figure>
+        <figure class="shot cm-e" data-anim="shot"><img src="../assets/fotos/cer-m6.jpg" alt="Bolso negro de CER en el piso del gimnasio" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Bolso</figcaption></figure>
+        <figure class="shot cm-f" data-anim="shot"><img src="../assets/fotos/cer-m5.jpg" alt="Corredora con el celular en el brazo mostrando la app de CER" width="1600" height="900" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">App en el brazo</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -238,7 +273,7 @@
   </div>
 </footer>
 
-<script src="../config.js?v=64"></script>
-<script src="../script.js?v=64"></script>
+<script src="../config.js?v=65"></script>
+<script src="../script.js?v=65"></script>
 </body>
 </html>
