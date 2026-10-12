@@ -85,11 +85,11 @@ img { display: block; max-width: 100%; }
 .logo-fit { display: block; width: max-content; margin: 0; font-size: 21vw; }
 
 /* Barrita verde */
-.chip { display: inline-block; width: 28px; height: 8px; margin-right: 10px; background: var(--accent); border-radius: 0; vertical-align: 0; }
+.chip { display: inline-block; width: 28px; height: 8px; margin-right: 10px; background: var(--accent); border-radius: 999px; vertical-align: 0; }
 
-/* Etiquetas y resaltados: SIEMPRE rectos. Redondeados solo los botones. */
+/* Etiquetas en píldora. Rectos solo en la intro, la portada y las gráficas (frase resaltada). */
 .tag, .pill-tag {
-  display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border-radius: 0;
+  display: inline-flex; align-items: center; min-height: 40px; padding: 8px 18px; border-radius: 999px;
   background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.2;
 }
 .tag { position: absolute; left: clamp(12px, 1.6vw, 24px); bottom: clamp(12px, 1.6vw, 24px); z-index: 2; }
@@ -172,6 +172,8 @@ img { display: block; max-width: 100%; }
 .motion .rotator { transition: transform .5s var(--ease), opacity .3s ease; }
 .rotator.is-out { transform: translateY(-110%); opacity: 0; }
 .rotator.is-in { transform: translateY(110%); opacity: 0; transition: none; }
+/* Portada: recuadros y etiquetas rectos */
+.hero .tag { border-radius: 0; padding-inline: 16px; }
 .hero-gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-3); margin-top: var(--s-5); }
 .hero-gallery .shot:first-child { grid-column: 1 / span 7; }
 .hero-gallery .hero-gallery-offset { grid-column: 9 / -1; margin-top: clamp(80px, 14vw, 260px); }
@@ -190,7 +192,7 @@ img { display: block; max-width: 100%; }
 .marquee { overflow: hidden; border-block: 1px solid var(--line); padding-block: clamp(14px, 2vw, 26px); }
 .marquee-track { display: flex; align-items: center; gap: clamp(20px, 3vw, 48px); width: max-content; }
 .marquee span { font-weight: 800; font-size: clamp(2rem, 6vw, 5.4rem); letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
-.marquee i { width: clamp(16px, 2vw, 28px); height: clamp(16px, 2vw, 28px); border-radius: 0; background: var(--accent); flex: none; }
+.marquee i { width: clamp(16px, 2vw, 28px); height: clamp(16px, 2vw, 28px); border-radius: 50%; background: var(--accent); flex: none; }
 .motion .marquee-track { animation: marquee 28s linear infinite; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
@@ -257,7 +259,7 @@ img { display: block; max-width: 100%; }
 .service-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-3); padding: 4px 0 var(--s-4) calc(3rem + 12px); }
 .service-body p { grid-column: 1 / span 6; max-width: 32em; font-size: 1.15rem; }
 .service-body ul { grid-column: 8 / -1; display: flex; flex-wrap: wrap; gap: 8px; align-content: start; }
-.service-body li { border: 1px solid var(--line); border-radius: 0; padding: 8px 14px; color: var(--gray); }
+.service-body li { border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; color: var(--gray); }
 .motion details[open] .service-body { animation: open .7s var(--ease); }
 @keyframes open { from { opacity: 0; transform: translateY(-10px); } }
 @media (max-width: 900px) { .service-body p, .service-body ul { grid-column: 1 / -1; } }
@@ -287,7 +289,7 @@ img { display: block; max-width: 100%; }
 /* Contacto */
 .contact-card { padding-block: var(--section) var(--s-5); }
 .contact-card h2 { font-size: clamp(3rem, 10vw, 9rem); line-height: 1.1; }
-.hl > span { background-image: linear-gradient(var(--accent), var(--accent)); color: var(--on-accent); }
+.hl > span { background-image: linear-gradient(var(--accent), var(--accent)); color: var(--on-accent); border-radius: 0.12em; }
 .contact-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-4) var(--s-3); align-items: start; margin-top: var(--s-5); }
 .contact-grid .statement { grid-column: 1 / span 6; max-width: 24em; }
 .channels { grid-column: 8 / -1; min-width: 0; border-top: 1px solid var(--ink); }
