@@ -436,15 +436,16 @@ img { display: block; max-width: 100%; }
 @property --cw-s { syntax: "<integer>"; inherits: false; initial-value: 0; }
 .cer-sys, .cer-pieces, .cer-mock {
   --cer: #FF3A12; --cer-black: #0B0B0B; --cer-graph: #262626; --cer-grey: #D6D6D3; --cer-white: #F4F4F2; --cer-sky: #4EC3F0;
-  /* Tipografía de CER: cambiar estos nombres por la familia de Adobe Fonts cuando esté en el kit */
-  --cer-narrow: "cer-narrow", "Archivo", "Arial Narrow", sans-serif;
-  --cer-text: "cer-text", "Archivo", "Helvetica Neue", Arial, sans-serif;
+  /* Tipografía de CER (Adobe Fonts): Shuttleblock Narrow para títulos, Shuttleblock para textos.
+     Si el kit no carga, Archivo angosta la reemplaza. */
+  --cer-narrow: "shuttleblock-narrow", "Archivo", "Arial Narrow", sans-serif;
+  --cer-text: "shuttleblock", "Archivo", "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Paleta */
 .cs-pal { display: grid; grid-template-columns: 4fr 2.4fr 2fr 1.4fr 1fr; gap: 6px; height: clamp(320px, 38vw, 520px); }
 .cs-sw { border-radius: calc(var(--radius) * .7); padding: var(--s-3); display: flex; flex-direction: column; gap: 4px; justify-content: flex-end; min-width: 0; overflow: hidden; transform-origin: bottom; }
-.cs-name { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 800; text-transform: uppercase; font-size: clamp(1.4rem, 2.4vw, 2.4rem); line-height: .9; }
+.cs-name { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: clamp(1.4rem, 2.4vw, 2.4rem); line-height: .9; }
 .cs-hex { font-size: var(--t-mono); opacity: .8; }
 .cs-use { font-size: .9rem; opacity: .75; }
 .cs-black { background: var(--cer-black); color: var(--cer); }
@@ -460,7 +461,7 @@ img { display: block; max-width: 100%; }
 .cs-t { background: var(--cer-black); color: var(--cer-white); border-radius: calc(var(--radius) * .7); padding: var(--s-3); display: flex; flex-direction: column; gap: var(--s-3); justify-content: space-between; min-height: 220px; }
 .cs-t .mono { color: #8a8a8a; }
 .cs-logo { width: 100%; height: auto; aspect-ratio: 831 / 259; color: var(--cer); }
-.cs-narrow { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 900; text-transform: uppercase; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .86; }
+.cs-narrow { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .86; }
 .cs-normal { font-family: var(--cer-text); font-weight: 500; font-size: 1.1rem; line-height: 1.4; }
 @media (max-width: 900px) {
   .cs-pal { grid-template-columns: 1fr 1fr; grid-auto-rows: 120px; height: auto; }
@@ -499,10 +500,10 @@ img { display: block; max-width: 100%; }
 .cw-or { color: var(--cer); }
 
 /* Letra */
-.cw-n { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 900; text-transform: uppercase; line-height: .84; letter-spacing: -.01em; font-size: 19cqi; margin: 0; }
+.cw-n { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; line-height: .84; letter-spacing: -.01em; font-size: 19cqi; margin: 0; }
 .cw-sm { font-size: 9cqi; line-height: .9; }
 .cw-txt { font-size: 3.8cqi; line-height: 1.35; font-weight: 500; max-width: 30ch; margin-top: 3cqi; }
-.cw-meta { display: flex; justify-content: space-between; gap: 4cqi; font-size: 3cqi; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.cw-meta { display: flex; justify-content: space-between; gap: 4cqi; font-family: var(--cer-narrow); font-stretch: 62%; font-size: 3.8cqi; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
 .cw-meta-b { margin-top: auto; padding-top: 3cqi; border-top: 1px solid currentColor; opacity: .85; }
 .cw-logo { width: 22cqi; height: auto; aspect-ratio: 831 / 259; color: currentColor; margin-top: 4cqi; flex: none; }
 
@@ -524,7 +525,7 @@ img { display: block; max-width: 100%; }
 @keyframes cw-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .r916 > .cw-logo { margin-top: 6cqi; color: var(--cer-white); }
 .cw-subs { margin-top: auto; margin-bottom: 16cqi; display: grid; place-items: center; text-align: center; min-height: 26cqi; }
-.cw-subs span { grid-area: 1 / 1; font-weight: 800; text-transform: uppercase; font-size: 6cqi; line-height: 1.15; padding: .3em .55em; border-radius: .3em; background: rgba(11,11,11,.75); max-width: 92%; }
+.cw-subs span { grid-area: 1 / 1; font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: 7.4cqi; line-height: 1.15; padding: .3em .55em; border-radius: .3em; background: rgba(11,11,11,.75); max-width: 92%; }
 .cw-s1 { animation: cw-s1 7s steps(1) infinite; }
 .cw-s2 { background: var(--cer) !important; color: var(--cer-black); animation: cw-s2 7s infinite; }
 @keyframes cw-s1 { 0%, 48% { opacity: 1; } 50%, 100% { opacity: 0; } }
@@ -543,7 +544,7 @@ img { display: block; max-width: 100%; }
 
 /* 5. HIIT vs. fuerza sobre gris */
 .cw-vs { margin-top: auto; display: grid; justify-items: start; font-size: 25cqi; overflow: hidden; }
-.cw-vs b { font-weight: 900; background: var(--cer); color: var(--cer-black); font-size: .42em; padding: .1em .25em .02em; margin: .12em 0; animation: cw-pop 5s var(--ease) infinite; }
+.cw-vs b { font-weight: 700; background: var(--cer); color: var(--cer-black); font-size: .42em; padding: .1em .25em .02em; margin: .12em 0; animation: cw-pop 5s var(--ease) infinite; }
 .cw-l { animation: cw-left 5s var(--ease) infinite both; }
 .cw-r { animation: cw-right 5s var(--ease) infinite both; }
 @keyframes cw-left { 0% { transform: translateX(-110%); } 14%, 88% { transform: none; } 100% { transform: translateX(-110%); } }
@@ -576,8 +577,9 @@ img { display: block; max-width: 100%; }
 /* 10. Comentario */
 .cw-comment { background: var(--cer-white); color: #111; border-radius: 5cqi; padding: 5cqi; display: grid; grid-template-columns: auto 1fr auto; gap: 3.5cqi; font-size: 4.4cqi; line-height: 1.3; animation: cw-float 4s ease-in-out infinite; }
 .cw-comment p { margin: 0; }
+.cw-comment b { font-weight: 500; }
 .cw-av { width: 10cqi; height: 10cqi; border-radius: 50%; background: var(--cer); color: var(--cer-black); display: grid; place-items: center; font-weight: 800; }
-.cw-user { font-weight: 800; }
+.cw-user { font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; font-size: 1.15em; }
 .cw-heart { color: var(--cer); font-size: 1.3em; animation: cw-beat 1.6s ease-in-out infinite; }
 @keyframes cw-beat { 0%, 60%, 100% { transform: scale(1); } 15% { transform: scale(1.45); } 30% { transform: scale(.95); } }
 @keyframes cw-float { 0%, 100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-2.5cqi) rotate(1deg); } }
@@ -586,7 +588,7 @@ img { display: block; max-width: 100%; }
 /* 11. Story de cierre */
 .cw-cta { margin-top: auto; display: grid; font-size: 27cqi; }
 .cw-cta span { animation: cw-up 5s var(--ease) infinite both; }
-.cw-btn { margin: 6cqi 0 4cqi; align-self: flex-start; background: var(--cer-white); color: var(--cer-black); border-radius: 999px; padding: .8em 1.3em; font-weight: 800; font-size: 4.6cqi; animation: cw-pulse 1.8s ease-in-out infinite; }
+.cw-btn { margin: 6cqi 0 4cqi; align-self: flex-start; background: var(--cer-white); color: var(--cer-black); border-radius: 999px; padding: .7em 1.2em .6em; font-family: var(--cer-narrow); font-stretch: 62%; font-weight: 700; text-transform: uppercase; font-size: 5.6cqi; animation: cw-pulse 1.8s ease-in-out infinite; }
 .cw-btn i { font-style: normal; color: var(--cer); }
 @keyframes cw-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,58,18,.6); } 60% { box-shadow: 0 0 0 4cqi rgba(255,58,18,0); } }
 
