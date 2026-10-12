@@ -215,12 +215,11 @@ img { display: block; max-width: 100%; }
   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: clamp(56px, 7vw, 96px) clamp(56px, 7vw, 96px); background-position: center;
 }
-.quote-text { display: grid; justify-items: center; row-gap: 0.1em; font-size: clamp(2.4rem, 7vw, 7rem); }
+.quote-text { display: grid; justify-items: center; gap: 0.06em; font-size: clamp(2.4rem, 7vw, 7rem); }
 .q-line { display: block; }
 /* Renglones resaltados: el recuadro deja aire arriba, abajo (colas de g, q, p) y a los costados */
-.q-mark { margin-block: 0.04em; }
 .q-mark > span, .hl > span {
-  display: inline-block; line-height: 1.08; padding: 0.06em 0.24em 0.12em; border-radius: 0;
+  display: inline-block; padding: 0.02em 0.22em 0.1em; border-radius: 0;
   color: var(--paper); background: linear-gradient(var(--ink), var(--ink)) no-repeat left / 100% 100%;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
