@@ -681,3 +681,74 @@ img { display: block; max-width: 100%; }
 .kn .cs-pal { grid-template-columns: 3fr 2.2fr 1.8fr 1.5fr 1.5fr; }
 .kn-roll { line-height: 1.12; height: 1.12em; }
 .kn-roll span { height: 1.12em; padding-top: 0; }
+
+/* NERO: recursos gráficos con el criterio del manual (composiciones, degradado, retícula y volumen) */
+.kn .kc-label, .kn .kn-lbl, .kn .cs-hex { font-family: var(--kn-mono); }
+.kn-lbl { font-family: var(--kn-mono); font-size: .78rem; color: #8a8a8a; letter-spacing: .02em; }
+
+/* Portada: el símbolo gira en volumen, de click a caja */
+.kn-hero-stage {
+  position: relative; aspect-ratio: 16 / 8; overflow: hidden; isolation: isolate;
+  background: radial-gradient(70% 90% at 70% 60%, #2D2D2D 0%, #0A0A0A 70%);
+  color: #E6E6E6; container-type: inline-size;
+}
+.kn-hs-word { position: absolute; left: 4cqi; top: 4cqi; width: 12cqi; height: auto; aspect-ratio: 4204 / 1000; z-index: 2; }
+.kn-hs-tag, .kn-hs-foot { position: absolute; z-index: 2; font-family: var(--kn-mono); font-size: max(11px, 1.05cqi); letter-spacing: .14em; text-transform: uppercase; color: #A1A2A6; }
+.kn-hs-tag { right: 4cqi; top: 4.4cqi; }
+.kn-hs-foot { left: 4cqi; bottom: 4cqi; letter-spacing: .04em; text-transform: none; }
+.kn-cube-wrap { position: absolute; inset: 0; display: grid; place-items: center; perspective: 120cqi; }
+.kn-cube { position: relative; width: 30cqi; aspect-ratio: 1; transform-style: preserve-3d; animation: kn-spin 9s cubic-bezier(.65,0,.35,1) infinite; }
+.kn-cube svg { position: absolute; inset: 0; width: 100%; height: 100%;
+  transform: translateZ(calc(var(--z) * -0.3cqi));
+  color: color-mix(in srgb, #E6E6E6 calc(100% - var(--z) * 4%), #191919); }
+@keyframes kn-spin {
+  0%, 12% { transform: rotateX(0) rotateY(0); }
+  40%, 60% { transform: rotateX(28deg) rotateY(-38deg); }
+  88%, 100% { transform: rotateX(0) rotateY(0); }
+}
+@media (max-width: 760px) { .kn-hero-stage { aspect-ratio: 4 / 5; } .kn-cube { width: 56cqi; } .kn-hs-word { width: 26cqi; } .kn-hs-tag, .kn-hs-foot { font-size: 2.6cqi; } }
+
+/* Estrategia: el símbolo se construye sobre su retícula */
+.kn-grid-stage { position: relative; background: #E6E6E6; aspect-ratio: 16 / 8; display: grid; place-items: center; overflow: hidden; container-type: inline-size; }
+.kn-grid-svg { height: 86%; width: auto; max-width: 92%; aspect-ratio: 1600 / 1300; }
+.kn-lines path, .kn-lines rect { stroke-dasharray: 2600; stroke-dashoffset: 2600; animation: kn-draw 7s ease-in-out infinite; }
+.kn-fill { opacity: 0; animation: kn-fillin 7s ease-in-out infinite; }
+@keyframes kn-draw { 0% { stroke-dashoffset: 2600; } 35%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes kn-fillin { 0%, 35% { opacity: 0; transform: scale(.96); } 50%, 88% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+.kn-fill { transform-origin: 500px 500px; }
+.kn-gs-label, .kn-gs-cap { position: absolute; font-family: var(--kn-mono); font-size: max(11px, 1.05cqi); color: #444444; }
+.kn-gs-label { left: 4cqi; top: 4cqi; }
+.kn-gs-cap { right: 4cqi; bottom: 4cqi; }
+@media (max-width: 760px) { .kn-grid-stage { aspect-ratio: 1; } .kn-gs-label, .kn-gs-cap { font-size: 3cqi; } }
+
+/* Composiciones */
+.kn-comp { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; margin-top: var(--s-3); }
+.kn-c { position: relative; overflow: hidden; container-type: inline-size; padding: 6%; display: flex; flex-direction: column; }
+.kn-c-h { font-family: "Sora", sans-serif; font-weight: 600; letter-spacing: -0.04em; line-height: 1.02; margin: 0; position: relative; z-index: 2; }
+.kn-c-logo { width: 26cqi; height: auto; aspect-ratio: 4204 / 1000; flex: none; }
+.kn-c1 { grid-column: 1 / span 5; aspect-ratio: 4 / 5; background: #FFFFFF; color: #0A0A0A; box-shadow: inset 0 0 0 1px #E2E2E2; }
+.kn-c1 .kn-c-h { font-size: 10cqi; margin-top: 8cqi; max-width: 9em; }
+.kn-c-bar { position: absolute; left: 0; right: 0; bottom: 0; background: #0A0A0A; color: #A1A2A6; padding: 5cqi 7cqi; font-family: var(--kn-mono); font-size: 3.4cqi; }
+.kn-c2 { grid-column: 6 / -1; aspect-ratio: 7 / 5; background: #0A0A0A; color: #E6E6E6; }
+.kn-c2 .kn-c-h { font-size: 6.4cqi; }
+.kn-c-big { position: absolute; right: -10cqi; bottom: -14cqi; width: 62cqi; height: auto; aspect-ratio: 1; color: #2D2D2D; animation: kn-drift 10s ease-in-out infinite alternate; }
+@keyframes kn-drift { from { transform: translate(0, 0); color: #2D2D2D; } to { transform: translate(-6cqi, -5cqi); color: #444444; } }
+.kn-c3 { grid-column: 1 / -1; aspect-ratio: 16 / 6; background: linear-gradient(90deg, #0A0A0A 45%, #2D2D2D 100%); color: #E6E6E6; padding: 3.6%; display: grid; grid-template-columns: 1fr 1.3fr 1fr; align-items: stretch; gap: 3.6%; }
+.kn-c3-left { display: flex; flex-direction: column; justify-content: space-between; }
+.kn-c3 .kn-c-logo { width: 14cqi; }
+.kn-c-block { display: block; width: 100%; height: 38%; background: #A1A2A6; transform-origin: left; animation: kn-block 6s cubic-bezier(.76,0,.24,1) infinite; }
+@keyframes kn-block { 0%, 10% { transform: scaleX(0); } 35%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+.kn-c3 .kn-c-h { font-size: 4.6cqi; align-self: center; }
+.kn-c3-sym { position: relative; }
+.kn-c3-sym svg { position: absolute; right: 0; bottom: 0; width: 72%; height: auto; aspect-ratio: 1; }
+.kn-c3-sym svg:first-child { color: #444444; transform: translate(-14%, -14%); animation: kn-echo 6s ease-in-out infinite; }
+.kn-c3-sym svg:last-child { color: #E6E6E6; }
+@keyframes kn-echo { 0%, 100% { transform: translate(0, 0); opacity: 0; } 30%, 70% { transform: translate(-14%, -14%); opacity: 1; } }
+@media (max-width: 900px) {
+  .kn-c1, .kn-c2 { grid-column: 1 / -1; aspect-ratio: 4 / 5; }
+  .kn-c2 .kn-c-h { font-size: 9cqi; }
+  .kn-c3 { aspect-ratio: 4 / 5; grid-template-columns: 1fr; padding: 6%; }
+  .kn-c3 .kn-c-logo { width: 30cqi; } .kn-c3 .kn-c-h { font-size: 11cqi; } .kn-c-block { height: 6cqi; margin-top: 4cqi; }
+  .kn-c3-sym { min-height: 40cqi; }
+}
+.motion .kn-comp:not(.in) *, .motion .kn-hero-stage:not(.in) *, .motion .kn-grid-stage:not(.in) * { animation-play-state: paused; }
