@@ -827,3 +827,10 @@ img { display: block; max-width: 100%; }
 .hero { padding-bottom: var(--s-5); }
 .clients li { font-size: clamp(1.1rem, 2vw, 1.7rem); }
 .ct-opt .channels:has(ul[hidden]) { display: none; }
+.contact-cta { grid-column: 8 / -1; display: grid; gap: var(--s-3); justify-items: start; }
+.contact-cta .channels { grid-column: auto; width: 100%; }
+.contact-cta .channels:has(ul[hidden]) { display: none; }
+.ct-wa-big { margin: 0; font-size: clamp(1.15rem, 1.8vw, 1.5rem); padding: 8px 8px 8px 32px; gap: 20px; }
+.ct-wa-big .ct-wa-ico { width: 60px; height: 60px; }
+.ct-wa-big .ct-wa-ico svg { width: 26px; height: 26px; }
+@media (max-width: 900px) { .contact-cta { grid-column: 1 / -1; } }
