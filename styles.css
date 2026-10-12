@@ -160,22 +160,19 @@ img { display: block; max-width: 100%; }
 .hero-side { grid-column: 9 / -1; display: grid; gap: var(--s-3); }
 .hero-side .statement { color: var(--gray); }
 .cta-row { display: flex; flex-wrap: wrap; gap: var(--s-1); }
-/* Recuadro de la palabra rotativa (recto).
+/* Píldora de la palabra rotativa.
    Ocupa exactamente un renglón: no agrega margen ni altura, así no corre la línea del texto.
    El aire alrededor de las letras (y la cola de g, q, p) se dibuja con una sombra sólida, que no ocupa lugar. */
 .word-pill {
-  display: inline-block; vertical-align: top; height: 1lh; padding: 0 0.12em;
-  background: var(--accent); color: var(--on-accent); border-radius: 0;
+  display: inline-block; vertical-align: top; height: 1lh; padding: 0 0.22em;
+  background: var(--accent); color: var(--on-accent); border-radius: 999px;
   box-shadow: 0 0.04em 0 0.08em var(--accent);
-  clip-path: inset(-0.04em -0.08em -0.12em);
-  white-space: nowrap; transition: width .6s var(--ease);
+  white-space: nowrap; overflow: hidden; transition: width .6s var(--ease);
 }
 .rotator { display: inline-block; white-space: nowrap; }
 .motion .rotator { transition: transform .5s var(--ease), opacity .3s ease; }
 .rotator.is-out { transform: translateY(-110%); opacity: 0; }
 .rotator.is-in { transform: translateY(110%); opacity: 0; transition: none; }
-/* Portada: recuadros y etiquetas rectos */
-.hero .tag { border-radius: 0; padding-inline: 16px; }
 .hero-gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-3); margin-top: var(--s-5); }
 .hero-gallery .shot:first-child { grid-column: 1 / span 7; }
 .hero-gallery .hero-gallery-offset { grid-column: 9 / -1; margin-top: clamp(80px, 14vw, 260px); }
@@ -216,7 +213,7 @@ img { display: block; max-width: 100%; }
 /* Trabajamos con */
 .clients { display: grid; gap: var(--s-2); margin-top: var(--s-5); padding-top: var(--s-3); border-top: 1px solid var(--line); }
 .clients ul { display: flex; flex-wrap: wrap; gap: 6px 0; }
-.clients li { font-weight: 800; font-size: clamp(1.6rem, 3.6vw, 3.2rem); letter-spacing: -0.045em; line-height: 1.05; }
+.clients li { font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.6rem); letter-spacing: -0.045em; line-height: 1.15; }
 .clients li:not(:last-child)::after { content: "·"; margin-inline: 0.35em; color: var(--accent); }
 
 /* Frase resaltada: grilla de fondo y renglones en recuadro negro */
@@ -235,7 +232,7 @@ img { display: block; max-width: 100%; }
 /* "hola": mismo criterio que la palabra rotativa, sin margen ni altura extra */
 .hl > span {
   display: inline-block; vertical-align: top; height: 1lh; padding: 0 0.1em;
-  background: var(--accent); color: var(--on-accent); border-radius: 0.1em;
+  background: var(--accent); color: var(--on-accent); border-radius: 999px; padding-inline: 0.22em;
   box-shadow: 0 0.04em 0 0.08em var(--accent);
 }
 .pill-tag { margin-top: var(--s-4); }
@@ -352,10 +349,10 @@ img { display: block; max-width: 100%; }
 .intro-word span span { display: none; }
 .intro-word span span.on { display: inline-block; }
 .intro-word .gait span { max-width: 2em; overflow: hidden; transition: max-width .38s var(--ease-io), opacity .25s ease; }
-.intro-word .gait.selected { background: var(--accent); box-shadow: 0 0 0 0.05em var(--accent); color: #0B0B0B; border-radius: 0; }
+.intro-word .gait.selected { background: var(--accent); box-shadow: 0 0 0 0.05em var(--accent); color: #0B0B0B; border-radius: 0.14em; }
 .intro-word .gait.selected:not(:has(span:not(.gone))) { box-shadow: none; }
 .intro-word .gait span.gone { max-width: 0; opacity: 0; }
-.caret { display: inline-block; border-radius: 0; width: 0.08em; height: 0.8em; margin-left: 0.06em; background: var(--accent); animation: blink .8s steps(1) infinite; }
+.caret { display: inline-block; border-radius: 999px; width: 0.08em; height: 0.8em; margin-left: 0.06em; background: var(--accent); animation: blink .8s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .intro-note { color: #A6A6A6; opacity: 0; transition: opacity .5s ease; }
 .intro.is-done .intro-note { opacity: 1; }
