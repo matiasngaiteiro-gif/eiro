@@ -127,11 +127,12 @@
       var y = window.scrollY, h = window.innerHeight;
       var contact = document.getElementById("contacto");
       var atContact = contact && contact.getBoundingClientRect().top < h * 0.6;
-      var show = y > h * 0.5 && !atContact && !document.documentElement.classList.contains("intro-on");
+      var show = !atContact && !document.documentElement.classList.contains("intro-on");
       if (show !== shown) { shown = show; a.classList.toggle("is-on", show); }
     };
     window.addEventListener("scroll", update, { passive: true });
     update();
+    var introWatch = setInterval(function () { update(); if (!document.documentElement.classList.contains("intro-on")) clearInterval(introWatch); }, 300);
   })();
 
   /* ---------- Contacto: botón de WhatsApp y formulario que arma el mensaje ---------- */
@@ -145,6 +146,19 @@
     var form = document.getElementById("ct-form");
     if (!form) return;
     var msg = document.getElementById("ct-msg");
+    /* Ideas listas: un toque las suma al texto, otro toque las saca */
+    var area = form.querySelector("textarea[name=detalle]");
+    form.querySelectorAll(".ct-ideas button").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", "false");
+      btn.addEventListener("click", function () {
+        var t = btn.textContent.trim();
+        var on = btn.getAttribute("aria-pressed") === "true";
+        var lines = area.value.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+        if (on) lines = lines.filter(function (l) { return l !== t; }); else lines.push(t);
+        area.value = lines.join("\n");
+        btn.setAttribute("aria-pressed", String(!on));
+      });
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var d = new FormData(form);

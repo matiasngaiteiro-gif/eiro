@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=73">
+<link rel="stylesheet" href="styles.css?v=74">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -62,7 +62,7 @@
           <li><a href="#servicios">Servicios <small>Qué hacemos</small></a></li>
           <li><a href="#metodo">Método <small>Cómo pensamos</small></a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="#contacto"><span class="roll"><span data-label="Hablemos">Hablemos</span></span></a>
+        <a class="nav-cta btn-roll" href="#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
       </div>
     </nav>
   </div>
@@ -313,7 +313,19 @@
             <label><input type="radio" name="cuando" value="En uno o dos meses"><span>En uno o dos meses</span></label>
             <label><input type="radio" name="cuando" value="Más adelante"><span>Más adelante</span></label>
           </fieldset>
-          <label class="ct-field"><span class="mono">Contanos un poco más</span><textarea name="detalle" rows="3"></textarea></label>
+          <div class="ct-field">
+            <span class="mono" id="ct-ideas-t">¿No sabés cómo contarlo? Elegí una idea</span>
+            <div class="ct-ideas" role="group" aria-labelledby="ct-ideas-t">
+              <button type="button">Quiero crear una marca desde cero.</button>
+              <button type="button">Mi marca necesita una renovación.</button>
+              <button type="button">Quiero ordenar y hacer crecer mis redes.</button>
+              <button type="button">Necesito contenido todos los meses.</button>
+              <button type="button">Tengo un evento y quiero que se llene.</button>
+              <button type="button">Voy a lanzar un producto nuevo.</button>
+              <button type="button">Todavía no sé por dónde empezar.</button>
+            </div>
+          </div>
+          <label class="ct-field"><span class="mono">Contanos un poco más</span><textarea name="detalle" rows="3" placeholder="Podés elegir una idea de arriba o escribir con tus palabras."></textarea></label>
           <div class="ct-send">
             <button class="btn btn-solid btn-roll ct-btn" type="submit"><span class="roll"><span data-label="Enviar proyecto">Enviar proyecto</span></span></button>
             <p class="ct-msg" id="ct-msg" role="status" aria-live="polite"></p>
@@ -356,7 +368,7 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=73"></script>
-<script src="script.js?v=73"></script>
+<script src="config.js?v=74"></script>
+<script src="script.js?v=74"></script>
 </body>
 </html>

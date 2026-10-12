@@ -6,6 +6,6 @@
 window.EIRO_CONFIG = {
   email: "",      // pendiente: todavía no hay dominio definido
   instagram: "",  // pendiente: usuario sin @
-  whatsapp: "",   // código de país + número, solo dígitos
+  whatsapp: "5491134850669",   // código de país + 9 + número, solo dígitos
   whatsappMensaje: "Hola Eiro, quiero contarles sobre mi marca."
 };
