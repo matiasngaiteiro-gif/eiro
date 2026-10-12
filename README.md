@@ -43,9 +43,10 @@ window.EIRO_CONFIG = {
 ## Sistema visual (el mismo de las piezas de Illustrator)
 
 - **Fondos blancos o negros.** Van en negro la barra, la portada, la cinta, Servicios, Contacto y el pie.
-- **Verde #6CE26F solo como acento:** la píldora de la palabra rotativa, botones sobre negro, etiquetas sobre las fotos, la cinta, el cursor "Ver" y detalles. Sobre blanco los botones van en negro.
+- **Verde #6CE26F solo como acento:** el recuadro de la palabra rotativa, botones sobre negro, etiquetas sobre las fotos, la cinta, el cursor "Ver" y detalles. Sobre blanco los botones van en negro.
 - **Tipografía:** títulos en Plus Jakarta Sans ExtraBold, apretados (clase `title`); textos en Regular y Medium; etiquetas en mayúscula (clase `mono`).
-- **Fotos** cálidas con grano, en tarjetas redondeadas (clase `shot`) con etiqueta verde en píldora (clase `tag`).
+- **Fotos** cálidas con grano, en tarjetas redondeadas (clase `shot`) con etiqueta verde recta (clase `tag`).
+- **Rectos siempre:** recuadros resaltados, etiquetas, la palabra rotativa, la barrita, los puntos de la cinta y la selección de la intro. **Redondeados solo los botones** (y las tarjetas de foto).
 - **Frase resaltada:** renglones con recuadro negro detrás, sobre una grilla, como en los flyers (sección después de Trabajos).
 
 ## Animaciones

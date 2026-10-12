@@ -85,11 +85,11 @@ img { display: block; max-width: 100%; }
 .logo-fit { display: block; width: max-content; margin: 0; font-size: 21vw; }
 
 /* Barrita verde */
-.chip { display: inline-block; width: 28px; height: 8px; margin-right: 10px; background: var(--accent); border-radius: 999px; vertical-align: 0; }
+.chip { display: inline-block; width: 28px; height: 8px; margin-right: 10px; background: var(--accent); border-radius: 0; vertical-align: 0; }
 
-/* Píldoras */
+/* Etiquetas y resaltados: SIEMPRE rectos. Redondeados solo los botones. */
 .tag, .pill-tag {
-  display: inline-flex; align-items: center; min-height: 40px; padding: 8px 18px; border-radius: 999px;
+  display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border-radius: 0;
   background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.2;
 }
 .tag { position: absolute; left: clamp(12px, 1.6vw, 24px); bottom: clamp(12px, 1.6vw, 24px); z-index: 2; }
@@ -160,11 +160,11 @@ img { display: block; max-width: 100%; }
 .hero-side { grid-column: 9 / -1; display: grid; gap: var(--s-3); }
 .hero-side .statement { color: var(--gray); }
 .cta-row { display: flex; flex-wrap: wrap; gap: var(--s-1); }
-/* Píldora de la palabra rotativa: alto propio para que entren las letras con cola (g, q, p) */
+/* Recuadro de la palabra rotativa (recto): alto propio para que entren las letras con cola (g, q, p) */
 .word-pill {
   display: inline-flex; align-items: center; overflow: hidden; vertical-align: -0.12em; margin-top: 0.14em;
-  height: 1.22em; line-height: 1.22; padding: 0 0.34em 0.06em;
-  background: var(--accent); color: var(--on-accent); border-radius: 999px;
+  height: 1.22em; line-height: 1.22; padding: 0 0.24em 0.06em;
+  background: var(--accent); color: var(--on-accent); border-radius: 0;
   transition: width .6s var(--ease);
 }
 .word-pill .rotator { padding-bottom: 0.04em; }
@@ -190,7 +190,7 @@ img { display: block; max-width: 100%; }
 .marquee { overflow: hidden; border-block: 1px solid var(--line); padding-block: clamp(14px, 2vw, 26px); }
 .marquee-track { display: flex; align-items: center; gap: clamp(20px, 3vw, 48px); width: max-content; }
 .marquee span { font-weight: 800; font-size: clamp(2rem, 6vw, 5.4rem); letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
-.marquee i { width: clamp(16px, 2vw, 28px); height: clamp(16px, 2vw, 28px); border-radius: 50%; background: var(--accent); flex: none; }
+.marquee i { width: clamp(16px, 2vw, 28px); height: clamp(16px, 2vw, 28px); border-radius: 0; background: var(--accent); flex: none; }
 .motion .marquee-track { animation: marquee 28s linear infinite; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
@@ -258,7 +258,7 @@ img { display: block; max-width: 100%; }
 .service-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-3); padding: 4px 0 var(--s-4) calc(3rem + 12px); }
 .service-body p { grid-column: 1 / span 6; max-width: 32em; font-size: 1.15rem; }
 .service-body ul { grid-column: 8 / -1; display: flex; flex-wrap: wrap; gap: 8px; align-content: start; }
-.service-body li { border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; color: var(--gray); }
+.service-body li { border: 1px solid var(--line); border-radius: 0; padding: 8px 14px; color: var(--gray); }
 .motion details[open] .service-body { animation: open .7s var(--ease); }
 @keyframes open { from { opacity: 0; transform: translateY(-10px); } }
 @media (max-width: 900px) { .service-body p, .service-body ul { grid-column: 1 / -1; } }
@@ -339,9 +339,10 @@ img { display: block; max-width: 100%; }
 .intro-word span span { display: none; }
 .intro-word span span.on { display: inline-block; }
 .intro-word .gait span { max-width: 2em; overflow: hidden; transition: max-width .38s var(--ease-io), opacity .25s ease; }
-.intro-word .gait.selected span { background: var(--accent); color: #0B0B0B; }
+.intro-word .gait.selected { background: var(--accent); box-shadow: 0 0 0 0.05em var(--accent); color: #0B0B0B; border-radius: 0; }
+.intro-word .gait.selected:not(:has(span:not(.gone))) { box-shadow: none; }
 .intro-word .gait span.gone { max-width: 0; opacity: 0; }
-.caret { display: inline-block; width: 0.08em; height: 0.8em; margin-left: 0.06em; background: var(--accent); animation: blink .8s steps(1) infinite; }
+.caret { display: inline-block; border-radius: 0; width: 0.08em; height: 0.8em; margin-left: 0.06em; background: var(--accent); animation: blink .8s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .intro-note { color: #A6A6A6; opacity: 0; transition: opacity .5s ease; }
 .intro.is-done .intro-note { opacity: 1; }
