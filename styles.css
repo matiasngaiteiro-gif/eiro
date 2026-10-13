@@ -1094,3 +1094,8 @@ body { font-weight: var(--w-text); }
 .mark:hover .mark-cap { opacity: 1; }
 @media (hover: none) { .mark-cap { opacity: 1; } }
 @media (max-width: 700px) { .marks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
+/* Página de logos */
+.logos-page { padding-top: clamp(120px, 14vw, 200px); }
+.logos-page .sec-head { display: grid; gap: var(--s-2); }
+.logos-page { padding-top: clamp(96px, 10vw, 160px); }
+.logos-page h1.title { font-size: clamp(3.2rem, 7.4vw, 8.4rem); }
