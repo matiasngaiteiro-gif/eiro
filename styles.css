@@ -341,7 +341,7 @@ img { display: block; max-width: 100%; }
   background: #0B0B0B; color: #FFF;
 }
 .intro-on body { overflow: hidden; }
-.intro-word { font-size: clamp(2.6rem, 11vw, 11rem); line-height: 0.9; display: inline-flex; align-items: center; }
+.intro-word { font-size: min(10rem, 9.6vw); line-height: 0.9; display: inline-flex; align-items: center; }
 .intro-word > span { display: inline-flex; }
 .intro-word span span { display: none; }
 .intro-word span span.on { display: inline-block; }
@@ -834,3 +834,11 @@ img { display: block; max-width: 100%; }
 .ct-wa-big .ct-wa-ico { width: 60px; height: 60px; }
 .ct-wa-big .ct-wa-ico svg { width: 26px; height: 26px; }
 @media (max-width: 900px) { .contact-cta { grid-column: 1 / -1; } }
+
+/* Logo nuevo en vector */
+.logo-svg { display: block; height: calc(var(--logo-size, 26px) * 0.78); width: auto; aspect-ratio: 4352 / 1000; color: currentColor; }
+.logo-full { margin: 0; }
+.logo-full svg { display: block; width: 100%; height: auto; aspect-ratio: 4352 / 1000; color: currentColor; }
+.intro-word svg { display: block; height: 1em; color: currentColor; overflow: visible; }
+.intro-word .gait span svg { flex: none; }
+.talk-mark svg { width: 18px; height: auto; aspect-ratio: 1164 / 1000; color: var(--accent, #6CE26F); }
