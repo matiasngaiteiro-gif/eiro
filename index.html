@@ -23,15 +23,15 @@
 <meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Eiro", "alternateName": "Eiro, estudio creativo", "url": "https://matiasngaiteiro-gif.github.io/eiro/", "logo": "https://matiasngaiteiro-gif.github.io/eiro/assets/apple-touch-icon.png", "image": "https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg", "description": "Estudio creativo en Buenos Aires: branding, identidad visual, contenido, redes y eventos.", "telephone": "+5491134850669", "areaServed": ["AR", "US"], "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"}, "founder": {"@type": "Person", "name": "Matías Gaiteiro", "jobTitle": "Fundador y director creativo"}, "knowsAbout": ["Branding", "Identidad visual", "Manual de marca", "Contenido para redes", "Marketing digital", "Comunicación de eventos"]}</script>
 
-<link rel="icon" href="assets/favicon.png?v=3" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3">
+<link rel="icon" href="assets/favicon.png?v=4" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
 <!-- Logo: Vinila Extended Black (Adobe Fonts). Textos: Plus Jakarta Sans (Google Fonts). Archivo Expanded queda de respaldo del logo. -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=80">
+<link rel="stylesheet" href="styles.css?v=81">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -51,7 +51,7 @@
 
 <!-- INTRO: se escribe GAITEIRO, se borra GAIT y queda EIRO -->
 <div class="intro" id="intro" aria-hidden="true">
-  <p class="intro-word"><span class="gait"><span><svg viewBox="0 0 1295 1000" style="width:1.295em"><use href="assets/eiro-logo.svg#g0"/></svg></span><span><svg viewBox="0 0 1417 1000" style="width:1.417em"><use href="assets/eiro-logo.svg#g1"/></svg></span><span><svg viewBox="0 0 509 1000" style="width:0.509em"><use href="assets/eiro-logo.svg#g2"/></svg></span><span><svg viewBox="0 0 1282 1000" style="width:1.282em"><use href="assets/eiro-logo.svg#g3"/></svg></span></span><span class="eiro"><span><svg viewBox="0 0 1164 1000" style="width:1.164em"><use href="assets/eiro-logo.svg#g4"/></svg></span><span><svg viewBox="0 0 585 1000" style="width:0.585em"><use href="assets/eiro-logo.svg#g5"/></svg></span><span><svg viewBox="0 0 1256 1000" style="width:1.256em"><use href="assets/eiro-logo.svg#g6"/></svg></span><span><svg viewBox="0 0 1347 1000" style="width:1.347em"><use href="assets/eiro-logo.svg#g7"/></svg></span></span><i class="caret"></i></p>
+  <p class="logo intro-word"><span class="gait"><span>G</span><span>A</span><span>I</span><span>T</span></span><span class="eiro"><span>E</span><span>I</span><span>R</span><span>O</span></span><i class="caret"></i></p>
   <p class="intro-note mono">Eiro, estudio creativo</p>
 </div>
 
@@ -59,7 +59,7 @@
 
 <header class="header on-dark">
   <div class="wrap">
-    <a class="logo-link" href="#inicio" aria-label="Eiro, ir al inicio"><svg class="logo-svg" viewBox="0 0 4352 1000" aria-hidden="true"><use href="assets/eiro-logo.svg#eiro"/></svg></a>
+    <a class="logo-link" href="#inicio" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true">EIRO</span></a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
@@ -82,7 +82,7 @@
   <!-- PORTADA -->
   <section class="hero on-dark" id="inicio">
     <div class="wrap">
-      <p class="logo-full" role="img" aria-label="Eiro" data-anim="fade"><svg class="" viewBox="0 0 4352 1000" aria-hidden="true"><use href="assets/eiro-logo.svg#eiro"/></svg></p>
+      <p class="logo logo-fit" id="logo-board" role="img" aria-label="Eiro" data-anim="letters">EIRO</p>
       <div class="hero-row">
         <h1 class="hero-title title">
           <span class="sr-only">Eiro, estudio creativo de branding en Buenos Aires: marca, contenido, redes y eventos.</span>
@@ -297,7 +297,7 @@
         <ul id="foot-channels"></ul>
       </div>
     </div>
-    <p class="logo-full footer-logo" role="img" aria-label="Eiro" data-anim="fade"><svg class="" viewBox="0 0 4352 1000" aria-hidden="true"><use href="assets/eiro-logo.svg#eiro"/></svg></p>
+    <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters">EIRO</p>
     <div class="legal mono">
       <span>© <span id="year">2026</span> Eiro</span>
       <span>Buenos Aires · Para Argentina y Estados Unidos</span>
@@ -307,7 +307,7 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=80"></script>
-<script src="script.js?v=80"></script>
+<script src="config.js?v=81"></script>
+<script src="script.js?v=81"></script>
 </body>
 </html>
