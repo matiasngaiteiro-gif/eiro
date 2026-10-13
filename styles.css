@@ -1040,3 +1040,22 @@ body { font-weight: var(--w-text); }
 .logo, .logo-fit, .intro-word { font-weight: 800; letter-spacing: -0.05em; }
 .logo .ek, .intro-word .ek { margin-right: 0.03em; }
 .logo-fit .l:first-child > span { margin-right: 0.03em; }
+
+/* El punto verde: firma y símbolo de Eiro (v94) */
+.logo .dot, .intro-word .dot { color: var(--accent); margin-left: -0.01em; }
+.logo-fit .l:last-child > span { color: var(--accent); }
+
+/* Portadas de trabajos: logo del cliente sobre color sólido, sin texto encima (v95) */
+.work .cover { display: grid; place-items: center; overflow: hidden; }
+.work .cover::after { display: none; }
+.work .cover .cv-logo { height: auto; max-width: none; object-fit: contain; transition: transform .9s var(--ease); }
+.work .cover .cv-word { font-weight: 800; letter-spacing: -0.05em; font-size: clamp(2.2rem, 4.4vw, 4.6rem); line-height: 1; transition: transform .9s var(--ease); }
+.work-link:hover .cover .cv-logo, .work-link:hover .cover .cv-word,
+.work-link:focus-visible .cover .cv-logo, .work-link:focus-visible .cover .cv-word { transform: scale(1.06); }
+.cv-cer { background: #FF3A12; }
+.cv-nero { background: #E6E6E6; }
+.cv-calenton { background: #1C1C1C; color: #F4F4F2; }
+.cv-crisger { background: #262626; color: #F4F4F2; }
+.cv-alma { background: #F4F4F2; color: #0B0B0B; }
+.work .work-meta.sr-only { position: absolute !important; opacity: 1; }
+.work .shot.cover img.cv-logo { position: static; inset: auto; height: auto; aspect-ratio: auto; object-fit: contain; }

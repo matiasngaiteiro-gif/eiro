@@ -23,15 +23,15 @@
 <meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Eiro", "alternateName": "Eiro, estudio creativo", "url": "https://matiasngaiteiro-gif.github.io/eiro/", "logo": "https://matiasngaiteiro-gif.github.io/eiro/assets/apple-touch-icon.png", "image": "https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg", "description": "Estudio creativo en Buenos Aires: branding, identidad visual, contenido, redes y eventos.", "telephone": "+5491134850669", "areaServed": ["AR", "US"], "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"}, "founder": {"@type": "Person", "name": "Matías Gaiteiro", "jobTitle": "Fundador y director creativo"}, "knowsAbout": ["Branding", "Identidad visual", "Manual de marca", "Contenido para redes", "Marketing digital", "Comunicación de eventos"]}</script>
 
-<link rel="icon" href="assets/favicon.png?v=4" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=4">
+<link rel="icon" href="assets/favicon.png?v=5" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=5">
 <!-- Logo: Vinila Extended Black (Adobe Fonts). Textos: Plus Jakarta Sans (Google Fonts). Archivo Expanded queda de respaldo del logo. -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
-<link rel="stylesheet" href="styles.css?v=93">
+<link rel="stylesheet" href="styles.css?v=95">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -51,7 +51,7 @@
 
 <!-- INTRO: se tipea gaiteiro, se borra gait con el teclado y queda eiro -->
 <div class="intro" id="intro" aria-hidden="true">
-  <p class="logo intro-word" data-word="Gaiteiro" data-cut="5" data-keep="3" data-type="E"><i class="caret"></i></p>
+  <p class="logo intro-word" data-word="Gaiteiro" data-cut="5" data-keep="3" data-type="E" data-end="."><i class="caret"></i></p>
   <p class="intro-note mono">ESTUDIO CREATIVO</p>
 </div>
 
@@ -59,7 +59,7 @@
 
 <header class="header on-dark">
   <div class="wrap">
-    <a class="logo-link" href="#inicio" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro</span></a>
+    <a class="logo-link" href="#inicio" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot">.</span></span></a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
@@ -112,36 +112,36 @@
       <div class="sec-head">
         <h2 class="title" id="trabajos-t" data-anim="words">Trabajos</h2>
       </div>
-      <!-- PORTFOLIO: cada <li> es un proyecto. Las fotos son de referencia (estética EIRO): reemplazalas por las del proyecto real cuando estén. -->
+      <!-- PORTFOLIO: cada portada es el logo del cliente sobre su color sólido. -->
       <ul class="works">
         <li class="work">
           <a class="work-link" href="trabajos/cer.html">
-          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/cer-b2.jpg" alt="Afiche negro con el logo naranja de CER pegado en una pared del barrio" width="928" height="1152" loading="lazy"><figcaption class="tag">CER</figcaption></figure>
-          <div class="work-meta" data-anim="fade"><h3>CER</h3><p class="mono muted">Centro de entrenamiento</p><p class="work-line muted">Identidad para un centro de entrenamiento preciso, cercano y a medida.</p></div>
+          <figure class="shot r-4x5 cover cv-cer" data-anim="shot"><img class="cv-logo" src="assets/cer/cer-logo-blanco.svg" alt="Logo de CER" width="831" height="259" style="width:58%"></figure>
+          <div class="work-meta sr-only"><h3>CER</h3><p class="mono muted">Centro de entrenamiento</p><p class="work-line muted">Identidad para un centro de entrenamiento preciso, cercano y a medida.</p></div>
           </a>
         </li>
         <li class="work">
           <a class="work-link" href="trabajos/nero.html">
-          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/nero-m2.jpg" alt="Caja negra con el símbolo de NERO en la puerta de una casa" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="tag">NERO</figcaption></figure>
-          <div class="work-meta" data-anim="fade"><h3>NERO</h3><p class="mono muted">Tienda digital de tecnología</p><p class="work-line muted">Una marca que une el click y la caja en un solo símbolo.</p></div>
+          <figure class="shot r-4x5 cover cv-nero" data-anim="shot"><img class="cv-logo" src="assets/nero/nero-logo.svg" alt="Logo de NERO" width="4204" height="1000" style="width:62%"></figure>
+          <div class="work-meta sr-only"><h3>NERO</h3><p class="mono muted">Tienda digital de tecnología</p><p class="work-line muted">Una marca que une el click y la caja en un solo símbolo.</p></div>
           </a>
         </li>
         <li class="work">
           <a class="work-link" href="trabajos/el-calenton.html">
-          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/el-calenton.jpg" alt="Gente bailando bajo luz roja y láseres en una fiesta" width="928" height="1152" loading="lazy"><figcaption class="tag">El Calentón</figcaption></figure>
-          <div class="work-meta" data-anim="fade"><h3>El Calentón</h3><p class="mono muted">Evento · Latin tech music</p><p class="work-line muted">Una noche que se espera desde el primer teaser.</p></div>
+          <figure class="shot r-4x5 cover cv-calenton" data-anim="shot"><span class="cv-word">El Calentón</span></figure>
+          <div class="work-meta sr-only"><h3>El Calentón</h3><p class="mono muted">Evento · Latin tech music</p><p class="work-line muted">Una noche que se espera desde el primer teaser.</p></div>
           </a>
         </li>
         <li class="work">
           <a class="work-link" href="trabajos/crisger.html">
-          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/crisger.jpg" alt="Operario con casco blanco y chaleco reflectivo sobre fondo negro" width="928" height="1152" loading="lazy"><figcaption class="tag">Crisger</figcaption></figure>
-          <div class="work-meta" data-anim="fade"><h3>Crisger</h3><p class="mono muted">Seguridad industrial</p><p class="work-line muted">Una marca industrial con presencia clara y confiable.</p></div>
+          <figure class="shot r-4x5 cover cv-crisger" data-anim="shot"><span class="cv-word">Crisger</span></figure>
+          <div class="work-meta sr-only"><h3>Crisger</h3><p class="mono muted">Seguridad industrial</p><p class="work-line muted">Una marca industrial con presencia clara y confiable.</p></div>
           </a>
         </li>
         <li class="work">
           <a class="work-link" href="trabajos/alma.html">
-          <figure class="shot r-4x5" data-anim="shot"><img src="assets/fotos/alma.jpg" alt="Chica riéndose con anteojos tintados en un after" width="928" height="1152" loading="lazy"><figcaption class="tag">Alma</figcaption></figure>
-          <div class="work-meta" data-anim="fade"><h3>Alma</h3><p class="mono muted">Productora de eventos</p><p class="work-line muted">Una productora que se reconoce antes de leer el nombre.</p></div>
+          <figure class="shot r-4x5 cover cv-alma" data-anim="shot"><span class="cv-word">Alma</span></figure>
+          <div class="work-meta sr-only"><h3>Alma</h3><p class="mono muted">Productora de eventos</p><p class="work-line muted">Una productora que se reconoce antes de leer el nombre.</p></div>
           </a>
         </li>
       </ul>
@@ -302,7 +302,7 @@
         <ul id="foot-channels"></ul>
       </div>
     </div>
-    <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.03">Eiro</p>
+    <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.03">Eiro.</p>
     <div class="legal mono">
       <span>© <span id="year">2026</span> Eiro</span>
       <span>Buenos Aires, para Argentina y Estados Unidos</span>
@@ -312,7 +312,7 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=93"></script>
-<script src="script.js?v=93"></script>
+<script src="config.js?v=95"></script>
+<script src="script.js?v=95"></script>
 </body>
 </html>

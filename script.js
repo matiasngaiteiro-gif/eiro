@@ -328,6 +328,12 @@
     /* El cursor salta al final y queda "eiro" */
     t += 420;
     later(function () { word.appendChild(caret); hold(); }, t);
+    /* Última tecla: el punto verde */
+    var endChar = word.getAttribute("data-end");
+    if (endChar) {
+      t += 420;
+      later(function () { var s = document.createElement("span"); s.className = "dot"; s.textContent = endChar; word.insertBefore(s, caret); hold(); }, t);
+    }
     t += 300;
     later(function () { intro.classList.add("is-done"); }, t);
     t += 900;
