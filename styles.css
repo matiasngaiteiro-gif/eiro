@@ -883,3 +883,12 @@ img { display: block; max-width: 100%; }
 .motion .work-link:hover .work-meta[data-anim="fade"], .motion .work-link:focus-visible .work-meta[data-anim="fade"] { opacity: 1; }
 @media (hover: none) { .motion .work-meta[data-anim="fade"].in { opacity: 1; } }
 .cursor { display: none !important; }
+
+/* Portadas de trabajos en 1080 x 1350 (4:5) */
+.work .shot { aspect-ratio: 4 / 5 !important; }
+
+/* Botón flotante: solo el ícono de WhatsApp, en círculo */
+.talk { padding: 0; gap: 0; background: #6CE26F; box-shadow: 0 10px 30px rgba(0,0,0,.3); border-radius: 50% !important; width: 60px; height: 60px; display: grid; place-items: center; }
+.talk-wa { width: 60px; height: 60px; background: transparent; box-shadow: none; border-radius: 50% !important; }
+.talk-wa svg { width: 28px; height: 28px; }
+@media (max-width: 900px) { .talk { left: auto; right: 16px; transform: translateY(140%); } .talk.is-on { transform: none; } }
