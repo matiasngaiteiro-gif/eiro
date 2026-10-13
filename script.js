@@ -23,7 +23,7 @@
       measureCtx.font = es.fontWeight + " 100px " + es.fontFamily;
       if ("letterSpacing" in measureCtx) measureCtx.letterSpacing = (ls * 100) + "px";
       var m = measureCtx.measureText((el.textContent || "Eiro").trim());
-      var kern = parseFloat(el.getAttribute("data-kern")) || 0;
+      var kern = (parseFloat(el.getAttribute("data-kern")) || 0) + (parseFloat(el.getAttribute("data-dot")) || 0);
       var inkLeft = -m.actualBoundingBoxLeft;              /* aire antes de la E */
       var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft + kern * 100;
       if (!(inkW > 0)) { el.style.fontSize = "21vw"; return; }
@@ -246,7 +246,9 @@
     el.querySelectorAll(".w").forEach(function (w, i) { w.firstChild.style.setProperty("--i", i); });
   });
   document.querySelectorAll('[data-anim="letters"]').forEach(function (el) {
+    var dot = el.querySelector(".dot");
     wrap(el, function (t) { return t.split(""); }, "l");
+    if (dot) { var o = document.createElement("span"); o.className = "l"; o.appendChild(dot); el.appendChild(o); }
     el.querySelectorAll(".l").forEach(function (l, i) { l.firstChild.style.setProperty("--i", i); });
   });
   fitLogos();
@@ -332,7 +334,7 @@
     var endChar = word.getAttribute("data-end");
     if (endChar) {
       t += 420;
-      later(function () { var s = document.createElement("span"); s.className = "dot"; s.textContent = endChar; word.insertBefore(s, caret); hold(); }, t);
+      later(function () { var s = document.createElement("span"); s.className = "dot"; word.insertBefore(s, caret); hold(); }, t);
     }
     t += 300;
     later(function () { intro.classList.add("is-done"); }, t);

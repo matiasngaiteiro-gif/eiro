@@ -1059,3 +1059,13 @@ body { font-weight: var(--w-text); }
 .cv-alma { background: #F4F4F2; color: #0B0B0B; }
 .work .work-meta.sr-only { position: absolute !important; opacity: 1; }
 .work .shot.cover img.cv-logo { position: static; inset: auto; height: auto; aspect-ratio: auto; object-fit: contain; }
+
+/* Punto del logo: círculo verde, solo en el logo (v96) */
+.logo .dot, .intro-word .dot, .logo-fit .dot {
+  display: inline-block; width: 0.19em; height: 0.19em; border-radius: 50% !important;
+  background: var(--accent); margin-left: 0.04em; vertical-align: baseline; color: transparent;
+}
+.logo-fit .l:last-child > span { color: inherit; }
+.motion [data-anim="letters"] .l > .dot { display: inline-block; }
+.intro-word { align-items: baseline; }
+.intro-word .caret { transform: translateY(0.14em); }
