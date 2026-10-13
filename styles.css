@@ -1069,3 +1069,13 @@ body { font-weight: var(--w-text); }
 .motion [data-anim="letters"] .l > .dot { display: inline-block; }
 .intro-word { align-items: baseline; }
 .intro-word .caret { transform: translateY(0.14em); }
+
+/* Entregables en los casos (v97) */
+.kc-deliv { display: grid; gap: 12px; margin-top: var(--s-3); }
+.kc-deliv ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid currentColor; max-width: 34em; }
+.kc-deliv li { padding: 12px 0; border-bottom: 1px solid var(--line); font-weight: 500; }
+@media (max-width: 560px) { .kc-deliv ul { grid-template-columns: 1fr; } }
+/* Grilla de trabajos con dos casos */
+.works { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .works { grid-template-columns: 1fr; } }
+.hero-accent { color: var(--accent); }
