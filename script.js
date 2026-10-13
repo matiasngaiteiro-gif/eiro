@@ -10,14 +10,25 @@
 
   /* ---------- Logos que ocupan todo el ancho (portada y pie) ---------- */
   var fitTargets = [document.getElementById("logo-board"), document.getElementById("logo-foot")].filter(Boolean);
+  /* El logo grande ocupa todo el ancho y su tinta queda alineada con el margen (sin el aire propio de la letra) */
+  var measureCtx = document.createElement("canvas").getContext("2d");
   function fitLogos() {
     fitTargets.forEach(function (el) {
       var box = el.parentElement;
       var cs = window.getComputedStyle(box);
       var avail = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-      el.style.fontSize = "100px";
-      var w = el.getBoundingClientRect().width;
-      if (w > 0 && avail > 0) el.style.fontSize = (100 * avail / w * 0.995) + "px";
+      if (!(avail > 0)) return;
+      var es = window.getComputedStyle(el);
+      var ls = parseFloat(es.letterSpacing) / parseFloat(es.fontSize) || 0;
+      measureCtx.font = es.fontWeight + " 100px " + es.fontFamily;
+      if ("letterSpacing" in measureCtx) measureCtx.letterSpacing = (ls * 100) + "px";
+      var m = measureCtx.measureText("EIRO");
+      var inkLeft = -m.actualBoundingBoxLeft;              /* aire antes de la E */
+      var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft;
+      if (!(inkW > 0)) { el.style.fontSize = "21vw"; return; }
+      var size = 100 * avail / inkW;
+      el.style.fontSize = size + "px";
+      el.style.marginLeft = (-inkLeft * size / 100) + "px";
     });
   }
   fitLogos();

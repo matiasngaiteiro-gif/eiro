@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=86">
+<link rel="stylesheet" href="styles.css?v=87">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -112,7 +112,6 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 class="title" id="trabajos-t" data-anim="words">Trabajos</h2>
-        <p class="mono muted" data-anim="fade">Selección</p>
       </div>
       <!-- PORTFOLIO: cada <li> es un proyecto. Las fotos son de referencia (estética EIRO): reemplazalas por las del proyecto real cuando estén. -->
       <ul class="works">
@@ -175,35 +174,34 @@
       <div class="wrap">
         <div class="sec-head">
           <h2 class="title" id="servicios-t" data-anim="words">Qué hacemos</h2>
-          <p class="mono muted" data-anim="fade">Cuatro áreas que funcionan solas o juntas</p>
         </div>
         <ol class="services">
           <li data-anim="fade"><details open>
-            <summary><span class="num mono" aria-hidden="true">01</span><h3 class="title">Marca</h3><span class="toggle" aria-hidden="true"></span></summary>
+            <summary><h3 class="title">Marca</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Encontramos lo que hace distinta a tu marca y le damos una forma que se reconoce en cualquier lugar. Después dejamos las reglas para que siga siendo la misma.</p>
-              <ul class="mono" aria-label="Entregables"><li>Estrategia y posicionamiento</li><li>Identidad visual</li><li>Sistemas gráficos</li><li>Manual de marca</li></ul>
+              <ul class="deliverables" aria-label="Entregables"><li>Estrategia y posicionamiento</li><li>Identidad visual</li><li>Sistemas gráficos</li><li>Manual de marca</li></ul>
             </div>
           </details></li>
           <li data-anim="fade"><details>
-            <summary><span class="num mono" aria-hidden="true">02</span><h3 class="title">Contenido</h3><span class="toggle" aria-hidden="true"></span></summary>
+            <summary><h3 class="title">Contenido</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Fotos, videos y piezas con una idea detrás. Contenido que se nota que es tuyo antes de leer el nombre.</p>
-              <ul class="mono" aria-label="Entregables"><li>Dirección de arte</li><li>Fotografía</li><li>Video</li><li>Diseño de piezas</li></ul>
+              <ul class="deliverables" aria-label="Entregables"><li>Dirección de arte</li><li>Fotografía</li><li>Video</li><li>Diseño de piezas</li></ul>
             </div>
           </details></li>
           <li data-anim="fade"><details>
-            <summary><span class="num mono" aria-hidden="true">03</span><h3 class="title">Marketing y redes</h3><span class="toggle" aria-hidden="true"></span></summary>
+            <summary><h3 class="title">Marketing y redes</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>Nos sumamos a tu equipo: planificamos, publicamos, coordinamos y medimos. Tus redes trabajan todos los días, también cuando vos estás en otra cosa.</p>
-              <ul class="mono" aria-label="Entregables"><li>Planificación</li><li>Gestión de cuentas</li><li>Calendarios de contenido</li><li>Campañas y anuncios</li><li>Coordinación de equipos</li><li>Seguimiento</li></ul>
+              <ul class="deliverables" aria-label="Entregables"><li>Planificación</li><li>Gestión de cuentas</li><li>Calendarios de contenido</li><li>Campañas y anuncios</li><li>Coordinación de equipos</li><li>Seguimiento</li></ul>
             </div>
           </details></li>
           <li data-anim="fade"><details>
-            <summary><span class="num mono" aria-hidden="true">04</span><h3 class="title">Eventos</h3><span class="toggle" aria-hidden="true"></span></summary>
+            <summary><h3 class="title">Eventos</h3><span class="toggle" aria-hidden="true"></span></summary>
             <div class="service-body">
               <p>De la primera idea a la última historia de la noche. Creamos la identidad del evento y todo lo que lo anuncia y lo cuenta.</p>
-              <ul class="mono" aria-label="Entregables"><li>Concepto e identidad</li><li>Piezas de difusión</li><li>Contenido audiovisual</li><li>Material gráfico</li></ul>
+              <ul class="deliverables" aria-label="Entregables"><li>Concepto e identidad</li><li>Piezas de difusión</li><li>Contenido audiovisual</li><li>Material gráfico</li></ul>
             </div>
           </details></li>
         </ol>
@@ -216,7 +214,6 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 class="title" id="metodo-t" data-anim="words">Cómo trabajamos</h2>
-        <p class="mono muted" data-anim="fade">Primero entender, después diseñar</p>
       </div>
       <ol class="method method-row">
         <li data-anim="fade"><span class="num mono" aria-hidden="true">01</span><div><h3 class="title">Entender</h3><p>Escuchamos antes de proponer: qué ofrecés, a quién y qué lugar ocupás hoy.</p></div></li>
@@ -236,7 +233,6 @@
         <span class="q-line q-mark" data-anim="mark"><span>Para que nada</span></span>
         <span class="q-line q-mark" data-anim="mark"><span>se contradiga.</span></span>
       </p>
-      <p class="pill-tag" data-anim="fade">Eiro, estudio creativo</p>
     </div>
   </section>
 
@@ -244,9 +240,8 @@
   <section class="section" id="estudio" aria-labelledby="estudio-t">
     <div class="wrap">
       <div class="studio-grid">
-        <figure class="shot r-4x5 studio-img" data-anim="shot" data-parallax="0.05"><img src="assets/fotos/matias.jpg" alt="Matías Gaiteiro con camisa de corderoy verde contra una pared verde, al sol" width="928" height="1152" loading="lazy"><figcaption class="tag">Matías Gaiteiro</figcaption></figure>
+        <figure class="shot r-4x5 studio-img" data-anim="shot" data-parallax="0.05"><img src="assets/fotos/matias.jpg" alt="Matías Gaiteiro con camisa de corderoy verde contra una pared verde, al sol" width="928" height="1152" loading="lazy"></figure>
         <div class="studio-text">
-          <p class="mono muted" data-anim="fade"><span class="chip" aria-hidden="true"></span>Estudio</p>
           <h2 class="title" id="estudio-t" data-anim="words">Cerca de cada cliente.</h2>
           <p class="statement" data-anim="fade">Trabajamos con pocas marcas a la vez, para conocer cada una de cerca: cómo habla, qué quiere y hacia dónde va. Muchas de esas relaciones llevan años.</p>
           <p class="signature" data-anim="fade"><strong>Matías Gaiteiro</strong><span class="mono muted">Fundador y director creativo</span></p>
@@ -280,7 +275,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <p class="mono">Eiro, estudio creativo</p>
+        <p class="footer-claim">Hacemos marcas que se reconocen de lejos y se sienten de cerca.</p>
       </div>
       <nav aria-label="Pie de página">
         <span class="label mono">Explorar</span>
@@ -300,14 +295,14 @@
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters">EIRO</p>
     <div class="legal mono">
       <span>© <span id="year">2026</span> Eiro</span>
-      <span>Buenos Aires · Para Argentina y Estados Unidos</span>
+      <span>Buenos Aires, para Argentina y Estados Unidos</span>
     </div>
   </div>
 </footer>
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=86"></script>
-<script src="script.js?v=86"></script>
+<script src="config.js?v=87"></script>
+<script src="script.js?v=87"></script>
 </body>
 </html>
