@@ -892,17 +892,3 @@ img { display: block; max-width: 100%; }
 .talk-wa { width: 60px; height: 60px; background: transparent; box-shadow: none; border-radius: 50% !important; }
 .talk-wa svg { width: 28px; height: 28px; }
 @media (max-width: 900px) { .talk { left: auto; right: 16px; transform: translateY(140%); } .talk.is-on { transform: none; } }
-
-/* La O del logo se transforma en un planeta */
-.logo-o { position: relative; cursor: pointer; }
-.logo-o > span { transition: opacity .35s ease, transform .6s var(--ease); }
-.planet { position: absolute; left: 50%; top: 50%; width: 0.74em; height: 0.74em; transform: translate(-50%, -50%) rotate(-40deg) scale(.6); opacity: 0;
-  transition: opacity .35s ease, transform .8s var(--ease); pointer-events: none; overflow: visible; }
-.pl-ring, .pl-line { fill: none; stroke: currentColor; }
-.pl-ring { stroke-width: 13; }
-.pl-line { stroke-width: 6; stroke-linecap: round; stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset .9s var(--ease) .15s; }
-.pl-star { fill: var(--accent); transform-origin: 50px 50px; transform: scale(0) rotate(-90deg); transition: transform .7s var(--ease) .3s; }
-.logo-o:hover > span, .logo-o.is-planet > span { opacity: 0; transform: scale(.7); }
-.logo-o:hover .planet, .logo-o.is-planet .planet { opacity: 1; transform: translate(-50%, -50%) rotate(0) scale(1); }
-.logo-o:hover .pl-line, .logo-o.is-planet .pl-line { stroke-dashoffset: 0; }
-.logo-o:hover .pl-star, .logo-o.is-planet .pl-star { transform: scale(1) rotate(0); }

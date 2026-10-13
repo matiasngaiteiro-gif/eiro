@@ -239,23 +239,6 @@
   });
   fitLogos();
 
-  /* ---------- La O del logo se vuelve un planeta al pasar el mouse (o al tocarla) ---------- */
-  document.querySelectorAll("#logo-board, #logo-foot").forEach(function (logo) {
-    var letters = logo.querySelectorAll(".l");
-    var o = letters[letters.length - 1];
-    if (!o) return;
-    o.classList.add("logo-o");
-    o.insertAdjacentHTML("beforeend",
-      '<svg class="planet" viewBox="0 0 100 100" aria-hidden="true">' +
-      '<circle class="pl-ring" cx="50" cy="50" r="43.5"/>' +
-      '<path class="pl-line" d="M50 6.5 C30 26 30 74 50 93.5"/>' +
-      '<path class="pl-line" d="M50 6.5 C70 26 70 74 50 93.5"/>' +
-      '<path class="pl-line" d="M6.5 50 C26 41 74 41 93.5 50"/>' +
-      '<path class="pl-star" d="M50 31 C52 45 55 48 69 50 C55 52 52 55 50 69 C48 55 45 52 31 50 C45 48 48 45 50 31Z"/>' +
-      '</svg>');
-    o.addEventListener("click", function () { o.classList.toggle("is-planet"); });
-  });
-
   /* ---------- Aparición al hacer scroll ---------- */
   var heroBox = document.getElementById("inicio");
   var io = new IntersectionObserver(function (entries) {
