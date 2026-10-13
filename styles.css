@@ -1084,3 +1084,13 @@ body { font-weight: var(--w-text); }
 .marquee span { font-size: clamp(1.4rem, 2.8vw, 2.6rem); letter-spacing: -0.025em; }
 .marquee i { width: clamp(8px, 0.9vw, 13px); height: clamp(8px, 0.9vw, 13px); }
 .marquee { padding-block: clamp(12px, 1.4vw, 20px); }
+
+/* LOGOS: grilla de marcas sobre color sólido (v99) */
+.marks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mark { position: relative; aspect-ratio: 1 / 1; background: var(--bg, #0B0B0B); display: grid; place-items: center; overflow: hidden; }
+.mark img { height: auto; transition: transform .9s var(--ease); }
+.mark:hover img { transform: scale(1.06); }
+.mark-cap { position: absolute; left: 16px; bottom: 14px; font-size: .84rem; font-weight: 500; color: #8A8A8A; opacity: 0; transition: opacity .3s ease; }
+.mark:hover .mark-cap { opacity: 1; }
+@media (hover: none) { .mark-cap { opacity: 1; } }
+@media (max-width: 700px) { .marks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } }
