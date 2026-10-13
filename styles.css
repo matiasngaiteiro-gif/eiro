@@ -1099,3 +1099,7 @@ body { font-weight: var(--w-text); }
 .logos-page .sec-head { display: grid; gap: var(--s-2); }
 .logos-page { padding-top: clamp(96px, 10vw, 160px); }
 .logos-page h1.title { font-size: clamp(3.2rem, 7.4vw, 8.4rem); }
+
+/* Paleta Eiro (v100): base = Verde Eiro, Papel y Tinta.
+   Acompañamiento para piezas: Monte #1E3A2F · Brote #C9EBCF · Bruma #D8D7EE · Arcilla #F1D2C6 · Ladrillo #F0643C · Sol #F6C64E */
+:root { --paper: #F2EEE6; --soft: #E8E2D6; --line: #DCD5C8; --gray: #5E5A53; --papel: #F2EEE6; --tinta: #0B0B0B; }
