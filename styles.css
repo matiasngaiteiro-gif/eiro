@@ -359,11 +359,11 @@ img { display: block; max-width: 100%; }
 .motion [data-anim="fade"] { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform 1.1s var(--ease); }
 .motion [data-anim="fade"].in { opacity: 1; transform: none; }
 
-.motion [data-anim="words"] .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.motion [data-anim="words"] .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.16em 0.04em 0.24em; margin: -0.16em -0.04em -0.24em; }
 .motion [data-anim="words"] .w > span { display: inline-block; transform: translateY(110%); transition: transform 1.1s var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
 .motion [data-anim="words"].in .w > span { transform: none; }
 
-.motion [data-anim="letters"] .l { display: inline-block; overflow: hidden; vertical-align: top; padding-block: 0.06em; margin-block: -0.06em; }
+.motion [data-anim="letters"] .l { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.16em 0.03em 0.2em; margin: -0.16em -0.03em -0.2em; }
 .motion [data-anim="letters"] .l > span { display: inline-block; transform: translateY(105%); transition: transform 1.2s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
 .motion [data-anim="letters"].in .l > span { transform: none; }
 
@@ -892,3 +892,12 @@ img { display: block; max-width: 100%; }
 .talk-wa { width: 60px; height: 60px; background: transparent; box-shadow: none; border-radius: 50% !important; }
 .talk-wa svg { width: 28px; height: 28px; }
 @media (max-width: 900px) { .talk { left: auto; right: 16px; transform: translateY(140%); } .talk.is-on { transform: none; } }
+
+/* Los botones sí van redondeados; todo lo demás sigue recto */
+.btn, .nav-cta, .menu-btn, .copy-btn, .ct-wa, .kc-nav a { border-radius: 999px !important; }
+.ct-wa-ico, .talk, .talk-wa, .services .toggle { border-radius: 50% !important; }
+/* Placas de CER: el texto ancho no se corta */
+.cu-p .cu-h { max-width: 100%; overflow-wrap: anywhere; }
+.motion .hl[data-anim="mark"] > span { clip-path: inset(-0.45em 100% -0.45em -0.3em); }
+.motion .hl[data-anim="mark"].in > span { clip-path: inset(-0.45em -0.3em -0.45em -0.3em); }
+.cu-up { padding-bottom: .12em; margin-bottom: -.12em; }
