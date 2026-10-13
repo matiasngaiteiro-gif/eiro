@@ -929,3 +929,50 @@ img { display: block; max-width: 100%; }
 .hero-side { padding-bottom: 0.35em; }
 .contact-grid { align-items: start; }
 .contact-cta { justify-self: start; }
+
+/* ---------- Sensación de producto global: calma, claridad y cercanía ---------- */
+/* Barra tipo app: translúcida y nítida al bajar */
+.header { transition: transform .5s var(--ease), background-color .3s ease, border-color .3s ease; }
+.header.is-stuck { background: rgba(11, 11, 11, .78); backdrop-filter: saturate(1.4) blur(16px); -webkit-backdrop-filter: saturate(1.4) blur(16px); border-bottom-color: rgba(255,255,255,.08); }
+/* Movimiento más corto y sin saltos grandes: como una interfaz, no como un video */
+.motion [data-anim="fade"] { transform: translateY(12px); transition: opacity .6s ease, transform .7s var(--ease); }
+.motion [data-anim="shot"] { clip-path: inset(6% 0 0 0) !important; transition: clip-path .9s var(--ease); }
+.motion [data-anim="shot"] img { scale: 1.08; transition: scale 1.2s var(--ease); }
+/* Botones con respuesta táctil */
+.btn, .nav-cta, .ct-wa { transition: transform .2s ease, background-color .3s ease, color .3s ease, box-shadow .3s ease; }
+.btn:active, .nav-cta:active, .ct-wa:active, .talk:active { transform: scale(.97); }
+.ct-wa:hover { box-shadow: 0 8px 24px rgba(108, 226, 111, .25); }
+.talk { transition: transform .5s var(--ease), opacity .4s ease, box-shadow .3s ease; }
+.talk:hover { box-shadow: 0 12px 32px rgba(108, 226, 111, .35); }
+
+/* Contacto con vista previa de chat */
+.ct-layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-5) var(--s-3); align-items: center; }
+.ct-copy { grid-column: 1 / span 7; display: grid; gap: var(--s-3); justify-items: start; }
+.ct-copy .statement { max-width: 26em; color: #CFCFCF; }
+.ct-copy .ct-wa { margin-top: var(--s-1); }
+.chat { grid-column: 9 / -1; background: #141414; border: 1px solid #262626; border-radius: 28px !important; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.45); max-width: 420px; justify-self: end; width: 100%; }
+.chat-top { display: flex; align-items: center; gap: 12px; padding: 16px 18px; background: #1B1B1B; border-bottom: 1px solid #262626; }
+.chat-av { width: 40px; height: 40px; border-radius: 50% !important; background: var(--accent); color: #0B0B0B; display: grid; place-items: center; font-weight: 800; }
+.chat-who { display: grid; line-height: 1.2; }
+.chat-who b { font-weight: 700; letter-spacing: -0.01em; }
+.chat-who small { color: var(--accent); font-size: .8rem; }
+.chat-body { display: grid; gap: 10px; padding: 20px 16px 22px;
+  background-color: #101010; background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px); background-size: 14px 14px; }
+.msg { max-width: 82%; padding: 10px 14px 8px; font-size: .95rem; line-height: 1.4; border-radius: 18px !important; position: relative; }
+.msg time { display: block; text-align: right; font-size: .68rem; opacity: .6; margin-top: 2px; }
+.msg.me { justify-self: end; background: var(--accent); color: #0B0B0B; border-bottom-right-radius: 6px !important; }
+.msg.them { justify-self: start; background: #232323; color: #F2F2F2; border-bottom-left-radius: 6px !important; }
+.typing { display: flex; gap: 5px; padding: 14px 16px; }
+.typing i { width: 7px; height: 7px; border-radius: 50% !important; background: #9A9A9A; animation: typing 1.2s infinite ease-in-out; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes typing { 0%, 60%, 100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+/* Los mensajes aparecen uno tras otro cuando el chat entra en pantalla */
+.motion .chat .msg { opacity: 0; transform: translateY(8px) scale(.98); transition: opacity .4s ease, transform .5s var(--ease); }
+.motion .chat.in .msg { opacity: 1; transform: none; }
+.motion .chat.in .msg:nth-child(2) { transition-delay: .6s; }
+.motion .chat.in .msg:nth-child(3) { transition-delay: 1.2s; }
+.motion .chat.in .msg:nth-child(4) { transition-delay: 1.8s; }
+@media (max-width: 900px) { .ct-copy, .chat { grid-column: 1 / -1; } .chat { justify-self: start; } }
+.ct-copy .channels { grid-column: auto; width: 100%; }
+.ct-copy .channels:has(ul[hidden]) { display: none; }
+.ct-copy h2 { font-size: clamp(3rem, 8vw, 7.5rem); }

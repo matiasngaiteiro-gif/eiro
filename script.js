@@ -250,6 +250,14 @@
   });
   fitLogos();
 
+  /* El chat de contacto se "escribe" cuando entra en pantalla */
+  (function () {
+    var chat = document.querySelector(".chat");
+    if (!chat || !("IntersectionObserver" in window)) { if (chat) chat.classList.add("in"); return; }
+    var o = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { chat.classList.add("in"); o.disconnect(); } }); }, { threshold: .35 });
+    o.observe(chat);
+  })();
+
   /* ---------- Aparición al hacer scroll ---------- */
   var heroBox = document.getElementById("inicio");
   var io = new IntersectionObserver(function (entries) {
