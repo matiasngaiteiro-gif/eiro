@@ -22,9 +22,10 @@
       var ls = parseFloat(es.letterSpacing) / parseFloat(es.fontSize) || 0;
       measureCtx.font = es.fontWeight + " 100px " + es.fontFamily;
       if ("letterSpacing" in measureCtx) measureCtx.letterSpacing = (ls * 100) + "px";
-      var m = measureCtx.measureText((el.textContent || "eiro").trim());
+      var m = measureCtx.measureText((el.textContent || "Eiro").trim());
+      var kern = parseFloat(el.getAttribute("data-kern")) || 0;
       var inkLeft = -m.actualBoundingBoxLeft;              /* aire antes de la E */
-      var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft;
+      var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft + kern * 100;
       if (!(inkW > 0)) { el.style.fontSize = "21vw"; return; }
       var size = 100 * avail / inkW;
       el.style.fontSize = size + "px";
@@ -300,9 +301,11 @@
         hold();
       }, t);
     });
-    /* Pausa, y el cursor vuelve con la flecha hasta después de la "t" */
+    /* Pausa, y el cursor vuelve con la flecha hasta antes de "iro" */
+    var keep = parseInt(word.getAttribute("data-keep"), 10) || (full.length - cut);
+    var retype = word.getAttribute("data-type") || "";
     t += 650;
-    for (var a = 1; a <= cut; a++) {
+    for (var a = 1; a <= keep; a++) {
       (function (n) {
         later(function () { word.insertBefore(caret, chars[full.length - n]); hold(); }, t);
       })(a);
@@ -312,9 +315,15 @@
     t += 380;
     for (var b = 1; b <= cut; b++) {
       (function (n) {
-        later(function () { var el = chars[cut - n]; if (el && el.parentNode) el.parentNode.removeChild(el); hold(); }, t);
+        later(function () { var el = chars[full.length - keep - n]; if (el && el.parentNode) el.parentNode.removeChild(el); hold(); }, t);
       })(b);
       t += 95;
+    }
+    /* Escribe la nueva inicial: queda "Eiro" */
+    if (retype) {
+      t += 260;
+      later(function () { var s = document.createElement("span"); s.className = "ek"; s.textContent = retype; word.insertBefore(s, caret); hold(); }, t);
+      t += 120;
     }
     /* El cursor salta al final y queda "eiro" */
     t += 420;
