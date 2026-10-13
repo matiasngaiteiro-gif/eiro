@@ -1020,3 +1020,17 @@ body { font-weight: var(--w-text); }
 .logo-fit { line-height: 0.9; }
 .intro-word { line-height: 1.1; }
 .intro-word .gait span { padding-bottom: .24em; margin-bottom: -.24em; }
+
+/* Intro tipeada (v91): letras sin transición, como en un teclado */
+.intro-word { display: inline-flex; align-items: center; white-space: pre; }
+.intro-word > span { display: inline-block; }
+.intro-word .caret { width: 0.06em; height: 0.95em; margin: 0 0.02em; border-radius: 0 !important; transform: translateY(-0.02em); }
+.intro-word .caret.hold { animation: none; opacity: 1; }
+
+/* Portada sin logo grande: la frase manda */
+.hero .wrap { min-height: min(60svh, 640px); display: grid; align-content: end; }
+.hero-title { font-size: clamp(3.2rem, 7.4vw, 8.4rem); }
+.hero-row { margin-top: 0; }
+.hero-title { grid-column: 1 / span 8; }
+.hero-side { grid-column: 9 / -1; }
+@media (max-width: 900px) { .hero .wrap { min-height: 56svh; } .hero-title { font-size: clamp(3rem, 13vw, 5rem); } .hero-title, .hero-side { grid-column: 1 / -1; } }

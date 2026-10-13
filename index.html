@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
-<link rel="stylesheet" href="styles.css?v=90">
+<link rel="stylesheet" href="styles.css?v=91">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -49,9 +49,9 @@
 </head>
 <body>
 
-<!-- INTRO: se escribe GAITEIRO, se borra GAIT y queda EIRO -->
+<!-- INTRO: se tipea gaiteiro, se borra gait con el teclado y queda eiro -->
 <div class="intro" id="intro" aria-hidden="true">
-  <p class="logo intro-word"><span class="gait"><span>g</span><span>a</span><span>i</span><span>t</span></span><span class="eiro"><span>e</span><span>i</span><span>r</span><span>o</span></span><i class="caret"></i></p>
+  <p class="logo intro-word" data-word="gaiteiro" data-cut="4"><i class="caret"></i></p>
   <p class="intro-note mono">Eiro, estudio creativo</p>
 </div>
 
@@ -82,7 +82,6 @@
   <!-- PORTADA -->
   <section class="hero on-dark" id="inicio">
     <div class="wrap">
-      <p class="logo logo-fit" id="logo-board" role="img" aria-label="Eiro" data-anim="letters">eiro</p>
       <div class="hero-row">
         <h1 class="hero-title title">
           <span class="sr-only">Eiro, estudio creativo de branding en Buenos Aires: marca, contenido, redes y eventos.</span>
@@ -313,7 +312,7 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=90"></script>
-<script src="script.js?v=90"></script>
+<script src="config.js?v=91"></script>
+<script src="script.js?v=91"></script>
 </body>
 </html>

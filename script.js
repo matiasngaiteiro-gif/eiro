@@ -272,28 +272,56 @@
     });
   }
 
-  /* ---------- Intro: se escribe GAITEIRO, se borra GAIT y queda EIRO ---------- */
+  /* ---------- Intro: se tipea "gaiteiro", el cursor vuelve 4 lugares y borra "gait" ---------- */
   var intro = document.getElementById("intro");
   var introOn = root.classList.contains("intro-on") && intro;
   if (introOn) {
     observe(document, true);
-    var letters = intro.querySelectorAll(".intro-word span span");
-    var gait = intro.querySelector(".gait");
-    var gaitLetters = gait ? gait.querySelectorAll("span") : [];
+    var word = intro.querySelector(".intro-word");
+    var caret = word.querySelector(".caret");
+    var full = word.getAttribute("data-word") || "gaiteiro";
+    var cut = parseInt(word.getAttribute("data-cut"), 10) || 4;
+    word.innerHTML = "";
+    word.appendChild(caret);
+    var chars = [];
     var timers = [];
     var later = function (fn, ms) { timers.push(setTimeout(fn, ms)); };
-    var t = 350;
-    letters.forEach(function (l) { later(function () { l.classList.add("on"); }, t); t += 105; });
-    t += 500;
-    later(function () { if (gait) gait.classList.add("selected"); }, t);
-    t += 520;
-    for (var k = gaitLetters.length - 1; k >= 0; k--) {
-      (function (el) { later(function () { el.classList.add("gone"); }, t); })(gaitLetters[k]);
-      t += 110;
+    var hold = function () { caret.classList.add("hold"); clearTimeout(caret._r); caret._r = setTimeout(function () { caret.classList.remove("hold"); }, 520); };
+    var t = 600;
+    /* Tipeo con ritmo humano: cada tecla tarda un poco distinto */
+    var gaps = [0, 120, 95, 140, 105, 90, 125, 100];
+    full.split("").forEach(function (ch, i) {
+      t += gaps[i % gaps.length] + 20;
+      later(function () {
+        var s = document.createElement("span");
+        s.textContent = ch;
+        word.insertBefore(s, caret);
+        chars.push(s);
+        hold();
+      }, t);
+    });
+    /* Pausa, y el cursor vuelve con la flecha hasta después de la "t" */
+    t += 650;
+    for (var a = 1; a <= cut; a++) {
+      (function (n) {
+        later(function () { word.insertBefore(caret, chars[full.length - n]); hold(); }, t);
+      })(a);
+      t += 85;
     }
+    /* Borra con la tecla de retroceso, una letra por vez */
     t += 380;
+    for (var b = 1; b <= cut; b++) {
+      (function (n) {
+        later(function () { var el = chars[cut - n]; if (el && el.parentNode) el.parentNode.removeChild(el); hold(); }, t);
+      })(b);
+      t += 95;
+    }
+    /* El cursor salta al final y queda "eiro" */
+    t += 420;
+    later(function () { word.appendChild(caret); hold(); }, t);
+    t += 300;
     later(function () { intro.classList.add("is-done"); }, t);
-    t += 750;
+    t += 900;
     var finish = function () {
       timers.forEach(clearTimeout);
       intro.classList.add("is-leaving");
