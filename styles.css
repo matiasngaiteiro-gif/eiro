@@ -1014,3 +1014,9 @@ body { font-weight: var(--w-text); }
 .method-row li { grid-template-columns: 1fr; gap: 10px; }
 .method-row h3 { margin-bottom: 8px; }
 #contacto .title + .statement { margin-top: var(--s-2); }
+
+/* Logo en minúscula (v90) */
+.logo, .logo-fit, .intro-word { text-transform: none; letter-spacing: -0.03em; }
+.logo-fit { line-height: 0.9; }
+.intro-word { line-height: 1.1; }
+.intro-word .gait span { padding-bottom: .24em; margin-bottom: -.24em; }

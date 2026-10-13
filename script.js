@@ -22,7 +22,7 @@
       var ls = parseFloat(es.letterSpacing) / parseFloat(es.fontSize) || 0;
       measureCtx.font = es.fontWeight + " 100px " + es.fontFamily;
       if ("letterSpacing" in measureCtx) measureCtx.letterSpacing = (ls * 100) + "px";
-      var m = measureCtx.measureText("EIRO");
+      var m = measureCtx.measureText((el.textContent || "eiro").trim());
       var inkLeft = -m.actualBoundingBoxLeft;              /* aire antes de la E */
       var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft;
       if (!(inkW > 0)) { el.style.fontSize = "21vw"; return; }
