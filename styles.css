@@ -1034,3 +1034,4 @@ body { font-weight: var(--w-text); }
 .hero-title { grid-column: 1 / span 8; }
 .hero-side { grid-column: 9 / -1; }
 @media (max-width: 900px) { .hero .wrap { min-height: 56svh; } .hero-title { font-size: clamp(3rem, 13vw, 5rem); } .hero-title, .hero-side { grid-column: 1 / -1; } }
+.intro-note { letter-spacing: 0.14em; font-weight: 500; font-size: 0.8rem; }
