@@ -1103,3 +1103,31 @@ body { font-weight: var(--w-text); }
 /* Paleta Eiro (v100): base = Verde Eiro, Papel y Tinta.
    Acompañamiento para piezas: Monte #1E3A2F · Brote #C9EBCF · Bruma #D8D7EE · Arcilla #F1D2C6 · Ladrillo #F0643C · Sol #F6C64E */
 :root { --paper: #F2EEE6; --soft: #E8E2D6; --line: #DCD5C8; --gray: #5E5A53; --papel: #F2EEE6; --tinta: #0B0B0B; }
+
+/* Bola de boliche: acceso a Gaiteiro (v101) */
+.talk.ball { background: #0B0B0B; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,.55); cursor: pointer; }
+.talk.ball svg { width: 30px; height: 30px; overflow: visible; }
+.talk.ball:hover { box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+.ball-spark { transform-origin: 56px 15px; animation: spark 2.4s ease-in-out infinite; }
+.ball-glint { animation: glint 2.4s steps(1) infinite; }
+.talk.ball:hover svg { animation: sway 1.2s ease-in-out infinite; transform-origin: 32px 0; }
+@keyframes spark { 0%,100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes glint { 0%,100% { opacity: 1; } 50% { opacity: .2; } }
+@keyframes sway { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+.gate { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 20px; background: rgba(11,11,11,0); backdrop-filter: blur(0); transition: background .25s ease, backdrop-filter .25s ease; }
+.gate.on { background: rgba(11,11,11,.82); backdrop-filter: blur(8px); }
+.gate-box { position: relative; width: min(440px, 100%); background: #0B0B0B; color: #FFFFFF; border: 1px solid #2A2A2A; padding: 40px 32px 28px; text-align: center; transform: translateY(16px); opacity: 0; transition: transform .3s var(--ease), opacity .25s ease; }
+.gate.on .gate-box { transform: none; opacity: 1; }
+.gate-ball { width: 64px; height: 64px; margin: 0 auto 18px; color: #FFFFFF; }
+.gate-ball svg { width: 100%; height: 100%; overflow: visible; animation: sway 2.4s ease-in-out infinite; transform-origin: 32px 0; }
+.gate-k { font-size: .84rem; font-weight: 500; color: #8A8A8A; margin: 0 0 6px; }
+.gate-box h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 600; letter-spacing: -0.035em; margin: 0 0 22px; }
+.gate-f { display: flex; gap: 8px; }
+.gate-f input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; color: #FFFFFF; background: #1C1C1C; border: 1px solid #2A2A2A; padding: 14px 18px; border-radius: 999px !important; outline: none; text-align: center; letter-spacing: .04em; }
+.gate-f input:focus { border-color: #FFFFFF; }
+.gate-f button { font: inherit; font-weight: 600; background: #FFFFFF; color: #0B0B0B; border: 0; padding: 14px 22px; border-radius: 999px !important; cursor: pointer; }
+.gate-msg { min-height: 1.4em; margin: 14px 0 0; font-size: .9rem; color: #A6A6A6; }
+.gate-x { position: absolute; right: 10px; top: 8px; background: none; border: 0; color: #8A8A8A; font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 6px; }
+.gate-box.no { animation: shake .4s ease; }
+.gate-box.ok { border-color: #FFFFFF; }
+@keyframes shake { 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
