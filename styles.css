@@ -1259,3 +1259,9 @@ body { background: #FFFFFF; color: #000000; }
 .sz main { position: relative; z-index: 1; background: #FFFFFF; }
 .sz .sz-curtain { position: sticky; bottom: 0; z-index: 0; }
 .sz-menu-open .talk, .sz-menu-open .gate { opacity: 0; pointer-events: none; }
+
+/* Intro más grande (v110): Eiro manda y "ESTUDIO CREATIVO" queda chico debajo */
+.intro-word { font-size: min(25vw, 16rem); line-height: 1; }
+.intro-on .intro { gap: clamp(8px, 1.4vw, 20px); }
+.intro-note { font-size: clamp(.7rem, .85vw, .88rem); letter-spacing: .16em; }
+.intro-note { color: #8A8A8A; }
