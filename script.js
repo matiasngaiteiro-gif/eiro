@@ -136,7 +136,7 @@
     m.innerHTML = '<div class="gate-box" role="dialog" aria-modal="true" aria-labelledby="gate-t">' +
       '<button type="button" class="gate-x" aria-label="Cerrar">×</button>' +
       '<div class="gate-ball">' + BALL + '</div>' +
-      '<p class="gate-k">Acceso privado</p><h2 id="gate-t">¿Tenés el código?</h2>' +
+      '<p class="gate-k">Private access</p><h2 id="gate-t">Ingresá tu código</h2>' +
       '<form class="gate-f"><input type="text" name="c" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Código" aria-label="Código"><button type="submit">Entrar</button></form>' +
       '<p class="gate-msg" aria-live="polite"></p></div>';
     document.body.appendChild(m);
@@ -155,7 +155,7 @@
         box.classList.add("ok");
         setTimeout(function () { location.href = dest; }, 450);
       } else {
-        msg.textContent = "Ese no es. Si no lo tenés, pedíselo a Matías.";
+        msg.textContent = "Código incorrecto. El acceso es solo por invitación.";
         box.classList.remove("no"); void box.offsetWidth; box.classList.add("no");
       }
     });

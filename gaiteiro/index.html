@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gaiteiro · Acceso privado</title>
+<title>Gaiteiro · Private access</title>
 <meta name="description" content="Gaiteiro: Matías Gaiteiro, uno a uno. Diseño de nicho para noches, artistas y marcas con carácter.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0B0B0B">
 <link rel="icon" href="../assets/favicon.png?v=6" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,600..900&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
 <!-- GAITEIRO: el lado uno a uno de Matías. Eiro es el estudio (equipo); Gaiteiro es él, solo y de nicho.
      Estructura: una noche contada por horas. Cada escena es una pantalla completa que se apila sobre la anterior.
      Se entra desde la bola de boliche de Eiro con el código (config.js → codigoGaiteiro). -->
 <style>
 :root{
   --black:#0B0B0B; --dark:#1C1C1C; --gray:#2A2A2A; --mute:#9A9A9A; --white:#FFFFFF;
-  --serif:"Instrument Serif",Georgia,serif; --sans:"Plus Jakarta Sans",Helvetica,Arial,sans-serif;
+  --wide:"Archivo","Arial Black",sans-serif; --sans:"Plus Jakarta Sans",Helvetica,Arial,sans-serif;
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;border-radius:0}
@@ -25,8 +25,9 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--black);color:var(--white);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .k{font-size:.84rem;font-weight:500;letter-spacing:.01em;color:rgba(255,255,255,.72)}
-.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:.92}
-.serif em{font-style:italic}
+.wide{font-family:var(--wide);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:.92}
+.wide em{font-style:normal;color:rgba(255,255,255,.5)}
+.card.light .wide em{color:rgba(11,11,11,.45)}
 
 /* grano */
 body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.1;
@@ -48,7 +49,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 /* reloj: la hora de la noche según la escena */
 .clock{position:fixed;right:var(--g);bottom:var(--g);z-index:60;text-align:right;pointer-events:none}
-.clock b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,4.4rem);line-height:.9;font-variant-numeric:tabular-nums}
+.clock b{display:block;font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:clamp(1.8rem,3.4vw,3rem);letter-spacing:-.03em;line-height:.9;font-variant-numeric:tabular-nums}
 .clock span{font-size:.8rem;color:rgba(255,255,255,.7)}
 .progress{position:fixed;left:var(--g);bottom:var(--g);z-index:60;display:flex;gap:6px}
 .progress i{width:26px;height:2px;background:rgba(255,255,255,.25)}
@@ -61,7 +62,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .scene .photo{position:absolute;z-index:-1;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .in{position:relative;padding:calc(var(--g) + 64px) var(--g) calc(var(--g) + 90px);display:grid;align-content:space-between;height:100%}
 .hour{display:flex;gap:14px;align-items:baseline}
-.hour b{font-family:var(--serif);font-weight:400;font-size:1.6rem}
+.hour b{font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:1.05rem;letter-spacing:-.02em;color:#fff}
 
 /* 22:00 — llegada */
 .s0 .bg{background-image:url(../escena/img/fiesta.jpg);filter:blur(10px) saturate(1.3) brightness(.55)}
@@ -75,7 +76,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .s1 .bg{background-image:url(../escena/img/matias.jpg)}
 .s1 .photo{left:var(--g);bottom:0;height:78%;aspect-ratio:4/5;box-shadow:none}
 .s1 .copy{grid-column:1;justify-self:end;max-width:min(640px,52vw);align-self:center}
-.s1 h2{margin:0 0 .35em;font-size:clamp(3.4rem,8.4vw,8.6rem)}
+.s1 h2{margin:0 0 .45em;font-size:clamp(2.2rem,4.6vw,4.6rem)}
 .s1 p{margin:0 0 .8em;font-size:clamp(1.05rem,1.6vw,1.4rem);line-height:1.4;color:rgba(255,255,255,.88)}
 @media(max-width:820px){.s1 .photo{height:46%;left:auto;right:0;opacity:.85}.s1 .copy{max-width:100%;justify-self:start;align-self:end}}
 
@@ -85,15 +86,14 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .s2 ol{list-style:none;margin:0;padding:0;counter-reset:n;max-width:min(760px,60vw)}
 .s2 li{counter-increment:n;display:flex;gap:18px;align-items:baseline;padding:.12em 0;border-bottom:1px solid rgba(255,255,255,.18)}
 .s2 li::before{content:"0" counter(n);font-size:.8rem;color:rgba(255,255,255,.6);min-width:26px}
-.s2 li span{font-family:var(--serif);font-size:clamp(2.4rem,5.4vw,5.4rem);line-height:1.05}
-.s2 li span em{font-style:italic}
+.s2 li span{font-family:var(--wide);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;font-size:clamp(1.5rem,3vw,3rem);line-height:1.15}
 @media(max-width:820px){.s2 .photo{display:none}.s2 ol{max-width:100%}}
 
 /* 03:00 — noches */
 .s3 .bg{background-image:url(../escena/img/perfume.jpg);filter:blur(18px) saturate(1.4) brightness(.6)}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--g);align-self:end}
 .card{background:rgba(11,11,11,.55);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);padding:clamp(20px,2.6vw,34px);min-height:clamp(260px,30vw,380px);display:flex;flex-direction:column;justify-content:space-between}
-.card h3{margin:0;font-size:clamp(3rem,6vw,6rem)}
+.card h3{margin:0;font-size:clamp(1.9rem,3.4vw,3.4rem)}
 .card p{margin:0;color:rgba(255,255,255,.82);max-width:24em}
 .card.light{background:rgba(255,255,255,.92);color:var(--black)}
 .card.light p,.card.light .k{color:#444}
@@ -102,18 +102,18 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 /* 05:00 — amanecer */
 .s4 .bg{background-image:url(../escena/img/pasto.jpg);filter:blur(8px) saturate(1.2) brightness(.7)}
-.s4 h2{margin:0;font-size:clamp(3.8rem,11vw,11rem)}
+.s4 h2{margin:0;font-size:clamp(2.6rem,7vw,7rem)}
 .s4 .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px}
 .s4 .row p{margin:0;max-width:26em;font-size:clamp(1.05rem,1.6vw,1.35rem);color:rgba(255,255,255,.9)}
 .wa{display:inline-flex;align-items:center;gap:14px;background:#fff;color:#0B0B0B;text-decoration:none;font-weight:700;font-size:clamp(1.05rem,1.5vw,1.3rem);letter-spacing:-.02em;padding:16px 26px;border-radius:999px}
 .wa svg{width:24px;height:24px}
-.s4 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px}
+.s4 .foot{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:28px}
 .s4 .foot a{text-decoration:none;font-weight:600}
 
 /* puerta */
 .door{position:fixed;inset:0;z-index:200;background:var(--black);display:grid;place-items:center;padding:20px;text-align:center}
 .door[hidden]{display:none}
-.door h1{margin:.2em 0 0;font-size:clamp(2.6rem,6vw,4rem)}
+.door h1{margin:.3em 0 0;font-size:clamp(1.8rem,4vw,2.8rem)}
 .door form{display:flex;gap:8px;margin-top:24px;justify-content:center}
 .door input{font:inherit;color:#fff;background:var(--dark);border:1px solid var(--gray);padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw)}
 .door input:focus{border-color:#fff}
@@ -131,7 +131,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 <div class="door" id="door" hidden>
   <div>
     <p class="k">Acceso privado</p>
-    <h1 class="serif">¿Tenés el <em>código?</em></h1>
+    <h1 class="wide">Ingresá tu código</h1>
     <form id="door-f"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Código" aria-label="Código"><button type="submit">Entrar</button></form>
     <p class="msg" aria-live="polite"></p>
     <a href="../index.html">← Volver a Eiro</a>
@@ -140,89 +140,90 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 <header class="bar">
   <a class="lg" href="#s0" aria-label="Gaiteiro">Gaiteiro<i class="dot"></i></a>
-  <a class="pill" id="wa-top" href="#s4">Escribime</a>
+  <a class="pill" id="wa-top" href="#s4">Bookings</a>
 </header>
 
-<div class="clock" aria-hidden="true"><b id="clock">22:00</b><span id="clock-l">Llegada</span></div>
+<div class="clock" aria-hidden="true"><b id="clock">22:00</b><span id="clock-l">Acceso</span></div>
 <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
 
 <main>
 
-  <section class="scene s0" id="s0" data-hour="22:00" data-label="Llegada">
+  <section class="scene s0" id="s0" data-hour="22:00" data-label="Acceso">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo fx" src="../escena/img/fiesta.jpg" alt="Manos arriba en una fiesta con papelitos">
     <div class="in">
-      <div class="hour k"><b>22:00</b> Acceso privado</div>
+      <div class="hour k"><b>22:00</b> Private access</div>
       <div>
         <h1 style="margin:0"><span class="lg" id="hero-lg" aria-label="Gaiteiro">Eiro<i class="dot"></i></span></h1>
-        <p class="lead fx" style="margin-top:.6em">Si tenés el código, llegaste al lugar donde trabajo uno a uno. Sin estudio en el medio.</p>
+        <p class="lead fx" style="margin-top:.6em">Dirección creativa para la noche. Uno a uno, por invitación.</p>
       </div>
     </div>
   </section>
 
-  <section class="scene s1" id="s1" data-hour="23:00" data-label="Quién">
+  <section class="scene s1" id="s1" data-hour="23:00" data-label="Perfil">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo" src="../escena/img/matias.jpg" alt="Matías Gaiteiro, retrato">
     <div class="in">
-      <div class="hour k"><b>23:00</b> Quién</div>
+      <div class="hour k"><b>23:00</b> Perfil</div>
       <div class="copy fx">
-        <h2 class="serif">Soy <em>Matías.</em></h2>
-        <p>Eiro es el estudio: equipo, proyectos grandes, procesos. Gaiteiro soy yo, solo.</p>
-        <p>Acá la idea, el diseño y cada pieza salen de la misma mano. Hablás con quien diseña, no con quien te pasa el mensaje.</p>
-        <p class="k">Pocos proyectos a la vez. Por eso el código.</p>
+        <h2 class="wide">Matías <em>Gaiteiro</em></h2>
+        <p>Director creativo independiente. Identidad y comunicación para clubes, ciclos, artistas y marcas de nicho.</p>
+        <p>Eiro es el estudio. Gaiteiro es el trabajo directo conmigo: una sola mano, de la idea a la última pieza.</p>
+        <p class="k">Agenda limitada · Ingreso con código</p>
       </div>
       <span></span>
     </div>
   </section>
 
-  <section class="scene s2" id="s2" data-hour="01:00" data-label="Lo que hago">
+  <section class="scene s2" id="s2" data-hour="01:00" data-label="Servicios">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo fx" src="../escena/img/dj.jpg" alt="Mano con anillos en la consola de un DJ">
     <div class="in">
-      <div class="hour k"><b>01:00</b> Lo que hago</div>
+      <div class="hour k"><b>01:00</b> Servicios</div>
       <ol class="fx">
-        <li><span>Identidad de <em>la noche</em></span></li>
-        <li><span>Flyers y <em>line ups</em></span></li>
-        <li><span>Teasers que <em>hacen esperar</em></span></li>
-        <li><span>Visuales <em>en vivo</em></span></li>
-        <li><span>Marcas chicas con <em>carácter</em></span></li>
+        <li><span>Identidad de eventos</span></li>
+        <li><span>Dirección de arte</span></li>
+        <li><span>Flyers y line ups</span></li>
+        <li><span>Teasers y contenido</span></li>
+        <li><span>Visuales en vivo</span></li>
+        <li><span>Merchandising</span></li>
       </ol>
       <span></span>
     </div>
   </section>
 
-  <section class="scene s3" id="s3" data-hour="03:00" data-label="Noches">
+  <section class="scene s3" id="s3" data-hour="03:00" data-label="Proyectos">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo fx" src="../escena/img/paletas.jpg" alt="Manos con anillos sosteniendo muestras de color sobre un suéter verde">
     <div class="in">
-      <div class="hour k"><b>03:00</b> Noches</div>
+      <div class="hour k"><b>03:00</b> Proyectos</div>
       <div class="cards fx">
         <article class="card">
-          <span class="k">Latin tech music · Teasers y comunicación</span>
-          <h3 class="serif">El <em>Calentón</em></h3>
-          <p>Una noche que se espera desde el primer teaser. La cuento antes de que empiece, para que llegue llena.</p>
+          <span class="k">Latin tech music · Buenos Aires</span>
+          <h3 class="wide">El Calentón</h3>
+          <p>Campaña de lanzamiento y teasers. La noche empieza a venderse antes de abrir las puertas.</p>
         </article>
         <article class="card light">
-          <span class="k">Próximamente</span>
-          <h3 class="serif">Tu <em>noche</em></h3>
-          <p>Si tenés el código, ya estás más cerca que el resto. Contame qué estás armando.</p>
+          <span class="k">Agenda abierta</span>
+          <h3 class="wide">Tu <em>evento</em></h3>
+          <p>Fechas disponibles para nuevos proyectos. Cupos limitados por temporada.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="scene s4" id="s4" data-hour="05:00" data-label="Antes del sol">
+  <section class="scene s4" id="s4" data-hour="05:00" data-label="Reservas">
     <div class="bg"></div><div class="shade"></div>
     <div class="in">
-      <div class="hour k"><b>05:00</b> Antes de que salga el sol</div>
+      <div class="hour k"><b>05:00</b> Bookings</div>
       <div>
-        <h2 class="serif fx">¿Tenés una <em>noche?</em></h2>
+        <h2 class="wide fx">Reservá <em>tu fecha</em></h2>
         <div class="row fx" style="margin-top:24px">
-          <p>Escribime directo. Una fiesta nueva, un ciclo que quiere volver a llenarse, un artista o una marca que todavía no encontró su voz.</p>
-          <a class="wa" id="wa" href="https://wa.me/5491134850669?text=Hola%20Mat%C3%ADas%2C%20entr%C3%A9%20con%20el%20c%C3%B3digo.%20Tengo%20algo%20para%20contarte." target="_blank" rel="noopener">Escribime
+          <p>Consultas y reservas por WhatsApp. Respuesta directa, sin intermediarios.</p>
+          <a class="wa" id="wa" href="https://wa.me/5491134850669?text=Hola%20Mat%C3%ADas%2C%20ingres%C3%A9%20con%20c%C3%B3digo.%20Quiero%20consultar%20por%20una%20fecha." target="_blank" rel="noopener">Reservar fecha
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
         </div>
-        <div class="foot k"><span>Gaiteiro es el otro lado de <a href="../index.html">Eiro</a>.</span><span>De día, el estudio. De noche, yo.</span></div>
+        <div class="foot k"><span>Gaiteiro · Un proyecto de <a href="../index.html">Eiro</a></span><span>Buenos Aires · Private access</span></div>
       </div>
     </div>
   </section>
@@ -244,7 +245,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
       if (inp.value.toLowerCase().replace(/\s+/g, "") === code) {
         try { sessionStorage.setItem("gaiteiro", "1"); } catch (err) {}
         door.hidden = true; play();
-      } else { msg.textContent = "Ese no es. Si no lo tenés, pedíselo a Matías."; }
+      } else { msg.textContent = "Código incorrecto. El acceso es solo por invitación."; }
     });
   }
   document.getElementById("wa-top").href = document.getElementById("wa").href;
