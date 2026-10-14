@@ -52,6 +52,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .lg .caret{display:inline-block;width:.06em;height:.95em;background:currentColor;margin:0 .02em;transform:translateY(.14em);animation:blink .8s steps(1) infinite}
 .lg .caret.hold{animation:none}
 @keyframes blink{50%{opacity:0}}
+.lg .dot{display:none} /* en la versión de noche el nombre va sin punto */
 
 /* barra: guest list · logo · acceso */
 .bar{position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px var(--g);background:rgba(30,30,30,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
@@ -238,7 +239,7 @@ form.list select option{color:#111}
     <div class="in">
       <span class="lab" style="color:var(--mute)">23:00 — Perfil</span>
       <div class="copy">
-        <h2 class="T l fx">Matías<br>Gaiteiro.</h2>
+        <h2 class="T l fx">Matías<br>Gaiteiro</h2>
         <p class="body fx d1">Director creativo independiente. Identidad y comunicación para clubes, ciclos, artistas y marcas de nicho.</p>
         <p class="body fx d2">Trabajo directo conmigo. Una sola mano, de la idea a la última pieza.</p>
         <div class="facts fx d3">
