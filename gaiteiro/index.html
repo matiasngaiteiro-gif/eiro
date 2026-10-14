@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/size.css?v=108">
 <!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
@@ -22,6 +23,7 @@
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1); --bpm:.484s; /* 124 BPM */
 }
 @font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue"), local("HelveticaNeue"), local("Helvetica"), url("../assets/fonts/heros-regular.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Medium"), local("HelveticaNeue-Medium"), url("../assets/fonts/heros-bold.woff") format("woff"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Helvetica Bold"), local("Helvetica-Bold"), url("../assets/fonts/heros-bold.woff") format("woff"); font-weight: 600 900; font-display: swap; }
 *,*::before,*::after{box-sizing:border-box;border-radius:0}
 html{scroll-behavior:smooth}
@@ -30,11 +32,11 @@ body.locked{overflow:hidden}
 a{color:inherit}
 
 /* Juego tipográfico: títulos en mayúscula, apilados y apretados; etiquetas chicas con aire */
-.T{font-weight:700;text-transform:uppercase;letter-spacing:-.04em;line-height:.88;margin:0}
+.T{font-weight:500;letter-spacing:-.045em;line-height:.95;margin:0}
 .T.xl{font-size:clamp(3.6rem,10vw,10rem)}
 .T.l{font-size:clamp(2.6rem,6.4vw,6.4rem)}
 .T.m{font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:.92}
-.T .dim{color:rgba(232,232,230,.38)}
+.T .dim{color:rgba(255,255,255,.34)}
 .lab{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
 .body{font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.38;letter-spacing:-.01em;color:rgba(232,232,230,.88);max-width:30em;margin:0}
 
@@ -55,11 +57,9 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .lg .dot{display:none} /* en la versión de noche el nombre va sin punto */
 
 /* barra: guest list · logo · acceso */
-.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px var(--g);background:rgba(0,0,0,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.bar .lg{font-size:26px}
-.bar a.lab{text-decoration:none;justify-self:start}
-.bar span.lab{justify-self:end;color:var(--mute)}
-.bar a.lab:hover{color:#fff}
+.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;gap:20px;height:72px;padding:0 var(--g);background:#000}
+.bar .lg{font-size:24px}
+.bar .lab{margin-left:auto;color:var(--mute)}
 
 /* reloj que avanza con el scroll */
 .clock{position:fixed;right:var(--g);bottom:var(--g);z-index:60;text-align:right;pointer-events:none}
@@ -95,7 +95,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .s1 .copy{width:min(640px,52vw);align-self:center;display:grid;gap:26px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .facts div{padding:14px 14px 0 0}
-.facts b{display:block;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(.95rem,1.3vw,1.15rem)}
+.facts b{display:block;font-weight:500;letter-spacing:-.025em;font-size:clamp(1rem,1.3vw,1.2rem)}
 .facts span{font-size:.82rem;color:var(--mute)}
 
 /* 00:30 · La campaña (foto) */
@@ -104,7 +104,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .tl div{padding:18px 16px 0 0;position:relative}
 .tl div::before{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
 .tl div.night::before{width:13px;height:13px;top:-7px;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 0 24px #fff}
-.tl b{display:block;font-weight:700;text-transform:uppercase;font-size:clamp(1.15rem,2vw,1.9rem);letter-spacing:-.04em;margin-bottom:6px}
+.tl b{display:block;font-weight:500;font-size:clamp(1.2rem,2vw,2rem);letter-spacing:-.045em;margin-bottom:6px}
 .tl span{font-size:clamp(.82rem,1vw,.95rem);color:rgba(232,232,230,.82);line-height:1.35;display:block}
 .s2 .photo{right:var(--g);top:15%;width:min(21vw,290px);aspect-ratio:4/5;transform:rotate(-2deg)}
 
@@ -122,7 +122,7 @@ a.prow:hover .T{color:#fff}
 .rules{list-style:none;margin:0;padding:0;counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--g)}
 .rules li{counter-increment:r;border-top:1px solid rgba(232,232,230,.35);padding:18px 0 24px;display:grid;grid-template-columns:44px 1fr;gap:8px}
 .rules li::before{content:"0" counter(r);font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.02em;color:var(--mute);padding-top:.5em}
-.rules b{display:block;font-weight:700;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2.3rem);letter-spacing:-.045em;line-height:.95}
+.rules b{display:block;font-weight:500;font-size:clamp(1.4rem,2.5vw,2.4rem);letter-spacing:-.045em;line-height:.98}
 .rules span{display:block;margin-top:10px;color:rgba(232,232,230,.82);font-size:.95rem;max-width:30em}
 
 /* 05:00 · Guest list (sólido; no es sticky para poder crecer) */
@@ -188,6 +188,29 @@ form.list select option{color:#111}
   .scene{min-height:0}
   .foot{padding-right:0;padding-bottom:40px}
 }
+
+/* ---------- Estilo Studio Size (v108): menú, títulos por líneas, lista que se enciende, pie gigante ---------- */
+:root{--sz-bg:#000;--sz-fg:#fff;--sz-dim:rgba(255,255,255,.22);--sz-mute:rgba(255,255,255,.55);--sz-line:rgba(255,255,255,.3);--sz-top:72px;--sz-g:var(--g)}
+.sz-menu{padding-bottom:max(36px,env(safe-area-inset-bottom))}
+.sz-meta{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
+.sz-menu-open .clock,.sz-menu-open .progress{opacity:0}
+.clock,.progress{transition:opacity .4s ease}
+body.end .clock,body.end .progress{opacity:0}
+.T.fx[data-sz]{opacity:1;transform:none}
+/* 04:15 · Lo que hago (sólido, se recorre: se enciende el renglón del centro) */
+.s45{position:relative;height:auto;min-height:100svh}
+.s45 .in{height:auto;min-height:100svh;align-content:start;gap:clamp(40px,8vh,90px)}
+.s45 .sz-list li{font-size:clamp(2.4rem,7vw,7rem);line-height:1}
+.s45 .wrapl{display:grid;grid-template-columns:1fr 3fr;gap:var(--g);align-items:start}
+.s45 .wrapl .lab{position:sticky;top:110px;color:var(--mute)}
+/* Pie: el nombre gigante */
+.s5 .in{grid-template-columns:minmax(0,1fr)}
+.end{min-width:0;overflow:hidden}
+.big{display:inline-block;margin:clamp(40px,8vh,96px) 0 0;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.8;white-space:nowrap;font-size:17vw}
+.endrow{display:grid;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #fff}
+.endrow p{margin:0;color:var(--mute);font-size:.95rem;letter-spacing:-.01em}
+.endrow .foot{padding-right:0}
+@media(max-width:860px){.s45 .wrapl{grid-template-columns:1fr}.s45 .wrapl .lab{position:static}.bar .lab{display:none}}
 @media(prefers-reduced-motion:reduce){.fx{opacity:1;transform:none}body::after,.scene .bg,.clock span i{animation:none}.gate{display:none}}
 </style>
 </head>
@@ -206,14 +229,22 @@ form.list select option{color:#111}
 <div class="gate" id="gate" aria-hidden="true"><i></i><b></b><p class="lab">Acceso concedido</p><i></i></div>
 <div class="spot" id="spot" aria-hidden="true"></div>
 
-<header class="bar">
-  <a class="lab" href="#s5">Guest list</a>
+<header class="bar" data-sz-bar>
   <a class="lg" href="#s0" aria-label="Gaiteiro">Gaiteiro<i class="dot"></i></a>
   <span class="lab">Private access</span>
 </header>
+<!-- Menú a pantalla completa (lo arma ../assets/size.js) -->
+<nav data-sz-menu hidden>
+  <a href="#s0">Puerta</a><a href="#s1">Perfil</a><a href="#s2">La campaña</a><a href="#s3">Noches</a><a href="#s4">House rules</a><a href="#s45">Lo que hago</a><a href="#s5">Guest list</a>
+</nav>
+<template data-sz-extra>
+  <div><span>Acceso</span><p>Private access</p><p>By invitation only</p></div>
+  <div><span>Directo</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span>Estudio</span><a href="../index.html">Eiro ↗</a></div>
+</template>
 
 <div class="clock" aria-hidden="true"><b id="clock">22:00</b><span class="lab" id="clock-l"><i></i>124 BPM · Puerta</span></div>
-<div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <main>
 
@@ -226,7 +257,7 @@ form.list select option{color:#111}
       <div>
         <h1 style="margin:0"><span class="lg" id="hero-lg" aria-label="Gaiteiro">Eiro<i class="dot"></i></span></h1>
         <div class="sub">
-          <p class="T m fx d1">Dirección creativa<br><span class="dim">para la noche.</span></p>
+          <p class="T m fx d1" data-sz="split">Dirección creativa<br><span class="dim">para la noche.</span></p>
           <span class="lab fx d2" style="color:var(--mute)">Uno a uno · Por invitación</span>
         </div>
       </div>
@@ -239,7 +270,7 @@ form.list select option{color:#111}
     <div class="in">
       <span class="lab" style="color:var(--mute)">23:00 — Perfil</span>
       <div class="copy">
-        <h2 class="T l fx">Matías<br>Gaiteiro</h2>
+        <h2 class="T l fx" data-sz="split">Matías<br>Gaiteiro</h2>
         <p class="body fx d1">Director creativo independiente. Identidad y comunicación para clubes, ciclos, artistas y marcas de nicho.</p>
         <p class="body fx d2">Trabajo directo conmigo. Una sola mano, de la idea a la última pieza.</p>
         <div class="facts fx d3">
@@ -258,7 +289,7 @@ form.list select option{color:#111}
     <img class="photo fx" src="../escena/img/dj.jpg" alt="Mano con anillos en la consola de un DJ">
     <div class="in">
       <span class="lab" style="color:var(--mute)">00:30 — La campaña</span>
-      <h2 class="T l fx">Una noche<br>se diseña<br><span class="dim">semanas antes.</span></h2>
+      <h2 class="T l fx" data-sz="split">Una noche<br>se diseña<br><span class="dim">semanas antes.</span></h2>
       <div class="tl fx d1">
         <div><b>D−30</b><span>Concepto e identidad de la noche</span></div>
         <div><b>D−21</b><span>Anuncio y fecha</span></div>
@@ -274,7 +305,7 @@ form.list select option{color:#111}
   <section class="scene s3 alt" id="s3" data-min="1560" data-label="Proyectos">
     <div class="in">
       <span class="lab" style="color:var(--mute)">02:00 — Proyectos</span>
-      <h2 class="T xl fx">Noches</h2>
+      <h2 class="T xl fx" data-sz="split">Noches</h2>
       <div class="rows fx d1">
         <div class="prow">
           <h3 class="T m">El Calentón</h3>
@@ -295,7 +326,7 @@ form.list select option{color:#111}
     <div class="bg"></div><div class="shade"></div>
     <div class="in">
       <span class="lab" style="color:var(--mute)">03:30 — Reglas de la casa</span>
-      <h2 class="T l fx">House<br><span class="dim">rules.</span></h2>
+      <h2 class="T l fx" data-sz="split">House<br><span class="dim">rules.</span></h2>
       <ol class="rules fx d1">
         <li><div><b>Hablás conmigo</b><span>De la primera llamada a la última pieza. Sin cuentas, sin intermediarios.</span></div></li>
         <li><div><b>Pocas fechas</b><span>Pocos proyectos por mes, para que cada noche tenga toda la atención.</span></div></li>
@@ -305,13 +336,24 @@ form.list select option{color:#111}
     </div>
   </section>
 
+  <!-- 04:15 · sólido con grano; se recorre y se enciende el renglón del centro -->
+  <section class="scene s45" id="s45" data-min="1695" data-label="Lo que hago">
+    <div class="in">
+      <span class="lab" style="color:var(--mute)">04:15 — Lo que hago</span>
+      <div class="wrapl">
+        <span class="lab">Para la noche</span>
+        <ul class="sz-list" data-sz="hl"><li>Identidad de la noche</li><li>Campaña de lanzamiento</li><li>Flyers y line up</li><li>Teasers</li><li>Cuenta regresiva</li><li>Contenido para redes</li><li>Visuales en vivo</li><li>Señalética</li><li>Aftermovie</li><li>Recap</li><li>Merch</li></ul>
+      </div>
+    </div>
+  </section>
+
   <!-- 05:00 · sólido con grano -->
   <section class="scene s5" id="s5" data-min="1740" data-label="Guest list">
     <div class="in">
       <span class="lab" style="color:var(--mute)">05:00 — Guest list</span>
       <div class="gl">
         <div class="left">
-          <h2 class="T xl fx">T27<br>Guest list<br>Sign-up</h2>
+          <h2 class="T xl fx" data-sz="split">T27<br>Guest list<br>Sign-up</h2>
           <div class="fx d1" style="display:grid;gap:22px">
             <h3 class="T m">Reservá tu fecha</h3>
             <p class="body">La guest list para la temporada 2027 está abierta. Anotate para tener prioridad en aperturas, cierres de temporada y fechas especiales.</p>
@@ -339,13 +381,20 @@ form.list select option{color:#111}
           </button>
         </form>
       </div>
-      <div class="foot lab"><span>Gaiteiro · Buenos Aires</span><span>Private access · By invitation only</span></div>
+      <div class="end" id="end">
+        <p class="big" id="big" aria-hidden="true">Gaiteiro</p>
+        <div class="endrow">
+          <p>Uno a uno. Por invitación.</p>
+          <div class="foot lab"><span>Gaiteiro · Buenos Aires</span><span>Private access · By invitation only</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
-<script src="../config.js"></script>
+<script src="../config.js?v=108"></script>
+<script src="../assets/size.js?v=108"></script>
 <script>
 (function () {
   var cfg = window.EIRO_CONFIG || {};
@@ -415,6 +464,21 @@ form.list select option{color:#111}
     }
   }
   window.addEventListener("scroll", tick, { passive: true }); window.addEventListener("resize", tick); tick();
+
+  /* ---------- Links a escenas: las escenas están pegadas arriba (sticky), así que se calcula su lugar real ---------- */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#s"]'); if (!a) return;
+    var target = document.querySelector(a.getAttribute("href")); var i = scenes.indexOf(target); if (i < 0) return;
+    e.preventDefault();
+    var y = scenes[0].parentNode.offsetTop; for (var k = 0; k < i; k++) y += scenes[k].offsetHeight;
+    window.scrollTo({ top: y + 2, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  /* ---------- Pie: GAITEIRO ocupa todo el ancho; el reloj se apaga al llegar ---------- */
+  var big = document.getElementById("big"), end = document.getElementById("end");
+  function fit() { big.style.fontSize = "100px"; var w = big.getBoundingClientRect().width; if (w) big.style.fontSize = (99.5 * end.clientWidth / w) + "px"; }
+  fit(); window.addEventListener("resize", fit); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener("scroll", function () { document.body.classList.toggle("end", end.getBoundingClientRect().top < window.innerHeight * 0.8); }, { passive: true });
 
   /* ---------- Luz que sigue al cursor (en celular se mueve sola) ---------- */
   var spot = document.getElementById("spot");

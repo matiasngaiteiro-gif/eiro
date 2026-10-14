@@ -22,7 +22,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../styles.css?v=107">
+<link rel="stylesheet" href="../styles.css?v=108">
+<link rel="stylesheet" href="../assets/size.css?v=108">
 <script>
   (function () {
     var d = document.documentElement;
@@ -53,6 +54,11 @@
     </nav>
   </div>
 </header>
+<template data-sz-extra>
+  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span>Base</span><p>Buenos Aires</p></div>
+  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+</template>
 
 <main id="contenido" class="kc kn">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -232,15 +238,11 @@
 
 </main>
 
-<footer class="footer on-dark">
+<footer class="footer on-dark sz-curtain">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="mono">Eiro, estudio creativo</p>
-      </div>
+    <div class="foot-cols">
       <nav aria-label="Pie de página">
-        <span class="label mono">Explorar</span>
-        <ul>
+        <ul class="foot-links">
           <li><a href="../index.html#casos">Casos de estudio</a></li>
           <li><a href="../logos.html">Logos</a></li>
           <li><a href="../index.html#servicios">Servicios</a></li>
@@ -249,19 +251,22 @@
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
-        <span class="label mono">Canales</span>
-        <ul id="foot-channels"></ul>
+        <ul class="foot-links" id="foot-channels"></ul>
       </div>
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
-    <div class="legal mono">
-      <span>© <span id="year">2026</span> Eiro</span>
-      <span>Buenos Aires · Para Argentina y Estados Unidos</span>
+    <div class="foot-bottom">
+      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <div class="legal">
+        <span>© <span id="year">2026</span> Eiro</span>
+        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="../config.js?v=107"></script>
-<script src="../script.js?v=107"></script>
+<script src="../config.js?v=108"></script>
+<script src="../script.js?v=108"></script>
+<script src="../assets/size.js?v=108"></script>
 </body>
 </html>

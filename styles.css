@@ -1181,3 +1181,81 @@ body { background: #FFFFFF; color: #000000; }
 .talk.ball { background: #000000; border-color: #000000; }
 .dark { --paper: #FFFFFF; --ink: #000000; --line: #E3E3E3; --gray: #5A5A5A; --char: #FFFFFF; --char-fg: #000000; background: #FFFFFF; color: #000000; }
 .chat-body { background: #FFFFFF !important; background-image: none !important; }
+
+/* ==========================================================
+   Estilo Studio Size (v108): Eiro sobre blanco.
+   Helvética medium muy apretada para lo grande, regular para leer,
+   rótulos en gris. Componentes compartidos en assets/size.css.
+   ========================================================== */
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Medium"), local("HelveticaNeue-Medium"), url("assets/fonts/heros-bold.woff") format("woff"); font-weight: 500; font-display: swap; }
+:root { --sz-bg: #FFFFFF; --sz-fg: #000000; --sz-dim: #CFCFCF; --sz-mute: #8A8A8A; --sz-line: rgba(0,0,0,.18); --sz-top: var(--header-h); }
+::selection { background: #000000; color: #FFFFFF; }
+
+/* Tipografía */
+.sz .title, .sz .hero-title { font-weight: 500; letter-spacing: -0.045em; line-height: .96; }
+.sz .statement { font-weight: 400; letter-spacing: -0.015em; }
+.sz .sec-head { align-items: end; margin-bottom: clamp(24px, 3vw, 44px); }
+.sz .sec-head h2 { font-size: clamp(1.7rem, 3vw, 3rem); letter-spacing: -0.04em; }
+
+/* Barra: logo a la izquierda y menú a la derecha, en todos los tamaños */
+.sz .nav, .sz .menu-btn { display: none !important; }
+.sz .header .wrap { display: flex !important; justify-content: space-between; align-items: center; flex-wrap: nowrap; }
+.sz .header, .sz .header.is-stuck { background: #FFFFFF; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.sz-menu-open .header { transform: none !important; }
+
+/* Portada: frase grande y, abajo, los datos en dos columnas (como "Client / Services") */
+.sz .hero { padding-block: 0 clamp(40px, 6vw, 96px); }
+.sz .hero .wrap { min-height: min(74svh, 780px); display: grid; grid-template-columns: minmax(0, 1fr); align-content: end; gap: clamp(32px, 4.4vw, 64px); }
+.sz .hero-title { grid-column: auto; font-size: clamp(3.6rem, 10.4vw, 12.4rem); }
+.sz .hero-facts { grid-column: auto; }
+@media (max-width: 900px) { .sz .hero .wrap { min-height: 66svh; } .sz .hero-title { font-size: clamp(3.4rem, 15vw, 6rem); } }
+
+/* Cinta */
+.sz .marquee { border-block-color: var(--line); }
+.sz .marquee span { font-weight: 500; letter-spacing: -0.04em; }
+.sz .marquee i { width: clamp(6px, .6vw, 9px); height: clamp(6px, .6vw, 9px); background: #000000; }
+
+/* Casos: portada sola y el nombre abajo, en gris */
+.case-cap { display: grid; gap: 2px; padding-top: 14px; }
+.case-cap h3 { font-size: clamp(1.05rem, 1.3vw, 1.25rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+.case-cap p { font-size: .95rem; color: var(--sz-mute); line-height: 1.3; }
+.sz .works { gap: clamp(28px, 3vw, 44px) clamp(10px, 1.2vw, 16px); }
+
+/* Frase, clientes y equipo */
+.sz-about { padding-top: clamp(40px, 6vw, 96px); }
+.sz-about .sz-statement { max-width: 14em; }
+.sz-about-row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s-4) var(--s-3); margin-top: clamp(40px, 6vw, 104px); align-items: end; }
+.sz-clients { grid-column: 1 / span 7; display: grid; gap: 14px; }
+.sz-about-copy { grid-column: 9 / -1; display: grid; gap: 28px; justify-items: start; }
+.sz-about-copy p { font-size: clamp(1.02rem, 1.2vw, 1.15rem); line-height: 1.45; letter-spacing: -0.01em; max-width: 28em; }
+@media (max-width: 900px) { .sz-clients, .sz-about-copy { grid-column: 1 / -1; } }
+
+/* Servicios: rótulo a la izquierda, lista grande a la derecha */
+.sz-services { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px var(--s-3); align-items: start; }
+.sz-services .sz-label { grid-column: 1 / span 3; position: sticky; top: calc(var(--header-h) + 20px); }
+.sz-services .sz-list { grid-column: 4 / -1; }
+@media (max-width: 900px) { .sz-services .sz-label, .sz-services .sz-list { grid-column: 1 / -1; position: static; } }
+
+/* Método */
+.sz .method h3 { font-weight: 500; letter-spacing: -0.035em; }
+.sz .method-row li { border-top-width: 1px; }
+
+/* Contacto: texto + botón circular con flecha */
+.sz .ct-copy h2 { font-size: clamp(3.2rem, 8.6vw, 8.4rem); }
+.sz-go-big { font-size: clamp(1.1rem, 1.6vw, 1.35rem); margin-top: var(--s-1); }
+.sz-go-big .sz-c { width: 58px; height: 58px; }
+.sz-go-big .sz-c svg { width: 18px; height: 18px; }
+
+/* Pie: links en gris, la palabra gigante, una línea fina y la firma chica */
+.sz .footer { padding-block: clamp(64px, 8vw, 128px) 22px; }
+.foot-cols { display: flex; flex-wrap: wrap; gap: 0 clamp(40px, 9vw, 160px); }
+.foot-links li a { display: inline-block; padding: 1px 0; text-decoration: none; font-size: clamp(1.15rem, 1.7vw, 1.6rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.15; color: var(--sz-dim); transition: color .25s ease; }
+.foot-links li a:hover, .foot-links li a:focus-visible { color: #000000; }
+.sz .footer-logo { margin-top: clamp(48px, 7vw, 120px); }
+.foot-bottom { display: grid; gap: 10px; margin-top: clamp(10px, 1.2vw, 18px); padding-top: 14px; border-top: 1px solid #000000; }
+.sz .footer-claim { font-size: .92rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: var(--sz-mute); max-width: none; }
+.sz .foot-bottom .legal { margin: 0; padding: 0; border: 0; font-size: .85rem; color: var(--sz-mute); }
+/* El pie queda quieto debajo y la página se corre como un telón */
+.sz main { position: relative; z-index: 1; background: #FFFFFF; }
+.sz .sz-curtain { position: sticky; bottom: 0; z-index: 0; }
+.sz-menu-open .talk, .sz-menu-open .gate { opacity: 0; pointer-events: none; }

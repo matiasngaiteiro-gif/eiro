@@ -22,7 +22,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../styles.css?v=107">
+<link rel="stylesheet" href="../styles.css?v=108">
+<link rel="stylesheet" href="../assets/size.css?v=108">
 <script>
   (function () {
     var d = document.documentElement;
@@ -53,6 +54,11 @@
     </nav>
   </div>
 </header>
+<template data-sz-extra>
+  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span>Base</span><p>Buenos Aires</p></div>
+  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+</template>
 
 <main id="contenido" class="kc">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cer-logo" viewBox="0 0 831 259"><path fill="currentColor" fill-rule="evenodd" d="M573,1 L573,258 L643,258 L643,174 L707,174 L754,258 L830,258 L781,174 L823,130 L823,44 L823,44 L781,1 L781,1Z M613,62 L754,62 L754,62 L754,109 L754,109 L643,109 L643,81Z M303,1 L303,258 L534,258 L534,196 L374,196 L374,159 L493,159 L493,99 L374,99 L374,81 L343,62 L534,62 L534,1Z M42,1 L0,44 L0,216 L42,258 L220,258 L263,216 L263,151 L192,151 L192,196 L71,196 L71,81 L71,81 L42,62 L192,62 L192,62 L192,109 L263,109 L263,44 L220,1Z"/></symbol></svg>
@@ -226,15 +232,11 @@
 
 </main>
 
-<footer class="footer on-dark">
+<footer class="footer on-dark sz-curtain">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="mono">Eiro, estudio creativo</p>
-      </div>
+    <div class="foot-cols">
       <nav aria-label="Pie de página">
-        <span class="label mono">Explorar</span>
-        <ul>
+        <ul class="foot-links">
           <li><a href="../index.html#casos">Casos de estudio</a></li>
           <li><a href="../logos.html">Logos</a></li>
           <li><a href="../index.html#servicios">Servicios</a></li>
@@ -243,19 +245,22 @@
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
-        <span class="label mono">Canales</span>
-        <ul id="foot-channels"></ul>
+        <ul class="foot-links" id="foot-channels"></ul>
       </div>
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
-    <div class="legal mono">
-      <span>© <span id="year">2026</span> Eiro</span>
-      <span>Buenos Aires · Para Argentina y Estados Unidos</span>
+    <div class="foot-bottom">
+      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <div class="legal">
+        <span>© <span id="year">2026</span> Eiro</span>
+        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="../config.js?v=107"></script>
-<script src="../script.js?v=107"></script>
+<script src="../config.js?v=108"></script>
+<script src="../script.js?v=108"></script>
+<script src="../assets/size.js?v=108"></script>
 </body>
 </html>
