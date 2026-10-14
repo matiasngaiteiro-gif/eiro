@@ -1131,3 +1131,9 @@ body { font-weight: var(--w-text); }
 .gate-box.no { animation: shake .4s ease; }
 .gate-box.ok { border-color: #FFFFFF; }
 @keyframes shake { 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
+/* Bola circular, sin cordón (v102) */
+.talk.ball svg { width: 42px; height: 42px; }
+.talk.ball:hover svg, .gate-ball svg { animation: none; }
+.ball-glint { animation: glint 2.4s ease-in-out infinite; }
+.talk.ball:hover .ball-glint { animation-duration: .8s; }
+.talk.ball .ball-glint, .gate-ball .ball-glint { fill: #FFFFFF; filter: drop-shadow(0 0 3px #fff); }
