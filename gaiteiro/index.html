@@ -6,7 +6,7 @@
 <title>Gaiteiro · Private access</title>
 <meta name="description" content="Gaiteiro: Matías Gaiteiro, dirección creativa para la noche. Uno a uno, por invitación.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#1E1E1E">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="../assets/favicon.png?v=7" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
      Se entra desde la bola de boliche de la web con el código (config.js → codigoGaiteiro). -->
 <style>
 :root{
-  --solid:#1E1E1E; --solid2:#161616; --ink:#E8E8E6; --mute:rgba(232,232,230,.6); --line:rgba(232,232,230,.22);
+  --solid:#000000; --solid2:#000000; --ink:#FFFFFF; --mute:rgba(255,255,255,.58); --line:rgba(255,255,255,.2);
   --sans:"Eiro Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1); --bpm:.484s; /* 124 BPM */
 }
@@ -55,7 +55,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .lg .dot{display:none} /* en la versión de noche el nombre va sin punto */
 
 /* barra: guest list · logo · acceso */
-.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px var(--g);background:rgba(30,30,30,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px var(--g);background:rgba(0,0,0,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .bar .lg{font-size:26px}
 .bar a.lab{text-decoration:none;justify-self:start}
 .bar span.lab{justify-self:end;color:var(--mute)}
@@ -76,7 +76,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .scene.alt{background:var(--solid2)}
 .scene .bg{position:absolute;inset:-8%;z-index:-3;background-size:cover;background-position:center;filter:blur(26px) saturate(1.3) brightness(.58);animation:pulse var(--bpm) ease-out infinite}
 @keyframes pulse{0%{transform:scale(1.1)}18%{transform:scale(1.125)}100%{transform:scale(1.1)}}
-.scene .shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(20,20,20,.45),rgba(20,20,20,.05) 38%,rgba(20,20,20,.82))}
+.scene .shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.05) 38%,rgba(0,0,0,.85))}
 .photo{position:absolute;z-index:-1;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .in{position:relative;z-index:1;height:100%;padding:calc(var(--g) + 76px) var(--g) calc(var(--g) + 92px);display:grid;align-content:space-between}
 
@@ -149,7 +149,7 @@ form.list select option{color:#111}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-right:200px;color:var(--mute)}
 
 /* puerta: pedir código si se entra directo */
-.door{position:fixed;inset:0;z-index:200;background:var(--solid);display:grid;place-items:center;padding:20px;text-align:center}
+.door{position:fixed;inset:0;z-index:200;background:#000;display:grid;place-items:center;padding:20px;text-align:center}
 .door[hidden]{display:none}
 .door .T{font-size:clamp(2.2rem,6vw,4.4rem);margin-top:.3em}
 .door form{display:flex;gap:8px;margin-top:28px;justify-content:center}

@@ -1154,3 +1154,30 @@ body, button, input, select, textarea { font-family: var(--font-sans); }
 .logo, .logo-fit, .intro-word { font-weight: 700; letter-spacing: -0.045em; }
 .logo .ek, .intro-word .ek { margin-right: 0.01em; }
 .logo-fit .l:first-child > span { margin-right: 0.01em; }
+
+/* ==========================================================
+   Blanco y negro intensos (v107): Eiro vive sobre blanco.
+   El verde queda solo en el punto del logo.
+   ========================================================== */
+:root { --paper: #FFFFFF; --ink: #000000; --char: #000000; --soft: #F3F3F3; --line: #E3E3E3; --gray: #5A5A5A; --accent: #000000; --on-accent: #FFFFFF; }
+.on-dark { --paper: #FFFFFF; --ink: #000000; --soft: #F3F3F3; --line: #E3E3E3; --gray: #5A5A5A; background: #FFFFFF; color: #000000; }
+body { background: #FFFFFF; color: #000000; }
+.logo .dot, .logo-fit .dot, .intro-word .dot { background: #6CE26F; }
+.intro-on .intro, .intro { background: #FFFFFF; color: #000000; }
+.intro-word .caret { background: #000000; }
+.header.is-stuck { background: rgba(255,255,255,.86); }
+.hero-side .statement, .ct-copy .statement { color: var(--gray); }
+.work-meta .mono { color: var(--gray); }
+.nav-cta, .ct-wa, .btn-solid { background: #000000; color: #FFFFFF; }
+.ct-wa-ico { background: #FFFFFF; color: #000000; }
+/* chat de contacto en claro */
+.chat { background: #FFFFFF; border-color: #E3E3E3; box-shadow: 0 30px 80px rgba(0,0,0,.08); }
+.chat-top { background: #F6F6F6; border-bottom-color: #E3E3E3; }
+.chat-av { background: #000000; color: #FFFFFF; }
+.chat-who small { color: #5A5A5A; }
+.msg.me { background: #000000; color: #FFFFFF; }
+.msg.them { background: #F1F1F1; color: #000000; }
+/* bola de boliche: negra sobre blanco */
+.talk.ball { background: #000000; border-color: #000000; }
+.dark { --paper: #FFFFFF; --ink: #000000; --line: #E3E3E3; --gray: #5A5A5A; --char: #FFFFFF; --char-fg: #000000; background: #FFFFFF; color: #000000; }
+.chat-body { background: #FFFFFF !important; background-image: none !important; }
