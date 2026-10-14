@@ -1265,3 +1265,9 @@ body { background: #FFFFFF; color: #000000; }
 .intro-on .intro { gap: clamp(8px, 1.4vw, 20px); }
 .intro-note { font-size: clamp(.7rem, .85vw, .88rem); letter-spacing: .16em; }
 .intro-note { color: #8A8A8A; }
+
+/* Casos en una fila que se corre hacia la derecha mientras bajás (v111). Sin cinta. */
+#casos { overflow-x: hidden; overflow-x: clip; }
+.sz-motion .works[data-sz="drift"] { display: flex; flex-wrap: nowrap; gap: clamp(10px, 1.2vw, 16px); width: max-content; max-width: none; will-change: transform; }
+.sz-motion .works[data-sz="drift"] > .work { flex: none; width: clamp(260px, 34vw, 560px); }
+@media (max-width: 700px) { .sz-motion .works[data-sz="drift"] > .work { width: 72vw; } }

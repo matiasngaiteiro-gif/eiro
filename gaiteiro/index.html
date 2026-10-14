@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/size.css?v=109">
+<link rel="stylesheet" href="../assets/size.css?v=111">
 <!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
@@ -37,7 +37,7 @@ a{color:inherit}
 .T.l{font-size:clamp(2.6rem,6.4vw,6.4rem)}
 .T.m{font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:.92}
 .T .dim{color:rgba(255,255,255,.34)}
-.lab{font-family:var(--mono);font-size:.76rem;font-weight:400;letter-spacing:0}
+.lab{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
 .body{font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.38;letter-spacing:-.01em;color:rgba(232,232,230,.88);max-width:30em;margin:0}
 
 /* grano en todo + luz que sigue al cursor */
@@ -111,11 +111,15 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 /* 02:00 · Proyectos (sólido) */
 .rows{border-top:1px solid var(--line)}
 .prow{display:grid;grid-template-columns:1.2fr 1.6fr auto;gap:var(--g);align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.rows.fx{opacity:1;transform:none}
+.rows .prow{opacity:0;transform:translateX(-14vw);transition:transform 1.3s var(--ease),opacity .9s ease}
+.rows .prow:nth-child(2){transition-delay:.18s}
+.rows.fx.on .prow{opacity:1;transform:none}
 .prow p{margin:0;color:rgba(232,232,230,.8);font-size:.98rem;max-width:30em}
 .prow .lab{color:var(--mute);text-align:right}
 a.prow:hover .T{color:#fff}
 .chips-ro{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.74rem;font-weight:400;color:var(--mute)}
+.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.72rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;color:var(--mute)}
 
 /* 03:30 · House rules (foto) */
 .s4 .bg{background-image:url(../escena/img/cadenas.jpg);filter:blur(22px) saturate(1.3) brightness(.55)}
@@ -132,7 +136,7 @@ a.prow:hover .T{color:#fff}
 .gl .left{display:grid;gap:clamp(40px,7vw,90px)}
 form.list{border-top:1px solid var(--line)}
 form.list label.f{display:block;padding:16px 0 0}
-form.list label.f span{display:block;font-family:var(--mono);font-size:.74rem;font-weight:400;color:var(--mute);margin-bottom:6px}
+form.list label.f span{display:block;font-family:var(--mono);font-size:.7rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
 form.list input,form.list select{width:100%;font:inherit;font-size:1.1rem;letter-spacing:-.01em;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:4px 0 12px;outline:none;border-radius:0;-webkit-appearance:none;appearance:none}
 form.list input::placeholder{color:rgba(232,232,230,.35)}
 form.list input:focus,form.list select:focus{border-bottom-color:var(--ink)}
@@ -141,9 +145,9 @@ form.list select option{color:#111}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .chips label{cursor:pointer}
 .chips input{position:absolute;opacity:0;pointer-events:none}
-.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.76rem;font-weight:400;transition:background .2s,color .2s,border-color .2s}
+.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
 .chips input:checked+span{background:var(--ink);color:#111;border-color:var(--ink)}
-.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-family:var(--mono);font-weight:500;font-size:.86rem;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
+.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-family:var(--mono);font-weight:500;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
 .send:hover{background:#fff}
 .send svg{width:22px;height:22px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-right:200px;color:var(--mute)}
@@ -153,9 +157,9 @@ form.list select option{color:#111}
 .door[hidden]{display:none}
 .door .T{font-size:clamp(2.2rem,6vw,4.4rem);margin-top:.3em}
 .door form{display:flex;gap:8px;margin-top:28px;justify-content:center}
-.door input{font:inherit;font-family:var(--mono);color:var(--ink);background:#111;border:1px solid #333;padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw);letter-spacing:.06em}
+.door input{font:inherit;font-family:var(--mono);text-transform:uppercase;color:var(--ink);background:#111;border:1px solid #333;padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw);letter-spacing:.06em}
 .door input:focus{border-color:var(--ink)}
-.door button{font:inherit;font-family:var(--mono);font-weight:500;font-size:.84rem;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
+.door button{font:inherit;font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
 .door .msg{min-height:1.4em;color:var(--mute);font-size:.86rem;margin-top:14px}
 .door a{color:var(--mute);text-decoration:none}
 
@@ -164,7 +168,9 @@ form.list select option{color:#111}
 .gate i{position:absolute;top:0;bottom:0;width:50.5%;background:#000;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
 .gate i:first-child{left:0}.gate i:last-of-type{right:0}
 .gate b{position:absolute;left:50%;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 30px 6px rgba(255,255,255,.7);transform:translateX(-50%) scaleY(0);transition:transform .7s var(--ease),opacity .6s ease .9s;z-index:2}
-.gate p{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;margin:0;color:#fff;transition:opacity .4s ease;z-index:3}
+.gate p{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;margin:0;color:#fff;font-size:clamp(.8rem,1.1vw,.95rem);letter-spacing:.12em;white-space:pre;transition:opacity .35s ease;z-index:3}
+.gate p .cur{display:inline-block;width:.62em;height:1.15em;margin-left:.08em;vertical-align:-.22em;background:#fff;animation:blink .8s steps(1) infinite}
+.gate p .cur.hold{animation:none}
 .gate.light b{transform:translateX(-50%) scaleY(1)}
 .gate.open i:first-child{transform:translateX(-100%)}
 .gate.open i:last-of-type{transform:translateX(100%)}
@@ -192,7 +198,7 @@ form.list select option{color:#111}
 /* ---------- Estilo Studio Size (v108): menú, títulos por líneas, lista que se enciende, pie gigante ---------- */
 :root{--sz-bg:#000;--sz-fg:#fff;--sz-dim:rgba(255,255,255,.22);--sz-mute:rgba(255,255,255,.55);--sz-line:rgba(255,255,255,.3);--sz-top:72px;--sz-g:var(--g)}
 .sz-menu{padding-bottom:max(36px,env(safe-area-inset-bottom))}
-.sz-meta{font-family:var(--mono);font-size:.8rem;font-weight:400}
+.sz-meta{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
 .sz-menu-open .clock,.sz-menu-open .progress{opacity:0}
 .clock,.progress{transition:opacity .4s ease}
 body.end .clock,body.end .progress{opacity:0}
@@ -211,7 +217,7 @@ body.end .clock,body.end .progress{opacity:0}
 .endrow p{margin:0;color:var(--mute);font-size:.95rem;letter-spacing:-.01em}
 .endrow .foot{padding-right:0}
 @media(max-width:860px){.s45 .wrapl{grid-template-columns:1fr}.s45 .wrapl .lab{position:static}.bar .lab{display:none}}
-@media(prefers-reduced-motion:reduce){.fx{opacity:1;transform:none}body::after,.scene .bg,.clock span i{animation:none}.gate{display:none}}
+@media(prefers-reduced-motion:reduce){.fx,.rows .prow{opacity:1;transform:none}body::after,.scene .bg,.clock span i{animation:none}.gate{display:none}}
 </style>
 </head>
 <body>
@@ -226,7 +232,7 @@ body.end .clock,body.end .progress{opacity:0}
   </div>
 </div>
 
-<div class="gate" id="gate" aria-hidden="true"><i></i><b></b><p class="lab">Acceso concedido</p><i></i></div>
+<div class="gate" id="gate" aria-hidden="true"><i></i><b></b><p class="lab" id="gate-t" data-text="Acceso concedido"></p><i></i></div>
 <div class="spot" id="spot" aria-hidden="true"></div>
 
 <header class="bar" data-sz-bar>
@@ -393,8 +399,8 @@ body.end .clock,body.end .progress{opacity:0}
 
 </main>
 
-<script src="../config.js?v=109"></script>
-<script src="../assets/size.js?v=109"></script>
+<script src="../config.js?v=111"></script>
+<script src="../assets/size.js?v=111"></script>
 <script>
 (function () {
   var cfg = window.EIRO_CONFIG || {};
@@ -408,9 +414,17 @@ body.end .clock,body.end .progress{opacity:0}
   function enter() {
     if (reduce) { gate.classList.add("gone"); play(); return; }
     document.body.classList.add("locked");
-    setTimeout(function () { gate.classList.add("light"); }, 150);
-    setTimeout(function () { gate.classList.add("open"); }, 950);
-    setTimeout(function () { gate.classList.add("gone"); document.body.classList.remove("locked"); play(); }, 2100);
+    /* primero se tipea ACCESO CONCEDIDO, después la luz y la puerta que se abre */
+    var gt = document.getElementById("gate-t"), word = gt.getAttribute("data-text"), cur = document.createElement("span");
+    cur.className = "cur"; gt.appendChild(cur);
+    var t = 380;
+    word.split("").forEach(function (ch, i) {
+      t += ch === " " ? 120 : 62 + (i % 3) * 14;
+      setTimeout(function () { gt.insertBefore(document.createTextNode(ch), cur); cur.classList.add("hold"); clearTimeout(cur._r); cur._r = setTimeout(function () { cur.classList.remove("hold"); }, 260); }, t);
+    });
+    t += 750; setTimeout(function () { gate.classList.add("light"); }, t);
+    t += 700; setTimeout(function () { gate.classList.add("open"); }, t);
+    t += 1150; setTimeout(function () { gate.classList.add("gone"); document.body.classList.remove("locked"); play(); }, t);
   }
   if (!ok) {
     door.hidden = false;

@@ -5,6 +5,7 @@
    - data-sz="hl"      lista grande en gris: se enciende el renglón que pasa por el centro
    - data-sz="fill"    frase que se llena de color palabra por palabra al bajar
    - data-sz="bubbles" clientes en círculos que caen y se acomodan (se empujan con el dedo o el mouse)
+   - data-sz="drift"   fila de proyectos que se corre hacia la derecha mientras bajás
 */
 (function () {
   var root = document.documentElement;
@@ -193,7 +194,9 @@
     var lists = [].slice.call(document.querySelectorAll('[data-sz="hl"]'));
     var fills = [].slice.call(document.querySelectorAll('[data-sz="fill"]')).map(function (el) { return { el: el, words: words(el) }; });
     if (reduce) { fills.forEach(function (f) { f.words.forEach(function (w) { w.classList.add("on"); }); }); fills = []; }
-    if (!lists.length && !fills.length) return;
+    /* filas que se corren hacia la derecha mientras bajás (data-sz="drift") */
+    var drifts = reduce ? [] : [].slice.call(document.querySelectorAll('[data-sz="drift"]'));
+    if (!lists.length && !fills.length && !drifts.length) return;
     var ticking = false;
     function update() {
       ticking = false;
@@ -209,6 +212,17 @@
         var p = Math.min(1, Math.max(0, (h * 0.82 - r.top) / (r.height + h * 0.3)));
         var n = Math.round(p * f.words.length);
         f.words.forEach(function (w, i) { w.classList.toggle("on", i < n); });
+      });
+      drifts.forEach(function (el) {
+        var box = el.parentElement, cs = getComputedStyle(box);
+        var avail = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        var over = Math.max(0, el.scrollWidth - avail);
+        var range = Math.max(over, window.innerWidth * 0.16);
+        var r = el.getBoundingClientRect();
+        /* si la fila no entra entera (celular), recorre todo mientras está a la vista: primero se ve NERO y termina en CER */
+        var p = over > 0 ? (h * 0.92 - r.bottom) / Math.max(1, h * 0.84 - r.height) : (h - r.top) / (h + r.height);
+        p = Math.min(1, Math.max(0, p));
+        el.style.transform = "translate3d(" + (-over + p * range).toFixed(1) + "px,0,0)";
       });
     }
     function req() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
