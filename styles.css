@@ -1137,3 +1137,20 @@ body { font-weight: var(--w-text); }
 .ball-glint { animation: glint 2.4s ease-in-out infinite; }
 .talk.ball:hover .ball-glint { animation-duration: .8s; }
 .talk.ball .ball-glint, .gate-ball .ball-glint { fill: #FFFFFF; filter: drop-shadow(0 0 3px #fff); }
+
+/* ==========================================================
+   Helvética en todo (v106)
+   En Mac/iPhone se usa la Helvética del sistema; en el resto,
+   TeX Gyre Heros (clon libre de Helvética, licencia GUST) incluida en assets/fonts.
+   ========================================================== */
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue"), local("HelveticaNeue"), local("Helvetica"), url("assets/fonts/heros-regular.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Helvetica Bold"), local("Helvetica-Bold"), url("assets/fonts/heros-bold.woff") format("woff"); font-weight: 600 900; font-display: swap; }
+:root {
+  --font-sans: "Eiro Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-logo: "Eiro Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body, button, input, select, textarea { font-family: var(--font-sans); }
+.title, .hero-title { letter-spacing: -0.04em; }
+.logo, .logo-fit, .intro-word { font-weight: 700; letter-spacing: -0.045em; }
+.logo .ek, .intro-word .ek { margin-right: 0.01em; }
+.logo-fit .l:first-child > span { margin-right: 0.01em; }

@@ -7,20 +7,22 @@
 <meta name="description" content="Gaiteiro: Matías Gaiteiro, dirección creativa para la noche. Uno a uno, por invitación.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1E1E1E">
-<link rel="icon" href="../assets/favicon.png?v=6" type="image/png">
+<link rel="icon" href="../assets/favicon.png?v=7" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap">
-<!-- GAITEIRO · el lado uno a uno de Matías. Todo en Plus Jakarta.
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
      Se entra desde la bola de boliche de la web con el código (config.js → codigoGaiteiro). -->
 <style>
 :root{
   --solid:#1E1E1E; --solid2:#161616; --ink:#E8E8E6; --mute:rgba(232,232,230,.6); --line:rgba(232,232,230,.22);
-  --sans:"Plus Jakarta Sans",Helvetica,Arial,sans-serif;
+  --sans:"Eiro Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1); --bpm:.484s; /* 124 BPM */
 }
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue"), local("HelveticaNeue"), local("Helvetica"), url("../assets/fonts/heros-regular.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Helvetica Bold"), local("Helvetica-Bold"), url("../assets/fonts/heros-bold.woff") format("woff"); font-weight: 600 900; font-display: swap; }
 *,*::before,*::after{box-sizing:border-box;border-radius:0}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--solid);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -28,12 +30,12 @@ body.locked{overflow:hidden}
 a{color:inherit}
 
 /* Juego tipográfico: títulos en mayúscula, apilados y apretados; etiquetas chicas con aire */
-.T{font-weight:700;text-transform:uppercase;letter-spacing:-.045em;line-height:.88;margin:0}
+.T{font-weight:700;text-transform:uppercase;letter-spacing:-.04em;line-height:.88;margin:0}
 .T.xl{font-size:clamp(3.6rem,10vw,10rem)}
 .T.l{font-size:clamp(2.6rem,6.4vw,6.4rem)}
 .T.m{font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:.92}
 .T .dim{color:rgba(232,232,230,.38)}
-.lab{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em}
+.lab{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
 .body{font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.38;letter-spacing:-.01em;color:rgba(232,232,230,.88);max-width:30em;margin:0}
 
 /* grano en todo + luz que sigue al cursor */
@@ -45,7 +47,8 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
   background:radial-gradient(circle at var(--x,70%) var(--y,30%),rgba(255,255,255,.45),rgba(255,255,255,0) 26%)}
 
 /* logo */
-.lg{font-weight:800;letter-spacing:-.05em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none}
+.lg{font-weight:800;text-transform:uppercase;letter-spacing:-.035em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none;transform:scaleX(.86);transform-origin:left center}
+.bar .lg{transform-origin:center}
 .lg .dot{display:inline-block;width:.19em;height:.19em;border-radius:50%;background:currentColor;margin-left:.04em}
 .lg .caret{display:inline-block;width:.06em;height:.95em;background:currentColor;margin:0 .02em;transform:translateY(.14em);animation:blink .8s steps(1) infinite}
 .lg .caret.hold{animation:none}
@@ -112,13 +115,13 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .prow .lab{color:var(--mute);text-align:right}
 a.prow:hover .T{color:#fff}
 .chips-ro{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.72rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;color:var(--mute)}
 
 /* 03:30 · House rules (foto) */
 .s4 .bg{background-image:url(../escena/img/cadenas.jpg);filter:blur(22px) saturate(1.3) brightness(.55)}
 .rules{list-style:none;margin:0;padding:0;counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--g)}
 .rules li{counter-increment:r;border-top:1px solid rgba(232,232,230,.35);padding:18px 0 24px;display:grid;grid-template-columns:44px 1fr;gap:8px}
-.rules li::before{content:"0" counter(r);font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--mute);padding-top:.5em}
+.rules li::before{content:"0" counter(r);font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.02em;color:var(--mute);padding-top:.5em}
 .rules b{display:block;font-weight:700;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2.3rem);letter-spacing:-.045em;line-height:.95}
 .rules span{display:block;margin-top:10px;color:rgba(232,232,230,.82);font-size:.95rem;max-width:30em}
 
@@ -129,7 +132,7 @@ a.prow:hover .T{color:#fff}
 .gl .left{display:grid;gap:clamp(40px,7vw,90px)}
 form.list{border-top:1px solid var(--line)}
 form.list label.f{display:block;padding:16px 0 0}
-form.list label.f span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+form.list label.f span{display:block;font-family:var(--mono);font-size:.7rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
 form.list input,form.list select{width:100%;font:inherit;font-size:1.1rem;letter-spacing:-.01em;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:4px 0 12px;outline:none;border-radius:0;-webkit-appearance:none;appearance:none}
 form.list input::placeholder{color:rgba(232,232,230,.35)}
 form.list input:focus,form.list select:focus{border-bottom-color:var(--ink)}
@@ -138,9 +141,9 @@ form.list select option{color:#111}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .chips label{cursor:pointer}
 .chips input{position:absolute;opacity:0;pointer-events:none}
-.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
 .chips input:checked+span{background:var(--ink);color:#111;border-color:var(--ink)}
-.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
+.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-family:var(--mono);font-weight:500;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
 .send:hover{background:#fff}
 .send svg{width:22px;height:22px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-right:200px;color:var(--mute)}
@@ -150,9 +153,9 @@ form.list select option{color:#111}
 .door[hidden]{display:none}
 .door .T{font-size:clamp(2.2rem,6vw,4.4rem);margin-top:.3em}
 .door form{display:flex;gap:8px;margin-top:28px;justify-content:center}
-.door input{font:inherit;color:var(--ink);background:#111;border:1px solid #333;padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw);letter-spacing:.06em}
+.door input{font:inherit;font-family:var(--mono);color:var(--ink);background:#111;border:1px solid #333;padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw);letter-spacing:.06em}
 .door input:focus{border-color:var(--ink)}
-.door button{font:inherit;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
+.door button{font:inherit;font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
 .door .msg{min-height:1.4em;color:var(--mute);font-size:.86rem;margin-top:14px}
 .door a{color:var(--mute);text-decoration:none}
 
