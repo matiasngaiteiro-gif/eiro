@@ -38,7 +38,7 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 .sz-menu.on { opacity: 1; }
 .sz-items { display: flex; flex-direction: column; align-items: flex-start; }
 .sz-items a {
-  display: inline-block; font-weight: 500; font-size: clamp(2.6rem, min(8.4vw, 9.2vh), 7.6rem); line-height: 1.02; letter-spacing: -0.045em;
+  display: inline-block; font-weight: 700; font-size: clamp(2.6rem, min(8.4vw, 9.2vh), 7.6rem); line-height: 1.02; letter-spacing: -0.04em;
   color: var(--sz-dim); text-decoration: none; opacity: 0; transform: translateY(40%);
   transition: transform .9s var(--sz-ease) calc(var(--i) * 55ms), opacity .5s ease calc(var(--i) * 55ms), color .7s ease calc(var(--i) * 55ms + 260ms);
 }
@@ -70,13 +70,13 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 /* ---------- Lista grande que se enciende al pasar por el centro ---------- */
 .sz-list { list-style: none; margin: 0; padding: 0; }
 .sz-list li {
-  font-weight: 500; font-size: clamp(2.1rem, 6.2vw, 6.4rem); line-height: 1.02; letter-spacing: -0.045em;
+  font-weight: 700; font-size: clamp(2.1rem, 6.2vw, 6.4rem); line-height: 1.02; letter-spacing: -0.04em;
   color: var(--sz-dim); transition: color .35s ease;
 }
 .sz-list li.on { color: var(--sz-fg); }
 
 /* ---------- Frase que se llena de color ---------- */
-.sz-statement { font-weight: 500; font-size: clamp(2.1rem, 5.6vw, 6rem); line-height: 1; letter-spacing: -0.045em; text-wrap: balance; margin: 0; }
+.sz-statement { font-weight: 700; font-size: clamp(2.1rem, 5.6vw, 6rem); line-height: 1; letter-spacing: -0.04em; text-wrap: balance; margin: 0; }
 .sz-w { color: var(--sz-dim); transition: color .4s ease; }
 .sz-w.on { color: var(--sz-fg); }
 
@@ -109,7 +109,7 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 .sz-bub-on > li {
   position: absolute; left: 0; top: 0; display: grid; place-items: center; padding: 0 .55em; overflow: hidden;
   border-radius: 50% !important; background: var(--sz-fg); color: var(--sz-bg); border: 1.5px solid var(--sz-fg);
-  font-weight: 500; line-height: 1; letter-spacing: -0.03em; text-align: center; user-select: none; will-change: transform;
+  font-weight: 700; line-height: 1; letter-spacing: -0.03em; text-align: center; user-select: none; will-change: transform;
 }
 .sz-bub-on > li.sz-b-alt { background: var(--sz-bg); color: var(--sz-fg); }
 

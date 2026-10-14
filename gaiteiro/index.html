@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/size.css?v=108">
+<link rel="stylesheet" href="../assets/size.css?v=109">
 <!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
@@ -32,12 +32,12 @@ body.locked{overflow:hidden}
 a{color:inherit}
 
 /* Juego tipográfico: títulos en mayúscula, apilados y apretados; etiquetas chicas con aire */
-.T{font-weight:500;letter-spacing:-.045em;line-height:.95;margin:0}
+.T{font-weight:700;letter-spacing:-.04em;line-height:.95;margin:0}
 .T.xl{font-size:clamp(3.6rem,10vw,10rem)}
 .T.l{font-size:clamp(2.6rem,6.4vw,6.4rem)}
 .T.m{font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:.92}
 .T .dim{color:rgba(255,255,255,.34)}
-.lab{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
+.lab{font-family:var(--mono);font-size:.76rem;font-weight:400;letter-spacing:0}
 .body{font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.38;letter-spacing:-.01em;color:rgba(232,232,230,.88);max-width:30em;margin:0}
 
 /* grano en todo + luz que sigue al cursor */
@@ -49,7 +49,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
   background:radial-gradient(circle at var(--x,70%) var(--y,30%),rgba(255,255,255,.45),rgba(255,255,255,0) 26%)}
 
 /* logo */
-.lg{font-weight:800;text-transform:uppercase;letter-spacing:-.035em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none}
+.lg{font-weight:700;letter-spacing:-.04em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none}
 .lg .dot{display:inline-block;width:.19em;height:.19em;border-radius:50%;background:currentColor;margin-left:.04em}
 .lg .caret{display:inline-block;width:.06em;height:.95em;background:currentColor;margin:0 .02em;transform:translateY(.14em);animation:blink .8s steps(1) infinite}
 .lg .caret.hold{animation:none}
@@ -95,7 +95,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .s1 .copy{width:min(640px,52vw);align-self:center;display:grid;gap:26px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .facts div{padding:14px 14px 0 0}
-.facts b{display:block;font-weight:500;letter-spacing:-.025em;font-size:clamp(1rem,1.3vw,1.2rem)}
+.facts b{display:block;font-weight:700;letter-spacing:-.025em;font-size:clamp(1rem,1.3vw,1.2rem)}
 .facts span{font-size:.82rem;color:var(--mute)}
 
 /* 00:30 · La campaña (foto) */
@@ -104,7 +104,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .tl div{padding:18px 16px 0 0;position:relative}
 .tl div::before{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
 .tl div.night::before{width:13px;height:13px;top:-7px;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 0 24px #fff}
-.tl b{display:block;font-weight:500;font-size:clamp(1.2rem,2vw,2rem);letter-spacing:-.045em;margin-bottom:6px}
+.tl b{display:block;font-weight:700;font-size:clamp(1.2rem,2vw,2rem);letter-spacing:-.045em;margin-bottom:6px}
 .tl span{font-size:clamp(.82rem,1vw,.95rem);color:rgba(232,232,230,.82);line-height:1.35;display:block}
 .s2 .photo{right:var(--g);top:15%;width:min(21vw,290px);aspect-ratio:4/5;transform:rotate(-2deg)}
 
@@ -115,14 +115,14 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .prow .lab{color:var(--mute);text-align:right}
 a.prow:hover .T{color:#fff}
 .chips-ro{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.72rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;color:var(--mute)}
+.chips-ro span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.74rem;font-weight:400;color:var(--mute)}
 
 /* 03:30 · House rules (foto) */
 .s4 .bg{background-image:url(../escena/img/cadenas.jpg);filter:blur(22px) saturate(1.3) brightness(.55)}
 .rules{list-style:none;margin:0;padding:0;counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--g)}
 .rules li{counter-increment:r;border-top:1px solid rgba(232,232,230,.35);padding:18px 0 24px;display:grid;grid-template-columns:44px 1fr;gap:8px}
 .rules li::before{content:"0" counter(r);font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.02em;color:var(--mute);padding-top:.5em}
-.rules b{display:block;font-weight:500;font-size:clamp(1.4rem,2.5vw,2.4rem);letter-spacing:-.045em;line-height:.98}
+.rules b{display:block;font-weight:700;font-size:clamp(1.4rem,2.5vw,2.4rem);letter-spacing:-.045em;line-height:.98}
 .rules span{display:block;margin-top:10px;color:rgba(232,232,230,.82);font-size:.95rem;max-width:30em}
 
 /* 05:00 · Guest list (sólido; no es sticky para poder crecer) */
@@ -132,7 +132,7 @@ a.prow:hover .T{color:#fff}
 .gl .left{display:grid;gap:clamp(40px,7vw,90px)}
 form.list{border-top:1px solid var(--line)}
 form.list label.f{display:block;padding:16px 0 0}
-form.list label.f span{display:block;font-family:var(--mono);font-size:.7rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+form.list label.f span{display:block;font-family:var(--mono);font-size:.74rem;font-weight:400;color:var(--mute);margin-bottom:6px}
 form.list input,form.list select{width:100%;font:inherit;font-size:1.1rem;letter-spacing:-.01em;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:4px 0 12px;outline:none;border-radius:0;-webkit-appearance:none;appearance:none}
 form.list input::placeholder{color:rgba(232,232,230,.35)}
 form.list input:focus,form.list select:focus{border-bottom-color:var(--ink)}
@@ -141,9 +141,9 @@ form.list select option{color:#111}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .chips label{cursor:pointer}
 .chips input{position:absolute;opacity:0;pointer-events:none}
-.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.03em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.chips span{display:inline-block;border:1px solid rgba(232,232,230,.4);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.76rem;font-weight:400;transition:background .2s,color .2s,border-color .2s}
 .chips input:checked+span{background:var(--ink);color:#111;border-color:var(--ink)}
-.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-family:var(--mono);font-weight:500;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
+.send{margin-top:26px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#111;border:0;font:inherit;font-family:var(--mono);font-weight:500;font-size:.86rem;padding:18px 22px;border-radius:999px;cursor:pointer;transition:background .2s}
 .send:hover{background:#fff}
 .send svg{width:22px;height:22px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-right:200px;color:var(--mute)}
@@ -155,7 +155,7 @@ form.list select option{color:#111}
 .door form{display:flex;gap:8px;margin-top:28px;justify-content:center}
 .door input{font:inherit;font-family:var(--mono);color:var(--ink);background:#111;border:1px solid #333;padding:14px 18px;border-radius:999px;outline:none;text-align:center;width:min(240px,60vw);letter-spacing:.06em}
 .door input:focus{border-color:var(--ink)}
-.door button{font:inherit;font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
+.door button{font:inherit;font-family:var(--mono);font-weight:500;font-size:.84rem;background:var(--ink);color:#111;border:0;padding:14px 22px;border-radius:999px;cursor:pointer}
 .door .msg{min-height:1.4em;color:var(--mute);font-size:.86rem;margin-top:14px}
 .door a{color:var(--mute);text-decoration:none}
 
@@ -192,7 +192,7 @@ form.list select option{color:#111}
 /* ---------- Estilo Studio Size (v108): menú, títulos por líneas, lista que se enciende, pie gigante ---------- */
 :root{--sz-bg:#000;--sz-fg:#fff;--sz-dim:rgba(255,255,255,.22);--sz-mute:rgba(255,255,255,.55);--sz-line:rgba(255,255,255,.3);--sz-top:72px;--sz-g:var(--g)}
 .sz-menu{padding-bottom:max(36px,env(safe-area-inset-bottom))}
-.sz-meta{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
+.sz-meta{font-family:var(--mono);font-size:.8rem;font-weight:400}
 .sz-menu-open .clock,.sz-menu-open .progress{opacity:0}
 .clock,.progress{transition:opacity .4s ease}
 body.end .clock,body.end .progress{opacity:0}
@@ -206,7 +206,7 @@ body.end .clock,body.end .progress{opacity:0}
 /* Pie: el nombre gigante */
 .s5 .in{grid-template-columns:minmax(0,1fr)}
 .end{min-width:0;overflow:hidden}
-.big{display:inline-block;margin:clamp(40px,8vh,96px) 0 0;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.8;white-space:nowrap;font-size:17vw}
+.big{display:inline-block;margin:clamp(40px,8vh,96px) 0 0;font-weight:700;letter-spacing:-.045em;line-height:.86;padding-bottom:.06em;white-space:nowrap;font-size:17vw}
 .endrow{display:grid;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #fff}
 .endrow p{margin:0;color:var(--mute);font-size:.95rem;letter-spacing:-.01em}
 .endrow .foot{padding-right:0}
@@ -393,8 +393,8 @@ body.end .clock,body.end .progress{opacity:0}
 
 </main>
 
-<script src="../config.js?v=108"></script>
-<script src="../assets/size.js?v=108"></script>
+<script src="../config.js?v=109"></script>
+<script src="../assets/size.js?v=109"></script>
 <script>
 (function () {
   var cfg = window.EIRO_CONFIG || {};
