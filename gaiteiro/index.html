@@ -7,11 +7,11 @@
 <meta name="description" content="Gaiteiro: Matías Gaiteiro, dirección creativa para la noche. Uno a uno, por invitación.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="../assets/favicon.png?v=7" type="image/png">
+<link rel="icon" href="../assets/favicon.png?v=8" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/size.css?v=111">
+<link rel="stylesheet" href="../assets/size.css?v=113">
 <!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
@@ -19,12 +19,10 @@
 <style>
 :root{
   --solid:#000000; --solid2:#000000; --ink:#FFFFFF; --mute:rgba(255,255,255,.58); --line:rgba(255,255,255,.2);
-  --sans:"Eiro Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1); --bpm:.484s; /* 124 BPM */
 }
-@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue"), local("HelveticaNeue"), local("Helvetica"), url("../assets/fonts/heros-regular.woff") format("woff"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Medium"), local("HelveticaNeue-Medium"), url("../assets/fonts/heros-bold.woff") format("woff"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Eiro Helvetica"; src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Helvetica Bold"), local("Helvetica-Bold"), url("../assets/fonts/heros-bold.woff") format("woff"); font-weight: 600 900; font-display: swap; }
+@font-face { font-family: "Inter Tight"; src: url("../assets/fonts/inter-tight-var.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
 *,*::before,*::after{box-sizing:border-box;border-radius:0}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--solid);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -32,10 +30,10 @@ body.locked{overflow:hidden}
 a{color:inherit}
 
 /* Juego tipográfico: títulos en mayúscula, apilados y apretados; etiquetas chicas con aire */
-.T{font-weight:700;letter-spacing:-.04em;line-height:.95;margin:0}
-.T.xl{font-size:clamp(3.6rem,10vw,10rem)}
-.T.l{font-size:clamp(2.6rem,6.4vw,6.4rem)}
-.T.m{font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:.92}
+.T{font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.92;margin:0}
+.T.xl{font-size:clamp(3rem,9.4vw,9.6rem)}
+.T.l{font-size:clamp(2.3rem,6vw,6rem)}
+.T.m{font-size:clamp(1.6rem,3.4vw,3.2rem);line-height:.92}
 .T .dim{color:rgba(255,255,255,.34)}
 .lab{font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.04em}
 .body{font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.38;letter-spacing:-.01em;color:rgba(232,232,230,.88);max-width:30em;margin:0}
@@ -49,7 +47,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
   background:radial-gradient(circle at var(--x,70%) var(--y,30%),rgba(255,255,255,.45),rgba(255,255,255,0) 26%)}
 
 /* logo */
-.lg{font-weight:700;letter-spacing:-.04em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none}
+.lg{font-weight:700;text-transform:uppercase;letter-spacing:-.02em;display:inline-flex;align-items:baseline;line-height:1;white-space:pre;text-decoration:none}
 .lg .dot{display:inline-block;width:.19em;height:.19em;border-radius:50%;background:currentColor;margin-left:.04em}
 .lg .caret{display:inline-block;width:.06em;height:.95em;background:currentColor;margin:0 .02em;transform:translateY(.14em);animation:blink .8s steps(1) infinite}
 .lg .caret.hold{animation:none}
@@ -63,7 +61,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 /* reloj que avanza con el scroll */
 .clock{position:fixed;right:var(--g);bottom:var(--g);z-index:60;text-align:right;pointer-events:none}
-.clock b{display:block;font-weight:700;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.clock b{display:block;font-weight:700;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.02em;line-height:.9;font-variant-numeric:tabular-nums}
 .clock span{display:inline-flex;align-items:center;gap:8px;margin-top:8px;color:var(--mute)}
 .clock span i{width:7px;height:7px;border-radius:50%;background:var(--ink);animation:beat var(--bpm) ease-out infinite}
 @keyframes beat{0%{opacity:1;transform:scale(1.25)}60%,100%{opacity:.25;transform:scale(1)}}
@@ -86,7 +84,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 /* 22:00 · Puerta (foto) */
 .s0 .bg{background-image:url(../escena/img/fiesta.jpg);filter:blur(9px) saturate(1.3) brightness(.5)}
-.s0 h1{margin:0;font-size:clamp(4.4rem,16vw,16rem)}
+.s0 h1{margin:0;font-size:clamp(3.6rem,14.6vw,15rem)}
 .s0 .photo{width:min(24vw,340px);aspect-ratio:4/5;right:13%;top:16%;transform:rotate(3deg)}
 .s0 .sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-top:22px}
 
@@ -95,7 +93,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .s1 .copy{width:min(640px,52vw);align-self:center;display:grid;gap:26px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .facts div{padding:14px 14px 0 0}
-.facts b{display:block;font-weight:700;letter-spacing:-.025em;font-size:clamp(1rem,1.3vw,1.2rem)}
+.facts b{display:block;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(1rem,1.3vw,1.2rem)}
 .facts span{font-size:.82rem;color:var(--mute)}
 
 /* 00:30 · La campaña (foto) */
@@ -104,7 +102,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .tl div{padding:18px 16px 0 0;position:relative}
 .tl div::before{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
 .tl div.night::before{width:13px;height:13px;top:-7px;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 0 24px #fff}
-.tl b{display:block;font-weight:700;font-size:clamp(1.2rem,2vw,2rem);letter-spacing:-.045em;margin-bottom:6px}
+.tl b{display:block;font-weight:700;text-transform:uppercase;font-size:clamp(1.1rem,1.8vw,1.8rem);letter-spacing:-.02em;margin-bottom:6px}
 .tl span{font-size:clamp(.82rem,1vw,.95rem);color:rgba(232,232,230,.82);line-height:1.35;display:block}
 .s2 .photo{right:var(--g);top:15%;width:min(21vw,290px);aspect-ratio:4/5;transform:rotate(-2deg)}
 
@@ -126,7 +124,7 @@ a.prow:hover .T{color:#fff}
 .rules{list-style:none;margin:0;padding:0;counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--g)}
 .rules li{counter-increment:r;border-top:1px solid rgba(232,232,230,.35);padding:18px 0 24px;display:grid;grid-template-columns:44px 1fr;gap:8px}
 .rules li::before{content:"0" counter(r);font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:.02em;color:var(--mute);padding-top:.5em}
-.rules b{display:block;font-weight:700;font-size:clamp(1.4rem,2.5vw,2.4rem);letter-spacing:-.045em;line-height:.98}
+.rules b{display:block;font-weight:700;text-transform:uppercase;font-size:clamp(1.3rem,2.3vw,2.2rem);letter-spacing:-.02em;line-height:.96}
 .rules span{display:block;margin-top:10px;color:rgba(232,232,230,.82);font-size:.95rem;max-width:30em}
 
 /* 05:00 · Guest list (sólido; no es sticky para poder crecer) */
@@ -206,13 +204,13 @@ body.end .clock,body.end .progress{opacity:0}
 /* 04:15 · Lo que hago (sólido, se recorre: se enciende el renglón del centro) */
 .s45{position:relative;height:auto;min-height:100svh}
 .s45 .in{height:auto;min-height:100svh;align-content:start;gap:clamp(40px,8vh,90px)}
-.s45 .sz-list li{font-size:clamp(2.4rem,7vw,7rem);line-height:1}
+.s45 .sz-list li{font-size:clamp(2rem,5.6vw,6rem);line-height:1}
 .s45 .wrapl{display:grid;grid-template-columns:1fr 3fr;gap:var(--g);align-items:start}
 .s45 .wrapl .lab{position:sticky;top:110px;color:var(--mute)}
 /* Pie: el nombre gigante */
 .s5 .in{grid-template-columns:minmax(0,1fr)}
 .end{min-width:0;overflow:hidden}
-.big{display:inline-block;margin:clamp(40px,8vh,96px) 0 0;font-weight:700;letter-spacing:-.045em;line-height:.86;padding-bottom:.06em;white-space:nowrap;font-size:17vw}
+.big{display:inline-block;margin:clamp(40px,8vh,96px) 0 0;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:.8;padding-bottom:.06em;white-space:nowrap;font-size:17vw}
 .endrow{display:grid;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #fff}
 .endrow p{margin:0;color:var(--mute);font-size:.95rem;letter-spacing:-.01em}
 .endrow .foot{padding-right:0}
@@ -399,8 +397,8 @@ body.end .clock,body.end .progress{opacity:0}
 
 </main>
 
-<script src="../config.js?v=111"></script>
-<script src="../assets/size.js?v=111"></script>
+<script src="../config.js?v=113"></script>
+<script src="../assets/size.js?v=113"></script>
 <script>
 (function () {
   var cfg = window.EIRO_CONFIG || {};

@@ -38,7 +38,7 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 .sz-menu.on { opacity: 1; }
 .sz-items { display: flex; flex-direction: column; align-items: flex-start; }
 .sz-items a {
-  display: inline-block; font-weight: 700; font-size: clamp(2.6rem, min(8.4vw, 9.2vh), 7.6rem); line-height: 1.02; letter-spacing: -0.04em;
+  display: inline-block; font-weight: 700; font-size: clamp(2rem, min(7.6vw, 8.4vh), 7rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase;
   color: var(--sz-dim); text-decoration: none; opacity: 0; transform: translateY(40%);
   transition: transform .9s var(--sz-ease) calc(var(--i) * 55ms), opacity .5s ease calc(var(--i) * 55ms), color .7s ease calc(var(--i) * 55ms + 260ms);
 }
@@ -60,7 +60,7 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 .sz-meta a:hover { color: var(--sz-mute); }
 
 /* ---------- Títulos que suben línea por línea ---------- */
-.sz-l { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+.sz-l { display: block; overflow: hidden; padding: .18em 0 .14em; margin: -.18em 0 -.14em; } /* aire arriba para tildes de mayúscula (Ó, Í, Ñ) */
 .sz-l > span { display: block; }
 .sz-motion [data-sz="lines"] .sz-l > span,
 .sz-motion [data-sz="split"] .sz-l > span { transform: translateY(108%); transition: transform 1.2s var(--sz-ease); transition-delay: calc(var(--i) * 85ms); }
@@ -70,13 +70,13 @@ html.sz-menu-open, html.sz-menu-open body { overflow: hidden; }
 /* ---------- Lista grande que se enciende al pasar por el centro ---------- */
 .sz-list { list-style: none; margin: 0; padding: 0; }
 .sz-list li {
-  font-weight: 700; font-size: clamp(2.1rem, 6.2vw, 6.4rem); line-height: 1.02; letter-spacing: -0.04em;
+  font-weight: 700; font-size: clamp(1.75rem, 5vw, 5.4rem); line-height: .98; letter-spacing: -0.02em; text-transform: uppercase;
   color: var(--sz-dim); transition: color .35s ease;
 }
 .sz-list li.on { color: var(--sz-fg); }
 
 /* ---------- Frase que se llena de color ---------- */
-.sz-statement { font-weight: 700; font-size: clamp(2.1rem, 5.6vw, 6rem); line-height: 1; letter-spacing: -0.04em; text-wrap: balance; margin: 0; }
+.sz-statement { font-weight: 700; font-size: clamp(1.9rem, 5vw, 5.4rem); line-height: .96; letter-spacing: -0.02em; text-transform: uppercase; text-wrap: balance; margin: 0; }
 .sz-w { color: var(--sz-dim); transition: color .4s ease; }
 .sz-w.on { color: var(--sz-fg); }
 

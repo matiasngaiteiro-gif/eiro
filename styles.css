@@ -1271,3 +1271,27 @@ body { background: #FFFFFF; color: #000000; }
 .sz-motion .works[data-sz="drift"] { display: flex; flex-wrap: nowrap; gap: clamp(10px, 1.2vw, 16px); width: max-content; max-width: none; will-change: transform; }
 .sz-motion .works[data-sz="drift"] > .work { flex: none; width: clamp(260px, 34vw, 560px); }
 @media (max-width: 700px) { .sz-motion .works[data-sz="drift"] > .work { width: 72vw; } }
+
+/* ==========================================================
+   Inter Tight en todo el proyecto (v112)
+   Fuente variable incluida en assets/fonts (licencia OFL).
+   Logos en Bold y en mayúscula; títulos en mayúscula.
+   ========================================================== */
+@font-face { font-family: "Inter Tight"; src: url("assets/fonts/inter-tight-var.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root {
+  --font-sans: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-logo: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body, button, input, select, textarea { font-family: var(--font-sans); }
+.logo, .logo-fit, .intro-word { font-family: var(--font-logo); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; }
+.logo .ek, .intro-word .ek, .logo-fit .l:first-child > span { margin-right: 0; }
+.title, .hero-title, .case-title, .case-next-name, .kc-big, .kc-tag, .kc-quote p, .gate-box h2,
+.sz .title, .sz .hero-title, .sz .ct-copy h2, .logos-page h1.title { text-transform: uppercase; letter-spacing: -0.02em; }
+.sz .title, .sz .hero-title { line-height: .92; }
+.sz .method h3 { letter-spacing: -0.015em; }
+.sz .hero-title { font-size: clamp(3.2rem, 10vw, 12rem); }
+@media (max-width: 900px) { .sz .hero-title { font-size: clamp(2.6rem, 12.4vw, 5.6rem); } }
+.sz .ct-copy h2 { font-size: clamp(2.8rem, 8vw, 8rem); }
+.case-title { font-size: clamp(3rem, 12vw, 11rem); }
+.kc-big { font-weight: 700; }
+.intro-word { font-size: min(19.5vw, 12.5rem); }

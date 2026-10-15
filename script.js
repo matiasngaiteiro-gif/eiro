@@ -22,7 +22,9 @@
       var ls = parseFloat(es.letterSpacing) / parseFloat(es.fontSize) || 0;
       measureCtx.font = es.fontWeight + " 100px " + es.fontFamily;
       if ("letterSpacing" in measureCtx) measureCtx.letterSpacing = (ls * 100) + "px";
-      var m = measureCtx.measureText((el.textContent || "Eiro").trim());
+      var txt = (el.textContent || "Eiro").trim();
+      if (es.textTransform === "uppercase") txt = txt.toUpperCase();
+      var m = measureCtx.measureText(txt);
       var kern = (parseFloat(el.getAttribute("data-kern")) || 0) + (parseFloat(el.getAttribute("data-dot")) || 0);
       var inkLeft = -m.actualBoundingBoxLeft;              /* aire antes de la E */
       var inkW = m.actualBoundingBoxRight + m.actualBoundingBoxLeft + kern * 100;
