@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eiro — Branding con criterio</title>
-<meta name="description" content="Eiro, estudio de branding en Buenos Aires dirigido por Matías Gaiteiro. Estrategia, identidad visual, content y lanzamientos para marcas que van en serio.">
+<title>Eiro — Marcas con carácter</title>
+<meta name="description" content="Eiro: marcas con carácter para los raros y los geniales. Branding, logos, mentorías y recursos para diseñadores.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="../assets/favicon.png?v=9" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=9">
-<!-- EIRO · versión /matias/
-     Referencia de estructura: un estudio con cara visible (titulares grandes en mayúscula, trabajos en mosaico,
-     bloques de imagen + texto y un cierre para escribirnos).
-     Tipografía: Plus Jakarta Sans (interletrado −50 en titulares) · Logotipo: Funnel Display Bold −50.
-     Color: blanco y negro; el verde (#34E0A1) solo para detalles: puntos, subrayados, estados y el botón de envío. -->
+<!-- EIRO · /matias/ — página independiente, sin relación con las otras webs.
+     Estructura y voz basadas en cjcawley.com: titular grande + botón, reel, seis trabajos, "la suerte acompaña a…",
+     bio con retrato, tres bloques (mentorías, recursos, charlas), club con suscripción y pie con redes.
+     Tipografía: Plus Jakarta Sans, titulares en minúscula con interletrado −50 · Logotipo: Funnel Display Bold −50.
+     Color: blanco y negro; verde #34E0A1 para detalles. -->
 <style>
 @font-face { font-family: "Plus Jakarta"; src: url("../assets/fonts/plus-jakarta-var.woff") format("woff"); font-weight: 200 800; font-display: swap; }
 @font-face { font-family: "Funnel Display"; src: url("../assets/fonts/funnel-display-var.woff") format("woff"); font-weight: 300 800; font-display: swap; }
 :root {
-  --ink: #000000; --paper: #FFFFFF; --soft: #F4F4F4; --line: #E6E6E6; --gray: #6E6E6E;
+  --ink: #000000; --paper: #FFFFFF; --soft: #F3F3F3; --line: #E4E4E4; --gray: #6B6B6B;
   --green: #34E0A1;
-  --g: clamp(18px, 3.6vw, 56px); --r: clamp(18px, 2vw, 28px);
+  --g: clamp(18px, 3.6vw, 56px); --r: clamp(16px, 1.8vw, 26px);
   --ease: cubic-bezier(.19, 1, .22, 1);
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -32,156 +32,118 @@ a { color: inherit; }
 img { display: block; max-width: 100%; }
 ::selection { background: var(--green); color: var(--ink); }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
-.wrap { max-width: 1520px; margin: 0 auto; padding: 0 var(--g); }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 var(--g); }
 .skip { position: absolute; left: var(--g); top: -80px; z-index: 99; background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 999px; text-decoration: none; }
 .skip:focus { top: 12px; }
 
-/* Voces */
-.H { font-weight: 800; text-transform: uppercase; letter-spacing: -0.05em; line-height: .9; }
-.k { font-size: .78rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--gray); }
-.btn { display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 26px; border-radius: 999px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 800; font-size: .92rem; letter-spacing: -0.01em; text-transform: uppercase; border: 0; cursor: pointer; transition: background-color .25s ease, color .25s ease, transform .2s ease; }
-.btn:hover { background: var(--green); color: var(--ink); }
+/* Titulares: minúscula, ExtraBold, interletrado −50 */
+.H { font-weight: 800; letter-spacing: -0.05em; line-height: .95; text-wrap: balance; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 30px; border-radius: 999px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 800; font-size: 1rem; letter-spacing: -0.03em; border: 2px solid var(--ink); cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .2s ease; }
+.btn:hover { background: var(--green); border-color: var(--green); color: var(--ink); }
 .btn:active { transform: scale(.97); }
-.btn i { font-style: normal; transition: transform .35s var(--ease); }
-.btn:hover i { transform: translateX(4px); }
-.btn-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
-.btn-line:hover { box-shadow: inset 0 0 0 1.5px var(--green); }
-/* puntito verde, como las burbujas de puntaje */
-.bub { display: inline-block; width: .5em; height: .5em; border-radius: 50%; background: var(--green); vertical-align: .12em; }
-.mark { background: linear-gradient(transparent 64%, var(--green) 64%, var(--green) 90%, transparent 90%); padding: 0 .04em; }
+.btn.line { background: transparent; color: var(--ink); }
+.btn.line:hover { background: var(--green); border-color: var(--green); }
 
 /* Logotipo */
 .logo { font-family: "Funnel Display", "Plus Jakarta", sans-serif; font-weight: 700; letter-spacing: -0.05em; line-height: 1; text-decoration: none; display: inline-flex; align-items: baseline; }
 .logo .dot { display: inline-block; width: .2em; height: .2em; border-radius: 50%; background: var(--green); margin-left: .04em; }
 
 /* Barra */
-.bar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s ease; }
-.bar.stuck { border-bottom-color: var(--line); }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 76px; }
-.bar .logo { font-size: 30px; }
-.nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); }
-.nav a { text-decoration: none; font-weight: 700; font-size: .86rem; text-transform: uppercase; letter-spacing: -0.01em; position: relative; }
-.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 3px; border-radius: 3px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
-.nav a:not(.btn):hover::after { transform: scaleX(1); }
-.nav .btn { min-height: 44px; padding: 0 20px; font-size: .82rem; }
-.burger { display: none; background: none; border: 0; padding: 10px 0 10px 10px; cursor: pointer; font: inherit; font-weight: 800; font-size: .86rem; text-transform: uppercase; }
+.bar { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1.5px solid transparent; transition: border-color .3s ease; }
+.bar.stuck { border-bottom-color: var(--ink); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 78px; }
+.bar .logo { font-size: 32px; }
+.nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 36px); }
+.nav a { text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: -0.03em; }
+.nav a:not(.btn) { background: linear-gradient(var(--green), var(--green)) no-repeat 0 100% / 0 3px; padding-bottom: 3px; transition: background-size .35s var(--ease); }
+.nav a:not(.btn):hover { background-size: 100% 3px; }
+.nav .btn { min-height: 46px; padding: 0 22px; font-size: .95rem; }
+.burger { display: none; background: none; border: 0; padding: 10px 0 10px 10px; cursor: pointer; font: inherit; font-weight: 800; letter-spacing: -0.03em; }
 @media (max-width: 900px) {
   .burger { display: block; }
-  .nav { position: fixed; inset: 76px 0 auto 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--g) 28px; border-bottom: 1px solid var(--line); transform: translateY(-120%); transition: transform .5s var(--ease); }
+  .nav { position: fixed; inset: 78px 0 auto 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 6px var(--g) 28px; border-bottom: 1.5px solid var(--ink); transform: translateY(-120%); transition: transform .5s var(--ease); }
   .nav.open { transform: none; }
-  .nav a:not(.btn) { font-size: 2rem; font-weight: 800; letter-spacing: -0.05em; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .nav a:not(.btn)::after { display: none; }
-  .nav .btn { margin-top: 20px; justify-content: center; min-height: 54px; font-size: .92rem; }
+  .nav a:not(.btn) { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.05em; padding: 10px 0; background: none; border-bottom: 1px solid var(--line); }
+  .nav .btn { margin-top: 22px; min-height: 56px; }
 }
 
 /* Portada */
-.hero { padding: clamp(28px, 4vw, 64px) 0 clamp(64px, 8vw, 120px); }
-.hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: end; }
-.hero h1 { font-size: clamp(3.2rem, 7.6vw, 9rem); }
-.hero-copy { display: grid; gap: clamp(24px, 3vw, 40px); justify-items: start; }
-.hero-copy p { max-width: 30em; font-size: clamp(1.02rem, 1.3vw, 1.2rem); color: var(--gray); }
-.hero-media { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--soft); }
-.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 1s ease, transform 4.6s linear; }
-.hero-media img.on { opacity: 1; transform: none; }
-.badge { position: absolute; left: 16px; bottom: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 10px; background: #fff; border-radius: 999px; padding: 10px 16px; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
-.badge .bubs { display: inline-flex; gap: 3px; }
-.badge .bubs i { width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
-@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } .hero-media { aspect-ratio: 4 / 4.4; } }
+.hero { padding: clamp(40px, 6vw, 96px) 0 clamp(48px, 6vw, 96px); }
+.hero h1 { font-size: clamp(3rem, 8.6vw, 10.4rem); max-width: 12em; }
+.hero h1 em { font-style: normal; background: linear-gradient(transparent 66%, var(--green) 66%, var(--green) 92%, transparent 92%); }
+.hero .cta { margin-top: clamp(28px, 3.4vw, 48px); }
+.reel { position: relative; margin-top: clamp(40px, 5vw, 80px); aspect-ratio: 16 / 8; border-radius: var(--r); overflow: hidden; background: var(--soft); }
+.reel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .7s ease; }
+.reel img.on { opacity: 1; }
+@media (max-width: 700px) { .reel { aspect-ratio: 4 / 5; } }
 
-/* Secciones */
-.sec { padding: clamp(72px, 9vw, 150px) 0; }
-.sec-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: clamp(28px, 3.6vw, 52px); }
-.sec-head h2 { font-size: clamp(2.4rem, 5.4vw, 6rem); }
-
-/* Trabajos en mosaico */
-.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); }
-.tile { text-decoration: none; display: grid; gap: 14px; }
-.tile .pic { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--soft); }
+/* Trabajos: mosaico de seis, el nombre abajo */
+.work { padding: clamp(24px, 3vw, 48px) 0 clamp(80px, 10vw, 160px); }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3vw, 44px) clamp(12px, 1.6vw, 24px); }
+.tile { display: grid; gap: 14px; }
+.tile .pic { aspect-ratio: 1 / 1; border-radius: var(--r); overflow: hidden; background: var(--soft); }
 .tile .pic img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
 .tile:hover .pic img { transform: scale(1.05); }
-.tile .pic.ink { background: var(--ink); display: grid; place-items: center; gap: 28px; align-content: center; }
-.tile .pic.ink img { width: 56%; height: auto; object-fit: contain; }
-.tile .pic.ink img + img { width: 48%; }
-.tile .cap { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.tile h3 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); }
-.tile span { font-size: .9rem; color: var(--gray); text-align: right; }
-.tile .go { position: absolute; right: 14px; top: 14px; width: 46px; height: 46px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-weight: 800; transform: scale(.8); opacity: 0; transition: transform .35s var(--ease), opacity .25s ease, background-color .25s ease; }
-.tile:hover .go { transform: none; opacity: 1; background: var(--green); }
-@media (max-width: 900px) { .tiles { grid-template-columns: 1fr 1fr; } .tile:last-child { grid-column: 1 / -1; } .tile:last-child .pic { aspect-ratio: 16 / 9; } }
-@media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } .tile .pic, .tile:last-child .pic { aspect-ratio: 4 / 4.2; } }
+.tile .pic.ink { background: var(--ink); display: grid; align-content: center; justify-items: center; gap: 30px; }
+.tile .pic.ink img { width: 54%; height: auto; object-fit: contain; }
+.tile .pic.ink img + img { width: 46%; }
+.tile h3 { font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
+@media (max-width: 800px) { .tiles { grid-template-columns: 1fr 1fr; } }
 
-/* Manifiesto */
-.manifesto h2 { font-size: clamp(2rem, 4.4vw, 4.8rem); margin-bottom: clamp(10px, 1.4vw, 20px); }
-.manifesto h3 { font-size: clamp(2.6rem, 7.2vw, 8.4rem); color: #C9C9C9; line-height: .92; }
-.manifesto h3 span { transition: color .4s ease; }
-.manifesto h3 span:hover { color: var(--ink); }
-.manifesto h3 .bub { margin: 0 .18em; width: .34em; height: .34em; vertical-align: .2em; }
-.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 96px); align-items: end; margin-top: clamp(56px, 7vw, 110px); }
-.about figure { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 5; max-width: 520px; background: var(--soft); }
-.about figure img { width: 100%; height: 100%; object-fit: cover; }
-.about figcaption { position: absolute; left: 16px; bottom: 16px; background: #fff; border-radius: 999px; padding: 8px 14px; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
-.about-copy { display: grid; gap: 26px; justify-items: start; }
-.about-copy p { font-size: clamp(1.1rem, 1.6vw, 1.45rem); line-height: 1.45; letter-spacing: -0.03em; }
-.about-copy p + p { font-size: 1rem; color: var(--gray); letter-spacing: -0.02em; }
-@media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+/* Presentación */
+.intro { padding-bottom: clamp(80px, 10vw, 160px); }
+.intro h2 { font-size: clamp(2rem, 4vw, 4.2rem); }
+.intro h3 { font-size: clamp(2.4rem, 6.6vw, 7.6rem); margin-top: .1em; }
+.intro h3 i { font-style: normal; color: var(--green); }
+.bio { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 96px); align-items: center; margin-top: clamp(56px, 7vw, 110px); }
+.bio-copy { display: grid; gap: 22px; justify-items: start; }
+.bio-copy p { font-size: clamp(1.1rem, 1.6vw, 1.5rem); line-height: 1.45; letter-spacing: -0.03em; }
+.bio-copy p em { font-style: italic; padding-right: .12em; }
+.bio-copy p + p { font-size: clamp(1rem, 1.2vw, 1.12rem); color: var(--gray); letter-spacing: -0.02em; }
+.bio figure { border-radius: 50%; overflow: hidden; aspect-ratio: 1 / 1; max-width: 480px; width: 100%; justify-self: center; background: var(--soft); }
+.bio figure img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .bio { grid-template-columns: 1fr; } .bio figure { order: -1; max-width: 300px; justify-self: start; } }
 
-/* Bloques imagen + texto */
-.rows { display: grid; gap: clamp(72px, 9vw, 140px); }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 96px); align-items: center; }
-.row:nth-child(even) .row-pic { order: 2; }
-.row-pic { border-radius: var(--r); overflow: hidden; aspect-ratio: 5 / 4; background: var(--soft); }
-.row-pic img { width: 100%; height: 100%; object-fit: cover; }
-.row-copy { display: grid; gap: 22px; justify-items: start; }
-.row-copy .num { display: inline-flex; align-items: center; gap: 10px; }
-.row-copy h2 { font-size: clamp(2.2rem, 4.6vw, 5rem); }
-.row-copy p { font-size: clamp(1.02rem, 1.3vw, 1.18rem); color: var(--gray); max-width: 30em; }
-.row-copy ul { display: flex; flex-wrap: wrap; gap: 8px; }
-.row-copy li { border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .82rem; font-weight: 700; }
-@media (max-width: 900px) { .row { grid-template-columns: 1fr; } .row:nth-child(even) .row-pic { order: 0; } }
+/* Bloques: imagen + texto, alternados */
+.blocks { display: grid; gap: clamp(80px, 10vw, 150px); padding-bottom: clamp(90px, 11vw, 170px); }
+.block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 96px); align-items: center; }
+.block:nth-child(even) .block-pic { order: 2; }
+.block-pic { border-radius: var(--r); overflow: hidden; aspect-ratio: 1 / 1; background: var(--soft); }
+.block-pic img { width: 100%; height: 100%; object-fit: cover; }
+.block-copy { display: grid; gap: 24px; justify-items: start; }
+.block-copy h2 { font-size: clamp(2.4rem, 5vw, 5.4rem); }
+.block-copy p { font-size: clamp(1.05rem, 1.35vw, 1.22rem); color: var(--gray); max-width: 28em; }
+@media (max-width: 900px) { .block { grid-template-columns: 1fr; } .block:nth-child(even) .block-pic { order: 0; } }
 
-/* Método */
-.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
-.step { border-top: 2px solid var(--ink); padding-top: 18px; display: grid; gap: 12px; align-content: start; }
-.step b { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--green); font-size: .82rem; font-weight: 800; }
-.step h3 { font-size: clamp(1.4rem, 2vw, 2rem); }
-.step p { color: var(--gray); font-size: .98rem; }
-@media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; } }
-@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
-
-/* Marcas */
-.brands { display: flex; flex-wrap: wrap; gap: 10px; }
-.brands li { border: 1.5px solid var(--line); border-radius: 999px; padding: 12px 20px; font-weight: 800; font-size: clamp(.95rem, 1.3vw, 1.15rem); text-transform: uppercase; letter-spacing: -0.03em; transition: border-color .25s ease, background-color .25s ease; }
-.brands li:hover { border-color: var(--green); background: var(--green); }
-
-/* Contacto */
-.club { background: var(--ink); color: #fff; border-radius: calc(var(--r) * 1.4); padding: clamp(32px, 5vw, 80px); display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: end; }
-.club h2 { font-size: clamp(2.6rem, 6vw, 6.6rem); }
-.club h2 .mark { background: linear-gradient(transparent 62%, var(--green) 62%, var(--green) 88%, transparent 88%); color: #fff; }
-.club h5 { font-size: 1rem; font-weight: 500; color: #9C9C9C; margin-top: 18px; letter-spacing: -0.02em; }
-.club h5 + h5 { color: #fff; font-size: 1.1rem; max-width: 26em; }
-.form { display: grid; gap: 12px; }
-.form label { display: grid; gap: 6px; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; color: #9C9C9C; }
-.form input, .form select { font: inherit; font-size: 1.05rem; color: #fff; background: #141414; border: 1.5px solid #2A2A2A; border-radius: 14px; padding: 15px 16px; outline: none; letter-spacing: -0.02em; -webkit-appearance: none; appearance: none; }
-.form input:focus, .form select:focus { border-color: var(--green); }
-.form select option { color: #000; }
-.form .btn { background: var(--green); color: var(--ink); justify-content: space-between; margin-top: 8px; }
-.form .btn:hover { background: #fff; }
+/* Club */
+.club { background: var(--ink); color: #fff; border-radius: calc(var(--r) * 1.4); padding: clamp(36px, 6vw, 96px); display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+.club-mark { width: clamp(110px, 14vw, 200px); aspect-ratio: 1; border-radius: 50%; background: var(--green); color: var(--ink); display: grid; place-items: center; text-align: center; font-weight: 800; letter-spacing: -0.05em; line-height: .95; font-size: clamp(1.2rem, 1.8vw, 1.8rem); transform: rotate(-8deg); }
+.club h2 { font-size: clamp(2.4rem, 5.4vw, 6rem); }
+.club h5 { font-weight: 500; letter-spacing: -0.02em; }
+.club .aside { color: var(--green); font-size: 1.1rem; margin-top: 12px; }
+.club .desc { color: #BDBDBD; font-size: 1.05rem; max-width: 34em; margin-top: 16px; }
+.form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.form input { flex: 1 1 200px; min-width: 0; font: inherit; font-size: 1.05rem; color: #fff; background: transparent; border: 2px solid #3A3A3A; border-radius: 999px; padding: 15px 22px; outline: none; letter-spacing: -0.02em; }
+.form input::placeholder { color: #8A8A8A; }
+.form input:focus { border-color: var(--green); }
+.form .btn { background: var(--green); border-color: var(--green); color: var(--ink); }
+.form .btn:hover { background: #fff; border-color: #fff; }
+.form-msg { width: 100%; min-height: 1.4em; font-size: .92rem; color: var(--green); }
 @media (max-width: 900px) { .club { grid-template-columns: 1fr; } }
 
 /* Pie */
-.foot { padding: clamp(56px, 7vw, 100px) 0 28px; }
-.foot .big { font-size: clamp(5rem, 23vw, 25rem); display: block; line-height: .8; margin-bottom: clamp(24px, 3vw, 40px); }
-.foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 28px; border-top: 1.5px solid var(--ink); padding-top: 18px; font-size: .9rem; }
-.foot-row nav { display: flex; gap: 22px; flex-wrap: wrap; }
-.foot-row a { text-decoration: none; font-weight: 700; }
-.foot-row a:hover { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 3px; text-underline-offset: 4px; }
-.foot-row span { color: var(--gray); }
+.foot { padding: clamp(60px, 8vw, 110px) 0 28px; }
+.foot-top { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.foot .logo { font-size: clamp(4.4rem, 15vw, 15rem); }
+.social { display: flex; gap: 10px; }
+.social a { display: inline-grid; place-items: center; min-width: 54px; height: 54px; padding: 0 20px; border-radius: 999px; border: 2px solid var(--ink); text-decoration: none; font-weight: 800; letter-spacing: -0.03em; transition: background-color .25s ease, border-color .25s ease; }
+.social a:hover { background: var(--green); border-color: var(--green); }
+.legal { margin-top: 28px; padding-top: 18px; border-top: 1.5px solid var(--ink); font-size: .9rem; color: var(--gray); }
 
 /* Aparición */
-.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform 1.1s var(--ease); }
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform 1.1s var(--ease); }
 .js .rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; } .hero-media img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; } .reel img { transition: none; } }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -193,12 +155,12 @@ img { display: block; max-width: 100%; }
     <a class="logo" href="#inicio" aria-label="Eiro">Eiro<span class="dot" aria-hidden="true"></span></a>
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#casos">Casos</a>
-      <a href="../logos.html">Logos</a>
-      <a href="#estudio">Estudio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#metodo">Método</a>
-      <a class="btn" href="#contacto">Trabajemos <i>→</i></a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#trabajos">Logos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#club">Club</a>
+      <a class="btn" href="#club">Trabajemos juntos</a>
     </nav>
   </div>
 </header>
@@ -208,140 +170,94 @@ img { display: block; max-width: 100%; }
   <!-- PORTADA -->
   <section class="hero" id="inicio">
     <div class="wrap">
-      <div class="hero-copy">
-        <h1 class="H rv">Branding con <span class="mark">criterio</span> para marcas que van en serio.</h1>
-        <p class="rv">Estrategia, identidad y content para marcas en crecimiento. Desde Buenos Aires, para Argentina y Estados Unidos.</p>
-        <a class="btn rv" href="#contacto">Trabajemos juntos <i>→</i></a>
-      </div>
-      <figure class="hero-media rv" id="reel" aria-label="Trabajos de Eiro">
-        <img class="on" src="../assets/fotos/cer-b1.jpg" alt="Cartel de CER en una medianera de ladrillo">
-        <img src="../assets/fotos/nero-m2.jpg" alt="Caja de NERO en la puerta de una casa" loading="lazy">
-        <img src="../assets/fotos/cer-m1.jpg" alt="Remera de CER colgada en un arco de fútbol" loading="lazy">
-        <img src="../assets/fotos/nero-m5.jpg" alt="Celular con la tienda de NERO" loading="lazy">
-        <span class="badge"><span class="bubs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Agenda abierta · 2027</span>
+      <h1 class="H rv">Marcas con carácter para los <em>raros</em> y los geniales.</h1>
+      <div class="cta rv"><a class="btn" href="#club">Trabajemos juntos</a></div>
+      <figure class="reel rv" id="reel" aria-label="Trabajos">
+        <img class="on" src="../assets/fotos/cer-b1.jpg" alt="">
+        <img src="../assets/fotos/alma.jpg" alt="" loading="lazy">
+        <img src="../assets/fotos/nero-m4.jpg" alt="" loading="lazy">
+        <img src="../assets/fotos/crisger.jpg" alt="" loading="lazy">
+        <img src="../assets/fotos/cer-m6.jpg" alt="" loading="lazy">
       </figure>
     </div>
   </section>
 
-  <!-- CASOS -->
-  <section class="sec" id="casos" aria-labelledby="casos-t" style="padding-top:0">
+  <!-- TRABAJOS -->
+  <section class="work" id="trabajos" aria-label="Trabajos">
     <div class="wrap">
-      <div class="sec-head rv">
-        <h2 class="H" id="casos-t">Casos</h2>
-        <a class="btn btn-line" href="../logos.html">Ver todos los logos <i>→</i></a>
-      </div>
-      <div class="tiles">
-        <a class="tile rv" href="../trabajos/cer.html">
-          <div class="pic"><img src="../assets/fotos/cer.jpg" alt="Profe y alumno entrenando en CER" loading="lazy"><span class="go" aria-hidden="true">→</span></div>
-          <div class="cap"><h3 class="H">CER</h3><span>Identidad · Centro de entrenamiento</span></div>
-        </a>
-        <a class="tile rv" href="../trabajos/nero.html">
-          <div class="pic"><img src="../assets/fotos/nero-m1.jpg" alt="Bolsa de envío de NERO" loading="lazy"><span class="go" aria-hidden="true">→</span></div>
-          <div class="cap"><h3 class="H">NERO</h3><span>Brand book · Tienda de tecnología</span></div>
-        </a>
-        <a class="tile rv" href="../logos.html">
-          <div class="pic ink"><img src="../assets/cer/cer-logo-blanco.svg" alt="Logo de CER"><img src="../assets/nero/nero-logo-blanco.svg" alt="Logo de NERO"><span class="go" aria-hidden="true">→</span></div>
-          <div class="cap"><h3 class="H">Logos</h3><span>Marcas que diseñamos</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ESTUDIO -->
-  <section class="sec manifesto" id="estudio" aria-labelledby="estudio-t" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="H rv" id="estudio-t">Las marcas que quedan son de los</h2>
-      <h3 class="H rv" aria-label="Obsesivos, curiosos, exigentes, metódicos, inquietos, cabeza dura, detallistas, inconformistas">
-        <span>Obsesivos</span><i class="bub"></i><span>Curiosos</span><i class="bub"></i><span>Exigentes</span><i class="bub"></i><span>Metódicos</span><i class="bub"></i><span>Inquietos</span><i class="bub"></i><span>Cabeza dura</span><i class="bub"></i><span>Detallistas</span><i class="bub"></i><span>Inconformistas</span>
-      </h3>
-      <div class="about">
-        <figure class="rv"><img src="../assets/fotos/matias.jpg" alt="Matías Gaiteiro" loading="lazy"><figcaption>Matías Gaiteiro · Dirección creativa</figcaption></figure>
-        <div class="about-copy rv">
-          <p>Eiro es un estudio de branding de Buenos Aires dirigido por Matías Gaiteiro, con más de diez años armando marcas, contenido y equipos de social media. Trabajamos con marcas que dejaron de improvisar y necesitan que todo hable el mismo idioma.</p>
-          <p>Estrategia, identidad y content con un mismo criterio, de la primera reunión al último archivo. Proyectos medianos y grandes, con procesos claros y plazos que se cumplen.</p>
-          <a class="btn btn-line" href="#metodo">Cómo trabajamos <i>→</i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section class="sec" id="servicios" aria-labelledby="servicios-t" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="sr-only" id="servicios-t">Servicios</h2>
-      <div class="rows">
-        <article class="row">
-          <div class="row-pic rv"><img src="../assets/fotos/cer-m4.jpg" alt="Botella de CER sobre una pista de atletismo" loading="lazy"></div>
-          <div class="row-copy rv">
-            <span class="k num"><i class="bub"></i> 01 — Branding</span>
-            <h2 class="H">Marcas de punta a punta</h2>
-            <p>Estrategia de marca, posicionamiento, identidad visual y brand book. Una marca pensada como sistema, para que cualquier equipo la aplique sin romperla.</p>
-            <ul><li>Estrategia</li><li>Naming</li><li>Identidad visual</li><li>Brand book</li></ul>
-            <a class="btn" href="../trabajos/cer.html">Ver caso CER <i>→</i></a>
-          </div>
-        </article>
-        <article class="row">
-          <div class="row-pic rv"><img src="../assets/fotos/nero-m5.jpg" alt="Mano con un celular que muestra la tienda de NERO" loading="lazy"></div>
-          <div class="row-copy rv">
-            <span class="k num"><i class="bub"></i> 02 — Content</span>
-            <h2 class="H">Content y social media</h2>
-            <p>Dirección de arte, foto, video y planificación de social media. Contenido con identidad, no piezas sueltas que salen como pueden.</p>
-            <ul><li>Dirección de arte</li><li>Foto y video</li><li>Social media</li><li>Paid media</li></ul>
-            <a class="btn" href="../trabajos/nero.html">Ver caso NERO <i>→</i></a>
-          </div>
-        </article>
-        <article class="row">
-          <div class="row-pic rv"><img src="../assets/fotos/nero-m2.jpg" alt="Caja de NERO en la puerta de una casa" loading="lazy"></div>
-          <div class="row-copy rv">
-            <span class="k num"><i class="bub"></i> 03 — Lanzamientos</span>
-            <h2 class="H">Salir a la cancha</h2>
-            <p>Concepto de campaña, plan de salida y piezas para cada punto de contacto. Para que el día del lanzamiento esté todo en su lugar y nadie improvise.</p>
-            <ul><li>Concepto</li><li>Key visual</li><li>Plan de salida</li><li>Activaciones</li></ul>
-            <a class="btn" href="#contacto">Hablemos <i>→</i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTODO -->
-  <section class="sec" id="metodo" aria-labelledby="metodo-t" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head rv"><h2 class="H" id="metodo-t">Cómo trabajamos</h2></div>
-      <ol class="steps">
-        <li class="step rv"><b>01</b><h3 class="H">Diagnóstico</h3><p>Entendemos el negocio antes de tocar un píxel: audiencia, competencia y punto de partida.</p></li>
-        <li class="step rv"><b>02</b><h3 class="H">Estrategia</h3><p>Posicionamiento, tono y prioridades. Se acuerda con tu equipo y no se mueve sin motivo.</p></li>
-        <li class="step rv"><b>03</b><h3 class="H">Diseño</h3><p>Identidad, sistema y piezas, con un equipo dedicado de punta a punta.</p></li>
-        <li class="step rv"><b>04</b><h3 class="H">Salida</h3><p>Acompañamos el lanzamiento, medimos y ajustamos. Nada de entregar y desaparecer.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- MARCAS -->
-  <section class="sec" aria-labelledby="marcas-t" style="padding-top:0">
-    <div class="wrap">
-      <p class="k rv" id="marcas-t" style="margin-bottom:22px">Marcas con las que trabajamos</p>
-      <ul class="brands rv">
-        <li>CER</li><li>NERO</li><li>Alma</li><li>Crisger</li><li>Extracto Importado</li><li>Pueblo Límite</li><li>UFO</li><li>Know How</li><li>Lado B</li><li>Meister</li><li>Muchachos</li><li>La Playa</li><li>Lima</li>
+      <ul class="tiles">
+        <li class="tile rv"><div class="pic"><img src="../assets/fotos/cer.jpg" alt="Entrenamiento en CER" loading="lazy"></div><h3 class="H">CER</h3></li>
+        <li class="tile rv"><div class="pic"><img src="../assets/fotos/nero-m1.jpg" alt="Bolsa de envío de NERO" loading="lazy"></div><h3 class="H">NERO</h3></li>
+        <li class="tile rv"><div class="pic"><img src="../assets/fotos/alma.jpg" alt="Noche en Alma" loading="lazy"></div><h3 class="H">Alma</h3></li>
+        <li class="tile rv"><div class="pic"><img src="../assets/fotos/crisger.jpg" alt="Obrero con casco de Crisger" loading="lazy"></div><h3 class="H">Crisger</h3></li>
+        <li class="tile rv"><div class="pic"><img src="../assets/fotos/el-calenton.jpg" alt="Pista llena en El Calentón" loading="lazy"></div><h3 class="H">El Calentón</h3></li>
+        <li class="tile rv"><div class="pic ink"><img src="../assets/cer/cer-logo-blanco.svg" alt="Logo de CER"><img src="../assets/nero/nero-logo-blanco.svg" alt="Logo de NERO"></div><h3 class="H">Logos</h3></li>
       </ul>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="sec" id="contacto" aria-labelledby="contacto-t" style="padding-top:0">
+  <!-- PRESENTACIÓN -->
+  <section class="intro" id="sobre-mi" aria-labelledby="suerte">
+    <div class="wrap">
+      <h2 class="H rv" id="suerte">La suerte acompaña a los</h2>
+      <h3 class="H rv">audaces, valientes, inquietos, rebeldes, inadaptados, soñadores, raros, distintos, cabezas duras <i>y</i> los que no piden permiso.</h3>
+      <div class="bio">
+        <div class="bio-copy rv">
+          <p>Hola, soy Matías. Diseñador de marcas, de logos y director creativo de Eiro, desde Buenos Aires. Hace más de diez años que ayudo a marcas con algo para decir a que se note: que las miren <em>dos veces</em> y se las acuerden.</p>
+          <p>Trabajo con negocios con propósito y gente que piensa distinto. Estrategia, identidad y una buena historia: lo que hace falta para que una marca no se parezca a ninguna otra.</p>
+          <a class="btn line" href="#club">Más sobre mí</a>
+        </div>
+        <figure class="rv"><img src="../assets/fotos/matias.jpg" alt="Matías Gaiteiro" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUES -->
+  <section id="recursos" aria-label="Mentorías, recursos y charlas">
+    <div class="wrap blocks">
+      <article class="block">
+        <div class="block-pic rv"><img src="../assets/fotos/matias-cuadrada.jpg" alt="" loading="lazy"></div>
+        <div class="block-copy rv">
+          <h2 class="H">Mentorías 1 a 1</h2>
+          <p>Te ayudo a armar un estudio de diseño que funcione y que deje plata: cómo cotizar, cómo conseguir clientes que valgan la pena y cómo dejar de decir que sí a todo. Uno a uno, a tu ritmo.</p>
+          <a class="btn" href="#club">Quiero saber más</a>
+        </div>
+      </article>
+      <article class="block">
+        <div class="block-pic rv"><img src="../assets/fotos/nero-m3.jpg" alt="" loading="lazy"></div>
+        <div class="block-copy rv">
+          <h2 class="H">Recursos y cursos</h2>
+          <p>Templates, herramientas y cursos para manejar tu estudio sin perder la cabeza. Lo mismo que uso yo todos los días, ordenado para que lo aproveches desde el primer proyecto.</p>
+          <a class="btn" href="#club">Ver recursos</a>
+        </div>
+      </article>
+      <article class="block">
+        <div class="block-pic rv"><img src="../assets/fotos/el-calenton.jpg" alt="" loading="lazy"></div>
+        <div class="block-copy rv">
+          <h2 class="H">Charlas y podcasts</h2>
+          <p>Entrevistas, charlas y paneles sobre la vida freelance, el branding y todo eso que nadie te cuenta cuando arrancás. Sin filtro y con ejemplos reales.</p>
+          <a class="btn" href="#club">Mirar acá</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLUB -->
+  <section id="club" aria-labelledby="club-t">
     <div class="wrap">
       <div class="club rv">
+        <div class="club-mark" aria-hidden="true">Club<br>Eiro</div>
         <div>
-          <h2 class="H" id="contacto-t">Contanos qué estás <span class="mark">armando</span></h2>
-          <h5>(Sin vueltas y sin compromiso.)</h5>
-          <h5>Con un brief, una idea suelta o un problema concreto alcanza. Te respondemos con una primera lectura del proyecto y los próximos pasos.</h5>
+          <h2 class="H" id="club-t">Sumate al club y llevate contenido exclusivo</h2>
+          <h5 class="aside">(No, no ese tipo de club.)</h5>
+          <h5 class="desc">Lo que no publico en ningún otro lado: procesos, archivos y la trastienda de cada marca. Una vez por mes, sin spam.</h5>
+          <form class="form" id="form">
+            <input name="nombre" autocomplete="given-name" placeholder="Nombre" aria-label="Nombre" required>
+            <input name="email" type="email" autocomplete="email" placeholder="Email" aria-label="Email" required>
+            <button class="btn" type="submit">Sumarme</button>
+            <p class="form-msg" aria-live="polite"></p>
+          </form>
         </div>
-        <form class="form" id="form">
-          <label>Nombre<input name="nombre" autocomplete="name" placeholder="Tu nombre" required></label>
-          <label>Marca<input name="marca" placeholder="Nombre de la marca"></label>
-          <label>Qué necesitás<select name="que"><option>Branding</option><option>Content y social media</option><option>Lanzamiento</option><option>Todo junto</option></select></label>
-          <button class="btn" type="submit">Enviar por WhatsApp <i>→</i></button>
-        </form>
       </div>
     </div>
   </section>
@@ -350,11 +266,11 @@ img { display: block; max-width: 100%; }
 
 <footer class="foot">
   <div class="wrap">
-    <span class="logo big" aria-hidden="true">Eiro<span class="dot"></span></span>
-    <div class="foot-row">
-      <nav aria-label="Pie de página"><a href="#casos">Casos</a><a href="../logos.html">Logos</a><a href="#servicios">Servicios</a><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></nav>
-      <span>© <span id="y">2026</span> Eiro · Buenos Aires</span>
+    <div class="foot-top">
+      <span class="logo" aria-hidden="true">Eiro<span class="dot"></span></span>
+      <nav class="social" aria-label="Redes"><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp</a></nav>
     </div>
+    <p class="legal">© <span id="y">2026</span> Eiro. Todos los derechos reservados.</p>
   </div>
 </footer>
 
@@ -385,13 +301,14 @@ img { display: block; max-width: 100%; }
     els.forEach(function (el) { io.observe(el); });
   } else els.forEach(function (el) { el.classList.add("in"); });
 
-  /* formulario → WhatsApp */
+  /* club: por ahora la suscripción llega por WhatsApp (cuando haya newsletter, se conecta acá) */
   var cfg = window.EIRO_CONFIG || {}, phone = String(cfg.whatsapp || "5491134850669").replace(/\D/g, "");
   document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
-    var d = new FormData(this), lines = ["Hola Eiro, soy " + String(d.get("nombre") || "").trim() + (d.get("marca") ? " de " + String(d.get("marca")).trim() : "") + "."];
-    lines.push("Necesito: " + d.get("que") + ".");
-    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+    var d = new FormData(this);
+    var text = "Hola, soy " + String(d.get("nombre") || "").trim() + " y me quiero sumar al club. Mi email: " + String(d.get("email") || "").trim();
+    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+    this.querySelector(".form-msg").textContent = "¡Adentro! Te escribimos pronto.";
   });
 })();
 </script>
