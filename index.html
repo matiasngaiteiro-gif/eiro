@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eiro · Estudio de branding en Buenos Aires</title>
-<meta name="description" content="Eiro es un estudio de branding en Buenos Aires. Identidad visual, manual de marca, contenido y redes para marcas de Argentina y Estados Unidos.">
-<meta name="theme-color" content="#0B0B0B">
+<title>Eiro — Estudio de branding en Buenos Aires</title>
+<meta name="description" content="Estudio de branding en Buenos Aires. Estrategia de marca, identidad visual, brand book, content y social media para marcas en crecimiento de Argentina y Estados Unidos.">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://matiasngaiteiro-gif.github.io/eiro/">
 
@@ -13,22 +13,20 @@
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Eiro">
 <meta property="og:url" content="https://matiasngaiteiro-gif.github.io/eiro/">
-<meta property="og:title" content="Eiro · Estudio de branding en Buenos Aires">
-<meta property="og:description" content="Marcas que se reconocen de lejos y se sienten de cerca. Branding, contenido, redes y eventos.">
-<meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=4">
+<meta property="og:title" content="Eiro — Estudio de branding en Buenos Aires">
+<meta property="og:description" content="Branding con criterio. Estrategia, identidad y content para marcas en crecimiento.">
+<meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Eiro, estudio creativo de Buenos Aires">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=4">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Eiro", "alternateName": "Eiro, estudio creativo", "url": "https://matiasngaiteiro-gif.github.io/eiro/", "logo": "https://matiasngaiteiro-gif.github.io/eiro/assets/apple-touch-icon.png", "image": "https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=4", "description": "Estudio creativo en Buenos Aires: estrategia de marca, identidad visual, contenido y campañas.", "telephone": "+5491134850669", "areaServed": ["AR", "US"], "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"}, "knowsAbout": ["Branding", "Identidad visual", "Manual de marca", "Contenido para redes", "Marketing digital", "Comunicación de eventos"]}</script>
+<meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=5">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Eiro", "alternateName": "Eiro, estudio creativo", "url": "https://matiasngaiteiro-gif.github.io/eiro/", "logo": "https://matiasngaiteiro-gif.github.io/eiro/assets/apple-touch-icon.png", "image": "https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=5", "description": "Estudio de branding en Buenos Aires: estrategia de marca, identidad visual, brand book, content y social media.", "telephone": "+5491134850669", "areaServed": ["AR", "US"], "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"}, "knowsAbout": ["Branding", "Estrategia de marca", "Identidad visual", "Brand book", "Content", "Social media"]}</script>
 
-<link rel="icon" href="assets/favicon.png?v=8" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="styles.css?v=113">
-<link rel="stylesheet" href="assets/size.css?v=113">
+<link rel="icon" href="assets/favicon.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=9">
+<link rel="stylesheet" href="styles.css?v=115">
+<link rel="stylesheet" href="assets/size.css?v=115">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -42,6 +40,8 @@
     try { seen = sessionStorage.getItem("eiro-intro") === "1"; } catch (e) {}
     if (!seen) d.classList.add("intro-on");
   })();
+  /* idioma: si quedó elegido inglés, se esconde un instante hasta traducir */
+  try { if (localStorage.getItem("eiro-lang") === "en") document.documentElement.classList.add("i18n-wait"); } catch (e) {}
 </script>
 </head>
 <body>
@@ -49,115 +49,133 @@
 <!-- INTRO: se tipea gaiteiro, se borra gait con el teclado y queda eiro -->
 <div class="intro" id="intro" aria-hidden="true">
   <p class="logo intro-word" data-word="Gaiteiro" data-cut="5" data-keep="3" data-type="E" data-end="."><i class="caret"></i></p>
-  <p class="intro-note mono">ESTUDIO CREATIVO</p>
+  <p class="intro-note" data-i18n="e.intro">ESTUDIO CREATIVO</p>
 </div>
 
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<a class="skip" href="#contenido" data-i18n="e.skip">Saltar al contenido</a>
 
-<header class="header on-dark">
+<header class="header">
   <div class="wrap">
-    <a class="logo-link" href="#inicio" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <a class="logo-link" href="#inicio" aria-label="Eiro"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
-        <li><a href="#casos">Casos de estudio <small>Lo que hicimos</small></a></li>
-        <li><a href="logos.html">Logos <small>Marcas que diseñamos</small></a></li>
-        <li><a href="#servicios">Servicios <small>Qué hacemos</small></a></li>
+        <li><a href="#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
+        <li><a href="logos.html" data-i18n="e.nav.logos">Logos</a></li>
+        <li><a href="#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
       </ul>
       <div class="nav-end">
         <ul>
-          <li><a href="#metodo">Método <small>Cómo pensamos</small></a></li>
+          <li><a href="#metodo" data-i18n="e.nav.metodo">Método</a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
+        <a class="nav-cta" href="#contacto" data-i18n="e.nav.cta">Hablemos</a>
       </div>
     </nav>
   </div>
 </header>
 <!-- Pie del menú a pantalla completa (lo arma assets/size.js) -->
 <template data-sz-extra>
-  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="e.m.contacto">Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
   <div><span>Base</span><p>Buenos Aires</p></div>
-  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+  <div><span data-i18n="e.m.mercados">Mercados</span><p>Argentina</p><p data-i18n="e.m.usa">Estados Unidos</p></div>
 </template>
 
 <main id="contenido">
 
   <!-- PORTADA -->
-  <section class="hero on-dark" id="inicio">
+  <section class="hero" id="inicio">
     <div class="wrap">
-      <h1 class="hero-title title">
-        <span class="sr-only">Eiro, estudio de branding en Buenos Aires: identidad visual, contenido y redes.</span>
-        <span aria-hidden="true" data-sz="lines">Estudio de<br>branding</span>
-      </h1>
+      <p class="hero-k" data-anim="fade" data-i18n="e.hero.k">Estudio de branding · Buenos Aires</p>
+      <h1 class="hero-title title"><span data-sz="lines" data-i18n="e.hero.t">Branding<br>con criterio.</span></h1>
       <dl class="sz-facts hero-facts" data-anim="fade">
-        <div><dt>Estudio</dt><dd>Buenos Aires, para Argentina y Estados Unidos</dd></div>
-        <div><dt>Servicios</dt><dd>Marca, Contenido, Marketing y redes, Lanzamientos</dd></div>
+        <div><dt data-i18n="e.hero.d1">Qué hacemos</dt><dd data-i18n="e.hero.v1">Estrategia de marca, identidad visual, content y social media.</dd></div>
+        <div><dt data-i18n="e.hero.d2">Para quién</dt><dd data-i18n="e.hero.v2">Marcas en crecimiento, en Argentina y Estados Unidos.</dd></div>
       </dl>
     </div>
   </section>
 
-  <!-- TRABAJOS -->
+  <!-- CASOS -->
   <section class="section" id="casos" aria-labelledby="casos-t">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="title" id="casos-t" data-sz="lines">Casos de estudio</h2>
-        <a class="sz-pill" href="logos.html">Ver logos</a>
+        <h2 class="title" id="casos-t"><span data-sz="lines" data-i18n="e.casos.t">Casos de estudio</span></h2>
+        <a class="sz-pill" href="logos.html" data-i18n="e.casos.pill">Ver logos</a>
       </div>
-      <!-- PORTFOLIO: cada portada es el logo del cliente sobre su color sólido; el nombre va abajo, nunca encima. -->
+      <!-- Cada portada es el logo del cliente sobre su color; el nombre va abajo, nunca encima. -->
       <ul class="works" data-sz="drift">
         <li class="work">
           <a class="work-link" href="trabajos/cer.html">
-          <figure class="shot r-4x5 cover cv-cer" data-anim="shot"><img class="cv-logo" src="assets/cer/cer-logo-blanco.svg" alt="Logo de CER" width="831" height="259" style="width:58%"></figure>
-          <div class="case-cap"><h3>CER</h3><p>Centro de entrenamiento</p></div>
+          <figure class="shot r-4x5 cover cv-cer" data-anim="shot"><img class="cv-logo" src="assets/cer/cer-logo-blanco.svg" alt="CER" width="831" height="259" style="width:58%"></figure>
+          <div class="case-cap"><h3>CER</h3><p data-i18n="e.casos.cer">Centro de entrenamiento · Identidad</p></div>
           </a>
         </li>
         <li class="work">
           <a class="work-link" href="trabajos/nero.html">
-          <figure class="shot r-4x5 cover cv-nero" data-anim="shot"><img class="cv-logo" src="assets/nero/nero-logo.svg" alt="Logo de NERO" width="4204" height="1000" style="width:62%"></figure>
-          <div class="case-cap"><h3>NERO</h3><p>Tienda digital de tecnología</p></div>
+          <figure class="shot r-4x5 cover cv-nero" data-anim="shot"><img class="cv-logo" src="assets/nero/nero-logo.svg" alt="NERO" width="4204" height="1000" style="width:62%"></figure>
+          <div class="case-cap"><h3>NERO</h3><p data-i18n="e.casos.nero">Tienda de tecnología · Brand book</p></div>
           </a>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- FRASE + CLIENTES + EQUIPO -->
-  <section class="section sz-about" aria-label="Cómo pensamos">
+  <!-- FRASE + EQUIPO -->
+  <section class="section sz-about" aria-labelledby="frase">
     <div class="wrap">
-      <p class="sz-statement" data-sz="fill">Todo en un mismo lugar. Para que nada se contradiga.</p>
+      <p class="sz-statement" id="frase" data-sz="fill" data-i18n="e.frase">Primero la estrategia. Después, todo lo que se ve.</p>
       <div class="sz-about-row">
-        <div class="sz-clients">
-          <p class="sz-label">Trabajamos con</p>
-          <ul class="sz-bubbles" data-sz="bubbles">
-            <li>CER</li><li>NERO</li><li>Alma</li><li>Crisger</li><li>Extracto Importado</li><li>Pueblo Límite</li><li>UFO</li><li>Know How</li><li>Lado B</li><li>Meister</li><li>Muchachos</li><li>La Playa</li><li>Lima</li>
-          </ul>
-        </div>
         <div class="sz-about-copy" data-anim="fade">
-          <p>Un equipo de estrategia, diseño y contenido para marcas que quieren crecer. Proyectos medianos y grandes, de la estrategia a la implementación, desde Buenos Aires para Argentina y Estados Unidos.</p>
-          <a class="sz-go" href="#contacto">Trabajemos juntos <span class="sz-c"></span></a>
+          <p data-i18n="e.equipo">Somos un equipo de estrategia, diseño y content para marcas que ya pasaron la etapa de improvisar. Tomamos proyectos medianos y grandes, con procesos claros, plazos que se cumplen y un mismo criterio de la primera reunión al último archivo.</p>
+          <a class="sz-go" href="#contacto"><span data-i18n="e.equipo.cta">Hablemos</span> <span class="sz-c"></span></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- MARCAS: logos que pasan. Para sumar uno, agregá un <li> con su logo (SVG en negro) en assets/clientes. -->
+  <section class="clients-strip" aria-labelledby="clientes-t">
+    <div class="wrap"><h2 class="sz-label" id="clientes-t" data-i18n="e.clientes">Marcas con las que trabajamos</h2></div>
+    <div class="logo-marquee">
+      <ul class="logo-track">
+        <li><img src="assets/cer/cer-logo.svg" alt="CER" width="831" height="259" style="height:30px"></li>
+        <li><img src="assets/nero/nero-logo.svg" alt="NERO" width="4204" height="1000" style="height:26px"></li>
+        <li><span class="wm">Alma</span></li>
+        <li><span class="wm">Crisger</span></li>
+        <li><span class="wm">Extracto Importado</span></li>
+        <li><span class="wm">Pueblo Límite</span></li>
+        <li><span class="wm">UFO</span></li>
+        <li><span class="wm">Know How</span></li>
+        <li><span class="wm">Lado B</span></li>
+        <li><span class="wm">Meister</span></li>
+        <li><span class="wm">Muchachos</span></li>
+        <li><span class="wm">La Playa</span></li>
+        <li><span class="wm">Lima</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- SERVICIOS: lista grande, se enciende el renglón que pasa por el centro -->
   <section class="section" id="servicios" aria-labelledby="servicios-t">
     <div class="wrap sz-services">
-      <h2 class="sz-label" id="servicios-t">Servicios</h2>
+      <div class="srv-head">
+        <h2 class="sz-label" id="servicios-t" data-i18n="e.srv.t">Servicios</h2>
+        <p class="srv-sub" data-i18n="e.srv.sub">Del posicionamiento a la pieza que sale publicada.</p>
+      </div>
       <ul class="sz-list" data-sz="hl">
-        <li>Estrategia de marca</li>
-        <li>Posicionamiento</li>
-        <li>Identidad visual</li>
-        <li>Sistemas gráficos</li>
-        <li>Manual de marca</li>
-        <li>Dirección de arte</li>
-        <li>Fotografía</li>
-        <li>Video</li>
-        <li>Contenido para redes</li>
-        <li>Gestión de cuentas</li>
-        <li>Campañas y anuncios</li>
-        <li>Lanzamientos</li>
-        <li>Activaciones</li>
+        <li data-i18n="e.srv.1">Estrategia de marca</li>
+        <li data-i18n="e.srv.2">Posicionamiento</li>
+        <li data-i18n="e.srv.3">Identidad visual</li>
+        <li data-i18n="e.srv.4">Sistemas gráficos</li>
+        <li>Brand book</li>
+        <li data-i18n="e.srv.6">Dirección de arte</li>
+        <li data-i18n="e.srv.7">Foto y video</li>
+        <li>Content</li>
+        <li>Social media</li>
+        <li>Community management</li>
+        <li>Paid media</li>
+        <li data-i18n="e.srv.12">Lanzamientos</li>
+        <li data-i18n="e.srv.13">Activaciones</li>
       </ul>
     </div>
   </section>
@@ -166,37 +184,37 @@
   <section class="section" id="metodo" aria-labelledby="metodo-t">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="title" id="metodo-t" data-sz="lines">Cómo trabajamos</h2>
+        <h2 class="title" id="metodo-t"><span data-sz="lines" data-i18n="e.met.t">Cómo trabajamos</span></h2>
       </div>
       <ol class="method method-row">
-        <li data-anim="fade"><div><h3 class="title">Entender</h3><p>Diagnóstico del negocio, la audiencia, la competencia y el punto de partida.</p></div></li>
-        <li data-anim="fade"><div><h3 class="title">Definir</h3><p>Estrategia: posicionamiento, tono y prioridades, acordados con tu equipo.</p></div></li>
-        <li data-anim="fade"><div><h3 class="title">Crear</h3><p>Diseño y producción con un equipo dedicado a cada proyecto.</p></div></li>
-        <li data-anim="fade"><div><h3 class="title">Acompañar</h3><p>Implementación, seguimiento y ajustes con métricas.</p></div></li>
+        <li data-anim="fade"><div><h3 class="title" data-i18n="e.met.1t">Diagnóstico</h3><p data-i18n="e.met.1">Entendemos el negocio antes de tocar un píxel: audiencia, competencia y punto de partida.</p></div></li>
+        <li data-anim="fade"><div><h3 class="title" data-i18n="e.met.2t">Estrategia</h3><p data-i18n="e.met.2">Definimos posicionamiento, tono y prioridades. Se acuerda con tu equipo y no se mueve sin motivo.</p></div></li>
+        <li data-anim="fade"><div><h3 class="title" data-i18n="e.met.3t">Diseño</h3><p data-i18n="e.met.3">Identidad, sistema y piezas, con un equipo dedicado de punta a punta.</p></div></li>
+        <li data-anim="fade"><div><h3 class="title" data-i18n="e.met.4t">Implementación</h3><p data-i18n="e.met.4">Acompañamos la salida, medimos y ajustamos. Nada de entregar y desaparecer.</p></div></li>
       </ol>
     </div>
   </section>
 
   <!-- CONTACTO: todo lleva a WhatsApp -->
-  <section class="on-dark" id="contacto" aria-labelledby="contacto-t">
+  <section id="contacto" aria-labelledby="contacto-t">
     <div class="contact-card wrap">
       <div class="ct-layout">
         <div class="ct-copy">
-          <h2 class="title" id="contacto-t" data-sz="lines">Trabajemos<br>juntos.</h2>
-          <p class="statement" data-anim="fade">Contanos sobre tu marca y el desafío que tenés por delante. Respondemos con una primera propuesta de alcance y los próximos pasos.</p>
-          <a class="sz-go sz-go-big" id="ct-wa" href="#contacto" data-anim="fade">Hablemos por WhatsApp <span class="sz-c"></span></a>
+          <h2 class="title" id="contacto-t"><span data-sz="lines" data-i18n="e.ct.t">Contanos qué<br>estás armando.</span></h2>
+          <p class="statement" data-anim="fade" data-i18n="e.ct.p">Con un brief, una idea suelta o un problema concreto alcanza. Te respondemos con una primera lectura del proyecto, alcance y próximos pasos.</p>
+          <a class="sz-go sz-go-big" id="ct-wa" href="#contacto" data-anim="fade"><span data-i18n="e.ct.btn">Escribinos por WhatsApp</span> <span class="sz-c"></span></a>
           <div class="channels"><ul id="channels" hidden></ul></div>
         </div>
-        <!-- Vista previa de la conversación: muestra cómo arranca el contacto -->
+        <!-- Vista previa de la conversación -->
         <div class="chat" aria-hidden="true">
           <div class="chat-top">
             <span class="chat-av">E</span>
-            <span class="chat-who"><b>Eiro</b><small>en línea</small></span>
+            <span class="chat-who"><b>Eiro</b><small data-i18n="e.chat.on">en línea</small></span>
           </div>
           <div class="chat-body">
-            <p class="msg me">Hola Eiro, queremos renovar nuestra marca.<time>10:24</time></p>
-            <p class="msg them">¡Hola! Gracias por escribir. Contanos sobre la empresa y el alcance del proyecto.<time>10:25</time></p>
-            <p class="msg me">Estamos creciendo y necesitamos identidad y contenido.<time>10:27</time></p>
+            <p class="msg me"><span data-i18n="e.chat.1">Hola, estamos por lanzar una línea nueva y la marca nos quedó chica.</span><time>10:24</time></p>
+            <p class="msg them"><span data-i18n="e.chat.2">¡Buenísimo! Contanos del negocio y para cuándo lo necesitan.</span><time>10:25</time></p>
+            <p class="msg me"><span data-i18n="e.chat.3">Para marzo. Te paso el brief.</span><time>10:27</time></p>
             <p class="msg them typing"><i></i><i></i><i></i></p>
           </div>
         </div>
@@ -206,16 +224,16 @@
 
 </main>
 
-<footer class="footer on-dark sz-curtain">
+<footer class="footer sz-curtain">
   <div class="wrap">
     <div class="foot-cols">
       <nav aria-label="Pie de página">
         <ul class="foot-links">
-          <li><a href="#casos">Casos de estudio</a></li>
+          <li><a href="#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
           <li><a href="logos.html">Logos</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#metodo">Método</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
+          <li><a href="#metodo" data-i18n="e.nav.metodo">Método</a></li>
+          <li><a href="#contacto" data-i18n="e.f.contacto">Contacto</a></li>
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
@@ -224,10 +242,10 @@
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
     <div class="foot-bottom">
-      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <p class="footer-claim" data-i18n="e.f.claim">Estrategia, identidad y content para marcas en crecimiento.</p>
       <div class="legal">
         <span>© <span id="year">2026</span> Eiro</span>
-        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+        <span data-i18n="e.f.base">Buenos Aires — Argentina · Estados Unidos</span>
       </div>
     </div>
   </div>
@@ -235,8 +253,10 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=113"></script>
-<script src="script.js?v=113"></script>
-<script src="assets/size.js?v=113"></script>
+<script src="assets/i18n-eiro.js?v=115"></script>
+<script src="assets/i18n.js?v=115"></script>
+<script src="config.js?v=115"></script>
+<script src="script.js?v=115"></script>
+<script src="assets/size.js?v=115"></script>
 </body>
 </html>

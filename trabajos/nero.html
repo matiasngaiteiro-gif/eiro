@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" data-title-key="nero.title">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NERO · Caso de branding · Eiro</title>
+<title>NERO — Caso de branding — Eiro</title>
 <meta name="description" content="Del click a tu puerta. Tienda digital de tecnología.">
-<meta name="theme-color" content="#0B0B0B">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://matiasngaiteiro-gif.github.io/eiro/trabajos/nero.html">
 <meta property="og:type" content="article">
@@ -16,48 +16,49 @@
 <meta property="og:description" content="Del click a tu puerta. Tienda digital de tecnología.">
 <meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/fotos/nero-b1.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/favicon.png?v=8" type="image/png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=8">
-<link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
+<link rel="icon" href="../assets/favicon.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../styles.css?v=113">
-<link rel="stylesheet" href="../assets/size.css?v=113">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css?v=115">
+<link rel="stylesheet" href="../assets/size.css?v=115">
 <script>
   (function () {
     var d = document.documentElement;
     d.classList.add("js");
     if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) d.classList.add("motion");
+    try { if (localStorage.getItem("eiro-lang") === "en") d.classList.add("i18n-wait"); } catch (e) {}
   })();
 </script>
 </head>
 <body class="case-page">
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<a class="skip" href="#contenido" data-i18n="e.skip">Saltar al contenido</a>
 
-<header class="header on-dark">
+<header class="header">
   <div class="wrap">
-    <a class="logo-link" href="../index.html" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <a class="logo-link" href="../index.html" aria-label="Eiro"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
-        <li><a href="../index.html#casos">Casos de estudio <small>Lo que hicimos</small></a></li>
-        <li><a href="../logos.html">Logos <small>Marcas que diseñamos</small></a></li>
-        <li><a href="../index.html#servicios">Servicios <small>Qué hacemos</small></a></li>
+        <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
+        <li><a href="../logos.html" data-i18n="e.nav.logos">Logos</a></li>
+        <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
       </ul>
       <div class="nav-end">
         <ul>
-          <li><a href="../index.html#metodo">Método <small>Cómo pensamos</small></a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="../index.html#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
+        <a class="nav-cta" href="../index.html#contacto" data-i18n="e.nav.cta">Hablemos</a>
       </div>
     </nav>
   </div>
 </header>
 <template data-sz-extra>
-  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="e.m.contacto">Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
   <div><span>Base</span><p>Buenos Aires</p></div>
-  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+  <div><span data-i18n="e.m.mercados">Mercados</span><p>Argentina</p><p data-i18n="e.m.usa">Estados Unidos</p></div>
 </template>
 
 <main id="contenido" class="kc kn">
@@ -69,12 +70,12 @@
   <!-- PORTADA -->
   <section class="kc-hero on-dark">
     <div class="wrap">
-      <a class="case-back mono" href="../index.html#casos">← Casos de estudio</a>
+      <a class="case-back mono" href="../index.html#casos" data-i18n="c.back">← Casos de estudio</a>
       <div class="kn-hero-stage" data-anim="fade" role="img" aria-label="Símbolo de NERO que gira en volumen, como una caja">
         <svg class="kn-hs-word" aria-hidden="true"><use href="#nero-logo"/></svg>
         <span class="kn-hs-tag">Digital Store</span>
         <div class="kn-cube-wrap" aria-hidden="true"><div class="kn-cube"><svg style="--z:0"><use href="#nero-sym"/></svg><svg style="--z:1"><use href="#nero-sym"/></svg><svg style="--z:2"><use href="#nero-sym"/></svg><svg style="--z:3"><use href="#nero-sym"/></svg><svg style="--z:4"><use href="#nero-sym"/></svg><svg style="--z:5"><use href="#nero-sym"/></svg><svg style="--z:6"><use href="#nero-sym"/></svg><svg style="--z:7"><use href="#nero-sym"/></svg><svg style="--z:8"><use href="#nero-sym"/></svg><svg style="--z:9"><use href="#nero-sym"/></svg><svg style="--z:10"><use href="#nero-sym"/></svg><svg style="--z:11"><use href="#nero-sym"/></svg><svg style="--z:12"><use href="#nero-sym"/></svg><svg style="--z:13"><use href="#nero-sym"/></svg><svg style="--z:14"><use href="#nero-sym"/></svg><svg style="--z:15"><use href="#nero-sym"/></svg><svg style="--z:16"><use href="#nero-sym"/></svg><svg style="--z:17"><use href="#nero-sym"/></svg><svg style="--z:18"><use href="#nero-sym"/></svg><svg style="--z:19"><use href="#nero-sym"/></svg><svg style="--z:20"><use href="#nero-sym"/></svg><svg style="--z:21"><use href="#nero-sym"/></svg><svg style="--z:22"><use href="#nero-sym"/></svg><svg style="--z:23"><use href="#nero-sym"/></svg></div></div>
-        <span class="kn-hs-foot">// Identidad visual</span>
+        <span class="kn-hs-foot" data-i18n="nero.hs">// Identidad visual</span>
       </div>
       <div class="kc-head">
         <div>
@@ -82,53 +83,53 @@
           <p class="kc-tag title" data-anim="words">Del click a tu puerta.</p>
         </div>
         <div class="kc-intro" data-anim="fade">
-          <p>NERO es una tienda digital de tecnología: audio, entretenimiento y accesorios para todos los días.</p>
-          <p>La marca tenía que verse como lo que vende: precisa, actual y fácil de entender.</p>
+          <p data-i18n="nero.i1">NERO es una tienda digital de tecnología: audio, entretenimiento y accesorios para el día a día.</p>
+          <p data-i18n="nero.i2">El brief: una marca que se viera como lo que vende. Precisa, actual y fácil de entender.</p>
           <dl class="kc-facts">
-            <div><dt class="mono">Sector</dt><dd>Tienda digital de tecnología</dd></div>
-            <div><dt class="mono">Alcance</dt><dd>Identidad · Manual de marca · Aplicaciones</dd></div>
+            <div><dt class="mono" data-i18n="c.sector">Sector</dt><dd data-i18n="nero.sector">Tienda digital de tecnología</dd></div>
+            <div><dt class="mono" data-i18n="c.alcance">Alcance</dt><dd data-i18n="nero.alcance">Identidad · Brand book · Aplicaciones</dd></div>
           </dl>
         </div>
       </div>
       <nav class="kc-nav mono" aria-label="Capítulos del caso">
-        <a href="#desafio">Desafío</a><a href="#estrategia">Estrategia</a><a href="#identidad">Identidad</a><a href="#aplicacion">Aplicación</a><a href="#resultado">Resultado</a>
+        <a href="#desafio" data-i18n="c.cap.1">Desafío</a><a href="#estrategia" data-i18n="c.cap.2">Estrategia</a><a href="#identidad" data-i18n="c.cap.3">Identidad</a><a href="#aplicacion" data-i18n="c.cap.4">Aplicación</a><a href="#resultado" data-i18n="c.cap.5">Resultado</a>
       </nav>
     </div>
   </section>
 
   <section class="kc-full">
     <div class="wrap">
-      <figure class="shot kc-wide" data-anim="shot" data-parallax="0.04"><img src="../assets/fotos/nero-b1.jpg" alt="Afiche negro con el símbolo de NERO en una pared de la ciudad" width="1600" height="900" fetchpriority="high" onerror="this.remove()"><figcaption class="slot mono">Afiche en la calle</figcaption></figure>
+      <figure class="shot kc-wide" data-anim="shot" data-parallax="0.04"><img src="../assets/fotos/nero-b1.jpg" alt="Afiche negro con el símbolo de NERO en una pared de la ciudad" width="1600" height="900" fetchpriority="high" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f1">Afiche en la calle</figcaption></figure>
     </div>
   </section>
 
   <!-- 01 DESAFÍO -->
   <section class="section kc-ch" id="desafio" aria-labelledby="desafio-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="desafio-t"><span>01</span> Desafío</h2>
+      <h2 class="kc-label mono" id="desafio-t"><span>01</span> <span data-i18n="c.cap.1">Desafío</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Ganar confianza desde el primer click.</p>
-        <p data-anim="fade">En una tienda online, la marca es lo primero que se toca. NERO necesitaba una identidad que transmitiera seriedad y cuidado, para que comprar tecnología ahí se sienta tan seguro como entrar a un local.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="nero.1t">Ganar confianza desde el primer click.</p>
+        <p data-anim="fade" data-i18n="nero.1">En e-commerce, la marca es lo primero que se toca. NERO necesitaba una identidad que transmitiera seriedad y cuidado, para que comprar tecnología ahí se sintiera tan seguro como entrar a un local.</p>
       </div>
     </div>
     <div class="wrap kc-pair">
-      <figure class="shot" data-anim="shot"><img src="../assets/fotos/nero-m5.jpg" alt="Mano con un celular que muestra la tienda de NERO" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Compra desde el celular</figcaption></figure>
-      <figure class="shot kc-low" data-anim="shot"><img src="../assets/fotos/nero-m4.jpg" alt="Chica con auriculares y una bolsa de NERO en la calle" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Bolsa de NERO en la calle</figcaption></figure>
+      <figure class="shot" data-anim="shot"><img src="../assets/fotos/nero-m5.jpg" alt="Mano con un celular que muestra la tienda de NERO" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f2">Compra desde el celular</figcaption></figure>
+      <figure class="shot kc-low" data-anim="shot"><img src="../assets/fotos/nero-m4.jpg" alt="Chica con auriculares y una bolsa de NERO en la calle" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f3">Bolsa de NERO en la calle</figcaption></figure>
     </div>
   </section>
 
   <!-- 02 ESTRATEGIA -->
   <section class="section kc-ch" id="estrategia" aria-labelledby="estrategia-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="estrategia-t"><span>02</span> Estrategia</h2>
+      <h2 class="kc-label mono" id="estrategia-t"><span>02</span> <span data-i18n="c.cap.2">Estrategia</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Un click y una caja.</p>
-        <p data-anim="fade">Toda la experiencia de NERO entra en dos momentos: el click que decide la compra y la caja que llega a casa. La identidad une esos dos gestos en una sola forma, y con ella cuenta una idea de mejora constante: cada pedido, un poco mejor que el anterior.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="nero.2t">Un click y una caja.</p>
+        <p data-anim="fade" data-i18n="nero.2">Toda la experiencia de NERO entra en dos momentos: el click que define la compra y la caja que llega a casa. La identidad une esos dos gestos en una sola forma y, con ella, una idea de mejora constante: cada pedido, un poco mejor que el anterior.</p>
       </div>
     </div>
     <div class="wrap">
       <div class="kn-grid-stage" data-anim="fade" role="img" aria-label="Construcción del símbolo de NERO sobre su retícula">
-        <span class="kn-gs-label">// 1.2 Retícula</span>
+        <span class="kn-gs-label" data-i18n="nero.g1">// 1.2 Retícula</span>
         <svg class="kn-grid-svg" viewBox="-300 -150 1600 1300" aria-hidden="true">
           <g class="kn-lines" fill="none" stroke="#A1A2A6" stroke-width="3">
             <path d="M-300 0H1300M-300 214H1300M-300 786H1300M-300 1000H1300"/>
@@ -138,7 +139,7 @@
           </g>
           <use class="kn-fill" href="#nero-sym" width="1000" height="1000" style="color:#0A0A0A"/>
         </svg>
-        <span class="kn-gs-cap">Click + Caja de envío</span>
+        <span class="kn-gs-cap" data-i18n="nero.g2">Click + caja de envío</span>
       </div>
     </div>
   </section>
@@ -146,10 +147,10 @@
   <!-- 03 IDENTIDAD -->
   <section class="section kc-ch" id="identidad" aria-labelledby="identidad-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="identidad-t"><span>03</span> Identidad</h2>
+      <h2 class="kc-label mono" id="identidad-t"><span>03</span> <span data-i18n="c.cap.3">Identidad</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Un símbolo que es click y es caja.</p>
-        <p data-anim="fade">La O de NERO es un cuadrado con dos esquinas desplazadas: de frente recuerda a un click; en perspectiva, a una caja lista para enviar. Negro, gris y blanco sostienen un sistema sobrio y elegante, con degradados que le dan profundidad. Sora pone los títulos, Manrope los textos y JetBrains Mono los datos.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="nero.3t">Un símbolo que es click y es caja.</p>
+        <p data-anim="fade" data-i18n="nero.3">La O de NERO es un cuadrado con dos esquinas desplazadas: de frente es un click; en perspectiva, una caja lista para despachar. Negro, gris y blanco sostienen un sistema sobrio, con degradados que le dan profundidad. Sora pone los títulos, Manrope los textos y JetBrains Mono los datos.</p>
       </div>
     </div>
     <div class="wrap">
@@ -159,19 +160,19 @@
         <div class="cb-l kn-l3"><svg class="kn-sym" role="img" aria-label="Símbolo de NERO en negro sobre blanco"><use href="#nero-sym"/></svg></div>
       </div>
       <div class="cs-pal kn-pal" data-anim="fade">
-        <div class="cs-sw kn-sw1"><span class="cs-name">Black</span><span class="cs-hex mono">#0A0A0A</span><span class="cs-use">Principal</span></div>
-        <div class="cs-sw kn-sw2"><span class="cs-name">Dark Gray</span><span class="cs-hex mono">#A1A2A6</span><span class="cs-use">Acompaña</span></div>
-        <div class="cs-sw kn-sw3"><span class="cs-name">Grafito</span><span class="cs-hex mono">#2D2D2D</span><span class="cs-use">Fondos</span></div>
-        <div class="cs-sw kn-sw4"><span class="cs-name">Blanco</span><span class="cs-hex mono">#E6E6E6</span><span class="cs-use">Textos</span></div>
-        <div class="cs-sw kn-sw5"><span class="cs-name">Degradado</span><span class="cs-hex mono">0A → A1</span><span class="cs-use">Profundidad</span></div>
+        <div class="cs-sw kn-sw1"><span class="cs-name">Black</span><span class="cs-hex mono">#0A0A0A</span><span class="cs-use" data-i18n="nero.pal.u1">Principal</span></div>
+        <div class="cs-sw kn-sw2"><span class="cs-name">Dark Gray</span><span class="cs-hex mono">#A1A2A6</span><span class="cs-use" data-i18n="nero.pal.u2">Acompaña</span></div>
+        <div class="cs-sw kn-sw3"><span class="cs-name" data-i18n="nero.pal.n3">Grafito</span><span class="cs-hex mono">#2D2D2D</span><span class="cs-use" data-i18n="nero.pal.u3">Fondos</span></div>
+        <div class="cs-sw kn-sw4"><span class="cs-name" data-i18n="nero.pal.n4">Blanco</span><span class="cs-hex mono">#E6E6E6</span><span class="cs-use" data-i18n="nero.pal.u4">Textos</span></div>
+        <div class="cs-sw kn-sw5"><span class="cs-name" data-i18n="nero.pal.n5">Degradado</span><span class="cs-hex mono">0A → A1</span><span class="cs-use" data-i18n="nero.pal.u5">Profundidad</span></div>
       </div>
       <div class="cb-type kn-type" data-anim="fade">
         <div class="cb-spec">
-          <span class="kn-lbl">// Títulos y destacados · Sora</span>
+          <span class="kn-lbl" data-i18n="nero.ty1">// Títulos y destacados · Sora</span>
           <p class="cb-roll kn-roll" aria-label="Click, caja, casa"><span>Click.</span><span>Caja.</span><span>Casa.</span><span>NERO.</span><span>Click.</span></p>
         </div>
         <div class="cb-spec cb-spec-s">
-          <span class="kn-lbl">// Textos de apoyo · Manrope</span>
+          <span class="kn-lbl" data-i18n="nero.ty2">// Textos de apoyo · Manrope</span>
           <p class="cb-text kn-text">Tecnología para todos los días, elegida con cuidado y enviada a tu casa.</p>
           <p class="kn-mono" aria-hidden="true">Datos · JetBrains Mono<br>AUDIO / 01 — STOCK DISPONIBLE</p>
         </div>
@@ -201,17 +202,17 @@
   <!-- 04 APLICACIÓN -->
   <section class="section kc-ch" id="aplicacion" aria-labelledby="aplicacion-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="aplicacion-t"><span>04</span> Aplicación</h2>
+      <h2 class="kc-label mono" id="aplicacion-t"><span>04</span> <span data-i18n="c.cap.4">Aplicación</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Del packaging a la pantalla.</p>
-        <p data-anim="fade">La marca vive en la bolsa de envío, en la caja que llega, en la tienda online y en las piezas de cada lanzamiento. El mismo sistema ordena producto y mensaje en todos los formatos.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="nero.4t">Del packaging a la pantalla.</p>
+        <p data-anim="fade" data-i18n="nero.4">La marca vive en la bolsa de envío, en la caja que llega, en la tienda online y en las piezas de cada lanzamiento. El mismo sistema ordena producto y mensaje en todos los formatos.</p>
       </div>
     </div>
     <div class="wrap">
       <div class="cm kn-cm">
-        <figure class="shot kn-1" data-anim="shot"><img src="../assets/fotos/nero-m1.jpg" alt="Bolsa de envío plateada con el logo de NERO" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Bolsa de envío</figcaption></figure>
-        <figure class="shot kn-2" data-anim="shot"><img src="../assets/fotos/nero-m2.jpg" alt="Caja negra con el símbolo de NERO en la puerta de una casa" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Caja en la puerta</figcaption></figure>
-        <figure class="shot kn-3" data-anim="shot"><img src="../assets/fotos/nero-m3.jpg" alt="Laptop con la tienda online de NERO" width="1600" height="900" loading="lazy" onerror="this.remove()"><figcaption class="slot mono">Tienda online</figcaption></figure>
+        <figure class="shot kn-1" data-anim="shot"><img src="../assets/fotos/nero-m1.jpg" alt="Bolsa de envío plateada con el logo de NERO" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f4">Bolsa de envío</figcaption></figure>
+        <figure class="shot kn-2" data-anim="shot"><img src="../assets/fotos/nero-m2.jpg" alt="Caja negra con el símbolo de NERO en la puerta de una casa" width="928" height="1152" loading="lazy" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f5">Caja en la puerta</figcaption></figure>
+        <figure class="shot kn-3" data-anim="shot"><img src="../assets/fotos/nero-m3.jpg" alt="Laptop con la tienda online de NERO" width="1600" height="900" loading="lazy" onerror="this.remove()"><figcaption class="slot mono" data-i18n="nero.f6">Tienda online</figcaption></figure>
       </div>
     </div>
   </section>
@@ -219,35 +220,35 @@
   <!-- 05 RESULTADO -->
   <section class="section kc-ch" id="resultado" aria-labelledby="resultado-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="resultado-t"><span>05</span> Resultado</h2>
+      <h2 class="kc-label mono" id="resultado-t"><span>05</span> <span data-i18n="c.cap.5">Resultado</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Una tienda que se ve tan bien como lo que vende.</p>
-        <p data-anim="fade">NERO tiene hoy un manual de marca completo y un sistema listo para crecer: logo en sus versiones, paleta, tipografías, gráficos de apoyo y reglas de uso para cada soporte.</p>
-        <div class="kc-deliv" data-anim="fade"><p class="mono muted">Entregables</p><ul><li>Logo y símbolo</li><li>Paleta de color</li><li>Sistema tipográfico</li><li>Gráficos de apoyo</li><li>Manual de marca</li><li>Aplicaciones de marca</li></ul></div>
+        <p class="kc-big" data-anim="fade" data-i18n="nero.5t">Una tienda que se ve tan bien como lo que vende.</p>
+        <p data-anim="fade" data-i18n="nero.5">Hoy NERO tiene un brand book completo y un sistema listo para escalar: logo y versiones, paleta, tipografías, gráficos de apoyo y reglas de uso para cada soporte.</p>
+        <div class="kc-deliv" data-anim="fade"><p class="mono muted" data-i18n="c.entregables">Entregables</p><ul><li data-i18n="nero.d1">Logo y símbolo</li><li data-i18n="nero.d2">Paleta de color</li><li data-i18n="nero.d3">Sistema tipográfico</li><li data-i18n="nero.d4">Gráficos de apoyo</li><li data-i18n="nero.d5">Brand book</li><li data-i18n="nero.d6">Aplicaciones de marca</li></ul></div>
       </div>
     </div>
   </section>
 
   <section class="case-next on-dark">
     <a class="wrap case-next-link" href="cer.html">
-      <span class="mono">Siguiente proyecto</span>
+      <span class="mono" data-i18n="c.next">Siguiente proyecto</span>
       <span class="case-next-name title">CER <i aria-hidden="true">→</i></span>
-      <span class="case-next-sector">Centro de entrenamiento · Ciudad Evita</span>
+      <span class="case-next-sector" data-i18n="c.ns.cer">Centro de entrenamiento · Ciudad Evita</span>
     </a>
   </section>
 
 </main>
 
-<footer class="footer on-dark sz-curtain">
+<footer class="footer sz-curtain">
   <div class="wrap">
     <div class="foot-cols">
       <nav aria-label="Pie de página">
         <ul class="foot-links">
-          <li><a href="../index.html#casos">Casos de estudio</a></li>
+          <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
           <li><a href="../logos.html">Logos</a></li>
-          <li><a href="../index.html#servicios">Servicios</a></li>
-          <li><a href="../index.html#metodo">Método</a></li>
-          <li><a href="../index.html#contacto">Contacto</a></li>
+          <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
+          <li><a href="../index.html#contacto" data-i18n="e.f.contacto">Contacto</a></li>
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
@@ -256,17 +257,19 @@
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
     <div class="foot-bottom">
-      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <p class="footer-claim" data-i18n="e.f.claim">Estrategia, identidad y content para marcas en crecimiento.</p>
       <div class="legal">
         <span>© <span id="year">2026</span> Eiro</span>
-        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+        <span data-i18n="e.f.base">Buenos Aires — Argentina · Estados Unidos</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="../config.js?v=113"></script>
-<script src="../script.js?v=113"></script>
-<script src="../assets/size.js?v=113"></script>
+<script src="../assets/i18n-eiro.js?v=115"></script>
+<script src="../assets/i18n.js?v=115"></script>
+<script src="../config.js?v=115"></script>
+<script src="../script.js?v=115"></script>
+<script src="../assets/size.js?v=115"></script>
 </body>
 </html>

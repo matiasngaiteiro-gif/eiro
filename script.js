@@ -3,6 +3,7 @@
   var root = document.documentElement;
   var config = window.EIRO_CONFIG || window.TEIRO_CONFIG || {};
   var motion = root.classList.contains("motion");
+  var T = window.t || function (k, es) { return es; };
 
   /* Año del pie */
   var year = document.getElementById("year");
@@ -82,7 +83,8 @@
     }
     if (config.whatsapp) {
       var number = String(config.whatsapp).replace(/\D/g, "");
-      var msg = config.whatsappMensaje ? "?text=" + encodeURIComponent(config.whatsappMensaje) : "";
+      var waT = T("e.wa", config.whatsappMensaje || "");
+      var msg = waT ? "?text=" + encodeURIComponent(waT) : "";
       items.push({ name: "WhatsApp", text: "+" + number, href: "https://wa.me/" + number + msg, external: true });
     }
     if (!items.length) return;
@@ -125,12 +127,10 @@
     var inCase = document.body.classList.contains("case-page") || /\/trabajos\//.test(location.pathname);
     var dest = inCase ? "../gaiteiro/" : "gaiteiro/";
     var code = String(config.codigoGaiteiro || "gaiteiro3").toLowerCase().replace(/\s+/g, "");
-    var BALL = '<svg viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="bb"><circle cx="32" cy="32" r="29"/></clipPath></defs>' +
-      '<g clip-path="url(#bb)" fill="currentColor"><rect x="24.6" y="3.0" width="5.6" height="5.6" opacity="0.64"/><rect x="31.8" y="3.0" width="5.6" height="5.6" opacity="0.57"/><rect x="39.0" y="3.0" width="5.6" height="5.6" opacity="0.45"/><rect x="10.2" y="10.2" width="5.6" height="5.6" opacity="0.69"/><rect x="17.4" y="10.2" width="5.6" height="5.6" opacity="0.81"/><rect x="24.6" y="10.2" width="5.6" height="5.6" opacity="0.81"/><rect x="31.8" y="10.2" width="5.6" height="5.6" opacity="0.70"/><rect x="39.0" y="10.2" width="5.6" height="5.6" opacity="0.55"/><rect x="46.2" y="10.2" width="5.6" height="5.6" opacity="0.39"/><rect x="10.2" y="17.4" width="5.6" height="5.6" opacity="0.77"/><rect x="17.4" y="17.4" width="5.6" height="5.6" opacity="0.94"/><rect x="24.6" y="17.4" width="5.6" height="5.6" opacity="0.95"/><rect x="31.8" y="17.4" width="5.6" height="5.6" opacity="0.78"/><rect x="39.0" y="17.4" width="5.6" height="5.6" opacity="0.60"/><rect x="46.2" y="17.4" width="5.6" height="5.6" opacity="0.42"/><rect x="53.4" y="17.4" width="5.6" height="5.6" opacity="0.28"/><rect x="3.0" y="24.6" width="5.6" height="5.6" opacity="0.58"/><rect x="10.2" y="24.6" width="5.6" height="5.6" opacity="0.74"/><rect x="17.4" y="24.6" width="5.6" height="5.6" opacity="0.88"/><rect x="24.6" y="24.6" width="5.6" height="5.6" opacity="0.89"/><rect x="31.8" y="24.6" width="5.6" height="5.6" opacity="0.75"/><rect x="39.0" y="24.6" width="5.6" height="5.6" opacity="0.58"/><rect x="46.2" y="24.6" width="5.6" height="5.6" opacity="0.41"/><rect x="53.4" y="24.6" width="5.6" height="5.6" opacity="0.28"/><rect x="3.0" y="31.8" width="5.6" height="5.6" opacity="0.50"/><rect x="10.2" y="31.8" width="5.6" height="5.6" opacity="0.63"/><rect x="17.4" y="31.8" width="5.6" height="5.6" opacity="0.72"/><rect x="24.6" y="31.8" width="5.6" height="5.6" opacity="0.72"/><rect x="31.8" y="31.8" width="5.6" height="5.6" opacity="0.64"/><rect x="39.0" y="31.8" width="5.6" height="5.6" opacity="0.50"/><rect x="46.2" y="31.8" width="5.6" height="5.6" opacity="0.35"/><rect x="53.4" y="31.8" width="5.6" height="5.6" opacity="0.28"/><rect x="3.0" y="39.0" width="5.6" height="5.6" opacity="0.38"/><rect x="10.2" y="39.0" width="5.6" height="5.6" opacity="0.48"/><rect x="17.4" y="39.0" width="5.6" height="5.6" opacity="0.55"/><rect x="24.6" y="39.0" width="5.6" height="5.6" opacity="0.55"/><rect x="31.8" y="39.0" width="5.6" height="5.6" opacity="0.49"/><rect x="39.0" y="39.0" width="5.6" height="5.6" opacity="0.38"/><rect x="46.2" y="39.0" width="5.6" height="5.6" opacity="0.28"/><rect x="53.4" y="39.0" width="5.6" height="5.6" opacity="0.28"/><rect x="10.2" y="46.2" width="5.6" height="5.6" opacity="0.32"/><rect x="17.4" y="46.2" width="5.6" height="5.6" opacity="0.37"/><rect x="24.6" y="46.2" width="5.6" height="5.6" opacity="0.37"/><rect x="31.8" y="46.2" width="5.6" height="5.6" opacity="0.32"/><rect x="39.0" y="46.2" width="5.6" height="5.6" opacity="0.28"/><rect x="46.2" y="46.2" width="5.6" height="5.6" opacity="0.28"/><rect x="17.4" y="53.4" width="5.6" height="5.6" opacity="0.28"/><rect x="24.6" y="53.4" width="5.6" height="5.6" opacity="0.28"/><rect x="31.8" y="53.4" width="5.6" height="5.6" opacity="0.28"/><rect x="39.0" y="53.4" width="5.6" height="5.6" opacity="0.28"/></g>' +
-      '<circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/>' +
-      '<rect x="19" y="17" width="6" height="6" fill="currentColor" class="ball-glint" transform="rotate(45 22 20)"/></svg>';
+    /* logotipo de la bola de boliche (el mismo de assets/bola.svg) */
+    var BALL = '<svg class="ball-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="32" cy="32" r="26"/><path d="M7.98 22.05H56.02"/><path d="M7.98 41.95H56.02"/><path d="M13.62 13.62H50.38"/><path d="M13.62 50.38H50.38"/><path d="M22.05 7.98H41.95"/><path d="M22.05 56.02H41.95"/><path d="M6 32H58"/><ellipse cx="32" cy="32" rx="13.00" ry="26"/><ellipse cx="32" cy="32" rx="22.52" ry="26"/><path d="M32 6V58"/></g><path class="ball-spark" d="M54 3.5c.7 4.2 1.8 5.3 6 6-4.2.7-5.3 1.8-6 6-.7-4.2-1.8-5.3-6-6 4.2-.7 5.3-1.8 6-6Z" fill="currentColor" stroke="none"/></svg>';
     var b = document.createElement("button");
-    b.type = "button"; b.className = "talk ball"; b.setAttribute("aria-label", "Acceso privado"); b.innerHTML = BALL;
+    b.type = "button"; b.className = "talk ball"; b.setAttribute("aria-label", T("e.gate.aria", "Acceso privado")); b.innerHTML = BALL;
     document.body.appendChild(b);
 
     var m = document.createElement("div");
@@ -138,8 +138,8 @@
     m.innerHTML = '<div class="gate-box" role="dialog" aria-modal="true" aria-labelledby="gate-t">' +
       '<button type="button" class="gate-x" aria-label="Cerrar">×</button>' +
       '<div class="gate-ball">' + BALL + '</div>' +
-      '<p class="gate-k">Private access</p><h2 id="gate-t">Ingresá tu código</h2>' +
-      '<form class="gate-f"><input type="text" name="c" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Código" aria-label="Código"><button type="submit">Entrar</button></form>' +
+      '<p class="gate-k">' + T("e.gate.k", "Acceso privado") + '</p><h2 id="gate-t">' + T("e.gate.t", "Ingresá tu código") + '</h2>' +
+      '<form class="gate-f"><input type="text" name="c" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="' + T("e.gate.ph", "Código") + '" aria-label="' + T("e.gate.ph", "Código") + '"><button type="submit">' + T("e.gate.btn", "Entrar") + '</button></form>' +
       '<p class="gate-msg" aria-live="polite"></p></div>';
     document.body.appendChild(m);
     var input = m.querySelector("input"), msg = m.querySelector(".gate-msg"), box = m.querySelector(".gate-box");
@@ -153,11 +153,11 @@
       e.preventDefault();
       if (input.value.toLowerCase().replace(/\s+/g, "") === code) {
         try { sessionStorage.setItem("gaiteiro", "1"); } catch (err) {}
-        msg.textContent = "Adelante.";
+        msg.textContent = T("e.gate.ok", "Adelante.");
         box.classList.add("ok");
         setTimeout(function () { location.href = dest; }, 450);
       } else {
-        msg.textContent = "Código incorrecto. El acceso es solo por invitación.";
+        msg.textContent = T("e.gate.no", "Código incorrecto. El acceso es solo por invitación.");
         box.classList.remove("no"); void box.offsetWidth; box.classList.add("no");
       }
     });
@@ -180,7 +180,8 @@
     var number = String(config.whatsapp || "").replace(/\D/g, "");
     var wa = document.getElementById("ct-wa");
     if (wa && number) {
-      wa.href = "https://wa.me/" + number + (config.whatsappMensaje ? "?text=" + encodeURIComponent(config.whatsappMensaje) : "");
+      var waMsg = T("e.wa", config.whatsappMensaje || "");
+      wa.href = "https://wa.me/" + number + (waMsg ? "?text=" + encodeURIComponent(waMsg) : "");
       wa.target = "_blank"; wa.rel = "noopener";
     }
     var form = document.getElementById("ct-form");

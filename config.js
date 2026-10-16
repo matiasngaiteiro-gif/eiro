@@ -7,7 +7,7 @@ window.EIRO_CONFIG = {
   email: "",      // pendiente: todavía no hay dominio definido
   instagram: "",  // pendiente: usuario sin @
   whatsapp: "5491134850669",   // código de país + 9 + número, solo dígitos
-  whatsappMensaje: "Hola Eiro, queremos contarles sobre nuestra marca.",
+  whatsappMensaje: "Hola Eiro, quiero contarles sobre un proyecto.",
   // Código para entrar a Gaiteiro (la bola de boliche). Sin espacios; no distingue mayúsculas.
   codigoGaiteiro: "gaiteiro3"
 };

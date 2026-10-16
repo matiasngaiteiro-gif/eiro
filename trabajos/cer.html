@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" data-title-key="cer.title">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CER · Caso de branding · Eiro</title>
+<title>CER — Caso de branding — Eiro</title>
 <meta name="description" content="Identidad de marca para CER, centro de entrenamiento en Ciudad Evita: precisión y cercanía. Entrená distinto.">
-<meta name="theme-color" content="#0B0B0B">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://matiasngaiteiro-gif.github.io/eiro/trabajos/cer.html">
 <meta property="og:type" content="article">
@@ -16,48 +16,49 @@
 <meta property="og:description" content="Identidad de marca para CER, centro de entrenamiento en Ciudad Evita: precisión y cercanía. Entrená distinto.">
 <meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/fotos/cer-b1.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/favicon.png?v=8" type="image/png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=8">
-<link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
+<link rel="icon" href="../assets/favicon.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../styles.css?v=113">
-<link rel="stylesheet" href="../assets/size.css?v=113">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css?v=115">
+<link rel="stylesheet" href="../assets/size.css?v=115">
 <script>
   (function () {
     var d = document.documentElement;
     d.classList.add("js");
     if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) d.classList.add("motion");
+    try { if (localStorage.getItem("eiro-lang") === "en") d.classList.add("i18n-wait"); } catch (e) {}
   })();
 </script>
 </head>
 <body class="case-page">
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<a class="skip" href="#contenido" data-i18n="e.skip">Saltar al contenido</a>
 
-<header class="header on-dark">
+<header class="header">
   <div class="wrap">
-    <a class="logo-link" href="../index.html" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <a class="logo-link" href="../index.html" aria-label="Eiro"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
-        <li><a href="../index.html#casos">Casos de estudio <small>Lo que hicimos</small></a></li>
-        <li><a href="../logos.html">Logos <small>Marcas que diseñamos</small></a></li>
-        <li><a href="../index.html#servicios">Servicios <small>Qué hacemos</small></a></li>
+        <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
+        <li><a href="../logos.html" data-i18n="e.nav.logos">Logos</a></li>
+        <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
       </ul>
       <div class="nav-end">
         <ul>
-          <li><a href="../index.html#metodo">Método <small>Cómo pensamos</small></a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="../index.html#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
+        <a class="nav-cta" href="../index.html#contacto" data-i18n="e.nav.cta">Hablemos</a>
       </div>
     </nav>
   </div>
 </header>
 <template data-sz-extra>
-  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="e.m.contacto">Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
   <div><span>Base</span><p>Buenos Aires</p></div>
-  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+  <div><span data-i18n="e.m.mercados">Mercados</span><p>Argentina</p><p data-i18n="e.m.usa">Estados Unidos</p></div>
 </template>
 
 <main id="contenido" class="kc">
@@ -66,7 +67,7 @@
   <!-- PORTADA: primero la marca, después el nombre -->
   <section class="kc-hero on-dark">
     <div class="wrap">
-      <a class="case-back mono" href="../index.html#casos">← Casos de estudio</a>
+      <a class="case-back mono" href="../index.html#casos" data-i18n="c.back">← Casos de estudio</a>
       <div class="cb-stage kc-stage" data-anim="fade" role="img" aria-label="Logo de CER sobre negro, naranja, gris oscuro y blanco">
         <svg class="cb-stage-logo" aria-hidden="true"><use href="#cer-logo"/></svg>
         <div class="cb-meta"><span>CER</span><span>Centro de entrenamiento</span><span>Ciudad Evita</span></div>
@@ -77,16 +78,16 @@
           <p class="kc-tag title" data-anim="words">Entrená distinto.</p>
         </div>
         <div class="kc-intro" data-anim="fade">
-          <p>CER es un centro de entrenamiento en Ciudad Evita, con sede propia, actividades al aire libre y seguimiento online. Cada plan se arma a medida, con método y conocimiento, para entrenar fuerte y sentirse bien por mucho tiempo.</p>
-          <p>La marca tenía que transmitir lo que se vive adentro: profesionalismo, cercanía y energía.</p>
+          <p data-i18n="cer.i1">CER es un centro de entrenamiento en Ciudad Evita con sede propia, clases al aire libre y seguimiento online. Cada plan se arma a medida, con método y criterio, para entrenar fuerte y sostenerlo en el tiempo.</p>
+          <p data-i18n="cer.i2">El brief: que la marca transmitiera lo que se vive adentro. Profesionalismo, cercanía y energía, en ese orden.</p>
           <dl class="kc-facts">
-            <div><dt class="mono">Sector</dt><dd>Centro de entrenamiento</dd></div>
-            <div><dt class="mono">Alcance</dt><dd>Identidad · Sistema gráfico · Aplicaciones</dd></div>
+            <div><dt class="mono" data-i18n="c.sector">Sector</dt><dd data-i18n="cer.sector">Centro de entrenamiento</dd></div>
+            <div><dt class="mono" data-i18n="c.alcance">Alcance</dt><dd data-i18n="cer.alcance">Identidad · Sistema gráfico · Aplicaciones</dd></div>
           </dl>
         </div>
       </div>
       <nav class="kc-nav mono" aria-label="Capítulos del caso">
-        <a href="#desafio">Desafío</a><a href="#estrategia">Estrategia</a><a href="#identidad">Identidad</a><a href="#aplicacion">Aplicación</a><a href="#resultado">Resultado</a>
+        <a href="#desafio" data-i18n="c.cap.1">Desafío</a><a href="#estrategia" data-i18n="c.cap.2">Estrategia</a><a href="#identidad" data-i18n="c.cap.3">Identidad</a><a href="#aplicacion" data-i18n="c.cap.4">Aplicación</a><a href="#resultado" data-i18n="c.cap.5">Resultado</a>
       </nav>
     </div>
   </section>
@@ -100,10 +101,10 @@
   <!-- 01 DESAFÍO -->
   <section class="section kc-ch" id="desafio" aria-labelledby="desafio-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="desafio-t"><span>01</span> Desafío</h2>
+      <h2 class="kc-label mono" id="desafio-t"><span>01</span> <span data-i18n="c.cap.1">Desafío</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Una sala con alma de equipo y una imagen que no lo contaba.</p>
-        <p data-anim="fade">CER tenía algo difícil de mostrar: un entrenamiento pensado al detalle para cada persona, con un profe que domina la movilidad, la fuerza y el rendimiento, y un grupo que se banca la rutina juntos. Pero su imagen no estaba a esa altura: cada pieza salía distinta y la marca se perdía entre tantas otras.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="cer.1t">Un equipo con alma de barrio y una imagen que no lo contaba.</p>
+        <p data-anim="fade" data-i18n="cer.1">CER tenía algo difícil de comunicar: entrenamiento pensado al detalle para cada persona, un profe que domina movilidad, fuerza y rendimiento, y un grupo que se banca la rutina en equipo. La imagen no estaba a esa altura: cada pieza salía distinta y la marca se perdía entre tantas otras.</p>
       </div>
     </div>
     <div class="wrap kc-pair">
@@ -115,10 +116,10 @@
   <!-- 02 ESTRATEGIA -->
   <section class="section kc-ch" id="estrategia" aria-labelledby="estrategia-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="estrategia-t"><span>02</span> Estrategia</h2>
+      <h2 class="kc-label mono" id="estrategia-t"><span>02</span> <span data-i18n="c.cap.2">Estrategia</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Precisión y cercanía.</p>
-        <p data-anim="fade">En CER cada plan parte de un conocimiento profundo del cuerpo: movilidad, fuerza y rendimiento, ajustados a cada persona. Y el profe acompaña todo el camino, dentro y fuera de la clase, de la sala a la largada de una carrera. La idea de marca une las dos cosas. Entrená distinto: con método, a tu medida y con alguien al lado.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="cer.2t">Precisión y cercanía.</p>
+        <p data-anim="fade" data-i18n="cer.2">Cada plan parte de un conocimiento profundo del cuerpo: movilidad, fuerza y rendimiento ajustados a cada persona. Y el profe acompaña todo el recorrido, de la sala a la largada de una carrera. La idea de marca junta las dos cosas. Entrená distinto: con método, a tu medida y con alguien al lado.</p>
       </div>
     </div>
     <div class="wrap">
@@ -135,10 +136,10 @@
   <!-- 03 IDENTIDAD -->
   <section class="section kc-ch cer-brand" id="identidad" aria-labelledby="identidad-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="identidad-t"><span>03</span> Identidad</h2>
+      <h2 class="kc-label mono" id="identidad-t"><span>03</span> <span data-i18n="c.cap.3">Identidad</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Una marca con la firmeza de un método.</p>
-        <p data-anim="fade">El logo, de letras anchas y cortes rectos, transmite solidez y precisión: se ve tan profesional como el entrenamiento que representa. El negro manda, el naranja aparece donde hay que mirar, el gris y el blanco ordenan, y el celeste se guarda para los detalles. Shuttleblock Narrow pone los títulos con autoridad; Shuttleblock acompaña en los textos.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="cer.3t">Una marca con la firmeza de un método.</p>
+        <p data-anim="fade" data-i18n="cer.3">Un logotipo de letras anchas y cortes rectos que transmite solidez y precisión: tan profesional como el entrenamiento que representa. El negro manda, el naranja aparece donde hay que mirar, el gris y el blanco ordenan, y el celeste queda para los detalles. Shuttleblock Narrow pone los títulos con autoridad; Shuttleblock acompaña en los textos.</p>
       </div>
     </div>
     <div class="wrap">
@@ -148,19 +149,19 @@
         <div class="cb-l cb-l3"><svg role="img" aria-label="CER en negro sobre blanco"><use href="#cer-logo"/></svg></div>
       </div>
       <div class="cs-pal" data-anim="fade">
-        <div class="cs-sw cs-black"><span class="cs-name">Negro</span><span class="cs-hex mono">#0B0B0B</span><span class="cs-use">Principal</span></div>
-        <div class="cs-sw cs-orange"><span class="cs-name">Naranja CER</span><span class="cs-hex mono">#FF3A12</span><span class="cs-use">Marca y títulos</span></div>
-        <div class="cs-sw cs-graph"><span class="cs-name">Gris oscuro</span><span class="cs-hex mono">#262626</span><span class="cs-use">Secundario</span></div>
-        <div class="cs-sw cs-white"><span class="cs-name">Blanco</span><span class="cs-hex mono">#F4F4F2</span><span class="cs-use">Textos</span></div>
-        <div class="cs-sw cs-sky"><span class="cs-name">Celeste</span><span class="cs-hex mono">#8DAEBE</span><span class="cs-use">Detalle</span></div>
+        <div class="cs-sw cs-black"><span class="cs-name" data-i18n="cer.pal.n1">Negro</span><span class="cs-hex mono">#0B0B0B</span><span class="cs-use" data-i18n="cer.pal.u1">Principal</span></div>
+        <div class="cs-sw cs-orange"><span class="cs-name" data-i18n="cer.pal.n2">Naranja CER</span><span class="cs-hex mono">#FF3A12</span><span class="cs-use" data-i18n="cer.pal.u2">Marca y títulos</span></div>
+        <div class="cs-sw cs-graph"><span class="cs-name" data-i18n="cer.pal.n3">Gris oscuro</span><span class="cs-hex mono">#262626</span><span class="cs-use" data-i18n="cer.pal.u3">Secundario</span></div>
+        <div class="cs-sw cs-white"><span class="cs-name" data-i18n="cer.pal.n4">Blanco</span><span class="cs-hex mono">#F4F4F2</span><span class="cs-use" data-i18n="cer.pal.u4">Textos</span></div>
+        <div class="cs-sw cs-sky"><span class="cs-name" data-i18n="cer.pal.n5">Celeste</span><span class="cs-hex mono">#8DAEBE</span><span class="cs-use" data-i18n="cer.pal.u5">Detalle</span></div>
       </div>
       <div class="cb-type" data-anim="fade">
         <div class="cb-spec">
-          <span class="mono">Títulos · Shuttleblock Narrow Bold</span>
+          <span class="mono" data-i18n="cer.ty1">Títulos · Shuttleblock Narrow Bold</span>
           <p class="cb-roll" aria-label="Entrená, corré, sumate, volvé"><span>Entrená</span><span>Corré</span><span>Sumate</span><span>Volvé</span><span>Entrená</span></p>
         </div>
         <div class="cb-spec cb-spec-s">
-          <span class="mono">Textos · Shuttleblock Medium</span>
+          <span class="mono" data-i18n="cer.ty2">Textos · Shuttleblock Medium</span>
           <p class="cb-text">Entrenamiento personalizado en la sede, al aire libre y online, con acompañamiento en cada paso.</p>
           <p class="cb-abc" aria-hidden="true">Aa Bb Cc 0123456789</p>
         </div>
@@ -188,10 +189,10 @@
   <!-- 04 APLICACIÓN -->
   <section class="section kc-ch cer-mock" id="aplicacion" aria-labelledby="aplicacion-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="aplicacion-t"><span>04</span> Aplicación</h2>
+      <h2 class="kc-label mono" id="aplicacion-t"><span>04</span> <span data-i18n="c.cap.4">Aplicación</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">La marca se pone la ropa de entrenar.</p>
-        <p data-anim="fade">Remeras, musculosas, bolsos, toallas y botellas que acompañan en la sede, en la plaza y en cada carrera. En la calle y en redes, el mismo sistema ordena carteles, carruseles y reels, y llega también a quienes entrenan online.</p>
+        <p class="kc-big" data-anim="fade" data-i18n="cer.4t">La marca se pone la ropa de entrenar.</p>
+        <p data-anim="fade" data-i18n="cer.4">Remeras, musculosas, bolsos, toallas y botellas que acompañan en la sede, en la plaza y en cada carrera. En la calle y en social media, el mismo sistema ordena carteles, carruseles y reels, y llega también a quienes entrenan online.</p>
       </div>
     </div>
     <div class="wrap">
@@ -209,39 +210,39 @@
   <!-- 05 RESULTADO -->
   <section class="section kc-ch" id="resultado" aria-labelledby="resultado-t">
     <div class="wrap kc-grid">
-      <h2 class="kc-label mono" id="resultado-t"><span>05</span> Resultado</h2>
+      <h2 class="kc-label mono" id="resultado-t"><span>05</span> <span data-i18n="c.cap.5">Resultado</span></h2>
       <div class="kc-body">
-        <p class="kc-big" data-anim="fade">Una marca a la altura de lo que pasa adentro.</p>
-        <p data-anim="fade">CER tiene hoy una identidad que cuenta lo que siempre fue: un lugar para entrenar con método, cerca y acompañado. Un sistema simple de usar, para que cada pieza nueva sume a la misma idea.</p>
-        <div class="kc-deliv" data-anim="fade"><p class="mono muted">Entregables</p><ul><li>Logo y versiones</li><li>Paleta de color</li><li>Sistema tipográfico</li><li>Placas para redes</li><li>Indumentaria y merch</li><li>Pantallas de la app</li></ul></div>
+        <p class="kc-big" data-anim="fade" data-i18n="cer.5t">Una marca a la altura de lo que pasa adentro.</p>
+        <p data-anim="fade" data-i18n="cer.5">Hoy CER tiene una identidad que cuenta lo que siempre fue: un lugar para entrenar con método, cerca y acompañado. Un sistema simple de usar, para que cada pieza nueva sume a la misma idea.</p>
+        <div class="kc-deliv" data-anim="fade"><p class="mono muted" data-i18n="c.entregables">Entregables</p><ul><li data-i18n="cer.d1">Logo y versiones</li><li data-i18n="cer.d2">Paleta de color</li><li data-i18n="cer.d3">Sistema tipográfico</li><li data-i18n="cer.d4">Placas para redes</li><li data-i18n="cer.d5">Indumentaria y merch</li><li data-i18n="cer.d6">Pantallas de la app</li></ul></div>
       </div>
     </div>
     <div class="wrap kc-end">
       <figure class="shot" data-anim="shot"><img src="../assets/fotos/cer-b2.jpg" alt="Afiche negro con el logo naranja de CER pegado en una pared del barrio" width="928" height="1152" loading="lazy" onerror="this.src='../assets/fotos/cer-m6.jpg'"></figure>
-      <blockquote class="kc-quote" data-anim="fade"><p class="title">“CER es lo más hermoso que me pudo pasar.”</p><footer class="mono muted">Un alumno</footer></blockquote>
+      <blockquote class="kc-quote" data-anim="fade"><p class="title" data-i18n="cer.q">“CER es lo más hermoso que me pudo pasar.”</p><footer class="mono muted" data-i18n="cer.qa">Un alumno</footer></blockquote>
     </div>
   </section>
 
   <section class="case-next on-dark">
     <a class="wrap case-next-link" href="nero.html">
-      <span class="mono">Siguiente proyecto</span>
+      <span class="mono" data-i18n="c.next">Siguiente proyecto</span>
       <span class="case-next-name title">NERO <i aria-hidden="true">→</i></span>
-      <span class="case-next-sector">Tienda digital de tecnología</span>
+      <span class="case-next-sector" data-i18n="c.ns.nero">Tienda digital de tecnología</span>
     </a>
   </section>
 
 </main>
 
-<footer class="footer on-dark sz-curtain">
+<footer class="footer sz-curtain">
   <div class="wrap">
     <div class="foot-cols">
       <nav aria-label="Pie de página">
         <ul class="foot-links">
-          <li><a href="../index.html#casos">Casos de estudio</a></li>
+          <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
           <li><a href="../logos.html">Logos</a></li>
-          <li><a href="../index.html#servicios">Servicios</a></li>
-          <li><a href="../index.html#metodo">Método</a></li>
-          <li><a href="../index.html#contacto">Contacto</a></li>
+          <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
+          <li><a href="../index.html#contacto" data-i18n="e.f.contacto">Contacto</a></li>
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
@@ -250,17 +251,19 @@
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
     <div class="foot-bottom">
-      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <p class="footer-claim" data-i18n="e.f.claim">Estrategia, identidad y content para marcas en crecimiento.</p>
       <div class="legal">
         <span>© <span id="year">2026</span> Eiro</span>
-        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+        <span data-i18n="e.f.base">Buenos Aires — Argentina · Estados Unidos</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="../config.js?v=113"></script>
-<script src="../script.js?v=113"></script>
-<script src="../assets/size.js?v=113"></script>
+<script src="../assets/i18n-eiro.js?v=115"></script>
+<script src="../assets/i18n.js?v=115"></script>
+<script src="../config.js?v=115"></script>
+<script src="../script.js?v=115"></script>
+<script src="../assets/size.js?v=115"></script>
 </body>
 </html>

@@ -1295,3 +1295,64 @@ body, button, input, select, textarea { font-family: var(--font-sans); }
 .case-title { font-size: clamp(3rem, 12vw, 11rem); }
 .kc-big { font-weight: 700; }
 .intro-word { font-size: min(19.5vw, 12.5rem); }
+
+/* ==========================================================
+   Blanco y negro, sin verde (v115)
+   Logotipo en Funnel Display Bold; títulos y textos en Inter Tight.
+   ========================================================== */
+@font-face { font-family: "Funnel Display"; src: url("assets/fonts/funnel-display-var.woff") format("woff"); font-weight: 300 800; font-style: normal; font-display: swap; }
+:root { --font-logo: "Funnel Display", "Inter Tight", "Helvetica Neue", Arial, sans-serif; --accent: #000000; }
+.logo, .logo-fit, .intro-word { font-family: var(--font-logo); font-weight: 700; letter-spacing: -0.03em; }
+.logo .dot, .logo-fit .dot, .intro-word .dot { background: #000000 !important; }
+::selection { background: #000000; color: #FFFFFF; }
+.i18n-wait body { visibility: hidden; }
+.intro-note { color: #8A8A8A; }
+
+/* Selector de idioma, como en UNVRS: ES / EN al lado del menú */
+.lang { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; margin-right: 20px; font-size: .82rem; font-weight: 600; letter-spacing: .04em; }
+.lang span { color: #BDBDBD; }
+.lang button { background: none; border: 0; padding: 6px 2px; font: inherit; letter-spacing: inherit; color: #9A9A9A; cursor: pointer; }
+.lang button[aria-pressed="true"] { color: #000000; }
+.lang button:hover { color: #000000; }
+.sz-menu-open .lang { visibility: hidden; }
+
+/* Portada */
+.hero-k { font-size: .95rem; color: var(--sz-mute); margin-bottom: clamp(-24px, -1.6vw, -12px); }
+.sz .hero .wrap { gap: clamp(24px, 3.4vw, 52px); }
+
+/* Equipo, a la derecha de la frase */
+.sz-about-row { margin-top: clamp(32px, 4.4vw, 72px); }
+.sz-about-copy { grid-column: 7 / -1; }
+@media (max-width: 900px) { .sz-about-copy { grid-column: 1 / -1; } }
+
+/* Marcas: logos que pasan */
+.clients-strip { padding-block: clamp(56px, 6vw, 100px); border-block: 1px solid var(--line); overflow: hidden; }
+.clients-strip .sz-label { margin-bottom: clamp(28px, 3.4vw, 48px); }
+.logo-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.logo-track { display: flex; align-items: center; width: max-content; list-style: none; margin: 0; padding: 0; }
+.logo-track li { flex: none; display: flex; align-items: center; height: 56px; padding-right: clamp(56px, 7vw, 112px); }
+.logo-track img { display: block; width: auto; filter: grayscale(1) brightness(0); }
+.logo-track .wm { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: clamp(1.15rem, 1.7vw, 1.55rem); letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap; line-height: 1; }
+.motion .logo-track { animation: logos 46s linear infinite; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+@keyframes logos { to { transform: translateX(-50%); } }
+
+/* Servicios: rótulo + bajada */
+.srv-head { grid-column: 1 / span 3; position: sticky; top: calc(var(--header-h) + 20px); display: grid; gap: 8px; align-self: start; }
+.srv-head .sz-label { position: static; }
+.srv-sub { font-size: .95rem; line-height: 1.4; max-width: 16em; color: #000000; }
+@media (max-width: 900px) { .srv-head { grid-column: 1 / -1; position: static; margin-bottom: 12px; } }
+
+/* Bola de boliche: el logotipo en blanco sobre el botón negro */
+.talk.ball { background: #000000; color: #FFFFFF; border: 0; }
+.talk.ball svg, .talk.ball .ball-mark { width: 34px; height: 34px; }
+.gate-ball { width: 72px; height: 72px; color: #FFFFFF; }
+.gate-ball svg { width: 100%; height: 100%; animation: none; }
+.ball-mark .ball-spark { transform-box: fill-box; transform-origin: center; }
+.motion .ball-mark .ball-spark { animation: spark 2.4s ease-in-out infinite; }
+.cursor { display: none !important; }
+
+.sz .ct-copy h2 { font-size: clamp(2.6rem, 5.8vw, 6.2rem); }
+
+/* Logotipo Eiro (v115): "Eiro" — E mayúscula, iro minúscula, Funnel Display Bold, interletrado −50 */
+.logo, .logo-fit, .intro-word { font-family: var(--font-logo); font-weight: 700; text-transform: none; letter-spacing: -0.05em; }

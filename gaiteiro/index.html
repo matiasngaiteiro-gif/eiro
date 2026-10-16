@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" data-title-key="g.title">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gaiteiro · Private access</title>
-<meta name="description" content="Gaiteiro: Matías Gaiteiro, dirección creativa para la noche. Uno a uno, por invitación.">
+<title>Gaiteiro — Acceso privado</title>
+<meta name="description" content="Gaiteiro: dirección creativa para la noche, por Matías Gaiteiro. Uno a uno, solo con invitación.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="../assets/favicon.png?v=8" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/size.css?v=113">
-<!-- GAITEIRO · el lado uno a uno de Matías. Helvética + mono (IBM Plex Mono) para etiquetas.
+<link rel="icon" href="../assets/favicon.png?v=9" type="image/png">
+<link rel="stylesheet" href="../assets/size.css?v=115">
+<!-- GAITEIRO · el lado uno a uno de Matías. Logotipo en Funnel Display, todo lo demás en Inter Tight.
      Estructura: una noche de 22:00 a 05:00. Escenas que se apilan, alternando sólidos con grano
      y fotos desenfocadas. El reloj avanza minuto a minuto con el scroll.
      Se entra desde la bola de boliche de la web con el código (config.js → codigoGaiteiro). -->
 <style>
 :root{
   --solid:#000000; --solid2:#000000; --ink:#FFFFFF; --mute:rgba(255,255,255,.58); --line:rgba(255,255,255,.2);
-  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"Inter Tight","Helvetica Neue",Arial,sans-serif; --logo:"Funnel Display","Inter Tight",sans-serif;
   --g:clamp(18px,3.4vw,48px); --ease:cubic-bezier(.2,.7,.2,1); --bpm:.484s; /* 124 BPM */
 }
+@font-face { font-family: "Funnel Display"; src: url("../assets/fonts/funnel-display-var.woff") format("woff"); font-weight: 300 800; font-display: swap; }
 @font-face { font-family: "Inter Tight"; src: url("../assets/fonts/inter-tight-var.woff") format("woff"); font-weight: 100 900; font-style: normal; font-display: swap; }
 *,*::before,*::after{box-sizing:border-box;border-radius:0}
 html{scroll-behavior:smooth}
@@ -215,172 +213,192 @@ body.end .clock,body.end .progress{opacity:0}
 .endrow p{margin:0;color:var(--mute);font-size:.95rem;letter-spacing:-.01em}
 .endrow .foot{padding-right:0}
 @media(max-width:860px){.s45 .wrapl{grid-template-columns:1fr}.s45 .wrapl .lab{position:static}.bar .lab{display:none}}
+
+/* ---------- v115: blanco y negro, sin mono, sin reloj; logotipo en Funnel Display ---------- */
+.lab{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.lg,.big{font-family:var(--logo);font-weight:700;letter-spacing:-.05em;text-transform:none} /* mismo logotipo que Eiro: Funnel Display Bold, −50 */
+.gl .T.xl{font-size:clamp(2.8rem,7vw,7.2rem)}
+.sz-meta{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.08em}
+.chips span,.chips-ro span,form.list label.f span,.send,.door button,.door input{font-family:var(--sans);font-weight:600;letter-spacing:.06em}
+.scene .bg{animation:none}
+.clock,.progress{display:none}
+.bar .lab{margin-left:auto}
+.lang{display:inline-flex;align-items:center;gap:6px;margin:0 6px 0 22px;font-size:.72rem;font-weight:600;letter-spacing:.08em}
+.lang span{color:#555}
+.lang button{background:none;border:0;padding:6px 2px;font:inherit;letter-spacing:inherit;color:#777;cursor:pointer}
+.lang button[aria-pressed="true"],.lang button:hover{color:#fff}
+.sz-menu-open .lang,.sz-menu-open .bar .lab{visibility:hidden}
+.i18n-wait body{visibility:hidden}
+.door .mark{width:64px;height:64px;margin:0 auto 22px;color:#fff;display:block}
+.ball-mark .ball-spark{transform-box:fill-box;transform-origin:center;animation:spark 2.4s ease-in-out infinite}
+@keyframes spark{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+@media(max-width:860px){.lang{margin-left:auto}}
 @media(prefers-reduced-motion:reduce){.fx,.rows .prow{opacity:1;transform:none}body::after,.scene .bg,.clock span i{animation:none}.gate{display:none}}
 </style>
+<script>try { if (localStorage.getItem("eiro-lang") === "en") document.documentElement.classList.add("i18n-wait"); } catch (e) {}</script>
 </head>
 <body>
 
 <div class="door" id="door" hidden>
   <div>
-    <p class="lab" style="color:var(--mute)">Private access</p>
-    <h1 class="T">Ingresá<br>tu código</h1>
-    <form id="door-f"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Código" aria-label="Código"><button type="submit">Entrar</button></form>
+    <svg class="ball-mark mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="32" cy="32" r="26"/><path d="M7.98 22.05H56.02"/><path d="M7.98 41.95H56.02"/><path d="M13.62 13.62H50.38"/><path d="M13.62 50.38H50.38"/><path d="M22.05 7.98H41.95"/><path d="M22.05 56.02H41.95"/><path d="M6 32H58"/><ellipse cx="32" cy="32" rx="13.00" ry="26"/><ellipse cx="32" cy="32" rx="22.52" ry="26"/><path d="M32 6V58"/></g><path class="ball-spark" d="M54 3.5c.7 4.2 1.8 5.3 6 6-4.2.7-5.3 1.8-6 6-.7-4.2-1.8-5.3-6-6 4.2-.7 5.3-1.8 6-6Z" fill="currentColor" stroke="none"/></svg>
+    <p class="lab" style="color:var(--mute)" data-i18n="g.door.k">Acceso privado</p>
+    <h1 class="T" data-i18n="g.door.t">Ingresá<br>tu código</h1>
+    <form id="door-f"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Código" aria-label="Código" data-i18n-attr="placeholder:g.door.ph, aria-label:g.door.ph"><button type="submit" data-i18n="g.door.btn">Entrar</button></form>
     <p class="msg" aria-live="polite"></p>
-    <a class="lab" href="../index.html">← Volver</a>
+    <a class="lab" href="../index.html" data-i18n="g.door.back">← Volver</a>
   </div>
 </div>
 
-<div class="gate" id="gate" aria-hidden="true"><i></i><b></b><p class="lab" id="gate-t" data-text="Acceso concedido"></p><i></i></div>
+<div class="gate" id="gate" aria-hidden="true"><i></i><b></b><p class="lab" id="gate-t" data-text="Acceso concedido" data-i18n-attr="data-text:g.gate"></p><i></i></div>
 <div class="spot" id="spot" aria-hidden="true"></div>
 
 <header class="bar" data-sz-bar>
   <a class="lg" href="#s0" aria-label="Gaiteiro">Gaiteiro<i class="dot"></i></a>
-  <span class="lab">Private access</span>
+  <span class="lab" data-i18n="g.bar">Acceso privado</span>
+  <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
 </header>
 <!-- Menú a pantalla completa (lo arma ../assets/size.js) -->
 <nav data-sz-menu hidden>
-  <a href="#s0">Puerta</a><a href="#s1">Perfil</a><a href="#s2">La campaña</a><a href="#s3">Noches</a><a href="#s4">House rules</a><a href="#s45">Lo que hago</a><a href="#s5">Guest list</a>
+  <a href="#s0" data-i18n="g.m.0">Inicio</a><a href="#s1" data-i18n="g.m.1">Perfil</a><a href="#s2" data-i18n="g.m.2">Proceso</a><a href="#s3" data-i18n="g.m.3">Noches</a><a href="#s4">House rules</a><a href="#s45" data-i18n="g.m.5">Servicios</a><a href="#s5">Guest list</a>
 </nav>
 <template data-sz-extra>
-  <div><span>Acceso</span><p>Private access</p><p>By invitation only</p></div>
-  <div><span>Directo</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
-  <div><span>Estudio</span><a href="../index.html">Eiro ↗</a></div>
+  <div><span data-i18n="g.mx.1">Acceso</span><p data-i18n="g.bar">Acceso privado</p><p data-i18n="g.mx.inv">Solo con invitación</p></div>
+  <div><span data-i18n="g.mx.2">Directo</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="g.mx.3">Estudio</span><a href="../index.html">Eiro ↗</a></div>
 </template>
-
-<div class="clock" aria-hidden="true"><b id="clock">22:00</b><span class="lab" id="clock-l"><i></i>124 BPM · Puerta</span></div>
-<div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <main>
 
-  <!-- 22:00 · foto desenfocada -->
-  <section class="scene s0" id="s0" data-min="1320" data-label="Puerta">
+  <!-- 01 · INICIO (foto desenfocada): el nombre se escribe de Eiro a Gaiteiro -->
+  <section class="scene s0" id="s0">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo fx" src="../escena/img/fiesta.jpg" alt="Manos arriba en una fiesta, con papelitos y luz de flash">
     <div class="in">
-      <span class="lab fx on" style="color:var(--mute)">22:00 — Puerta</span>
+      <span></span>
       <div>
         <h1 style="margin:0"><span class="lg" id="hero-lg" aria-label="Gaiteiro">Eiro<i class="dot"></i></span></h1>
         <div class="sub">
-          <p class="T m fx d1" data-sz="split">Dirección creativa<br><span class="dim">para la noche.</span></p>
-          <span class="lab fx d2" style="color:var(--mute)">Uno a uno · Por invitación</span>
+          <p class="T m fx d1" data-sz="split" data-i18n="g.hero">Dirección creativa<br><span class="dim">para la noche.</span></p>
+          <span class="lab fx d2" style="color:var(--mute)" data-i18n="g.hero.k">Uno a uno · Solo con invitación</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 23:00 · sólido con grano -->
-  <section class="scene s1" id="s1" data-min="1380" data-label="Perfil">
-    <img class="photo" src="../escena/img/matias.jpg?v=2" alt="Matías Gaiteiro, retrato sobre fondo naranja">
+  <!-- 02 · PERFIL (sólido con grano) -->
+  <section class="scene s1" id="s1">
+    <img class="photo" src="../escena/img/matias.jpg?v=2" alt="Matías Gaiteiro">
     <div class="in">
-      <span class="lab" style="color:var(--mute)">23:00 — Perfil</span>
+      <span class="lab" style="color:var(--mute)"><span>01 — </span><span data-i18n="g.m.1">Perfil</span></span>
       <div class="copy">
         <h2 class="T l fx" data-sz="split">Matías<br>Gaiteiro</h2>
-        <p class="body fx d1">Director creativo independiente. Identidad y comunicación para clubes, ciclos, artistas y marcas de nicho.</p>
-        <p class="body fx d2">Trabajo directo conmigo. Una sola mano, de la idea a la última pieza.</p>
+        <p class="body fx d1" data-i18n="g.p1">Director creativo independiente. Identidad, campañas y content para clubes, ciclos, artistas y marcas que viven de noche.</p>
+        <p class="body fx d2" data-i18n="g.p2">Trabajás directo conmigo, sin intermediarios: la idea, el diseño y la última pieza salen de la misma cabeza.</p>
         <div class="facts fx d3">
-          <div><b>Uno a uno</b><span>Siempre conmigo</span></div>
-          <div><b>Por invitación</b><span>Ingreso con código</span></div>
-          <div><b>Agenda corta</b><span>Pocos proyectos por mes</span></div>
+          <div><b data-i18n="g.f1">Uno a uno</b><span data-i18n="g.f1s">Siempre conmigo</span></div>
+          <div><b data-i18n="g.f2">Por invitación</b><span data-i18n="g.f2s">Acceso con código</span></div>
+          <div><b data-i18n="g.f3">Agenda corta</b><span data-i18n="g.f3s">Pocos proyectos por temporada</span></div>
         </div>
       </div>
       <span></span>
     </div>
   </section>
 
-  <!-- 00:30 · foto desenfocada -->
-  <section class="scene s2" id="s2" data-min="1470" data-label="La campaña">
+  <!-- 03 · PROCESO (foto desenfocada) -->
+  <section class="scene s2" id="s2">
     <div class="bg"></div><div class="shade"></div>
     <img class="photo fx" src="../escena/img/dj.jpg" alt="Mano con anillos en la consola de un DJ">
     <div class="in">
-      <span class="lab" style="color:var(--mute)">00:30 — La campaña</span>
-      <h2 class="T l fx" data-sz="split">Una noche<br>se diseña<br><span class="dim">semanas antes.</span></h2>
+      <span class="lab" style="color:var(--mute)"><span>02 — </span><span data-i18n="g.m.2">Proceso</span></span>
+      <h2 class="T l fx" data-sz="split" data-i18n="g.pr.t">Una noche<br>se diseña<br><span class="dim">semanas antes.</span></h2>
       <div class="tl fx d1">
-        <div><b>D−30</b><span>Concepto e identidad de la noche</span></div>
-        <div><b>D−21</b><span>Anuncio y fecha</span></div>
-        <div><b>D−14</b><span>Line up y flyers</span></div>
-        <div><b>D−7</b><span>Teasers y cuenta regresiva</span></div>
-        <div class="night"><b>La noche</b><span>Visuales en vivo y señalética</span></div>
-        <div><b>D+1</b><span>Recap y aftermovie</span></div>
+        <div><b>D−30</b><span data-i18n="g.pr.1">Concepto e identidad de la noche</span></div>
+        <div><b>D−21</b><span data-i18n="g.pr.2">Anuncio y save the date</span></div>
+        <div><b>D−14</b><span data-i18n="g.pr.3">Line up y flyers</span></div>
+        <div><b>D−7</b><span data-i18n="g.pr.4">Teasers y cuenta regresiva</span></div>
+        <div class="night"><b data-i18n="g.pr.5t">La noche</b><span data-i18n="g.pr.5">Visuales en vivo y señalética</span></div>
+        <div><b>D+1</b><span data-i18n="g.pr.6">Recap y aftermovie</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 02:00 · sólido con grano -->
-  <section class="scene s3 alt" id="s3" data-min="1560" data-label="Proyectos">
+  <!-- 04 · NOCHES (sólido con grano) -->
+  <section class="scene s3 alt" id="s3">
     <div class="in">
-      <span class="lab" style="color:var(--mute)">02:00 — Proyectos</span>
-      <h2 class="T xl fx" data-sz="split">Noches</h2>
+      <span class="lab" style="color:var(--mute)"><span>03 — </span><span data-i18n="g.m.3">Noches</span></span>
+      <h2 class="T xl fx" data-sz="split" data-i18n="g.m.3">Noches</h2>
       <div class="rows fx d1">
         <div class="prow">
           <h3 class="T m">El Calentón</h3>
-          <div><p>Campaña de lanzamiento y teasers. La noche empieza a venderse antes de abrir las puertas.</p><div class="chips-ro"><span>Teasers</span><span>Comunicación</span><span>Line up</span></div></div>
-          <span class="lab">Latin tech music</span>
+          <div><p data-i18n="g.n1">Campaña de lanzamiento y teasers para un ciclo de latin tech. La fiesta se empieza a vender semanas antes de que suene el primer tema.</p><div class="chips-ro"><span>Teasers</span><span>Social media</span><span>Line up</span></div></div>
+          <span class="lab">Latin tech</span>
         </div>
         <a class="prow" href="#s5">
-          <h3 class="T m"><span class="dim">Tu evento</span></h3>
-          <div><p>Fechas disponibles para nuevos proyectos. Cupos limitados por temporada.</p></div>
+          <h3 class="T m"><span class="dim" data-i18n="g.n2t">Tu evento</span></h3>
+          <div><p data-i18n="g.n2">Fechas abiertas para la temporada 2027. Cupos limitados.</p></div>
           <span class="lab">Guest list →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 03:30 · foto desenfocada -->
-  <section class="scene s4" id="s4" data-min="1650" data-label="House rules">
+  <!-- 05 · HOUSE RULES (foto desenfocada) -->
+  <section class="scene s4" id="s4">
     <div class="bg"></div><div class="shade"></div>
     <div class="in">
-      <span class="lab" style="color:var(--mute)">03:30 — Reglas de la casa</span>
+      <span class="lab" style="color:var(--mute)"><span>04 — </span>House rules</span>
       <h2 class="T l fx" data-sz="split">House<br><span class="dim">rules.</span></h2>
       <ol class="rules fx d1">
-        <li><div><b>Hablás conmigo</b><span>De la primera llamada a la última pieza. Sin cuentas, sin intermediarios.</span></div></li>
-        <li><div><b>Pocas fechas</b><span>Pocos proyectos por mes, para que cada noche tenga toda la atención.</span></div></li>
-        <li><div><b>Nada sale sin tu ok</b><span>Cada pieza se aprueba antes de publicarse. Sin sorpresas.</span></div></li>
-        <li><div><b>Se arranca antes</b><span>Una campaña empieza semanas antes de la fecha. Cuanto antes hablemos, mejor sale.</span></div></li>
+        <li><div><b data-i18n="g.r1t">Hablás conmigo</b><span data-i18n="g.r1">De la primera llamada a la última pieza. Sin cuentas ni teléfono descompuesto.</span></div></li>
+        <li><div><b data-i18n="g.r2t">Pocas fechas</b><span data-i18n="g.r2">Tomo pocos proyectos por mes para que cada noche tenga toda la atención.</span></div></li>
+        <li><div><b data-i18n="g.r3t">Nada sale sin tu ok</b><span data-i18n="g.r3">Cada pieza se aprueba antes de publicarse. Cero sorpresas.</span></div></li>
+        <li><div><b data-i18n="g.r4t">Se arranca con tiempo</b><span data-i18n="g.r4">Una buena campaña empieza semanas antes. Cuanto antes hablemos, mejor sale.</span></div></li>
       </ol>
     </div>
   </section>
 
-  <!-- 04:15 · sólido con grano; se recorre y se enciende el renglón del centro -->
-  <section class="scene s45" id="s45" data-min="1695" data-label="Lo que hago">
+  <!-- 06 · SERVICIOS (sólido; se enciende el renglón del centro) -->
+  <section class="scene s45" id="s45">
     <div class="in">
-      <span class="lab" style="color:var(--mute)">04:15 — Lo que hago</span>
+      <span class="lab" style="color:var(--mute)"><span>05 — </span><span data-i18n="g.m.5">Servicios</span></span>
       <div class="wrapl">
-        <span class="lab">Para la noche</span>
-        <ul class="sz-list" data-sz="hl"><li>Identidad de la noche</li><li>Campaña de lanzamiento</li><li>Flyers y line up</li><li>Teasers</li><li>Cuenta regresiva</li><li>Contenido para redes</li><li>Visuales en vivo</li><li>Señalética</li><li>Aftermovie</li><li>Recap</li><li>Merch</li></ul>
+        <span class="lab" data-i18n="g.s.k">Para la noche</span>
+        <ul class="sz-list" data-sz="hl"><li data-i18n="g.s.1">Identidad de la noche</li><li data-i18n="g.s.2">Campaña de lanzamiento</li><li>Key visual</li><li data-i18n="g.s.4">Flyers y line up</li><li>Teasers</li><li data-i18n="g.s.6">Cuenta regresiva</li><li>Social media</li><li data-i18n="g.s.8">Visuales en vivo</li><li data-i18n="g.s.9">Señalética</li><li>Aftermovie</li><li>Merch</li></ul>
       </div>
     </div>
   </section>
 
-  <!-- 05:00 · sólido con grano -->
-  <section class="scene s5" id="s5" data-min="1740" data-label="Guest list">
+  <!-- 07 · GUEST LIST (sólido con grano) -->
+  <section class="scene s5" id="s5">
     <div class="in">
-      <span class="lab" style="color:var(--mute)">05:00 — Guest list</span>
+      <span class="lab" style="color:var(--mute)"><span>06 — </span>Guest list</span>
       <div class="gl">
         <div class="left">
           <h2 class="T xl fx" data-sz="split">T27<br>Guest list<br>Sign-up</h2>
           <div class="fx d1" style="display:grid;gap:22px">
-            <h3 class="T m">Reservá tu fecha</h3>
-            <p class="body">La guest list para la temporada 2027 está abierta. Anotate para tener prioridad en aperturas, cierres de temporada y fechas especiales.</p>
-            <p class="body">Llega directo a mi WhatsApp. Respondo personalmente.</p>
+            <h3 class="T m" data-i18n="g.gl.t">Reservá tu fecha</h3>
+            <p class="body" data-i18n="g.gl.1">La guest list de la temporada 2027 está abierta. Anotate y tenés prioridad en aperturas, cierres de temporada y fechas especiales.</p>
+            <p class="body" data-i18n="g.gl.2">Llega directo a mi WhatsApp y respondo yo.</p>
           </div>
         </div>
         <form class="list fx d2" id="gl-form">
-          <label class="f"><span>Nombre</span><input id="f-name" autocomplete="name" placeholder="Tu nombre"></label>
-          <label class="f"><span>Evento o ciclo</span><input id="f-event" placeholder="Nombre de la fiesta"></label>
+          <label class="f"><span data-i18n="g.fm.n">Nombre</span><input id="f-name" autocomplete="name" placeholder="Tu nombre" data-i18n-attr="placeholder:g.fm.nph"></label>
+          <label class="f"><span data-i18n="g.fm.e">Evento o ciclo</span><input id="f-event" placeholder="Nombre de la fiesta" data-i18n-attr="placeholder:g.fm.eph"></label>
           <div class="two">
-            <label class="f"><span>Fecha</span><input id="f-date" placeholder="Ej: 14 de noviembre"></label>
-            <label class="f"><span>Capacidad</span><select id="f-cap"><option value="">Elegí</option><option>Hasta 300</option><option>300 a 1.000</option><option>1.000 a 3.000</option><option>Más de 3.000</option></select></label>
+            <label class="f"><span data-i18n="g.fm.d">Fecha</span><input id="f-date" placeholder="Ej: 14 de noviembre" data-i18n-attr="placeholder:g.fm.dph"></label>
+            <label class="f"><span data-i18n="g.fm.c">Capacidad</span><select id="f-cap"><option value="" data-i18n="g.fm.c0">Elegí</option><option data-i18n="g.fm.c1">Hasta 300</option><option data-i18n="g.fm.c2">300 a 1.000</option><option data-i18n="g.fm.c3">1.000 a 3.000</option><option data-i18n="g.fm.c4">Más de 3.000</option></select></label>
           </div>
-          <div class="f" style="padding-top:18px"><span class="lab" style="color:var(--mute);font-size:.68rem">Necesito</span>
+          <div class="f" style="padding-top:18px"><span class="lab" style="color:var(--mute);font-size:.68rem" data-i18n="g.fm.need">Necesito</span>
             <div class="chips">
-              <label><input type="checkbox" value="Identidad"><span>Identidad</span></label>
-              <label><input type="checkbox" value="Campaña completa"><span>Campaña completa</span></label>
-              <label><input type="checkbox" value="Flyers y line up"><span>Flyers y line up</span></label>
+              <label><input type="checkbox" value="Identidad"><span data-i18n="g.ch.1">Identidad</span></label>
+              <label><input type="checkbox" value="Campaña completa"><span data-i18n="g.ch.2">Campaña completa</span></label>
+              <label><input type="checkbox" value="Flyers y line up"><span data-i18n="g.s.4">Flyers y line up</span></label>
               <label><input type="checkbox" value="Teasers"><span>Teasers</span></label>
-              <label><input type="checkbox" value="Visuales en vivo"><span>Visuales en vivo</span></label>
+              <label><input type="checkbox" value="Visuales en vivo"><span data-i18n="g.s.8">Visuales en vivo</span></label>
             </div>
           </div>
-          <button class="send" type="submit">Register now
+          <button class="send" type="submit"><span data-i18n="g.fm.send">Anotarme</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
           </button>
         </form>
@@ -388,8 +406,8 @@ body.end .clock,body.end .progress{opacity:0}
       <div class="end" id="end">
         <p class="big" id="big" aria-hidden="true">Gaiteiro</p>
         <div class="endrow">
-          <p>Uno a uno. Por invitación.</p>
-          <div class="foot lab"><span>Gaiteiro · Buenos Aires</span><span>Private access · By invitation only</span></div>
+          <p data-i18n="g.end">Uno a uno. Solo con invitación.</p>
+          <div class="foot lab"><span>Gaiteiro — Buenos Aires</span><span data-i18n="g.end.k">Acceso privado · Solo con invitación</span></div>
         </div>
       </div>
     </div>
@@ -397,10 +415,13 @@ body.end .clock,body.end .progress{opacity:0}
 
 </main>
 
-<script src="../config.js?v=113"></script>
-<script src="../assets/size.js?v=113"></script>
+<script src="../assets/i18n-gaiteiro.js?v=115"></script>
+<script src="../assets/i18n.js?v=115"></script>
+<script src="../config.js?v=115"></script>
+<script src="../assets/size.js?v=115"></script>
 <script>
 (function () {
+  var T = window.t || function (k, es) { return es; };
   var cfg = window.EIRO_CONFIG || {};
   var code = String(cfg.codigoGaiteiro || "gaiteiro3").toLowerCase().replace(/\s+/g, "");
   var phone = String(cfg.whatsapp || "5491134850669").replace(/\D/g, "");
@@ -408,11 +429,10 @@ body.end .clock,body.end .progress{opacity:0}
   var ok = false; try { ok = sessionStorage.getItem("gaiteiro") === "1"; } catch (e) {}
   var door = document.getElementById("door"), gate = document.getElementById("gate");
 
-  /* ---------- Acceso: la puerta del club se abre ---------- */
+  /* ---------- Acceso: se tipea ACCESO CONCEDIDO y la puerta se abre ---------- */
   function enter() {
     if (reduce) { gate.classList.add("gone"); play(); return; }
     document.body.classList.add("locked");
-    /* primero se tipea ACCESO CONCEDIDO, después la luz y la puerta que se abre */
     var gt = document.getElementById("gate-t"), word = gt.getAttribute("data-text"), cur = document.createElement("span");
     cur.className = "cur"; gt.appendChild(cur);
     var t = 380;
@@ -433,11 +453,11 @@ body.end .clock,body.end .progress{opacity:0}
       if (inp.value.toLowerCase().replace(/\s+/g, "") === code) {
         try { sessionStorage.setItem("gaiteiro", "1"); } catch (err) {}
         door.hidden = true; enter();
-      } else { msg.textContent = "Código incorrecto. El acceso es solo por invitación."; }
+      } else { msg.textContent = T("g.door.no", "Código incorrecto. El acceso es solo por invitación."); }
     });
   } else { enter(); }
 
-  /* ---------- La intro al revés: en Eiro se borra "Gait"; acá se vuelve a escribir ---------- */
+  /* ---------- El nombre: en Eiro se borra "Gait"; acá se vuelve a escribir ---------- */
   var played = false;
   function play() {
     if (played) return; played = true;
@@ -454,30 +474,16 @@ body.end .clock,body.end .progress{opacity:0}
     t += 1400; later(function () { caret.remove(); }, t);
   }
 
-  /* ---------- Reloj: avanza minuto a minuto con el scroll ---------- */
-  var scenes = [].slice.call(document.querySelectorAll(".scene"));
-  var clock = document.getElementById("clock"), clockL = document.getElementById("clock-l"), dots = document.querySelectorAll(".progress i");
-  var shown = -1;
-  function fmt(m) { m = Math.round(m) % 1440; var h = Math.floor(m / 60), mm = m % 60; return (h < 10 ? "0" : "") + h + ":" + (mm < 10 ? "0" : "") + mm; }
+  /* ---------- Cada escena se enciende cuando llega arriba ---------- */
+  var scenes = [].slice.call(document.querySelectorAll(".scene")), shown = -1;
   function tick() {
-    var y = window.scrollY + window.innerHeight * 0.35, top = 0, idx = 0, frac = 0;
-    for (var i = 0; i < scenes.length; i++) {
-      var h = scenes[i].offsetHeight;
-      if (y >= top) { idx = i; frac = Math.min(1, (y - top) / h); }
-      top += h;
-    }
-    var a = +scenes[idx].dataset.min, b = scenes[idx + 1] ? +scenes[idx + 1].dataset.min : a;
-    clock.textContent = fmt(a + (b - a) * frac);
-    if (idx !== shown) {
-      shown = idx;
-      clockL.lastChild.nodeValue = "124 BPM · " + scenes[idx].dataset.label;
-      dots.forEach(function (d, i) { d.classList.toggle("on", i <= idx); });
-      if (idx > 0) scenes[idx].querySelectorAll(".fx").forEach(function (el) { el.classList.add("on"); });
-    }
+    var y = window.scrollY + window.innerHeight * 0.35, top = 0, idx = 0;
+    for (var i = 0; i < scenes.length; i++) { if (y >= top) idx = i; top += scenes[i].offsetHeight; }
+    if (idx !== shown) { shown = idx; if (idx > 0) scenes[idx].querySelectorAll(".fx").forEach(function (el) { el.classList.add("on"); }); }
   }
   window.addEventListener("scroll", tick, { passive: true }); window.addEventListener("resize", tick); tick();
 
-  /* ---------- Links a escenas: las escenas están pegadas arriba (sticky), así que se calcula su lugar real ---------- */
+  /* ---------- Links a escenas: están pegadas arriba (sticky), así que se calcula su lugar real ---------- */
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href^="#s"]'); if (!a) return;
     var target = document.querySelector(a.getAttribute("href")); var i = scenes.indexOf(target); if (i < 0) return;
@@ -486,11 +492,10 @@ body.end .clock,body.end .progress{opacity:0}
     window.scrollTo({ top: y + 2, behavior: reduce ? "auto" : "smooth" });
   });
 
-  /* ---------- Pie: GAITEIRO ocupa todo el ancho; el reloj se apaga al llegar ---------- */
+  /* ---------- Pie: GAITEIRO ocupa todo el ancho ---------- */
   var big = document.getElementById("big"), end = document.getElementById("end");
   function fit() { big.style.fontSize = "100px"; var w = big.getBoundingClientRect().width; if (w) big.style.fontSize = (99.5 * end.clientWidth / w) + "px"; }
   fit(); window.addEventListener("resize", fit); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-  window.addEventListener("scroll", function () { document.body.classList.toggle("end", end.getBoundingClientRect().top < window.innerHeight * 0.8); }, { passive: true });
 
   /* ---------- Luz que sigue al cursor (en celular se mueve sola) ---------- */
   var spot = document.getElementById("spot");
@@ -504,14 +509,14 @@ body.end .clock,body.end .progress{opacity:0}
   /* ---------- Guest list → WhatsApp ---------- */
   document.getElementById("gl-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    var v = function (id) { return (document.getElementById(id).value || "").trim(); };
-    var needs = [].slice.call(this.querySelectorAll(".chips input:checked")).map(function (c) { return c.value; });
-    var lines = ["Hola Matías, ingresé con código. Quiero anotarme en la guest list."];
-    if (v("f-name")) lines.push("Nombre: " + v("f-name"));
-    if (v("f-event")) lines.push("Evento: " + v("f-event"));
-    if (v("f-date")) lines.push("Fecha: " + v("f-date"));
-    if (v("f-cap")) lines.push("Capacidad: " + v("f-cap"));
-    if (needs.length) lines.push("Necesito: " + needs.join(", "));
+    var v = function (id) { var el = document.getElementById(id); return el.tagName === "SELECT" ? (el.value ? el.options[el.selectedIndex].text : "") : (el.value || "").trim(); };
+    var needs = [].slice.call(this.querySelectorAll(".chips input:checked")).map(function (c) { return c.nextElementSibling.textContent; });
+    var lines = [T("g.wa", "Hola Matías, entré con código y quiero anotarme en la guest list.")];
+    if (v("f-name")) lines.push(T("g.fm.n", "Nombre") + ": " + v("f-name"));
+    if (v("f-event")) lines.push(T("g.wa.e", "Evento") + ": " + v("f-event"));
+    if (v("f-date")) lines.push(T("g.fm.d", "Fecha") + ": " + v("f-date"));
+    if (v("f-cap")) lines.push(T("g.fm.c", "Capacidad") + ": " + v("f-cap"));
+    if (needs.length) lines.push(T("g.fm.need", "Necesito") + ": " + needs.join(", "));
     window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
   });
 })();

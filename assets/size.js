@@ -191,6 +191,11 @@
 
     [].forEach.call(document.querySelectorAll('[data-sz="bubbles"]'), bubbles);
 
+    /* logos que pasan: se duplica la fila para que el loop no tenga corte */
+    [].forEach.call(document.querySelectorAll(".logo-track"), function (tr) {
+      [].slice.call(tr.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); tr.appendChild(c); });
+    });
+
     var lists = [].slice.call(document.querySelectorAll('[data-sz="hl"]'));
     var fills = [].slice.call(document.querySelectorAll('[data-sz="fill"]')).map(function (el) { return { el: el, words: words(el) }; });
     if (reduce) { fills.forEach(function (f) { f.words.forEach(function (w) { w.classList.add("on"); }); }); fills = []; }

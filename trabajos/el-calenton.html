@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" data-title-key="el-calenton.title">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>El Calentón · Caso de branding · Eiro</title>
+<title>El Calentón — Caso de branding — Eiro</title>
 <meta name="description" content="Una noche que se espera desde el primer teaser. Evento · Latin tech music.">
-<meta name="theme-color" content="#0B0B0B">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://matiasngaiteiro-gif.github.io/eiro/trabajos/el-calenton.html">
 <meta property="og:type" content="article">
@@ -16,48 +16,49 @@
 <meta property="og:description" content="Una noche que se espera desde el primer teaser. Evento · Latin tech music.">
 <meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/fotos/el-calenton.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/favicon.png?v=8" type="image/png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=8">
-<link rel="stylesheet" href="https://use.typekit.net/wlo1uwr.css">
+<link rel="icon" href="../assets/favicon.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../styles.css?v=113">
-<link rel="stylesheet" href="../assets/size.css?v=113">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css?v=115">
+<link rel="stylesheet" href="../assets/size.css?v=115">
 <script>
   (function () {
     var d = document.documentElement;
     d.classList.add("js");
     if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) d.classList.add("motion");
+    try { if (localStorage.getItem("eiro-lang") === "en") d.classList.add("i18n-wait"); } catch (e) {}
   })();
 </script>
 </head>
 <body class="case-page">
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<a class="skip" href="#contenido" data-i18n="e.skip">Saltar al contenido</a>
 
-<header class="header on-dark">
+<header class="header">
   <div class="wrap">
-    <a class="logo-link" href="../index.html" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <a class="logo-link" href="../index.html" aria-label="Eiro"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
-        <li><a href="../index.html#casos">Casos de estudio <small>Lo que hicimos</small></a></li>
-        <li><a href="../logos.html">Logos <small>Marcas que diseñamos</small></a></li>
-        <li><a href="../index.html#servicios">Servicios <small>Qué hacemos</small></a></li>
+        <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
+        <li><a href="../logos.html" data-i18n="e.nav.logos">Logos</a></li>
+        <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
       </ul>
       <div class="nav-end">
         <ul>
-          <li><a href="../index.html#metodo">Método <small>Cómo pensamos</small></a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="../index.html#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
+        <a class="nav-cta" href="../index.html#contacto" data-i18n="e.nav.cta">Hablemos</a>
       </div>
     </nav>
   </div>
 </header>
 <template data-sz-extra>
-  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="e.m.contacto">Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
   <div><span>Base</span><p>Buenos Aires</p></div>
-  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+  <div><span data-i18n="e.m.mercados">Mercados</span><p>Argentina</p><p data-i18n="e.m.usa">Estados Unidos</p></div>
 </template>
 
 <main id="contenido">
@@ -124,16 +125,16 @@
 
 </main>
 
-<footer class="footer on-dark sz-curtain">
+<footer class="footer sz-curtain">
   <div class="wrap">
     <div class="foot-cols">
       <nav aria-label="Pie de página">
         <ul class="foot-links">
-          <li><a href="../index.html#casos">Casos de estudio</a></li>
+          <li><a href="../index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
           <li><a href="../logos.html">Logos</a></li>
-          <li><a href="../index.html#servicios">Servicios</a></li>
-          <li><a href="../index.html#metodo">Método</a></li>
-          <li><a href="../index.html#contacto">Contacto</a></li>
+          <li><a href="../index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
+          <li><a href="../index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
+          <li><a href="../index.html#contacto" data-i18n="e.f.contacto">Contacto</a></li>
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
@@ -142,17 +143,19 @@
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
     <div class="foot-bottom">
-      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <p class="footer-claim" data-i18n="e.f.claim">Estrategia, identidad y content para marcas en crecimiento.</p>
       <div class="legal">
         <span>© <span id="year">2026</span> Eiro</span>
-        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+        <span data-i18n="e.f.base">Buenos Aires — Argentina · Estados Unidos</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="../config.js?v=113"></script>
-<script src="../script.js?v=113"></script>
-<script src="../assets/size.js?v=113"></script>
+<script src="../assets/i18n-eiro.js?v=115"></script>
+<script src="../assets/i18n.js?v=115"></script>
+<script src="../config.js?v=115"></script>
+<script src="../script.js?v=115"></script>
+<script src="../assets/size.js?v=115"></script>
 </body>
 </html>

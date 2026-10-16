@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" data-title-key="logos.title">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logos · Eiro, estudio de branding</title>
-<meta name="description" content="Logos y marcas diseñadas por Eiro, estudio de branding en Buenos Aires.">
-<meta name="theme-color" content="#0B0B0B">
+<title>Logos — Eiro, estudio de branding</title>
+<meta name="description" content="Identidades diseñadas por Eiro, estudio de branding en Buenos Aires.">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://matiasngaiteiro-gif.github.io/eiro/logos.html">
 
@@ -14,20 +14,18 @@
 <meta property="og:site_name" content="Eiro">
 <meta property="og:url" content="https://matiasngaiteiro-gif.github.io/eiro/logos.html">
 <meta property="og:title" content="Logos · Eiro, estudio de branding">
-<meta property="og:description" content="Marcas que se reconocen de lejos y se sienten de cerca. Branding, contenido, redes y eventos.">
-<meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=4">
+<meta property="og:description" content="Branding con criterio. Estrategia, identidad y content para marcas en crecimiento.">
+<meta property="og:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Eiro, estudio creativo de Buenos Aires">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=4">
+<meta name="twitter:image" content="https://matiasngaiteiro-gif.github.io/eiro/assets/og-eiro.jpg?v=5">
 
-<link rel="icon" href="assets/favicon.png?v=8" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="styles.css?v=113">
-<link rel="stylesheet" href="assets/size.css?v=113">
+<link rel="icon" href="assets/favicon.png?v=9" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=9">
+<link rel="stylesheet" href="styles.css?v=115">
+<link rel="stylesheet" href="assets/size.css?v=115">
 <script>
   /* Prepara las animaciones antes de pintar, para que no haya parpadeo.
      La intro (GAITEIRO → EIRO) se muestra una vez por visita. */
@@ -39,37 +37,38 @@
     d.classList.add("motion");
     var seen = false;
     try { seen = sessionStorage.getItem("eiro-intro") === "1"; } catch (e) {}
-    
   })();
+  try { if (localStorage.getItem("eiro-lang") === "en") document.documentElement.classList.add("i18n-wait"); } catch (e) {}
 </script>
 </head>
 <body>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<header class="header on-dark">
+<header class="header">
   <div class="wrap">
-    <a class="logo-link" href="index.html" aria-label="Eiro, ir al inicio"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <a class="logo-link" href="index.html" aria-label="Eiro"><span class="logo" aria-hidden="true"><span class="ek">E</span>iro<span class="dot" aria-hidden="true"></span></span></a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang-btn="es">ES</button><span aria-hidden="true">/</span><button type="button" data-lang-btn="en">EN</button></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <ul class="nav-start">
-        <li><a href="index.html#casos">Casos de estudio <small>Lo que hicimos</small></a></li>
-        <li><a aria-current="page" href="logos.html">Logos <small>Marcas que diseñamos</small></a></li>
-        <li><a href="index.html#servicios">Servicios <small>Qué hacemos</small></a></li>
+        <li><a href="index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
+        <li><a href="logos.html" data-i18n="e.nav.logos">Logos</a></li>
+        <li><a href="index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
       </ul>
       <div class="nav-end">
         <ul>
-          <li><a href="index.html#metodo">Método <small>Cómo pensamos</small></a></li>
+          <li><a href="index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
         </ul>
-        <a class="nav-cta btn-roll" href="index.html#contacto"><span class="roll"><span data-label="Trabajemos juntos">Trabajemos juntos</span></span></a>
+        <a class="nav-cta" href="index.html#contacto" data-i18n="e.nav.cta">Hablemos</a>
       </div>
     </nav>
   </div>
 </header>
 <template data-sz-extra>
-  <div><span>Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+  <div><span data-i18n="e.m.contacto">Contacto</span><a href="https://wa.me/5491134850669" target="_blank" rel="noopener">WhatsApp ↗</a></div>
   <div><span>Base</span><p>Buenos Aires</p></div>
-  <div><span>Trabajamos en</span><p>Argentina</p><p>Estados Unidos</p></div>
+  <div><span data-i18n="e.m.mercados">Mercados</span><p>Argentina</p><p data-i18n="e.m.usa">Estados Unidos</p></div>
 </template>
 
 <main id="contenido">
@@ -78,12 +77,12 @@
   <section class="section logos-sec logos-page" id="logos" aria-labelledby="logos-t">
     <div class="wrap">
       <div class="sec-head">
-        <h1 class="title" id="logos-t" data-sz="lines">Logos</h1>
-        <p class="statement muted" data-anim="fade">Marcas que diseñamos para nuestros clientes.</p>
+        <h1 class="title" id="logos-t"><span data-sz="lines" data-i18n="logos.t">Logos</span></h1>
+        <p class="statement muted" data-anim="fade" data-i18n="logos.sub">Identidades que diseñamos, del concepto al último ajuste.</p>
       </div>
       <ul class="marks">
         <li class="mark" style="--bg:#0B0B0B" data-anim="fade"><img src="assets/cer/cer-logo-naranja.svg" alt="Logo de CER" width="831" height="259" loading="lazy" style="width:56%"><span class="mark-cap">CER</span></li>
-        <li class="mark" style="--bg:#E6E6E6" data-anim="fade"><img src="assets/nero/nero-simbolo.svg" alt="Símbolo de NERO" width="1000" height="1000" loading="lazy" style="width:30%"><span class="mark-cap">NERO · Símbolo</span></li>
+        <li class="mark" style="--bg:#E6E6E6" data-anim="fade"><img src="assets/nero/nero-simbolo.svg" alt="Símbolo de NERO" width="1000" height="1000" loading="lazy" style="width:30%"><span class="mark-cap" data-i18n="logos.nerosym">NERO · Símbolo</span></li>
         <li class="mark" style="--bg:#141414" data-anim="fade"><img src="assets/nero/nero-logo-blanco.svg" alt="Logo de NERO" width="4204" height="1000" loading="lazy" style="width:58%"><span class="mark-cap">NERO</span></li>
       </ul>
     </div>
@@ -91,16 +90,16 @@
 
 </main>
 
-<footer class="footer on-dark sz-curtain">
+<footer class="footer sz-curtain">
   <div class="wrap">
     <div class="foot-cols">
       <nav aria-label="Pie de página">
         <ul class="foot-links">
-          <li><a href="index.html#casos">Casos de estudio</a></li>
+          <li><a href="index.html#casos" data-i18n="e.nav.casos">Casos de estudio</a></li>
           <li><a href="logos.html">Logos</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="index.html#metodo">Método</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="index.html#servicios" data-i18n="e.nav.servicios">Servicios</a></li>
+          <li><a href="index.html#metodo" data-i18n="e.nav.metodo">Método</a></li>
+          <li><a href="index.html#contacto" data-i18n="e.f.contacto">Contacto</a></li>
         </ul>
       </nav>
       <div class="foot-channels" id="foot-channels-box" hidden>
@@ -109,10 +108,10 @@
     </div>
     <p class="logo logo-fit footer-logo" id="logo-foot" role="img" aria-label="Eiro" data-anim="letters" data-kern="0.01" data-dot="0.24">Eiro<span class="dot"></span></p>
     <div class="foot-bottom">
-      <p class="footer-claim">Estrategia, identidad y contenido para marcas que quieren crecer.</p>
+      <p class="footer-claim" data-i18n="e.f.claim">Estrategia, identidad y content para marcas en crecimiento.</p>
       <div class="legal">
         <span>© <span id="year">2026</span> Eiro</span>
-        <span>Buenos Aires, para Argentina y Estados Unidos</span>
+        <span data-i18n="e.f.base">Buenos Aires — Argentina · Estados Unidos</span>
       </div>
     </div>
   </div>
@@ -120,8 +119,10 @@
 
 <div class="cursor" id="cursor" aria-hidden="true">Ver</div>
 
-<script src="config.js?v=113"></script>
-<script src="script.js?v=113"></script>
-<script src="assets/size.js?v=113"></script>
+<script src="assets/i18n-eiro.js?v=115"></script>
+<script src="assets/i18n.js?v=115"></script>
+<script src="config.js?v=115"></script>
+<script src="script.js?v=115"></script>
+<script src="assets/size.js?v=115"></script>
 </body>
 </html>
